@@ -10,8 +10,8 @@ Meteor.startup(function () {
     .done(function () {
 //       Session.set("showLoadingIndicator", false);
     })
-    .fail(function (error_message) {
+    .fail(function (err) {
       // Handle the situation
-      console.log(error_message);
+      console.log(err);
     });
 });
