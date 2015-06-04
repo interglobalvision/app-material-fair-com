@@ -82,4 +82,9 @@ Router.map(function() {
 
   this.route('forgot');
 
+  // Applications
+  this.route('application', {
+    path: '/application',
+  });
+
 });
