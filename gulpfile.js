@@ -18,7 +18,7 @@ gulp.task('lintjs', function () {
     'app/**/*.js',
     '!app/.meteor/**/*.js',
     '!app/packages/**/*.js',
-    '!node_modules/**/*.js'
+    '!node_modules/**/*.js',
   ])
   .pipe(jshint())
   .pipe(jshint.reporter('default'))
@@ -35,8 +35,10 @@ gulp.task('watch', function () {
     'app/**/*.js',
     '!app/.meteor/**/*.js',
     '!app/packages/**/*.js',
-    '!node_modules/**/*.js'
-  ], ['lintjs']);
+    '!node_modules/**/*.js',
+  ], [
+    'lintjs',
+  ]);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch',]);
