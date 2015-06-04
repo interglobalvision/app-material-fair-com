@@ -31,7 +31,9 @@ var filters = {
 
 };
 
-Router.onBeforeAction(filters.myFilter, {only: ['items'],},);
+Router.onBeforeAction(filters.myFilter, {
+  only: ['items',],
+});
 
 // Routes
 
