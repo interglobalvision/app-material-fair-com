@@ -3,7 +3,7 @@ Template.forgot.events = {
     e.preventDefault();
 
     var options = {
-      email: $('#email').val()
+      email: $('#email').val(),
     };
 
     Accounts.forgotPassword(options, function(error){
@@ -14,6 +14,5 @@ Template.forgot.events = {
 //         flash("Password reset link sent!");
       }
     });
-
-  }
+  },
 };

@@ -5,7 +5,7 @@ Template.signup.events = {
     var user = {
       username: $('#username').val(),
       email: $('#email').val(),
-      password: $('#password').val()
+      password: $('#password').val(),
     };
 
     if(!user.username || !user.email || !user.password){
@@ -20,6 +20,5 @@ Template.signup.events = {
         }
       });
     }
-
-  }
+  },
 };
