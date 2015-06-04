@@ -1,5 +1,4 @@
 {
-  "disallowEmptyBlocks": true,
   "disallowKeywords": ["with"],
   "disallowMultipleLineBreaks": true,
   "disallowKeywordsOnNewLine": ["else"],

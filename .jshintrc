@@ -10,14 +10,6 @@
   "noarg": true,
   "strict": true,
   "trailing": true,
-  "undef": true,
   "unused": "vars",
-  "strict": false,
-  "predef": [
-    "Meteor",
-    "Mongo",
-    "document",
-    "jQuery",
-    "$"
-  ]
+  "strict": false
 }
