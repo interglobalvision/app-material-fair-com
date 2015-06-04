@@ -10,9 +10,9 @@ Applications = new Meteor.Collection('applications');
 
 // Schema
 Applications.attachSchema( new SimpleSchema({
-  submited: {
+  submitted: {
     type: Boolean,
-    label: 'Submited',
+    label: 'Submitted',
     defaultValue: false,
   },
   signed: {
@@ -41,36 +41,47 @@ Applications.attachSchema( new SimpleSchema({
     type: String,
     label: 'Gallery Name',
   },
-  address1: {
-    type: String,
-    label: 'Address (Line 1)',
+
+  // -- Address
+  address: {
+    type: Object,
+    label: 'Address',
+    optional: true,
   },
-  address2: {
+  'address.line1': {
     type: String,
-    label: 'Address (Line 2)',
+    label: '',
   },
-  city: {
+  'address.line2': {
+    type: String,
+    label: '',
+  },
+  'address.city': {
     type: String,
     label: 'City',
   },
-  state: {
+  'address.state': {
     type: String,
     label: 'State (if applicable)',
     optional: true,
   },
-  postalCode: {
+  'address.postalCode': {
     type: String,
     label: 'Postal Code (if applicable)',
     optional: true,
   },
   galleryYear: {
-    type: String,
+    type: Number,
     label: 'Year gallery was founded',
   },
   participation: {
     type: String,
     label: 'Participation in other fairs',
     optional: true,
+    max: 2000,
+    autoform: {
+      rows: 10,
+    },
   },
   website: {
     type: String,
@@ -100,13 +111,9 @@ Applications.attachSchema( new SimpleSchema({
   },
 
   // Primary Contact
-  contact: {
-    type: Object,
-  },
   'contact.name': {
     type: String,
     label: 'Name',
-    regEx: SimpleSchema.RegEx.Email,
   },
   'contact.email': {
     type: String,
@@ -116,21 +123,29 @@ Applications.attachSchema( new SimpleSchema({
   'contact.phone': {
     type: String,
     label: 'Mobile Phone',
-    regEx: SimpleSchema.RegEx.Email,
+  },
+  galleryHistory: {
+    type: String,
+    label: 'Brief history of the gallery',
+    max: 2000,
+    autoform: {
+      rows: 10,
+    },
   },
 
   // Proposal
-  'proposal.galleryHistory': {
-    type: String,
-    label: 'Brief history of the gallery',
-  },
-  'proposal.standProposal': {
+  standProposal: {
     type: String,
     label: 'Proposal for Material Art Fair 2016 stand',
+    max: 2000,
+    autoform: {
+      rows: 10,
+    },
   },
-  'proposal.artists': {
+  artists: {
     type: [Object,],
     label: 'Artists represented by the gallery',
+    min: 1,
   },
   /*
    * Gotta fogure it out how to save and relate pdf, i think with FS u just save the ID
@@ -140,29 +155,36 @@ Applications.attachSchema( new SimpleSchema({
     label: 'Artist name',
   },
   */
-  'proposal.artists.$.name': {
+  'artists.$.name': {
     type: String,
     label: 'Artist name',
   },
-  'proposal.artists.$.workTitle': {
+  'artists.$.workTitle': {
     type: String,
     label: 'Work title',
   },
-  'proposal.artists.$.medium': {
+  'artists.$.medium': {
     type: String,
     label: 'Medium',
   },
-  'proposal.artists.$.dimensions': {
+  'artists.$.dimensions': {
     type: String,
     label: 'Dimensions',
   },
-  'proposal.artists.$.year': {
+  'artists.$.year': {
     type: Number,
     label: 'Year',
   },
-  'boothType': {
+  boothType: {
     type: String,
     label: "Booth size",
+    allowedValues: [
+      'Project',
+      'Small',
+      'Medium',
+      'Medium Plus',
+      'Large',
+    ],
   },
 }));
 
