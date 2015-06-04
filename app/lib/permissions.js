@@ -22,4 +22,4 @@ can = {
   removeItem: function (userId, item) {
     return userId === item.userId;
   }
-}
+};
