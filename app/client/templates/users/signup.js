@@ -19,8 +19,8 @@ Template.signup.events = {
             if (error) {
               console.log(error);
             }else{
-              Meteor.call('createApplication', {userId: Meteor.userId()}, function(error, result) {
-                if error {
+              Meteor.call('createApplication', {userId: Meteor.userId(),}, function(error, result) {
+                if (error) {
                   console.log(error);
                 }else{
                   Router.go('/');
