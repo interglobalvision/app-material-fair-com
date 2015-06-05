@@ -23,3 +23,9 @@ Meteor.publish('singleItem', function(id) {
 Meteor.publish('allRoles', function (){ 
   return Meteor.roles.find({});
 });
+
+// ---- Applications 
+// Publish a single item
+Meteor.publish('singleApplication', function(userId) {
+  return Applications.find({userId: userId,});
+});
