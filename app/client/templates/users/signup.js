@@ -14,14 +14,21 @@ Template.signup.events = {
         if (error) {
           console.log(error.reason);
           // flash(error.reason, 'error');
-        } else {
+        }else{
           Meteor.call('createUserRoles', Meteor.userId(), function(error, result) {
             if (error) {
               console.log(error);
             }else{
-              Router.go('/');
-              console.log('Thanks for signing up!');
-              // flash('Thanks for signing up!');
+              Meteor.call('createApplication', {userId: Meteor.userId(),}, function(error, result) {
+                if (error) {
+                  console.log(error);
+                }else{
+                  console.log('creates an application for u');
+                  Router.go('/');
+                  console.log('Thanks for signing up!');
+                  // flash('Thanks for signing up!');
+                }
+              });
             }
           });
         }
