@@ -9,7 +9,7 @@ Template.signup.events = {
 
     if(!user.email || !user.password){
       // flash('Please fill in all fields');
-    }else{
+    } else {
       Accounts.createUser(user, function(error){
         if (error) {
           console.log(error.reason);
@@ -18,11 +18,12 @@ Template.signup.events = {
           Meteor.call('createUserRoles', Meteor.userId(), function(error, result) {
             if (error) {
               console.log(error);
-            }else{
+            } else {
               Meteor.call('createApplication', {userId: Meteor.userId(),}, function(error, result) {
                 if (error) {
                   console.log(error);
-                }else{
+                } else {
+                  console.log('creates an application for u');
                   Router.go('/');
                   console.log('Thanks for signing up!');
                   // flash('Thanks for signing up!');
