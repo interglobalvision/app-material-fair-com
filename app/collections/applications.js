@@ -28,20 +28,20 @@ Applications.allow({
 
 Meteor.methods({
   createApplication: function(application){
-    Applications.insert(application);
-  },
-
-  removeApplication: function(application){
-    if(can.removeApplication(Meteor.user(), application)){
-      Applications.remove(application._id);
+    if (Roles.userIsInRole(Meteor.userId(), 'applicant')) {
+      Applications.insert(application);
     }else{
-      throw new Meteor.Error(403, 'You do not have the rights to delete this application.');
+      this.stop();
+      return;
     }
   },
 
-  saveApplication: function(application){
-    if(can.createApplication(Meteor.user())){
-      Applications.insert(application);
+  removeApplication: function(application){
+    if (Roles.userIsInRole(Meteor.userId(), ['super','admin',])) {
+      Applications.remove(application._id);
+    }else{
+      this.stop();
+      return;
     }
   },
 });
