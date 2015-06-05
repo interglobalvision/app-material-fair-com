@@ -7,6 +7,13 @@ Meteor.methods({
     } else {
       console.log('applicant');
       Roles.addUsersToRoles(userId, ['applicant',]);
+      Meteor.call('createApplication', {userId: userId,}, function(error, result) {
+        if (error) {
+          console.log(error);
+        }else{
+          console.log('application created');
+        }
+      });
     }
   },
 }); 
