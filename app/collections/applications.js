@@ -28,9 +28,7 @@ Applications.allow({
 
 Meteor.methods({
   createApplication: function(application){
-    if(can.createApplication(Meteor.user())){
-      Applications.insert(application);
-    }
+    Applications.insert(application);
   },
 
   removeApplication: function(application){

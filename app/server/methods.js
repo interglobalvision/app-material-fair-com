@@ -1,6 +1,6 @@
 Meteor.methods({
   // User methods
-  afterCreateUser: function(userId) {
+  createUserRoles: function(userId) {
     if (Meteor.users.find().count() === 1) {
       console.log('super');
       Roles.addUsersToRoles(userId, ['super',]);
