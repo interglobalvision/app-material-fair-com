@@ -17,3 +17,9 @@ Meteor.publish('allItems', function() {
 Meteor.publish('singleItem', function(id) {
   return Items.find(id);
 });
+
+// Publish roles
+
+Meteor.publish('allRoles', function (){ 
+  return Meteor.roles.find({});
+});
