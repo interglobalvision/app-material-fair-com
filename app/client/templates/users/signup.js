@@ -3,20 +3,27 @@ Template.signup.events = {
     event.preventDefault();
 
     var user = {
-      username: $('#username').val(),
       email: $('#email').val(),
       password: $('#password').val(),
     };
 
-    if(!user.username || !user.email || !user.password){
-//       flash('Please fill in all fields');
+    if(!user.email || !user.password){
+      // flash('Please fill in all fields');
     }else{
       Accounts.createUser(user, function(error){
-        if(error){
-//           flash(error.reason, 'error');
-        }else{
-          Router.go('/');
-//           flash('Thanks for signing up!');
+        if (error) {
+          console.log(error.reason);
+          // flash(error.reason, 'error');
+        } else {
+          Meteor.call('onCreateUserAddRole', Meteor.userId(), function(error, result) {
+            if (error) {
+              console.log(error);
+            } else {
+              Router.go('/');
+              console.log('Thanks for signing up!');
+              // flash('Thanks for signing up!');
+            }
+          });
         }
       });
     }
