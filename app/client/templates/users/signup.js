@@ -19,15 +19,9 @@ Template.signup.events = {
             if (error) {
               console.log(error);
             }else{
-              Meteor.call('createApplication', {userId: Meteor.userId(),}, function(error, result) {
-                if (error) {
-                  console.log(error);
-                }else{
-                  Router.go('/');
-                  console.log('Thanks for signing up!');
-                  // flash('Thanks for signing up!');
-                }
-              });
+              Router.go('/');
+              console.log('Thanks for signing up!');
+              // flash('Thanks for signing up!');
             }
           });
         }

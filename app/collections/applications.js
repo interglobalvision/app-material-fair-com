@@ -31,7 +31,7 @@ Meteor.methods({
     if (Roles.userIsInRole(Meteor.userId(), 'applicant')) {
       Applications.insert(application);
     }else{
-      this.stop();
+      console.log('You do not have permission to createApplication');
       return;
     }
   },
@@ -40,7 +40,7 @@ Meteor.methods({
     if (Roles.userIsInRole(Meteor.userId(), ['super','admin',])) {
       Applications.remove(application._id);
     }else{
-      this.stop();
+      console.log('You do not have permission to removeApplication');
       return;
     }
   },
