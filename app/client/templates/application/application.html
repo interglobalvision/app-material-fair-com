@@ -1,6 +1,6 @@
 <template name="application">
   <div class="container">
-    {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review"}}
+    {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted,signed,paid,approved, rating" }}
     <input type="button" value="Save">
   </div>
 </template>
