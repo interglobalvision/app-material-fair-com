@@ -2,8 +2,6 @@ Template.application.created = function () {
 };
 
 Template.application.helpers({
-  applicationDocId: function() {
-  },
 });
 
 Template.application.rendered = function () {
@@ -16,10 +14,14 @@ Template.application.events({
 
     // Get form values
     var applicationValues = AutoForm.getFormValues('insertApplicationForm');
-    
-    console.log(applicationValues);
-    
+
     // Update values
+    Meteor.call('saveApplication', this._id, Meteor.userId(), applicationValues.updateDoc, function(error, response) {
+      if(error) {
+        console.log(error);
+      } 
+    });
+
   },
 });
 

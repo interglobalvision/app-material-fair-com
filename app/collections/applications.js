@@ -44,4 +44,14 @@ Meteor.methods({
       return;
     }
   },
+
+  saveApplication: function(applicationId, userId, applicationUpdate){
+    // TODO: Check doc ownder with userId
+    if (Roles.userIsInRole(Meteor.userId(), 'applicant')) {
+      Applications.update(applicationId, applicationUpdate);
+    }else{
+      console.log('You do not have permission to createApplication');
+      return;
+    }
+  },
 });
