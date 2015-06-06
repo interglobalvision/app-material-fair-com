@@ -1,5 +1,15 @@
 <template name="users">
   <div class="container">
-
+  	<div class="admin-users">
+	  {{#each adminUsers}}
+	  	{{email}}
+		{{/each}}
+		</div>
+		<div class="committee-users">
+	  {{#each committeeUsers}}
+	  	{{email}}
+		{{/each}}
+		</div>
+		{{> createAdmin}}
   </div>
 </template>
