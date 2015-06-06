@@ -82,6 +82,27 @@ Router.map(function() {
 
   this.route('forgot');
 
+  // Admin
+  this.route('dashboard', {
+    path: '/admin',
+  });
+
+  this.route('users', {
+    waitOn: function() {
+      return [
+        Meteor.subscribe('adminUsers'),
+        Meteor.subscribe('committeeUsers'),
+      ];
+    },
+
+    data: function() {
+      return {
+        adminUsers: Roles.getUsersInRole('admin'),
+        committeeUsers: Roles.getUsersInRole('committee'),
+      };
+    },
+  });
+
   // Applications
   this.route('application', {
     path: '/application',
