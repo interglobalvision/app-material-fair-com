@@ -38,7 +38,6 @@ Schemas.applicationForm = new SimpleSchema({
   address: {
     type: Object,
     label: 'Address',
-    optional: true,
   },
   'address.line1': {
     type: String,
@@ -47,6 +46,7 @@ Schemas.applicationForm = new SimpleSchema({
   'address.line2': {
     type: String,
     label: '',
+    optional: true,
   },
   'address.city': {
     type: String,
