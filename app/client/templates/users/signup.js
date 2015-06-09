@@ -7,14 +7,14 @@ Template.signup.events = {
       password: $('#password').val(),
     };
 
-    if(!user.email || !user.password){
+    if (!user.email || !user.password) {
       // flash('Please fill in all fields');
-    }else{
-      Accounts.createUser(user, function(error){
+    } else {
+      Accounts.createUser(user, function(error) {
         if (error) {
           console.log(error.reason);
           // flash(error.reason, 'error');
-        }else{
+        } else {
           var userId = Meteor.userId();
 
           Meteor.call('createUserRoles', userId, function(error, result) {
@@ -25,14 +25,14 @@ Template.signup.events = {
               Meteor.call('createApplication', {userId: userId,}, function(error, result) {
                 if (error) {
                   console.log(error);
-                }else{
+                } else {
                   console.log('application created');
                   console.log('Thanks for signing up!');
                   // flash('Thanks for signing up!');
                   Router.go('/application');
                 }
               });
-            }else{
+            } else {
               Router.go('/');
             }
           });
