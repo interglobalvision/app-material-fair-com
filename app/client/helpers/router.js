@@ -86,9 +86,6 @@ Router.map(function() {
   // Admin
   this.route('dashboard', {
     path: '/admin',
-  });
-
-  this.route('users', {
     waitOn: function() {
       return [
         Meteor.subscribe('adminUsers'),
