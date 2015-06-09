@@ -27,13 +27,14 @@ Meteor.publish('allRoles', function (){
 // Publish admin users
 
 Meteor.publish('adminUsers', function (){ 
-  return Roles.getUsersInRole('admin');
+	return Roles.getUsersInRole('admin');
+  //return Meteor.users.find({roles: {$in: ['admin'] } });
 });
 
 // Publish committee users
 
 Meteor.publish('committeeUsers', function (){ 
-  return Roles.getUsersInRole('committee');
+	return Roles.getUsersInRole('committee');
 });
 
 // ---- Applications 
