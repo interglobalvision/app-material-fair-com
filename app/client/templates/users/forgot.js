@@ -7,9 +7,9 @@ Template.forgot.events = {
     };
 
     Accounts.forgotPassword(options, function(error){
-      if(error){
+      if (error) {
 //         flash(error.reason, "error");
-      }else{
+      } else {
         Router.go('/login');
 //         flash("Password reset link sent!");
       }
