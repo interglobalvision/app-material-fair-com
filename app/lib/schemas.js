@@ -133,7 +133,7 @@ Schemas.applicationForm = new SimpleSchema({
   },
   artists: {
     type: [Object,],
-    label: 'Artists represented by the gallery',
+    label: '',
     min: 1,
   },
   /*
