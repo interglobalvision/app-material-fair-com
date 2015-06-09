@@ -5,7 +5,7 @@
 Client-side Router.
 
 /+ ---------------------------------------------------- */
-  
+
 // Config
 
 Router.configure({
@@ -23,16 +23,17 @@ var filters = {
   },
 
   isLoggedIn: function() {
-    if (!(Meteor.loggingIn() || Meteor.user())) {
-      alert('Please Log In First.');
-      this.stop();
+    if (! Meteor.userId()) {
+      this.render('login');
+    } else {
+      this.next();
     }
   },
 
 };
 
 Router.onBeforeAction(filters.myFilter, {
-  only: ['items',],
+  except: ['signup','login','forgot',],
 });
 
 // Routes
