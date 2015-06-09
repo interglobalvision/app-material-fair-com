@@ -22,11 +22,12 @@ Meteor.methods({
 
   adminCreateUser: function(user) {
     var userId = Accounts.createUser(user);
+    
     return userId;
   },
 
   enrollmentEmail: function(userId) {
     Accounts.sendEnrollmentEmail(userId);
     return 'success';
-  }
+  },
 }); 
