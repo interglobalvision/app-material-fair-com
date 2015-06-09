@@ -16,7 +16,7 @@ Applications.allow({
   },
 
   update: function(userId, doc, fieldNames, modifier){
-    if(Roles.userIsInRole(userId, 'applicant') && doc.userId == userId) { 
+    if (Roles.userIsInRole(userId, 'applicant') && doc.userId === userId) { 
       return true;
     } else { 
       return false;
@@ -24,7 +24,7 @@ Applications.allow({
   },
 
   remove: function(userId, doc){
-    if(Roles.userIsInRole(userId, 'applicant') && doc.userId == userId) { 
+    if (Roles.userIsInRole(userId, 'applicant') && doc.userId === userId) { 
       return true;
     } else { 
       return false;

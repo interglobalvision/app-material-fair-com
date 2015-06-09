@@ -20,10 +20,10 @@ Template.application.events({
 
     // Update values
     Meteor.call('saveApplication', this._id, Meteor.userId(), applicationValues.updateDoc, function(error, response) {
-      if(error) {
+      if (error) {
         console.log(error);
       } else {
-        Materialize.toast('Application saved', 4000) // 4000 is the duration of the toast
+        Materialize.toast('Application saved', 4000);
       }
     });
 
