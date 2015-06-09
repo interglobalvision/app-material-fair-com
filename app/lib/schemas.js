@@ -71,9 +71,6 @@ Schemas.applicationForm = new SimpleSchema({
     label: 'Participation in other fairs',
     optional: true,
     max: 2000,
-    autoform: {
-      rows: 10,
-    },
   },
   website: {
     type: String,

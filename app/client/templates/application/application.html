@@ -1,6 +1,28 @@
-<template name="application">
+  <template name="application">
   <div class="container">
-    {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted,signed,paid,approved, rating" }}
-    <input type="button" value="Save">
+    {{#autoForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
+      {{> afQuickField name='galleryName' autofocus='' }}
+      {{> afObjectField name='address' }}
+      {{> afQuickField name='galleryYear' }}
+      {{> afQuickField name='participation' rows='5' }}
+      {{> afQuickField name='website' }}
+      {{> afQuickField name='twitter' }}
+      {{> afQuickField name='facebook' }}
+      {{> afQuickField name='tumblr' }}
+      {{> afQuickField name='instagram' }}
+      {{> afObjectField name='contact' }}
+      {{> afQuickField name='galleryHistory' rows='5' }}
+      {{> afQuickField name='standProposal' rows='5' }}
+      {{> afArrayField name='artists' template='addArtist' }}
+      {{> afQuickField name='boothType' options='allowed' class='browser-default' }}
+      <hr />
+      <div class="progress">
+        <div class="indeterminate" style="width: 70%"></div>
+      </div>
+      <button id="saveApplication" type="submit" class="btn btn-default">Save</button>
+      <button id="submitApplication" type="submit" class="btn btn-primary">Submit</button>
+    {{/autoForm}}
+    <!--  LEAVE THIS HERE, HELPS FOR TESTING 
+      {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted,signed,paid,approved, rating" }} -->
   </div>
 </template>
