@@ -12,15 +12,20 @@ Applications = new Meteor.Collection('applications');
 
 Applications.allow({
   insert: function(userId, doc){
-    return can.createApplication(userId);
+    return Roles.userIsInRole(userId, 'applicant');
   },
 
   update: function(userId, doc, fieldNames, modifier){
-    return can.editApplication(userId, doc);
+    // TODO: Check doc ownder with userId
+    if(Roles.userIsInRole(userId, 'applicant') && doc.userId == userId) { 
+      return true;
+    } else { 
+      return false;
+    }
   },
 
   remove: function(userId, doc){
-    return can.removeApplication(userId, doc);
+    return Roles.userIsInRole(userId, 'applicant');
   },
 });
 
@@ -28,30 +33,14 @@ Applications.allow({
 
 Meteor.methods({
   createApplication: function(application){
-    if (Roles.userIsInRole(Meteor.userId(), 'applicant')) {
-      Applications.insert(application);
-    }else{
-      console.log('You do not have permission to createApplication');
-      return;
-    }
+    Applications.insert(application);
   },
 
   removeApplication: function(application){
-    if (Roles.userIsInRole(Meteor.userId(), ['super','admin',])) {
-      Applications.remove(application._id);
-    }else{
-      console.log('You do not have permission to removeApplication');
-      return;
-    }
+    Applications.remove(application._id);
   },
 
   saveApplication: function(applicationId, userId, applicationUpdate){
-    // TODO: Check doc ownder with userId
-    if (Roles.userIsInRole(Meteor.userId(), 'applicant')) {
-      Applications.update(applicationId, applicationUpdate);
-    }else{
-      console.log('You do not have permission to createApplication');
-      return;
-    }
+    Applications.update(applicationId, applicationUpdate);
   },
 });
