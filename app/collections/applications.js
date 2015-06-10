@@ -43,7 +43,7 @@ Meteor.methods({
     Applications.remove(application._id);
   },
 
-  saveApplication: function(applicationId, userId, applicationUpdate){
+  saveApplication: function(applicationId, applicationUpdate){
     Applications.update(applicationId, applicationUpdate);
   },
 });

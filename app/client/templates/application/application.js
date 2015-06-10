@@ -19,7 +19,7 @@ Template.application.events({
     var applicationValues = AutoForm.getFormValues('insertApplicationForm');
 
     // Update values
-    Meteor.call('saveApplication', this._id, Meteor.userId(), applicationValues.updateDoc, function(error, response) {
+    Meteor.call('saveApplication', this._id, applicationValues.updateDoc, function(error, response) {
       if (error) {
         console.log(error);
       } else {
@@ -32,4 +32,3 @@ Template.application.events({
 
   },
 });
-
