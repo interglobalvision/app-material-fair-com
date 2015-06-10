@@ -5,7 +5,5 @@ Accounts.emailTemplates.enrollAccount.subject = function (user) {
 };
 
 Accounts.emailTemplates.enrollAccount.text = function (user, url) {
-   return "You have a new account on the Material Art Fair application & review."
-     + " To activate your account, simply click the link below:\n\n"
-     + url;
+   return "You have a new account on the Material Art Fair application & review." + " To activate your account, simply click the link below:\n\n" + url;
 };
