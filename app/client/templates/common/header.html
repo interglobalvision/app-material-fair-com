@@ -3,13 +3,18 @@
     <nav>
       <div class="nav-wrapper row">
         <div class="col s12">
-          <a href="#" class="brand-logo">Logo</a>
+          <a href="/" class="brand-logo">Logo</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if isInRole 'admin,super'}}
+              <li class="waves-effect waves-light"><a href="/admin">Dashboard</a></li>
+              <li class="waves-effect waves-light"><a href="/submissions">Submissions</a></li>
+            {{/if}}
+
             {{#if isLoggedIn}}
-              <li><a href="/" class="log-out">Log Out</a></li>
+              <li class="waves-effect waves-light"><a href="/" class="log-out">Log Out</a></li>
             {{else}}
-              <li><a href="{{pathFor 'signup'}}">Sign Up</a></li>
-              <li><a href="{{pathFor 'login'}}">Log In</a></li>
+              <li class="waves-effect waves-light"><a href="{{pathFor 'signup'}}">Sign Up</a></li>
+              <li class="waves-effect waves-light"><a href="{{pathFor 'login'}}">Log In</a></li>
             {{/if}}
           </ul>
         </div>
