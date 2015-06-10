@@ -1,39 +1,27 @@
 <template name="users">
-  <div class="container">
-  	<div class="dashboard-applications">
-  		<h2>Applications</h2>
-  		<ul>
-			{{#each applications}}
-		  	<li>
-		  		{{_id}}
-		  	</li>
-			{{/each}}
-  		</ul>
-  	</div>
-  	<div class="dashboard-users-admin">
-	  	<h2>Admin</h2>
-	  	<ul>
-		  {{#each adminUsers}}
-		  	<li>
-		  	{{#each emails}}
-		  		{{address}}
-		  	{{/each}}
-		  	</li>
-			{{/each}}
-			</ul>
-		</div>
-		<div class="dashboard-users-committee">
-			<h2>Committee</h2>
-			<ul>
-		  {{#each committeeUsers}}
-			  <li>
-		  	{{#each emails}}
-		  		{{address}}
-		  	{{/each}}
-		  	</li>
-			{{/each}}
-			</ul>
-		</div>
-		{{> createAdmin}}
-  </div>
+	<div class="dashboard-users-admin">
+  	<h2>Admin</h2>
+  	<ul>
+	  {{#each adminUsers}}
+	  	<li>
+	  	{{#each emails}}
+	  		{{address}}
+	  	{{/each}}
+	  	</li>
+		{{/each}}
+		</ul>
+	</div>
+	<div class="dashboard-users-committee">
+		<h2>Committee</h2>
+		<ul>
+	  {{#each committeeUsers}}
+		  <li>
+	  	{{#each emails}}
+	  		{{address}}
+	  	{{/each}}
+	  	</li>
+		{{/each}}
+		</ul>
+	</div>
+	{{> createAdmin}}
 </template>

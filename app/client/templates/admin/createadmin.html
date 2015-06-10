@@ -1,24 +1,22 @@
 <template name="createAdmin">
-  <div class="container">
-	  <form>
-	    <div class="control-group">
-	      <label>User Email</label>
-	      <div class="controls"><input id="email" name="email" type="text" value="" /></div>
-	    </div>
-	    <div class="control-group">
-	      <label>Role</label>
-	      <div class="controls">
-	      	<input id="admin" name="role" type="radio" value="admin" />
-	      	<label for="admin">Admin</label>
-	      	<input id="committee" name="role" type="radio" value="committee" />
-	      	<label for="committee">Committee</label>
-	      </div>
-	    </div>
-	    <div class="form-actions">
-		    <button class="btn waves-effect waves-light" type="submit" name="action">Create User
-			    <i class="mdi-content-send right"></i>
-			  </button>
-	    </div>
-	  </form>
-  </div>
+  <form>
+    <div class="control-group">
+      <label>User Email</label>
+      <div class="controls"><input id="email" name="email" type="text" value="" /></div>
+    </div>
+    <div class="control-group">
+      <label>Role</label>
+      <div class="controls">
+      	<input id="admin" name="role" type="radio" value="admin" />
+      	<label for="admin">Admin</label>
+      	<input id="committee" name="role" type="radio" value="committee" />
+      	<label for="committee">Committee</label>
+      </div>
+    </div>
+    <div class="form-actions">
+	    <button class="btn waves-effect waves-light" type="submit" name="action">Create User
+		    <i class="mdi-content-send right"></i>
+		  </button>
+    </div>
+  </form>
 </template>

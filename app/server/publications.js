@@ -42,3 +42,7 @@ Meteor.publish('committeeUsers', function (){
 Meteor.publish('singleApplication', function(userId) {
   return Applications.find({userId: userId,});
 });
+
+Meteor.publish('allApplications', function(userId) {
+  return Applications.find();
+});

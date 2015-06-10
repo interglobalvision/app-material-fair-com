@@ -90,11 +90,13 @@ Router.map(function() {
       return [
         Meteor.subscribe('adminUsers'),
         Meteor.subscribe('committeeUsers'),
+        Meteor.subscribe('allApplications'),
       ];
     },
 
     data: function() {
       return {
+        applications: Applications.find(),
         adminUsers: Roles.getUsersInRole('admin'),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
