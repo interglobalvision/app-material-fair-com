@@ -1,5 +1,14 @@
 <template name="submissions">
   <div class="container">
-
+  	<div class="submissions-applications">
+			<h2>Applicants</h2>
+			<ul>
+			{{#each applications}}
+		  	<li>
+		  		{{galleryName}}
+		  	</li>
+			{{/each}}
+			</ul>
+		</div>
   </div>
 </template>
