@@ -1,22 +1,5 @@
 Router.map(function() {
 
-  // Pages
-
-  this.route('homepage', {
-    path: '/',
-  });
-
-  this.route('content');
-
-  // Users
-
-  this.route('login');
-
-  this.route('signup');
-
-  this.route('forgot');
-
-  // Admin
   this.route('dashboard', {
     path: '/admin',
     waitOn: function() {
@@ -30,6 +13,10 @@ Router.map(function() {
     data: function() {
       return {
         applications: Applications.find(),
+        applicationsCount: Applications.find().count(),
+        applicationsSubmittedCount: Applications.find({submitted: true,}).count(),
+        applicationsSignedCount: Applications.find({signed: true,}).count(),
+        applicationsPaidCount: Applications.find({paid: true,}).count(),
         adminUsers: Roles.getUsersInRole('admin'),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
