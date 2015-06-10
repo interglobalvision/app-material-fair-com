@@ -9,9 +9,9 @@ Template.application.rendered = function () {
 };
 
 Template.application.events({
-  'click button#saveApplication': function(e) {
+  'click #saveApplication': function(e) {
     e.preventDefault();
-    
+
     // Show loading bar
     document.querySelector('.progress').style.opacity = 1;
 
@@ -21,6 +21,7 @@ Template.application.events({
     // Update values
     Meteor.call('saveApplication', this._id, applicationValues.updateDoc, function(error, response) {
       if (error) {
+        // >>> we need error handling
         console.log(error);
       } else {
         Materialize.toast('Application saved', 4000);

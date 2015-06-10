@@ -2,7 +2,7 @@
 
 ## Applications ##
 
-All code related to the Applications collection goes here. 
+All code related to the Applications collection goes here.
 
 /+ ---------------------------------------------------- */
 
@@ -16,24 +16,25 @@ Applications.allow({
   },
 
   update: function(userId, doc, fieldNames, modifier){
-    if (Roles.userIsInRole(userId, 'applicant') && doc.userId === userId) { 
+    if (Roles.userIsInRole(userId, 'applicant') && doc.userId === userId) {
       return true;
-    } else { 
+    } else {
       return false;
     }
   },
 
   remove: function(userId, doc){
-    if (Roles.userIsInRole(userId, 'applicant') && doc.userId === userId) { 
+    if (Roles.userIsInRole(userId, 'applicant') && doc.userId === userId) {
       return true;
-    } else { 
+    } else {
       return false;
     }
   },
 });
 
 // Methods
-
+// >> why are these methods here?!
+// >>> should be in some kind of /methods folder && this is clients side too no?
 Meteor.methods({
   createApplication: function(application){
     Applications.insert(application);

@@ -4,6 +4,7 @@ Router.map(function() {
     path: '/admin',
     waitOn: function() {
       return [
+        // >>> should these subscriptions require auth on the sever to check role?
         Meteor.subscribe('adminUsers'),
         Meteor.subscribe('committeeUsers'),
         Meteor.subscribe('allApplications'),

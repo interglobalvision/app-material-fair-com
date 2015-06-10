@@ -32,6 +32,7 @@ var filters = {
 
 };
 
+// >>> probably better not to pass as array here but hook multiple times [if possible] then can have different exceptions
 Router.onBeforeAction(filters.myFilter, {
   except: ['signup','login','forgot',],
 });

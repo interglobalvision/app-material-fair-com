@@ -25,20 +25,24 @@ Template.dashboard.events({
 		} else {
 			Meteor.call('adminCreateUser', user, function(error, result) {
 				if (error) {
+          Materialize.toast(error.reason, 3000);
 					console.log(error.reason);
 				} else {
 					var userId = result;
 
 					Meteor.call('createUserRoles', userId, role, function(error, result) {
 						if (error) {
+              Materialize.toast(error, 3000);
 							console.log(error);
 						} else {
 							console.log('role=' + result);
 
 							Meteor.call('enrollmentEmail', userId, function(error, result) {
 								if (error) {
+                  Materialize.toast(error, 3000);
 									console.log(error);
 								} else {
+                  Materialize.toast('Enrollment email sent', 3000);
 									console.log(result);
 									Router.go('/admin');
 								}

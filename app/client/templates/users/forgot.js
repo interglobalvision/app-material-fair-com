@@ -8,10 +8,10 @@ Template.forgot.events = {
 
     Accounts.forgotPassword(options, function(error){
       if (error) {
-//         flash(error.reason, "error");
+        Materialize.toast(error.reason, 3000);
       } else {
+        Materialize.toast('Password reset link sent!', 3000);
         Router.go('/login');
-//         flash("Password reset link sent!");
       }
     });
   },
