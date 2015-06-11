@@ -1,91 +1,101 @@
 <template name="dashboard">
-
-  <div id="dashboard-users-stat" class="container">
-    <div class="row">
-      <div class="col l3 m6 s12">
-        <div class="card-panel center-align red">
-          <h6 class="white-text">All applications:</h6>
-          <h3 class="white-text">{{applicationsCount}}</h3>
-        </div>
-    	</div>
-    	<div class="col l3 m6 s12">
-        <div class="card-panel center-align orange">
-          <h6 class="white-text">Submitted applications:</h6>
-          <h3 class="white-text">{{applicationsSubmittedCount}}</h3>
-        </div>
-    	</div>
-    	<div class="col l3 m6 s12">
-        <div class="card-panel center-align orange lighten-2">
-          <h6 class="white-text">Signed applications:</h6>
-          <h3 class="white-text">{{applicationsSignedCount}}</h3>
-        </div>
-    	</div>
-    	<div class="col l3 m6 s12">
-        <div class="card-panel center-align green">
-          <h6 class="white-text">Paid applications:</h6>
-          <h3 class="white-text">{{applicationsPaidCount}}</h3>
-        </div>
-    	</div>
-    </div>
-  </div>
-
   <div class="container">
-    <div class="row">
-      <div id="dashboard-users-admin" class="col m6 s12">
-      	<h4>Admin Users</h4>
-      	<ul>
-    	  {{#each adminUsers}}
-    	  <div class="card red-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">{{username}}</span>
-            {{#each emails}}
-      	  		{{address}}
-      	  	{{/each}}
-          </div>
+    <div id="dashboard-users-stat" class="section">
+      <div class="row">
+        <div class="col s12">
+          <h4>Application Status</h4>
         </div>
-    		{{/each}}
-    		</ul>
-    	</div>
-    	<div id="dashboard-users-committee" class="col m6 s12">
-    		<h4>Committee Users</h4>
-    	  {{#each committeeUsers}}
-    	  <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">{{username}}</span>
-            {{#each emails}}
-      	  		{{address}}
-      	  	{{/each}}
+        <div class="col l3 m6 s12">
+          <div class="card-panel center-align indigo darken-4">
+            <h6 class="white-text">All</h6>
+            <h3 class="white-text">{{applicationsCount}}</h3>
           </div>
-          <div class="card-action">
-            <a href="#">Remove user?</a>
+      	</div>
+      	<div class="col l3 m6 s12">
+          <div class="card-panel center-align yellow darken-2">
+            <h6 class="white-text">Submitted</h6>
+            <h3 class="white-text">{{applicationsSubmittedCount}}</h3>
           </div>
-        </div>
-    		{{/each}}
-    	</div>
+      	</div>
+      	<div class="col l3 m6 s12">
+          <div class="card-panel center-align cyan darken-1">
+            <h6 class="white-text">Signed</h6>
+            <h3 class="white-text">{{applicationsSignedCount}}</h3>
+          </div>
+      	</div>
+      	<div class="col l3 m6 s12">
+          <div class="card-panel center-align teal darken-3">
+            <h6 class="white-text">Paid</h6>
+            <h3 class="white-text">{{applicationsPaidCount}}</h3>
+          </div>
+      	</div>
+      </div>
     </div>
-  </div>
+    <div class="divider"></div>
 
-  <div class="container">
-    <h4>Add new user</h4>
-    <form>
-      <div class="control-group">
-        <label>User Email</label>
-        <div class="controls"><input id="email" name="email" type="text" value="" /></div>
+    <div class="section">
+      <div class="row">
+        <div id="dashboard-users-admin" class="col m6 s12">
+        	<h4>Admin Users</h4>
+        	<ul>
+      	  {{#each adminUsers}}
+      	  <div class="card grey darken-2">
+            <div class="card-content white-text">
+              <span class="card-title">{{username}}</span>
+              {{#each emails}}
+        	  		{{address}}
+        	  	{{/each}}
+            </div>
+          </div>
+      		{{/each}}
+      		</ul>
+      	</div>
+      	<div id="dashboard-users-committee" class="col m6 s12">
+      		<h4>Committee Users</h4>
+      	  {{#each committeeUsers}}
+      	  <div class="card grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{username}}</span>
+              {{#each emails}}
+        	  		{{address}}
+        	  	{{/each}}
+            </div>
+            <div class="card-action">
+              <a href="#">Remove user?</a>
+            </div>
+          </div>
+      		{{/each}}
+      	</div>
       </div>
-      <div class="control-group">
-        <label>Role</label>
-        <div class="controls">
-        	<input id="admin" name="role" type="radio" value="admin" />
-        	<label for="admin">Admin</label>
-        	<input id="committee" name="role" type="radio" value="committee" />
-        	<label for="committee">Committee</label>
+    </div>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h4>Add new user</h4>
+      <form>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="email" name="email" type="text" value="" />
+            <label>User Email</label>
+          </div>
+          <div class="input-field col s6 m3">
+          	<input id="admin" name="role" type="radio" value="admin" />
+          	<label for="admin">Admin</label>
+          </div>
+          <div class="input-field col s6 m3">
+          	<input id="committee" name="role" type="radio" value="committee" />
+          	<label for="committee">Committee</label>
+          </div>
         </div>
-      </div>
-      <div class="form-actions">
-  	    <button id="admin-add-user" class="btn waves-effect waves-light" type="submit" name="action">Create User
-  		    <i class="mdi-content-send right"></i>
-  		  </button>
-      </div>
-    </form>
+        <div class="row">
+          <div class="col s12">
+      	    <button id="admin-add-user" class="btn waves-effect waves-light" type="submit" name="action">
+              Create User<i class="mdi-content-send right"></i>
+      		  </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  
   </div>
 </template>
