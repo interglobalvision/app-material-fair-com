@@ -2,6 +2,18 @@ Router.map(function() {
 
   this.route('dashboard', {
     path: '/admin',
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+      
+      if (Roles.userIsInRole(userId, 'admin')) {
+        this.next();
+      } else if (Roles.userIsInRole(userId, 'committee')) {
+        Router.go('/submissions');
+      } else if (Roles.userIsInRole(userId, 'applicant')) {
+        Router.go('/application');
+      }
+    },
+
     waitOn: function() {
       return [
         // >>> should these subscriptions require auth on the sever to check role?
