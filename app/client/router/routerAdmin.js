@@ -15,9 +15,9 @@ Router.map(function() {
       return {
         applications: Applications.find(),
         applicationsCount: Applications.find().count(),
-        applicationsSubmittedCount: Applications.find({submitted: true,}).count(),
-        applicationsSignedCount: Applications.find({signed: true,}).count(),
-        applicationsPaidCount: Applications.find({paid: true,}).count(),
+        applicationsSubmittedCount: Applications.find({status: 'submitted',}).count(),
+        applicationsSignedCount: Applications.find({status: 'signed',}).count(),
+        applicationsPaidCount: Applications.find({status: 'paid',}).count(),
         adminUsers: Roles.getUsersInRole('admin'),
         committeeUsers: Roles.getUsersInRole('committee'),
       };

@@ -1,6 +1,6 @@
   <template name="application">
   <div class="container">
-    {{#autoForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
+    {{#autoForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="status, rating" }}
       {{> afQuickField name='galleryName' autofocus='' }}
       {{> afObjectField name='address' }}
       {{> afQuickField name='galleryYear' }}

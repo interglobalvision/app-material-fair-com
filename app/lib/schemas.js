@@ -2,25 +2,16 @@ Schemas = {};
 
 // Application Form Schema
 Schemas.applicationForm = new SimpleSchema({
-  submitted: {
-    type: Boolean,
-    label: 'Submitted',
-    defaultValue: false,
-  },
-  signed: {
-    type: Boolean,
-    label: 'Signed',
-    defaultValue: false,
-  },
-  paid: {
-    type: Boolean,
-    label: 'Paid',
-    defaultValue: false,
-  },
-  approved: {
-    type: Boolean,
-    label: 'Approved',
-    defaultValue: false,
+  status: {
+    type: String,
+    defaultValue: 'saved',
+    allowedValues: [
+      'saved',
+      'submitted',
+      'signed',
+      'paid',
+      'approved',
+    ],
   },
   rating: {
     type: Number,
