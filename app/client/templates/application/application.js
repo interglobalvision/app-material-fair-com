@@ -2,6 +2,30 @@ Template.application.created = function () {
 };
 
 Template.application.helpers({
+  statusTemplate: function(status) {
+    switch (status) {
+      case 'approved': {
+        return Template.applicationIdk;
+      }
+
+      case 'paid': {
+        return Template.applicationThanx;
+      }
+      
+      case 'signed': {
+        return Template.applicationPay;
+      }
+
+      case 'submitted': {
+        return Template.applicationSign;
+      }
+
+      case 'created': {
+        console.log('created');
+        return Template.applicationAdd;
+      }
+    }
+  },
 });
 
 Template.application.rendered = function () {
