@@ -20,7 +20,7 @@ Template.signup.events = {
             if (error) {
               Materialize.toast(error, 3000);
             } else if (result === 'applicant') {
-              Meteor.call('createApplication', {userId: userId,}, function(error, result) {
+              Meteor.call('createApplication', {userId: userId, status: 'saved',}, function(error, result) {
                 if (error) {
                   Materialize.toast(error, 3000);
                 } else {
