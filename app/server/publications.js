@@ -28,7 +28,6 @@ Meteor.publish('allRoles', function (){
 
 Meteor.publish('adminUsers', function (){
 	return Roles.getUsersInRole('admin');
-  //return Meteor.users.find({roles: {$in: ['admin'] } });
 });
 
 // Publish committee users
