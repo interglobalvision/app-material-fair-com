@@ -29,6 +29,9 @@ Template.signup.events = {
                   Router.go('/application');
                 }
               });
+            } else if (result === 'admin') {
+              Materialize.toast('Welcome to the admin dashboard.', 3000);
+              Router.go('/admin');
             } else {
               Router.go('/');
             }

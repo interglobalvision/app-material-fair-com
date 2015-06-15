@@ -32,7 +32,7 @@ Template.submitted.events({
     e.preventDefault();
 
 		if (signaturePad.isEmpty()) {
-			Materialize.toast('Please provide signature first', 4000);
+			Materialize.toast('Please provide signature.', 3000);
 		} else {
 			var signatureData = signaturePad.toDataURL();
 

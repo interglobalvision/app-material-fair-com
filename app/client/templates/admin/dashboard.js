@@ -53,4 +53,24 @@ Template.dashboard.events({
       });
     }
   },
+
+  'click .remove-user': function(event){
+    event.preventDefault();
+
+		var removeUserId = this._id,
+		userId = Meteor.userId();
+
+		if (Roles.userIsInRole(userId, 'admin')) {
+			Meteor.call('removeUser', removeUserId, function(error, result) {
+				if (error) {
+					alert(error);
+				} else {
+					Materialize.toast('User removed', 3000);
+				}
+			});
+		} else {
+			Materialize.toast("You don't have permission", 3000);
+			Router.go('/');
+		}
+	},
 });
