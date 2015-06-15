@@ -7,7 +7,10 @@ Template.saved.helpers({
 });
 
 Template.saved.rendered = function () {
-  //
+  $('#saveApplication').pushpin({ 
+    top: $('#saveApplication').offset().top,
+    offset: 20
+  });
 };
 
 Template.saved.events({

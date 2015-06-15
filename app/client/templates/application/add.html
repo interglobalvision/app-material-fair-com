@@ -1,29 +1,43 @@
 <template name="saved">
-  {{#autoForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
-    {{> afQuickField name='galleryName' autofocus='' }}
-    {{> afObjectField name='address' }}
-    {{> afQuickField name='galleryYear' }}
-    {{> afQuickField name='participation' rows='5' }}
-    {{> afQuickField name='website' }}
-    {{> afQuickField name='twitter' }}
-    {{> afQuickField name='facebook' }}
-    {{> afQuickField name='tumblr' }}
-    {{> afQuickField name='instagram' }}
-    {{> afObjectField name='contact' }}
-    {{> afQuickField name='galleryHistory' rows='5' }}
-    {{> afQuickField name='standProposal' rows='5' }}
-    <h3>Artists represented by the gallery</h3>
-    {{> afArrayField name='artists' template='materialized' }}
-    {{> afQuickField name='boothType' options='allowed' class='browser-default' }}
-
-    <hr/>
-
-    <div class="progress">
-      <div class="indeterminate" style="width: 70%"></div>
+  <div class="section">
+    <h3>Introduction</h3>
+    <p>Blah blah blah...</p>
+  </div>
+  <div class="row">
+    {{#autoForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
+    <div class="col s10">
+      <div class="section">
+        {{> afQuickField name='galleryName' autofocus='' }}
+        {{> afObjectField name='address' }}
+        {{> afQuickField name='galleryYear' }}
+        {{> afQuickField name='participation' rows='5' }}
+        {{> afQuickField name='website' }}
+        {{> afQuickField name='twitter' }}
+        {{> afQuickField name='facebook' }}
+        {{> afQuickField name='tumblr' }}
+        {{> afQuickField name='instagram' }}
+        {{> afObjectField name='contact' }}
+        {{> afQuickField name='galleryHistory' rows='5' }}
+        {{> afQuickField name='standProposal' rows='5' }}
+        <h3>Artists represented by the gallery</h3>
+        {{> afArrayField name='artists' template='materialized' }}
+        {{> afQuickField name='boothType' options='allowed' class='browser-default' }}
+      </div>
+      <div class="section">
+        <div class="progress">
+          <div class="indeterminate" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        <button id="submitApplication" type="submit" class="btn btn-primary">Review</button>
+      </div>
     </div>
-    <button id="saveApplication" type="submit" class="btn btn-default">Save</button>
-    <button id="submitApplication" type="submit" class="btn btn-primary">Submit</button>
-  {{/autoForm}}
+    {{/autoForm}}
+    <div class="col s2">
+      <button id="saveApplication" type="submit" class="btn btn-default">Save</button>
+    </div>
+  </div>
 
 
   <!-- LEAVE THIS HERE, HELPS FOR TESTING -->
