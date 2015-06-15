@@ -1,17 +1,23 @@
 <template name="signup">
   <div class="container">
-    <form>
-      <div class="control-group">
-        <label>Email</label>
-        <div class="controls"><input id="email" name="email" type="text" value="" /></div>
-      </div>
-      <div class="control-group">
-        <label>Password</label>
-        <div class="controls"><input id="password" name="password" type="password" value="" /></div>
-      </div>
-      <div class="form-actions">
-        <input type="submit" class="waves-effect waves-light btn" value="Sign Up" />
-      </div>
-    </form>
+    <div class="section">
+      <form>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" name="email" type="text" value="" />
+            <label class="active">Email</label>
+          </div>
+          <div class="input-field col s12">
+              <input id="password" name="password" type="password" value="" />
+              <label class="active">Password</label>
+          </div>
+          <div class="form-actions">
+            <div class="col s12">
+              <input type="submit" class="waves-effect waves-light btn" value="Sign Up" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </template>

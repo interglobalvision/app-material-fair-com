@@ -14,28 +14,19 @@ Router.configure({
   notFoundTemplate: 'notFound',
 });
 
-// Filters
-
-var filters = {
-
-  myFilter: function () {
-    this.next();
-  },
-
-  isLoggedIn: function() {
-    if (! Meteor.userId()) {
-      this.render('login');
-    } else {
-      this.next();
-    }
-  },
-
-};
-
 // >>> probably better not to pass as array here but hook multiple times [if possible] then can have different exceptions
-Router.onBeforeAction(filters.myFilter, {
-  except: ['signup','login','forgot',],
-});
+Router.onBeforeAction(function() {
+    if (! Meteor.userId()) {
+      this.next();
+    } else {
+      this.go('/');
+    }
+  }, 
+
+  {
+    only: ['login',],
+  }
+);
 
 // Routes
 
