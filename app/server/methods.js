@@ -27,4 +27,8 @@ Meteor.methods({
     Accounts.sendEnrollmentEmail(userId);
     return 'success';
   },
+
+  removeUser: function(userId) {
+    Meteor.users.remove({_id: userId,});
+  },
 }); 
