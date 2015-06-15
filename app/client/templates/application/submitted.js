@@ -34,10 +34,16 @@ Template.submitted.events({
 		if (signaturePad.isEmpty()) {
 			Materialize.toast('Please provide signature first', 4000);
 		} else {
-			var signatureData = signaturePad.toDataURL(),
-			applicationId = Applications.findOne()._id;
+			var signatureData = signaturePad.toDataURL();
 
-			Applications.update(applicationId, {$set: {signature: signatureData, status: "signed",},});
+      Meteor.call('saveApplication', this._id, {$set: {signature: signatureData, status: "signed",},}, function(error, response) {
+        if (error) {
+          // >>> we need error handling
+          console.log(error);
+        } else {
+          Materialize.toast('Application signed', 4000);
+        }
+      });
 		}
   },
 
