@@ -11,7 +11,7 @@ Template.saved.rendered = function () {
   
   $('#saveApplication').pushpin({ 
     top: $('#saveApplication').offset().top,
-    offset: 20
+    offset: 20,
   });
 };
 

@@ -31,7 +31,7 @@ Template.submitted.rendered = function () {
   $('#backToForm').pushpin({ 
     top: $('#backToForm').offset().top,
     bottom: $('#terms').offset().top,
-    offset: 20
+    offset: 20,
   });
 };
 
