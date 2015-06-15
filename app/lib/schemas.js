@@ -62,6 +62,10 @@ Schemas.applicationForm = new SimpleSchema({
     label: 'Participation in other fairs',
     optional: true,
     max: 2000,
+    autoform: {
+      type: 'textarea',
+      rows: 5,
+    },
   },
   website: {
     type: String,
@@ -109,6 +113,7 @@ Schemas.applicationForm = new SimpleSchema({
     label: 'Brief history of the gallery',
     max: 2000,
     autoform: {
+      type: 'textarea',
       rows: 10,
     },
   },
@@ -119,7 +124,8 @@ Schemas.applicationForm = new SimpleSchema({
     label: 'Proposal for Material Art Fair 2016 stand',
     max: 2000,
     autoform: {
-      rows: 10,
+      type: 'textarea',
+      rows: 5,
     },
   },
   artists: {
