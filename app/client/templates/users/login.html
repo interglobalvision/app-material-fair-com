@@ -1,18 +1,26 @@
 <template name="login">
   <div class="container">
-    <form>
-      <div class="control-group">
-        <label>Email</label>
-        <div class="controls"><input id="email" type="text" value="" /></div>
-      </div>
-      <div class="control-group">
-        <label>Password</label>
-        <div class="controls"><input id="password" type="password" value="" /></div>
-      </div>
-      <div class="form-actions">
-        <input type="submit" class="waves-effect waves-light btn" value="Log In" />
-        <a href="/forgot">Forgot password?</a>
-      </div>
-    </form>
+    <div class="section">
+      <form>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" name="email" type="text" value="" />
+            <label class="active">Email</label>
+          </div>
+          <div class="input-field col s12">
+              <input id="password" type="password" value="" />
+              <label class="active">Password</label>
+          </div>
+          <div class="form-actions">
+            <div class="col s6">
+              <input type="submit" class="waves-effect waves-light btn" value="Log In" />
+            </div>
+            <div class="col s6">
+              <a href="/forgot">Forgot password?</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
