@@ -3,16 +3,16 @@
     {{> afQuickField name='galleryName' autofocus='' }}
     {{> afObjectField name='address' }}
     {{> afQuickField name='galleryYear' }}
-    {{> afQuickField name='participation' rows='5' }}
+    {{> afQuickField name='participation' class='materialize-textarea'}}
     {{> afQuickField name='website' }}
     {{> afQuickField name='twitter' }}
     {{> afQuickField name='facebook' }}
     {{> afQuickField name='tumblr' }}
     {{> afQuickField name='instagram' }}
     {{> afObjectField name='contact' }}
-    {{> afQuickField name='galleryHistory' rows='5' }}
-    {{> afQuickField name='standProposal' rows='5' }}
-    <h3>Artists represented by the gallery</h3>
+    {{> afQuickField name='galleryHistory' class='materialize-textarea'}}
+    {{> afQuickField name='standProposal' class='materialize-textarea'}}
+    <h4>Artists represented by the gallery</h4>
     {{> afArrayField name='artists' template='materialized' }}
     {{> afQuickField name='boothType' options='allowed' class='browser-default' }}
 
