@@ -31,11 +31,14 @@ Template.submitted.events({
   'click #reviewSign': function(e) {
     e.preventDefault();
 
-    if (signaturePad.isEmpty()) {
-      alert("Please provide signature first.");
-    } else {
-      window.open(signaturePad.toDataURL());
-    }
+		if (signaturePad.isEmpty()) {
+			Materialize.toast('Please provide signature first', 4000);
+		} else {
+			var signatureData = signaturePad.toDataURL(),
+			applicationId = Applications.findOne()._id;
+
+			Applications.update(applicationId, {$set: {signature: signatureData, status: "signed",},});
+		}
   },
 
   'click #clearSign': function(e) {
