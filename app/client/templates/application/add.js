@@ -7,6 +7,8 @@ Template.saved.helpers({
 });
 
 Template.saved.rendered = function () {
+  $(window).scrollTop( 0 );
+  
   $('#saveApplication').pushpin({ 
     top: $('#saveApplication').offset().top,
     offset: 20
