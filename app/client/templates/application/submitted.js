@@ -9,6 +9,8 @@ Template.submitted.helpers({
 Template.submitted.rendered = function () {
   var canvas = document.getElementById("signature-pad");
 
+  $(window).scrollTop( 0 );
+
   function resizeCanvas() {
     // When zoomed out to less than 100%, for some very strange reason,
     // some browsers report devicePixelRatio as less than 1
@@ -25,6 +27,12 @@ Template.submitted.rendered = function () {
   resizeCanvas();
 
   signaturePad = new SignaturePad(canvas);
+
+  $('#backToForm').pushpin({ 
+    top: $('#backToForm').offset().top,
+    bottom: $('#terms').offset().top,
+    offset: 20
+  });
 };
 
 Template.submitted.events({
@@ -45,6 +53,19 @@ Template.submitted.events({
         }
       });
 		}
+  },
+
+  'click #backToForm': function(e) {
+    e.preventDefault();
+
+    Meteor.call('saveApplication', this._id, {$set: {status: "saved",},}, function(error, response) {
+      if (error) {
+        // >>> we need error handling
+        console.log(error);
+      } else {
+        //$(window).scrollTop( 0 );
+      }
+    });
   },
 
   'click #clearSign': function(e) {
