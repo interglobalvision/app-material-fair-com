@@ -21,6 +21,10 @@
 	"dashboard-add_user-create": "Create User",
 
 	"submissions": "Submissions",
+	"submissions-submitted": "Submitted",
+	"submissions-signed": "Signed",
+	"submissions-paid": "Paid",
+	"submissions-approved": "Approved",
 
 	"application": "Application"
 }
