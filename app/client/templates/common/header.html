@@ -4,7 +4,7 @@
       <div class="nav-wrapper row">
         <div class="col s12">
           <a href="/" class="brand-logo">Material Art Fair</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <ul id="nav" class="right hide-on-med-and-down">
             {{#if isInRole 'admin'}}
               <li class="waves-effect waves-light"><a href="/admin">{{_ "dashboard"}}</a></li>
             {{/if}}
@@ -22,6 +22,25 @@
               <li class="waves-effect waves-light"><a href="{{pathFor 'login'}}">{{_ "login"}}</a></li>
             {{/if}}
           </ul>
+          <ul id="nav-mobile" class="side-nav">
+            {{#if isInRole 'admin'}}
+              <li><a href="/admin">{{_ "dashboard"}}</a></li>
+            {{/if}}
+            {{#if isInRole 'admin,committee'}}
+              <li><a href="/submissions">{{_ "submissions"}}</a></li>
+            {{/if}}
+            {{#if isInRole 'applicant'}}
+              <li><a href="/application">{{_ "application"}}</a></li>
+            {{/if}}
+
+            {{#if isLoggedIn}}
+              <li><a href="/" class="log-out">{{_ "logout"}}</a></li>
+            {{else}}
+              <li><a href="{{pathFor 'signup'}}">{{_ "sign_up"}}</a></li>
+              <li><a href="{{pathFor 'login'}}">{{_ "login"}}</a></li>
+            {{/if}}
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
       </div>
     </nav>
