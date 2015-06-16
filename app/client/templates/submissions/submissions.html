@@ -1,11 +1,81 @@
 <template name="submissions">
   <div class="container">
-  	<div class="submissions-applications">
-  		<h4>Applicants</h4>
+  	<div class="submissions-submitted">
+  		<h4>Submitted</h4>
 			<ul class="collection">
-			{{#each applications}}
+			{{#each submitted}}
 		  	<li class="collection-item">
-		  		<span class="title"><h5>{{galleryName}}</h5></span>
+		  		<h5>
+		  			<a href="/submissions/{{this._id}}">
+		  				{{galleryName}}
+		  			</a>
+	  			</h5>
+		  		{{#with address}}
+		  		<p>{{city}}, {{state}}</p>
+		  		{{/with}}
+		  		{{#with contact}}
+		  		<p>{{name}}<br>
+		  		{{email}}<br>
+		  		{{phone}}</p>
+		  		{{/with}}
+		  	</li>
+			{{/each}}
+			</ul>
+		</div>
+		<div class="submissions-signed">
+  		<h4>Signed</h4>
+			<ul class="collection">
+			{{#each signed}}
+		  	<li class="collection-item">
+		  		<h5>
+		  			<a href="/submissions/{{this._id}}">
+		  				{{galleryName}}
+		  			</a>
+	  			</h5>
+		  		{{#with address}}
+		  		<p>{{city}}, {{state}}</p>
+		  		{{/with}}
+		  		{{#with contact}}
+		  		<p>{{name}}<br>
+		  		{{email}}<br>
+		  		{{phone}}</p>
+		  		{{/with}}
+		  	</li>
+			{{/each}}
+			</ul>
+		</div>
+		<div class="submissions-payed">
+  		<h4>Payed</h4>
+			<ul class="collection">
+			{{#each payed}}
+		  	<li class="collection-item">
+		  		<h5>
+		  			<a href="/submissions/{{this._id}}">
+		  				{{galleryName}}
+		  			</a>
+	  			</h5>
+					{{#with address}}
+		  		<p>{{city}}, {{state}}</p>
+		  		{{/with}}
+		  		{{#with contact}}
+		  		<p>{{name}}<br>
+		  		{{email}}<br>
+		  		{{phone}}</p>
+		  		{{/with}}
+		  	</li>
+			{{/each}}
+			</ul>
+		</div>
+		<div class="submissions-approved">
+  		<h4>Approved</h4>
+			<ul class="collection">
+			{{#each approved}}
+		  	<li class="collection-item">
+		  		<h5>
+		  			<a href="/submissions/{{this._id}}">
+		  				{{galleryName}}
+		  			</a>
+	  			</h5>
 		  		{{#with address}}
 		  		<p>{{city}}, {{state}}</p>
 		  		{{/with}}
