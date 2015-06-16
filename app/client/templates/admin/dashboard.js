@@ -16,31 +16,28 @@ Template.dashboard.events({
 
     var user = {
       email: $('#email').val(),
+      profile: {
+      	name: $('#name').val(),
+      },
     },
     role = $('input[name="role"]:checked').val();
 
-		if (!user.email || !role) {
-			console.log('Please fill in all fields');
-			// flash('Please fill in all fields');
+		if (!user.email || !role || !user.profile.name) {
+			Materialize.toast('Please fill in all fields', 3000);
 		} else {
 			Meteor.call('adminCreateUser', user, function(error, result) {
 				if (error) {
           Materialize.toast(error.reason, 3000);
-					console.log(error.reason);
 				} else {
 					var userId = result;
 
 					Meteor.call('createUserRoles', userId, role, function(error, result) {
 						if (error) {
-              Materialize.toast(error, 3000);
-							console.log(error);
+              Materialize.toast(error.reason, 3000);
 						} else {
-							console.log('role=' + result);
-
 							Meteor.call('enrollmentEmail', userId, function(error, result) {
 								if (error) {
-                  Materialize.toast(error, 3000);
-									console.log(error);
+                  Materialize.toast(error.reason, 3000);
 								} else {
                   Materialize.toast('Enrollment email sent', 3000);
 									console.log(result);

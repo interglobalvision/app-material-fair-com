@@ -42,6 +42,9 @@
       	  <div class="card grey darken-3">
             <div class="card-content white-text">
               <span class="card-title">{{username}}</span>
+              {{#with profile}}
+                {{name}}<br>
+              {{/with}}
               {{#each emails}}
         	  		{{address}}
         	  	{{/each}}
@@ -59,9 +62,12 @@
       	  <div class="card grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">{{username}}</span>
+              {{#with profile}}
+                {{name}}<br>
+              {{/with}}
               {{#each emails}}
-        	  		{{address}}
-        	  	{{/each}}
+                {{address}}
+              {{/each}}
             </div>
             <div class="card-action">
               <a class="u-pointer remove-user">Remove user</a>
@@ -77,21 +83,29 @@
       <h4>Add new user</h4>
       <form>
         <div class="row">
-          <div class="input-field col s6">
-            <input id="email" name="email" type="text" value="" />
-            <label>User Email</label>
-          </div>
-          <div class="input-field col s6 m2">
-          	<input id="admin" name="role" type="radio" value="admin" />
-          	<label for="admin">Admin</label>
-          </div>
-          <div class="input-field col s6 m2">
-          	<input id="committee" name="role" type="radio" value="committee" />
-          	<label for="committee">Committee</label>
-          </div>
-        </div>
-        <div class="row">
           <div class="col s12">
+            <div class="input-field">
+              <input id="name" name="name" type="text" value="" />
+              <label>Name</label>
+            </div>
+            <div class="input-field">
+              <input id="email" name="email" type="text" value="" />
+              <label>Email</label>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="input-field">
+              <input id="admin" name="role" type="radio" value="admin" />
+              <label for="admin">Admin</label>
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="input-field">
+              <input id="committee" name="role" type="radio" value="committee" />
+              <label for="committee">Committee</label>
+            </div>
+          </div>
+          <div class="input-field col s6">
       	    <button id="admin-add-user" class="btn waves-effect waves-light" type="submit" name="action">
               Create User<i class="mdi-content-send right"></i>
       		  </button>
