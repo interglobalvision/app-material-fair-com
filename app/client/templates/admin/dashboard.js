@@ -14,12 +14,12 @@ Template.dashboard.events({
   'click #admin-add-user': function(event){
     event.preventDefault();
 
-    var user = {
-      email: $('#email').val(),
-      profile: {
-      	name: $('#name').val(),
-      },
-    },
+		var user = {
+			email: $('#email').val(),
+			profile: {
+				name: $('#name').val(),
+			},
+		},
     role = $('input[name="role"]:checked').val();
 
 		if (!user.email || !role || !user.profile.name) {

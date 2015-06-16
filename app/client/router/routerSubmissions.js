@@ -20,10 +20,10 @@ Router.map(function() {
 
     data: function() {
       return {
-        submitted: Applications.find({status: 'submitted'}),
-        signed: Applications.find({status: 'signed'}),
-        paid: Applications.find({status: 'paid'}),
-        approved: Applications.find({status: 'approved'}),
+        submitted: Applications.find({status: 'submitted',}),
+        signed: Applications.find({status: 'signed',}),
+        paid: Applications.find({status: 'paid',}),
+        approved: Applications.find({status: 'approved',}),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
     },
@@ -34,11 +34,12 @@ Router.map(function() {
     waitOn: function () {
       return Meteor.subscribe('singleApplication', this.params.userId);
     },
+
     data: function () {
       return {
-        submission: Applications.findOne({userId: this.params.userId})
-      }
-    }
+        submission: Applications.findOne({userId: this.params.userId,}),
+      };
+    },
   });
 
 });

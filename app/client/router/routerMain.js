@@ -22,8 +22,9 @@ Router.onBeforeAction(function () {
       this.next();
     }
   },
+  
   {
-    except: ['signup','homepage'],
+    except: ['signup','homepage',],
   }
 );
 
