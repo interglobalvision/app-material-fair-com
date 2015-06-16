@@ -1,15 +1,15 @@
 <template name="submitted">
-	<h3>Review and sign</h3>
+	<h3>{{_ "application-review_sign"}}</h3>
   <div class="row">
   	<div class="col s10">
 		  <div class="section">
 			  <ul class="collection">
 			  	<li class="collection-item">
-			  		<strong>Gallery Name</strong>
+			  		<strong>{{_ "application-gallery_name"}}</strong>
 			  		<p>{{galleryName}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Address</strong>
+			  		<strong>{{_ "application-address"}}</strong>
 			  		<p>{{#with address}}
 			  		{{line1}}<br>
 			  		{{#if line2}}
@@ -19,15 +19,15 @@
 			  		{{/with}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Gallery Year</strong>
+			  		<strong>{{_ "application-gallery_year"}}</strong>
 			  		<p>{{galleryYear}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Participation in other fairs</strong>
+			  		<strong>{{_ "application-participation"}}</strong>
 			  		<p>{{participation}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Website</strong>
+			  		<strong>{{_ "application-website"}}</strong>
 			  		<p>{{website}}</p>
 			  	</li>
 			  	<li class="collection-item">
@@ -52,7 +52,7 @@
 		  <div class="section">
 			  <ul class="collection">
 			  	<li class="collection-item">
-			  		<strong>Contact name</strong>
+			  		<strong>{{_ "application-contact-name"}}</strong>
 			  		<p>{{name}}</p>
 			  	</li>
 			  	<li class="collection-item">
@@ -60,7 +60,7 @@
 			  		<p>{{email}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Phone</strong>
+			  		<strong>{{_ "application-contact-phone"}}</strong>
 			  		<p>{{phone}}</p>
 			  	</li>
 				</ul>
@@ -70,23 +70,23 @@
 		  {{#each artists}}
 			  <ul class="collection">
 			  	<li class="collection-item">
-			  		<strong>Name</strong>
+			  		<strong>{{_ "application-artists-name"}}</strong>
 			  		<p>{{name}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Title of the work</strong>
+			  		<strong>{{_ "application-artists-title"}}</strong>
 			  		<p>{{workTitle}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Medium</strong>
+			  		<strong>{{_ "application-artists-medium"}}</strong>
 			  		<p>{{medium}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Dimensions</strong>
+			  		<strong>{{_ "application-artists-dimensions"}}</strong>
 			  		<p>{{dimensions}}</p>
 			  	</li>
 			  	<li class="collection-item">
-			  		<strong>Year</strong>
+			  		<strong>{{_ "application-artists-year"}}</strong>
 			  		<p>{{year}}</p>
 			  	</li>
 			  </ul>
@@ -95,32 +95,33 @@
 		  <div class="section">
 			  <ul class="collection">
 			  	<li class="collection-item">
-			  		<strong>Booth type</strong>
+			  		<strong>{{_ "application-booth"}}</strong>
 			  		<p>{{boothType}}</p>
 			  	</li>
 			  </ul>
 			</div>
 		</div>
 		<div class="col s2">
-			<a class="btn" id="backToForm">Edit</a>
+			<a class="btn" id="backToForm">{{_ "application-edit"}}</a>
 		</div>
 	</div>
 	<div class="section" id="terms">
-  	<h4>Terms & Conditions</h4>
+  	<h4>{{_ "application-terms"}}</h4>
+  	<p>{{_ "application-terms-text"}}</p>
   </div>
   <div class="divider"></div>
 	<div class="section">
-		<h4>Signature</h4>
+		<h4>{{_ "application-signature"}}</h4>
 		<div class="row">
 			<div class="input-field col s12">
-	      <input id="typed-signature" type="text" placeholder="Legal name">
-	      <label class="active" for="typed-signature">Typed signature</label>
+	      <input id="typed-signature" type="text" placeholder='{{_ "application-signature-legal_name"}}'>
+	      <label class="active" for="typed-signature">{{_ "application-signature-typed"}}</label>
 	    </div>
 	    <div class="col s12 u-align-center">
-	    	or
+	    	{{_ "application-signature-or"}}
 	    </div>
 	    <div class="col s12">
-		    <label class="active">Drawn signature</label>
+		    <label class="active">{{_ "application-signature-drawn"}}</label>
 			  <div class="card white">
 			  	<div class="card-content" id="signature-card">
 			    	<canvas id="signature-pad"></canvas>
@@ -128,7 +129,7 @@
 			  </div>
 			</div>
   		<div class="col s12">
-				<a id="clearSign" class="u-pointer">Clear signature</a>
+				<a id="clearSign" class="u-pointer">{{_ "application-signature-clear"}}</a>
 			</div>
 		</div>
   </div>
@@ -136,8 +137,8 @@
   <div class="section">
   	<div class="row">
 	  	<div class="col s12">
-		  	<p>When you click the submit button...</p>
-			  <a class="btn" id="reviewSign">Submit</a>
+		  	<p>{{_ "application-submit-warning"}}</p>
+			  <a class="btn" id="reviewSign">{{_ "application-submit"}}</a>
 			</div>
 		</div>
 	</div>

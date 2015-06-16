@@ -5,6 +5,7 @@
 	"password": "Password",
 	"forgot_password": "Forgot Password?",
 
+// Dashboard
 	"dashboard": "Dashboard",
 	"dashboard-application_status": "Application Status",
 	"dashboard-application_status-all": "All",
@@ -20,13 +21,59 @@
 	"dashboard-add_user-committee": "Committee",
 	"dashboard-add_user-create": "Create User",
 
+// Submissions
 	"submissions": "Submissions",
 	"submissions-submitted": "Submitted",
 	"submissions-signed": "Signed",
 	"submissions-paid": "Paid",
 	"submissions-approved": "Approved",
 
-	"application": "Application"
+// Application
+	"application": "Application",
+	"application-introduction": "Introduction",
+	"application-introduction-text": "Blah, blah, blah...",
+
+	"application-gallery_name": "Gallery name",
+
+	"application-address": "Address",
+	"application-gallery_year": "Year the gallery was founded",
+	"application-participation": "Participation in other fairs",
+	"application-website": "Website",
+
+	"application-contact-name": "Contact Name",
+	"application-contact-phone": "Phone",
+
+	"application-artists": "Artists represented by the gallery",
+	"application-artists-name": "Name",
+	"application-artists-title": "Title",
+	"application-artists-medium": "Medium",
+	"application-artists-dimensions": "Dimensions",
+	"application-artists-year": "Year",
+
+	"application-booth": "Booth type",
+
+	"application-review": "Review",
+	"application-save": "Save",
+
+	"application-review_sign": "Review and Sign",
+	"application-edit": "Edit",
+
+	"application-terms": "Terms & Conditions",
+	"application-terms-text": "Yada, yada, yada...",
+
+	"application-signature": "Signature",
+	"application-signature-typed": "Typed signature",
+	"application-signature-legal_name": "Legal name",
+	"application-signature-or": "Or",
+	"application-signature-drawn": "Drawn signature",
+	"application-signature-clear": "Clear signature",
+
+	"application-submit-warning": "When you submit...",
+	"application-submit": "Submit",
+
+	"application-please_pay": "Please pay",
+
+	"application-congratulations": "Contragulations!"
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."
