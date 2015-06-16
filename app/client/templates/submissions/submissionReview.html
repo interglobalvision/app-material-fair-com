@@ -1,5 +1,108 @@
 <template name="submissionReview">
   <div class="container">
-
+  	{{#with submission}}
+  	<div class="row">
+	  	<div class="col s12">
+			  <div class="section">
+				  <ul class="collection">
+				  	<li class="collection-item">
+				  		<strong>Gallery Name</strong>
+				  		<p>{{galleryName}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Address</strong>
+				  		<p>{{#with address}}
+				  		{{line1}}<br>
+				  		{{#if line2}}
+				  		{{line2}}<br>
+				  		{{/if}}
+				  		{{city}}, {{state}} {{postalCode}}
+				  		{{/with}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Gallery Year</strong>
+				  		<p>{{galleryYear}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Participation in other fairs</strong>
+				  		<p>{{participation}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Website</strong>
+				  		<p>{{website}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Twitter</strong>
+				  		<p>{{twitter}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Facebook</strong>
+				  		<p>{{facebook}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Tumblr</strong>
+				  		<p>{{tumblr}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Instagram</strong>
+				  		<p>{{instagram}}</p>
+				  	</li>
+				  </ul>
+				</div>
+			  {{#with contact}}
+			  <div class="section">
+				  <ul class="collection">
+				  	<li class="collection-item">
+				  		<strong>Contact name</strong>
+				  		<p>{{name}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Email</strong>
+				  		<p>{{email}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Phone</strong>
+				  		<p>{{phone}}</p>
+				  	</li>
+					</ul>
+				</div>
+				{{/with}}
+				<div class="section">
+			  {{#each artists}}
+				  <ul class="collection">
+				  	<li class="collection-item">
+				  		<strong>Name</strong>
+				  		<p>{{name}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Title of the work</strong>
+				  		<p>{{workTitle}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Medium</strong>
+				  		<p>{{medium}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Dimensions</strong>
+				  		<p>{{dimensions}}</p>
+				  	</li>
+				  	<li class="collection-item">
+				  		<strong>Year</strong>
+				  		<p>{{year}}</p>
+				  	</li>
+				  </ul>
+			  {{/each}}
+			  </div>
+			  <div class="section">
+				  <ul class="collection">
+				  	<li class="collection-item">
+				  		<strong>Booth type</strong>
+				  		<p>{{boothType}}</p>
+				  	</li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+		{{/with}}
   </div>
 </template>
