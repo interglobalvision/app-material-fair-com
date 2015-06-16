@@ -22,7 +22,7 @@ Router.map(function() {
       return {
         submitted: Applications.find({status: 'submitted'}),
         signed: Applications.find({status: 'signed'}),
-        payed: Applications.find({status: 'payed'}),
+        paid: Applications.find({status: 'paid'}),
         approved: Applications.find({status: 'approved'}),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
