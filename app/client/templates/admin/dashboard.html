@@ -3,29 +3,29 @@
     <div id="dashboard-users-stat" class="section">
       <div class="row">
         <div class="col s12">
-          <h4>Application Status</h4>
+          <h4>{{_ "dashboard-application_status"}}</h4>
         </div>
         <div class="col l3 m6 s12">
           <div class="card-panel center-align indigo darken-4">
-            <h6 class="white-text">All</h6>
+            <h6 class="white-text">{{_ "dashboard-application_status-all"}}</h6>
             <h3 class="white-text">{{applicationsCount}}</h3>
           </div>
       	</div>
       	<div class="col l3 m6 s12">
           <div class="card-panel center-align yellow darken-2">
-            <h6 class="white-text">Submitted</h6>
+            <h6 class="white-text">{{_ "dashboard-application_status-submitted"}}</h6>
             <h3 class="white-text">{{applicationsSubmittedCount}}</h3>
           </div>
       	</div>
       	<div class="col l3 m6 s12">
           <div class="card-panel center-align cyan darken-1">
-            <h6 class="white-text">Signed</h6>
+            <h6 class="white-text">{{_ "dashboard-application_status-signed"}}</h6>
             <h3 class="white-text">{{applicationsSignedCount}}</h3>
           </div>
       	</div>
       	<div class="col l3 m6 s12">
           <div class="card-panel center-align teal darken-3">
-            <h6 class="white-text">Paid</h6>
+            <h6 class="white-text">{{_ "dashboard-application_status-paid"}}</h6>
             <h3 class="white-text">{{applicationsPaidCount}}</h3>
           </div>
       	</div>
@@ -36,7 +36,7 @@
     <div class="section">
       <div class="row">
         <div id="dashboard-users-admin" class="col m6 s12">
-        	<h4>Admin Users</h4>
+        	<h4>{{_ "dashboard-admin_users"}}</h4>
         	<ul>
       	  {{#each adminUsers}}
       	  <div class="card grey darken-3">
@@ -50,14 +50,14 @@
         	  	{{/each}}
             </div>
             <div class="card-action">
-              <a class="u-pointer remove-user">Remove user</a>
+              <a class="u-pointer remove-user">{{_ "dashboard-remove_user"}}</a>
             </div>
           </div>
       		{{/each}}
       		</ul>
       	</div>
       	<div id="dashboard-users-committee" class="col m6 s12">
-      		<h4>Committee Users</h4>
+      		<h4>{{_ "dashboard-committee_users"}}</h4>
       	  {{#each committeeUsers}}
       	  <div class="card grey darken-1">
             <div class="card-content white-text">
@@ -70,7 +70,7 @@
               {{/each}}
             </div>
             <div class="card-action">
-              <a class="u-pointer remove-user">Remove user</a>
+              <a class="u-pointer remove-user">{{_ "dashboard-remove_user"}}</a>
             </div>
           </div>
       		{{/each}}
@@ -80,13 +80,13 @@
     <div class="divider"></div>
 
     <div class="section">
-      <h4>Add new user</h4>
+      <h4>{{_ "dashboard-add_user"}}</h4>
       <form>
         <div class="row">
           <div class="col s12">
             <div class="input-field">
               <input id="name" name="name" type="text" value="" />
-              <label>Name</label>
+              <label>{{_ "dashboard-add_user-name"}}</label>
             </div>
             <div class="input-field">
               <input id="email" name="email" type="text" value="" />
@@ -96,18 +96,18 @@
           <div class="col s3">
             <div class="input-field">
               <input id="admin" name="role" type="radio" value="admin" />
-              <label for="admin">Admin</label>
+              <label for="admin">{{_ "dashboard-add_user-admin"}}</label>
             </div>
           </div>
           <div class="col s3">
             <div class="input-field">
               <input id="committee" name="role" type="radio" value="committee" />
-              <label for="committee">Committee</label>
+              <label for="committee">{{_ "dashboard-add_user-committee"}}</label>
             </div>
           </div>
           <div class="input-field col s6">
       	    <button id="admin-add-user" class="btn waves-effect waves-light" type="submit" name="action">
-              Create User<i class="mdi-content-send right"></i>
+              {{_ "dashboard-add_user-create"}}<i class="mdi-content-send right"></i>
       		  </button>
           </div>
         </div>
