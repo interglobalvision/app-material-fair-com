@@ -20,7 +20,10 @@ Router.map(function() {
 
     data: function() {
       return {
-        applications: Applications.find(),
+        submitted: Applications.find({status: 'submitted'}),
+        signed: Applications.find({status: 'signed'}),
+        payed: Applications.find({status: 'payed'}),
+        approved: Applications.find({status: 'approved'}),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
     },
