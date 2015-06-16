@@ -11,6 +11,9 @@
             {{#if isInRole 'admin,committee'}}
               <li class="waves-effect waves-light"><a href="/submissions">Submissions</a></li>
             {{/if}}
+            {{#if isInRole 'applicant'}}
+              <li class="waves-effect waves-light"><a href="/application">Application</a></li>
+            {{/if}}
 
             {{#if isLoggedIn}}
               <li class="waves-effect waves-light"><a href="/" class="log-out">Log Out</a></li>
