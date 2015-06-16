@@ -29,4 +29,16 @@ Router.map(function() {
     },
   });
 
+  this.route('submissionReview', {
+    path: '/submissions/:userId',
+    waitOn: function () {
+      return Meteor.subscribe('singleApplication', this.params.userId);
+    },
+    data: function () {
+      return {
+        submission: Applications.findOne({userId: this.params.userId})
+      }
+    }
+  });
+
 });
