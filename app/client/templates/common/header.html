@@ -21,6 +21,16 @@
               <li class="waves-effect waves-light"><a href="{{pathFor 'signup'}}">{{_ "sign_up"}}</a></li>
               <li class="waves-effect waves-light"><a href="{{pathFor 'login'}}">{{_ "login"}}</a></li>
             {{/if}}
+            <li>
+              <div class="switch">
+                <label class="white-text">
+                  Eng
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  Esp
+                </label>
+              </div>
+            </li>
           </ul>
           <ul id="nav-mobile" class="side-nav">
             {{#if isInRole 'admin'}}
