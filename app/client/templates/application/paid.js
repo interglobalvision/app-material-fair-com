@@ -11,5 +11,9 @@ Template.paid.rendered = function () {
 };
 
 Template.paid.events({
-  //
+  'click #pdfDownload': function(e) {
+    e.preventDefault();
+
+    Blaze.saveAsPDF(Template.pdf, {data: Applications.findOne()});
+	},
 });
