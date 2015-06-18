@@ -66,6 +66,7 @@ mrt:paypal@1.1.1
 msavin:mongol@1.0.97
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
+ongoworks:pdf@1.1.1
 ordered-dict@1.0.3
 random@1.0.3
 reactive-dict@1.1.0
