@@ -1,17 +1,24 @@
-getUserLanguage = function () {
-  // Put here the logic for determining the user language
-  return 'en';
-};
+Tracker.autorun(function () {
+  var userLanguage; 
 
-Meteor.startup(function () {
-//   Session.set("showLoadingIndicator", true);
-
-  TAPi18n.setLanguage(getUserLanguage())
+  if (Meteor.user()) {
+    userLanguage = Meteor.user().profile.lang;
+  } else if (TAPi18n.getLanguage()) {
+    userLanguage = TAPi18n.getLanguage();
+  } else {
+    userLanguage = 'en';
+  }
+  
+  TAPi18n.setLanguage(userLanguage)
     .done(function () {
-//       Session.set("showLoadingIndicator", false);
+      if (userLanguage === 'en') {
+        $('#lang').prop('checked', false);
+      } else if (userLanguage === 'es') {
+        $('#lang').prop('checked', true);
+      }
     })
-    .fail(function (err) {
+    .fail(function (error) {
       // Handle the situation
-      console.log(err);
+      console.log(error);
     });
 });
