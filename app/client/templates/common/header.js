@@ -1,12 +1,26 @@
 Template.header.rendered = function () {
+	var lang;
+
 	$(".button-collapse").sideNav({
 		closeOnClick: true,
 	});
 	$('#lang-lever').click(function() {
 		if ($('#lang').is(':checked')) {
-			TAPi18n.setLanguage('en');
+			lang = 'en'; 
 		} else {
-			TAPi18n.setLanguage('es');
+			lang = 'es'; 
+		}
+
+		TAPi18n.setLanguage(lang);
+
+		if (Meteor.userId()) {
+			Meteor.call('setUserLanguage', Meteor.userId(), lang, function(error, result) {
+				if (error) {
+					Materialize.toast(error, 3000);
+				} else {
+					console.log(getUserLanguage());
+				}
+			});
 		}
 	});
 };
