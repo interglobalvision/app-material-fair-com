@@ -28,6 +28,8 @@
   "submissions-signed": "Signed",
   "submissions-paid": "Paid",
   "submissions-approved": "Approved",
+  "submissions-thanks": "Thanks for your submission",
+  "submissions-download_pdf": "Download PDF of your submission",
 
 // Application
   "application": "Application",
