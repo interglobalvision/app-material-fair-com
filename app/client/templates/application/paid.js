@@ -15,9 +15,9 @@ Template.paid.events({
     e.preventDefault();
 
     Blaze.saveAsPDF(Template.pdf, {
-    	filename: "material-application-2016.pdf",
-    	data: Applications.findOne(),
-    	format: "letter",
+      filename: "material-application-2016.pdf",
+      data: Applications.findOne(),
+      format: "letter",
     });
-	},
+  },
 });
