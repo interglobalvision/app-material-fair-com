@@ -35,4 +35,13 @@ Meteor.methods({
   setUserLanguage: function(userId, lang) {
     Meteor.users.update(userId, {$set:{'profile.lang':lang,},});
   },
-});
+
+  // Payment methods
+  makePayment: function (url, json) {
+    this.unblock();
+    var result = HTTP.call("POST", url, {data: json,});
+
+    return result;
+  },
+
+}); 
