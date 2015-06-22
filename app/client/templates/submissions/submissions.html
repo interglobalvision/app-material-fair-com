@@ -2,10 +2,11 @@
   <div class="container">
   	<div class="submissions-submitted">
   		<h4>{{_ "submissions-submitted"}}</h4>
-			<ul class="collection">
+			<div class="row">
 			{{#each submitted}}
-		  	<li class="collection-item">
-		  		<h5>
+			  <div class="col m6 s12">
+          <div class="card-panel indigo darken-4 white-text">
+            <h5>
 		  			<a href="/submissions/{{userId}}">
 		  				{{galleryName}}
 		  			</a>
@@ -18,16 +19,18 @@
 		  		{{email}}<br>
 		  		{{phone}}</p>
 		  		{{/with}}
-		  	</li>
+          </div>
+      	</div>
 			{{/each}}
-			</ul>
+			</div>
 		</div>
 		<div class="submissions-signed">
   		<h4>{{_ "submissions-signed"}}</h4>
-			<ul class="collection">
+			<div class="row">
 			{{#each signed}}
-		  	<li class="collection-item">
-		  		<h5>
+			  <div class="col m6 s12">
+          <div class="card-panel yellow darken-4 white-text">
+            <h5>
 		  			<a href="/submissions/{{userId}}">
 		  				{{galleryName}}
 		  			</a>
@@ -40,38 +43,18 @@
 		  		{{email}}<br>
 		  		{{phone}}</p>
 		  		{{/with}}
-		  	</li>
+          </div>
+      	</div>
 			{{/each}}
-			</ul>
+			</div>
 		</div>
 		<div class="submissions-paid">
   		<h4>{{_ "submissions-paid"}}</h4>
-			<ul class="collection">
+			<div class="row">
 			{{#each paid}}
-		  	<li class="collection-item">
-		  		<h5>
-		  			<a href="/submissions/{{userId}}">
-		  				{{galleryName}}
-		  			</a>
-	  			</h5>
-					{{#with address}}
-		  		<p>{{city}}, {{state}}</p>
-		  		{{/with}}
-		  		{{#with contact}}
-		  		<p>{{name}}<br>
-		  		{{email}}<br>
-		  		{{phone}}</p>
-		  		{{/with}}
-		  	</li>
-			{{/each}}
-			</ul>
-		</div>
-		<div class="submissions-approved">
-  		<h4>{{_ "submissions-approved"}}</h4>
-			<ul class="collection">
-			{{#each approved}}
-		  	<li class="collection-item">
-		  		<h5>
+			  <div class="col m6 s12">
+          <div class="card-panel cyan darken-4 white-text">
+            <h5>
 		  			<a href="/submissions/{{userId}}">
 		  				{{galleryName}}
 		  			</a>
@@ -84,9 +67,34 @@
 		  		{{email}}<br>
 		  		{{phone}}</p>
 		  		{{/with}}
-		  	</li>
+          </div>
+      	</div>
 			{{/each}}
-			</ul>
+			</div>
+		</div>
+		<div class="submissions-approved">
+  		<h4>{{_ "submissions-approved"}}</h4>
+			<div class="row">
+			{{#each approved}}
+			  <div class="col m6 s12">
+          <div class="card-panel teal darken-4 white-text">
+            <h5>
+		  			<a href="/submissions/{{userId}}">
+		  				{{galleryName}}
+		  			</a>
+	  			</h5>
+		  		{{#with address}}
+		  		<p>{{city}}, {{state}}</p>
+		  		{{/with}}
+		  		{{#with contact}}
+		  		<p>{{name}}<br>
+		  		{{email}}<br>
+		  		{{phone}}</p>
+		  		{{/with}}
+          </div>
+      	</div>
+			{{/each}}
+			</div>
 		</div>
   </div>
 </template>
