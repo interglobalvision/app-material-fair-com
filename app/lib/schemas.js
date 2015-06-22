@@ -70,7 +70,7 @@ Schemas.applicationForm = new SimpleSchema({
   website: {
     type: String,
     label: 'Website',
-    regEx: SimpleSchema.RegEx.Url,
+    regEx: SimpleSchema.RegEx.Domain,
     optional: true,
   },
   twitter: {

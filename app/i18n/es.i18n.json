@@ -47,15 +47,15 @@
   "application-contact-phone": "Phone",
 
   "application-artists": "Artists represented by the gallery",
-  "application-artists-name": "Name",
-  "application-artists-title": "Title",
+  "application-artists-name": "Nombre",
+  "application-artists-title": "Título",
   "application-artists-medium": "Medium",
   "application-artists-dimensions": "Dimensions",
-  "application-artists-year": "Year",
+  "application-artists-year": "Año",
 
   "application-booth": "Booth type",
 
-  "application-review": "Review",
+  "application-review": "Revistar",
   "application-save": "Save",
 
   "application-review_sign": "Review and Sign",
