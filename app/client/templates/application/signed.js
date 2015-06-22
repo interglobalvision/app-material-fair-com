@@ -16,41 +16,61 @@ Template.signed.events({
   'click #submit-payment': function(e){
     e.preventDefault();
 
-    $('input#submit-payment').attr('disabled','disabled');
+  // Disable submit button
+    //$('input#submit-payment').attr('disabled','disabled');
 
-		var paymentData = {
-			"jsonrpc": "2.0",
-			"method": "transaccion",
-			"params": {
-				"data": {
-					"nombre": "Juan",
-					"apellidos": "Lopez",
-					"numeroTarjeta": "5579567890123456", "cvt": "123",
-					"cp": "11560",
-					"mesExpiracion": "10", "anyoExpiracion": "15",
-					"monto": "100",
-					"idSucursal": "1",
-					"idUsuario": "1",
-					"idServicio": "3",
-					"email": "comprador@correo.com",
-					"telefono": "5550220910",
-					"celular": "5550123456",
-					"calleyNumero": "Anatole France 311",
-					"colonia": "Polanco",
-					"municipio": "Miguel Hidalgo",
-					"estado": "Distrito Federal",
-					"pais": "Mexico",
-					"param1": "",
-					"param2": "",
-					"param3": "",
-					"param4": "",
-					"param5": "",
-				}, 
-			},
-			"id": "test",
-		};
+    var first = $('#first-name').val(),
+  	last = $('#last-name').val(),
+  	cardNumber = $('#card-number').val().replace(/\D/g,''),
+  	cvt = $('#cvt').val().replace(/\D/g,''),
+  	postalCode = $('#postal-code').val().replace(/\D/g,''),
+  	month = $('#exp-month').val().replace(/\D/g,''),
+  	year = $('#exp-year').val().replace(/\D/g,''),
+  	amount = $('#amount').val(),
+  	email = $('#email').val(),
+  	phone = $('#phone').val(),
+  	cell = $('#cell').val(),
+  	address1 = $('#address-1').val(),
+  	address2 = $('#address-2').val(),
+  	city = $('#city').val(),
+  	state = $('#state').val(),
+  	country = $('#country').val();
 
-      console.log(paymentData);
+		var paymentData = { "jsonrpc": "2.0",
+		"method": "transaccion",
+		"params": { 
+			"data": { 
+				"nombre": first,
+				"apellidos": last,
+				"numeroTarjeta": cardNumber, 
+				"cvt": cvt,
+				"cp": postalCode,
+				"mesExpiracion": month, 
+				"anyoExpiracion": year,
+				"monto": "150.00",
+				"idSucursal": "7caa36207edfd028940cd642d9bddce0f3f6ab87",
+				"idUsuario": "6ab29f84c3fd61418070b28dcf98d0130eb93d17",
+				"idServicio": "3",
+				"email": email,
+				"telefono": phone,
+				"celular": cell,
+				"calleyNumero": address1,
+				"colonia": address2,
+				"municipio": city,
+				"estado": state,
+				"pais": country, 
+			}, 
+		}, 
+		},
+		emptyFields = false;
+
+		$.each(paymentData, function(key, value) {
+			console.log(key, value);
+			if (value == "" ) {
+				emptyFields = true;
+				Materialize.toast('Please complete all fields.', 3000);
+			}
+		});
 /*
     var request = $.ajax({
 			url: "https://www.pagofacil.net/st/public/Wsjtransaccion/",

@@ -3,17 +3,15 @@
   <form id="transaccion" name="transaccion" enctype="application/x-www- form-urlencoded" action="" method="post">
   	<div class="row">
 	  	<div class="input-field col s6">
-		  	<input type="text" name="nombre" id="nombre" >
-				<label for="nombre" class="required">{{_ "application-pay-first_name"}}</label> 
+		  	<input type="text" name="nombre" id="first-name" placeholder='{{_ "application-pay-first_name"}}'>
 			</div>
 			<div class="input-field col s6">
-				<input type="text" name="apellidos" id="apellidos" >
-				<label for="apellidos" class="required">{{_ "application-pay-last_name"}}</label> 
+				<input type="text" name="nombre" id="last-name" placeholder='{{_ "application-pay-last_name"}}'> 
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s6">
-				<input type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="XXXX XXXX XXXX XXXX">
+				<input type="text" name="numeroTarjeta" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
 				<label for="numeroTarjeta" class="active required">{{_ "application-pay-card_number"}}</label>
 			</div>
 			<div class="input-field col s6">
@@ -21,48 +19,42 @@
 				<label for="cvt" class="active required">{{_ "application-pay-cvt"}}</label>
 			</div>
 			<div class="input-field col s6">
-				<input type="text" name="mesExpiracion" id="mesExpiracion" >
-				<label for="mesExpiracion" class="required">{{_ "application-pay-exp_month"}}</label>
+				<input type="text" name="mesExpiracion" id="exp-month" placeholder="Two-digit month">
+				<label for="mesExpiracion" class="active required">{{_ "application-pay-exp_month"}}</label>
 			</div>
 			<div class="input-field col s6">
-				<input type="text" name="anyoExpiracion" id="anyoExpiracion" >
-				<label for="anyoExpiracion" class="required">{{_ "application-pay-exp_year"}}</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s6">
-				<input type="text" name="calleyNumero" id="calleyNumero" >
-				<label for="calleyNumero" class="required">{{_ "application-pay-address_1"}}</label>
-			</div>
-			<div class="input-field col s6">
-				<input type="text" name="colonia" id="colonia" >
-				<label for="colonia" class="required">{{_ "application-pay-address_2"}}</label>
-			</div>
-			<div class="input-field col s6">
-				<input type="text" name="municipio" id="municipio" >
-				<label for="municipio" class="required">{{_ "application-pay-city"}}</label>
-			</div>
-			<div class="input-field col s6">
-				<input type="text" name="cp" id="cp" >
-				<label for="cp" class="required">{{_ "application-pay-postal_code"}}</label>
-			</div>
-			<div class="input-field col s6">
-				<input type="text" name="estado" id="estado" >
-				<label for="estado" class="required">{{_ "application-pay-state"}}</label>
-			</div>
-			<div class="input-field col s6">
-				<input type="text" name="pais" id="pais" >
-				<label for="pais" class="required">{{_ "application-pay-country"}}</label>
+				<input type="text" name="anyoExpiracion" id="exp-year" placeholder="Two-digit year">
+				<label for="anyoExpiracion" class="active required">{{_ "application-pay-exp_year"}}</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s6">
-				<input type="text" name="email" id="email" >
-				<label for="email" class="optional">email:</label>
+				<input type="text" name="calleyNumero" id="address-1" placeholder='{{_ "application-pay-address_1"}}'>
 			</div>
 			<div class="input-field col s6">
-				<input type="text" name="telefono" id="telefono" >
-				<label for="telefono" class="required">Telefono (10 dígitos):</label>
+				<input type="text" name="colonia" id="address-2" placeholder='{{_ "application-pay-address_2"}}'>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="municipio" id="city" placeholder='{{_ "application-pay-city"}}'>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="cp" id="postal-code" placeholder='{{_ "application-pay-postal_code"}}'>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="estado" id="state" placeholder='{{_ "application-pay-state"}}'>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="pais" id="country" placeholder='{{_ "application-pay-country"}}'>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input type="text" name="telefono" id="phone" placeholder="1 55 5555 5555">
+				<label for="telefono" class="active required">{{_ "application-pay-phone"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="telefono" id="cell" placeholder="1 55 5555 5555">
+				<label for="telefono" class="active required">{{_ "application-pay-cell"}}</label>
 			</div>
 		</div>
 		<div class="row">
