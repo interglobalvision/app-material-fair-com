@@ -1,3 +1,75 @@
 <template name="signed">
   <p>{{_ "application-please_pay"}}</p>
+  <form id="transaccion" name="transaccion" enctype="application/x-www- form-urlencoded" action="" method="post">
+  	<div class="row">
+	  	<div class="input-field col s6">
+		  	<input type="text" name="nombre" id="nombre" >
+				<label for="nombre" class="required">{{_ "application-pay-first_name"}}</label> 
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="apellidos" id="apellidos" >
+				<label for="apellidos" class="required">{{_ "application-pay-last_name"}}</label> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input type="text" name="numeroTarjeta" id="numeroTarjeta" placeholder="XXXX XXXX XXXX XXXX">
+				<label for="numeroTarjeta" class="active required">{{_ "application-pay-card_number"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="cvt" id="cvt" placeholder="123">
+				<label for="cvt" class="active required">{{_ "application-pay-cvt"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="mesExpiracion" id="mesExpiracion" >
+				<label for="mesExpiracion" class="required">{{_ "application-pay-exp_month"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="anyoExpiracion" id="anyoExpiracion" >
+				<label for="anyoExpiracion" class="required">{{_ "application-pay-exp_year"}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input type="text" name="calleyNumero" id="calleyNumero" >
+				<label for="calleyNumero" class="required">{{_ "application-pay-address_1"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="colonia" id="colonia" >
+				<label for="colonia" class="required">{{_ "application-pay-address_2"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="municipio" id="municipio" >
+				<label for="municipio" class="required">{{_ "application-pay-city"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="cp" id="cp" >
+				<label for="cp" class="required">{{_ "application-pay-postal_code"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="estado" id="estado" >
+				<label for="estado" class="required">{{_ "application-pay-state"}}</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="pais" id="pais" >
+				<label for="pais" class="required">{{_ "application-pay-country"}}</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input type="text" name="email" id="email" >
+				<label for="email" class="optional">email:</label>
+			</div>
+			<div class="input-field col s6">
+				<input type="text" name="telefono" id="telefono" >
+				<label for="telefono" class="required">Telefono (10 dígitos):</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<input type="submit" name="submit" id="submit-payment" class="btn" value="submit">
+			</div>
+		</div>
+		
+	</form>
 </template>
