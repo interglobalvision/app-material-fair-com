@@ -2,7 +2,7 @@ Meteor.methods({
   // User methods
   createUserRoles: function(userId, role) {
     var result;
-    
+
     if (Meteor.users.find().count() === 1) {
       Roles.addUsersToRoles(userId, ['admin',]);
       result = 'admin';
@@ -19,7 +19,7 @@ Meteor.methods({
 
   adminCreateUser: function(user) {
     var userId = Accounts.createUser(user);
-    
+
     return userId;
   },
 
@@ -33,6 +33,6 @@ Meteor.methods({
   },
 
   setUserLanguage: function(userId, lang) {
-    Meteor.users.update(userId, {$set:{"profile.lang":lang,},});
+    Meteor.users.update(userId, {$set:{'profile.lang':lang,},});
   },
-}); 
+});

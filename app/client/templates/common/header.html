@@ -25,8 +25,8 @@
               <div class="switch">
                 <label class="white-text">
                   Eng
-                  <input type="checkbox" id="lang">
-                  <span id="lang-lever" class="lever"></span>
+                  <input type="checkbox" class="language" id="lang">
+                  <span class="language-switch lever"></span>
                   Esp
                 </label>
               </div>
@@ -49,6 +49,16 @@
               <li><a href="{{pathFor 'signup'}}">{{_ "sign_up"}}</a></li>
               <li><a href="{{pathFor 'login'}}">{{_ "login"}}</a></li>
             {{/if}}
+            <li>
+              <div class="switch">
+                <label>
+                  Eng
+                  <input type="checkbox" class="language" id="lang">
+                  <span class="language-switch lever"></span>
+                  Esp
+                </label>
+              </div>
+            </li>
           </ul>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>

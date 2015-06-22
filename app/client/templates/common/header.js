@@ -1,14 +1,15 @@
 Template.header.rendered = function () {
 	var lang;
 
-	$(".button-collapse").sideNav({
+	$('.button-collapse').sideNav({
 		closeOnClick: true,
 	});
-	$('#lang-lever').click(function() {
-		if ($('#lang').is(':checked')) {
-			lang = 'en'; 
+	$('.language-switch').click(function(e) {
+
+		if ($(this).parent().find('input.language').is(':checked')) {
+			lang = 'en';
 		} else {
-			lang = 'es'; 
+			lang = 'es';
 		}
 
 		TAPi18n.setLanguage(lang);
@@ -17,8 +18,6 @@ Template.header.rendered = function () {
 			Meteor.call('setUserLanguage', Meteor.userId(), lang, function(error, result) {
 				if (error) {
 					Materialize.toast(error, 3000);
-				} else {
-					console.log(getUserLanguage());
 				}
 			});
 		}
