@@ -9,7 +9,7 @@ All code related to the Applications collection goes here.
 Applications = new Meteor.Collection('applications');
 
 // Allow/Deny
-
+// >>> this should only be declared on the server. Currently I think this is declared on the client too.
 Applications.allow({
   insert: function(userId, doc){
     return Roles.userIsInRole(userId, 'applicant');
