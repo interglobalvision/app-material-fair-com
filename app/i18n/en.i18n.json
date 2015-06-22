@@ -75,6 +75,20 @@
   "application-submit": "Submit",
 
   "application-please_pay": "Please pay",
+  "application-pay-first_name": "First name",
+  "application-pay-last_name": "Last name",
+  "application-pay-card_number": "Card number",
+  "application-pay-cvc": "CVC",
+  "application-pay-exp_month": "Expiration month",
+  "application-pay-exp_year": "Expiration year",
+  "application-pay-address_1": "Address line 1",
+  "application-pay-address_2": "Address line 2",
+  "application-pay-city": "City",
+  "application-pay-postal_code": "Postal code",
+  "application-pay-state": "State",
+  "application-pay-country": "Country",
+  "application-pay-phone": "Telephone",
+  "application-pay-cell": "Cellphone",
 
   "application-congratulations": "Contragulations!"
 }
