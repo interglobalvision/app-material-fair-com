@@ -1,5 +1,5 @@
 Tracker.autorun(function () {
-  var userLanguage; 
+  var userLanguage;
 
   if (Meteor.user()) {
     userLanguage = Meteor.user().profile.lang;
@@ -8,13 +8,13 @@ Tracker.autorun(function () {
   } else {
     userLanguage = 'en';
   }
-  
+
   TAPi18n.setLanguage(userLanguage)
     .done(function () {
       if (userLanguage === 'en') {
-        $('#lang').prop('checked', false);
+        $('.language').prop('checked', false);
       } else if (userLanguage === 'es') {
-        $('#lang').prop('checked', true);
+        $('.language').prop('checked', true);
       }
     })
     .fail(function (error) {
