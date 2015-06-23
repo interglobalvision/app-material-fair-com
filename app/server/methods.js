@@ -37,22 +37,29 @@ Meteor.methods({
   },
 
   // Payment methods
-  makePayment: function (params) {
+  makePayment: function (params, applicationId) {
     this.unblock();
 
     var url = 'https://www.pagofacil.net/st/public/Wsrtransaccion/index/format/json';
 
     params['method'] = 'transaccion';
-    params['data[monto]'] = '150.00';
+    params['data[monto]'] = '1.00';
     params['data[idSucursal]'] = '7caa36207edfd028940cd642d9bddce0f3f6ab87';
     params['data[idUsuario]'] = '6ab29f84c3fd61418070b28dcf98d0130eb93d17';
     params['data[idServicio]'] = 3;
-    result = HTTP.call('POST', url, {params: params,});
-    auth = result.data.transaccion.autorizado;
- 
-    console.log(result.data);
+    apiResult = HTTP.call('POST', url, {params: params,});
 
-    return auth;
+    console.log(apiResult);
+
+    auth = apiResult.data.WebServices_Transacciones.transaccion.autorizado;
+    transactionId = apiResult.data.WebServices_Transacciones.transaccion.transaccion;
+    transaction = apiResult.data.WebServices_Transacciones.transaccion;
+
+    var result = Applications.update(applicationId, {transactionId: transactionId, transaction: transaction, status: 'paid',});
+
+    console.log(result);
+
+    return result;
   },
 
-}); 
+});

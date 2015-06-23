@@ -1,12 +1,13 @@
 <template name="signed">
   <p>{{_ "application-please_pay"}}</p>
   <form id="transaccion" name="transaccion" enctype="application/x-www- form-urlencoded" action="" method="post">
+    <input type="hidden" value="{{ _id }}" id="application-id">
   	<div class="row">
 	  	<div class="input-field col s12 m6">
 		  	<input type="text" name="nombre" id="first-name" placeholder='{{_ "application-pay-first_name"}}'>
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="nombre" id="last-name" placeholder='{{_ "application-pay-last_name"}}'> 
+				<input type="text" name="nombre" id="last-name" placeholder='{{_ "application-pay-last_name"}}'>
 			</div>
 		</div>
 		<div class="row">
@@ -62,6 +63,6 @@
 				<input type="submit" name="submit" id="submit-payment" class="btn" value="pay">
 			</div>
 		</div>
-		
+
 	</form>
 </template>

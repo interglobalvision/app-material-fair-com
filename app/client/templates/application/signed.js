@@ -19,13 +19,13 @@ Template.signed.events({
 		// Disable submit button
 		//$('input#submit-payment').attr('disabled','disabled');
 
-		var paymentData = { 
+		var paymentData = {
 			"data[nombre]": $('#first-name').val(),
 			"data[apellidos]": $('#last-name').val(),
-			"data[numeroTarjeta]": $('#card-number').val().replace(/\D/g,''), 
+			"data[numeroTarjeta]": $('#card-number').val().replace(/\D/g,''),
 			"data[cvt]": $('#cvc').val().replace(/\D/g,''),
 			"data[cp]": $('#postal-code').val().replace(/\D/g,''),
-			"data[mesExpiracion]": $('#exp-month').val().replace(/\D/g,''), 
+			"data[mesExpiracion]": $('#exp-month').val().replace(/\D/g,''),
 			"data[anyoExpiracion]": $('#exp-year').val().replace(/\D/g,''),
 			"data[email]": "michaelrayvon@gmail.com",
 			"data[telefono]": $('#phone').val().replace(/\D/g,''),
@@ -36,6 +36,7 @@ Template.signed.events({
 			"data[estado]": $('#state').val(),
 			"data[pais]": $('#country').val(),
 		},
+		applicationId = $('#application-id').val(),
 		emptyFields;
 
 		function incomplete() {
@@ -47,6 +48,7 @@ Template.signed.events({
 					emptyFields = false;
 				}
 			});
+			///>>> this will return false as long as the last paymentData item is not empty as the falsy is overwritten. Also does this work with the array?
 
 			return emptyFields;
 		}
@@ -55,10 +57,11 @@ Template.signed.events({
 			Materialize.toast('Please complete all fields.', 3000);
 		} else {
 			console.log(paymentData);
-			Meteor.call('makePayment', paymentData, function(error, result) {
+			Meteor.call('makePayment', paymentData, applicationId, function(error, result) {
 				if (error) {
 					Materialize.toast(error.reason, 3000);
 				} else {
+					Materialize.toast('Thanks for your payment.');
 					console.log(result);
 				}
 			});
