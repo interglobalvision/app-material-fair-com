@@ -55,7 +55,7 @@ Meteor.methods({
     transactionId = apiResult.data.WebServices_Transacciones.transaccion.transaccion;
     transaction = apiResult.data.WebServices_Transacciones.transaccion;
 
-    var result = Applications.update(applicationId, {transactionId: transactionId, transaction: transaction, status: 'paid',});
+    var result = Applications.update(applicationId, {$set: {transactionId: transactionId, transaction: transaction, status: 'paid',}});
 
     console.log(result);
 

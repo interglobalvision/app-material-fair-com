@@ -61,7 +61,7 @@ Template.signed.events({
 				if (error) {
 					Materialize.toast(error.reason, 3000);
 				} else {
-					Materialize.toast('Thanks for your payment.');
+					Materialize.toast('Thanks for your payment.', 3000);
 					console.log(result);
 				}
 			});
