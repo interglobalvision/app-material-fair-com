@@ -1,11 +1,3 @@
-Template.saved.onCreated( function() {
-  //
-});
-
-Template.saved.helpers({
-  //
-});
-
 Template.saved.rendered = function () {
   $(window).scrollTop( 0 );
 
