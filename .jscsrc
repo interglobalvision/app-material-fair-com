@@ -11,7 +11,6 @@
   "disallowSpacesInsideObjectBrackets": "all",
   "disallowYodaConditions": true,
   "requireBlocksOnNewline": true,
-  "requireCamelCaseOrUpperCaseIdentifiers": true,
   "requireCapitalizedConstructors": true,
   "requireCommaBeforeLineBreak": true,
   "requireCurlyBraces": true,
