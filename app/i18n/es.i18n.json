@@ -6,6 +6,9 @@
 	"forgot_password": "¿Olvidaste tu contraseña?",
   "browser-warning": "For best experience use an up to date modern browser like Chrome, Firefox or Safari",
 
+// Homepage
+  "homepage-welcome": "Bienvenidos",
+
 // Dashboard
 	"dashboard": "Dashboard",
 	"dashboard-application_status": "Status de Aplicación",
@@ -13,6 +16,7 @@
 	"dashboard-application_status-submitted": "Submitted",
 	"dashboard-application_status-signed": "Firmadas",
 	"dashboard-application_status-paid": "Pagadas",
+	"dashboard-application_status-approved": "Aprobada",
 	"dashboard-admin_users": "Administradores",
 	"dashboard-committee_users": "Miembros del Comité",
 	"dashboard-remove_user": "Eliminar Usuario",
