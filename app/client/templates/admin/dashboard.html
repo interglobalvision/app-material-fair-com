@@ -5,12 +5,6 @@
         <div class="col s12">
           <h4>{{_ "dashboard-application_status"}}</h4>
         </div>
-        <div class="col l3 m6 s12">
-          <div class="card-panel center-align indigo darken-4">
-            <h6 class="white-text">{{_ "dashboard-application_status-all"}}</h6>
-            <h3 class="white-text">{{applicationsCount}}</h3>
-          </div>
-      	</div>
       	<div class="col l3 m6 s12">
           <div class="card-panel center-align yellow darken-2">
             <h6 class="white-text">{{_ "dashboard-application_status-submitted"}}</h6>
@@ -29,6 +23,17 @@
             <h3 class="white-text">{{applicationsPaidCount}}</h3>
           </div>
       	</div>
+        <div class="col l3 m6 s12">
+          <div class="card-panel center-align indigo darken-4">
+            <h6 class="white-text">{{_ "dashboard-application_status-approved"}}</h6>
+            <h3 class="white-text">{{applicationsApprovedCount}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <h5 class="u-align-right">Total {{applicationsCount}}</h5>
+        </div>
       </div>
     </div>
     <div class="divider"></div>

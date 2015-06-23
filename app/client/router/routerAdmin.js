@@ -30,6 +30,7 @@ Router.map(function() {
         applicationsSubmittedCount: Applications.find({status: 'submitted',}).count(),
         applicationsSignedCount: Applications.find({status: 'signed',}).count(),
         applicationsPaidCount: Applications.find({status: 'paid',}).count(),
+        applicationsApprovedCount: Applications.find({status: 'approved',}).count(),
         adminUsers: Roles.getUsersInRole('admin'),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
