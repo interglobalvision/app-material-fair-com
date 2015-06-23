@@ -47,8 +47,10 @@ Meteor.methods({
     params['data[idSucursal]'] = '7caa36207edfd028940cd642d9bddce0f3f6ab87';
     params['data[idUsuario]'] = '6ab29f84c3fd61418070b28dcf98d0130eb93d17';
     params['data[idServicio]'] = 3;
-    apiResult = HTTP.call('POST', url, {params: params,});
+    params['data[divisa]'] = 'USD';
 
+    apiResult = HTTP.call('POST', url, {params: params,});
+    
     console.log(apiResult);
 
     auth = apiResult.data.WebServices_Transacciones.transaccion.autorizado;
