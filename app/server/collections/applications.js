@@ -28,4 +28,8 @@ Meteor.methods({
   saveApplication: function(applicationId, applicationUpdate){
     Applications.update(applicationId, applicationUpdate);
   },
+
+  submitApplication: function(applicationId){
+    Applications.update(applicationId, {$set: {status: 'submitted',},});
+  },
 });
