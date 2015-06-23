@@ -16,7 +16,7 @@ Template.submitted.rendered = function () {
     // some browsers report devicePixelRatio as less than 1
     // and only part of the canvas is cleared then.
     var ratio = Math.max(window.devicePixelRatio || 1, 1);
-    
+
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
     canvas.getContext("2d").scale(ratio, ratio);
@@ -28,7 +28,7 @@ Template.submitted.rendered = function () {
 
   signaturePad = new SignaturePad(canvas);
 
-  $('#backToForm').pushpin({ 
+  $('#backToForm').pushpin({
     top: $('#backToForm').offset().top,
     bottom: $('#terms').offset().top,
     offset: 20,
@@ -58,6 +58,7 @@ Template.submitted.events({
   'click #backToForm': function(e) {
     e.preventDefault();
 
+    // >>> this is insecure. NEVER send mongo operators from the client that are sensitive like this!
     Meteor.call('saveApplication', this._id, {$set: {status: "saved",},}, function(error, response) {
       if (error) {
         // >>> we need error handling
