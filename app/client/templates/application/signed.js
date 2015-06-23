@@ -49,7 +49,7 @@ Template.signed.events({
 				"cp": postalCode,
 				"mesExpiracion": month, 
 				"anyoExpiracion": year,
-				"monto": "150.00",
+				"monto": "1.00",
 				"idSucursal": "7caa36207edfd028940cd642d9bddce0f3f6ab87",
 				"idUsuario": "6ab29f84c3fd61418070b28dcf98d0130eb93d17",
 				"idServicio": "3",
@@ -60,9 +60,9 @@ Template.signed.events({
 				"colonia": address2,
 				"municipio": city,
 				"estado": state,
-				"pais": country, 
-				}, 
-			}, 
+				"pais": country,
+				},
+			},
 		},
 		url = "https://www.pagofacil.net/ws/public/Wsjrecurrentes/",
 		emptyFields;
@@ -83,11 +83,13 @@ Template.signed.events({
 		if (incomplete()) {
 			Materialize.toast('Please complete all fields.', 3000);
 		} else {
+			console.log(paymentData);
 			Meteor.call('makePayment', url, paymentData, function(error, result) {
 				if (error) {
 					Materialize.toast(error.reason, 3000);
 				} else {
-					console.log(result);
+					console.log("data: " + result.data);
+					console.log("content: " + result.content);
 				}
 			});
 		}
