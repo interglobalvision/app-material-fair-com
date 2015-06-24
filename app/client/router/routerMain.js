@@ -24,7 +24,7 @@ Router.onBeforeAction(function () {
   },
   
   {
-    except: ['signup','homepage','forgot'],
+    except: ['signup','homepage','forgot',],
   }
 );
 
