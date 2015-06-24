@@ -21,7 +21,6 @@ Applications.allow({
 });
 
 // Methods
-//>>> all of these need auth checks? Allow/Deny rules have no effect on server and anyone on client can call these methods
 Meteor.methods({
   createApplication: function(application) {
     if (!Meteor.userId()) {
