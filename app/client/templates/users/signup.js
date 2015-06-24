@@ -5,10 +5,17 @@ Template.signup.events = {
     var user = {
       email: $('#email').val(),
       password: $('#password').val(),
+      profile: {lang: null}
     };
 
+    if (TAPi18n.getLanguage()) {
+      user.profile.lang = TAPi18n.getLanguage();
+    } else {
+      user.profile.lang = 'en';
+    }
+
     if (!user.email || !user.password) {
-      Materialize.toast(error.reason, 3000);
+      Materialize.toast('Empty email or password', 3000);
     } else {
       Accounts.createUser(user, function(error) {
         if (error) {
