@@ -21,25 +21,53 @@ Applications.allow({
 });
 
 // Methods
-//>>> all of these need auth checks. Allow/Deny rules have no effect on server
+//>>> all of these need auth checks? Allow/Deny rules have no effect on server and anyone on client can call these methods
 Meteor.methods({
-  createApplication: function(application){
+  createApplication: function(application) {
+    if (!Meteor.userId()) {
+      throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.');
+    }
+
     return Applications.insert(application);
   },
 
-  saveApplication: function(applicationId, applicationUpdate){
-    return Applications.update(applicationId, applicationUpdate);
+  saveApplication: function(applicationId, applicationUpdate) {
+    var application = Applications.findOne(applicationId);
+
+    if (!Meteor.userId()) {
+      throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.');
+    }
+
+    return Applications.update(application._id, applicationUpdate);
   },
 
-  revertApplicationToEdit: function(applicationId){
-    return Applications.update(applicationId, {$set: {status: 'saved',},});
+  revertApplicationToEdit: function(applicationId) {
+    var application = Applications.findOne(applicationId);
+
+    if (Meteor.userId() !== application.userId) {
+      throw new Meteor.Error('not-allowed', 'You must own this application to change it.');
+    }
+
+    return Applications.update(application._id, {$set: {status: 'saved',},});
   },
 
-  submitApplication: function(applicationId){
+  submitApplication: function(applicationId) {
+    var application = Applications.findOne(applicationId);
+
+    if (Meteor.userId() !== application.userId) {
+      throw new Meteor.Error('not-allowed', 'You must own this application to change it.');
+    }
+
     return Applications.update(applicationId, {$set: {status: 'submitted',},});
   },
 
-  signApplication: function(applicationId, signatureData){
+  signApplication: function(applicationId, signatureData) {
+    var application = Applications.findOne(applicationId);
+
+    if (Meteor.userId() !== application.userId) {
+      throw new Meteor.Error('not-allowed', 'You must own this application to change it.');
+    }
+
     return Applications.update(applicationId, {$set: {signature: signatureData, status: 'signed',},});
   },
 });
