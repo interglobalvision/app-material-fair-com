@@ -41,7 +41,7 @@ Meteor.methods({
   makePayment: function (params, applicationId) {
     this.unblock();
 
-    params['method'] = 'transaccion';
+    params.method = 'transaccion';
     params['data[monto]'] = '1.00';
     params['data[idSucursal]'] = '7caa36207edfd028940cd642d9bddce0f3f6ab87';
     params['data[idUsuario]'] = '6ab29f84c3fd61418070b28dcf98d0130eb93d17';
