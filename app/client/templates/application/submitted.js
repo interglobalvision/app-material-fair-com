@@ -7,7 +7,7 @@ Template.submitted.helpers({
 });
 
 Template.submitted.rendered = function () {
-  var canvas = document.getElementById("signature-pad");
+  var canvas = document.getElementById('signature-pad');
 
   $(window).scrollTop( 0 );
 
@@ -19,7 +19,7 @@ Template.submitted.rendered = function () {
 
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
-    canvas.getContext("2d").scale(ratio, ratio);
+    canvas.getContext('2d').scale(ratio, ratio);
   }
 
   window.onresize = resizeCanvas;
@@ -44,12 +44,12 @@ Template.submitted.events({
 		} else {
 			var signatureData = signaturePad.toDataURL();
 
-      Meteor.call('saveApplication', this._id, {$set: {signature: signatureData, status: "signed",},}, function(error, response) {
+      Meteor.call('signApplication', this._id, signatureData, function(error, response) {
         if (error) {
           // >>> we need error handling
           console.log(error);
         } else {
-          Materialize.toast('Application signed', 4000);
+          Materialize.toast('Application signed', 3000);
         }
       });
 		}
@@ -58,8 +58,7 @@ Template.submitted.events({
   'click #backToForm': function(e) {
     e.preventDefault();
 
-    // >>> this is insecure. NEVER send mongo operators from the client that are sensitive like this!
-    Meteor.call('saveApplication', this._id, {$set: {status: "saved",},}, function(error, response) {
+    Meteor.call('revertApplicationToEdit', this._id, function(error, response) {
       if (error) {
         // >>> we need error handling
         console.log(error);
@@ -67,6 +66,7 @@ Template.submitted.events({
         //$(window).scrollTop( 0 );
       }
     });
+
   },
 
   'click #clearSign': function(e) {

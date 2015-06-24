@@ -7,6 +7,7 @@ Applications.allow({
   },
 
   update: function(userId, doc, fieldNames, modifier){
+    //>>> this needs to deny the ability to edit the status field
     if (Roles.userIsInRole(userId, 'applicant') && doc.userId === userId) {
       return true;
     } else {
@@ -20,16 +21,25 @@ Applications.allow({
 });
 
 // Methods
+//>>> all of these need auth checks. Allow/Deny rules have no effect on server
 Meteor.methods({
   createApplication: function(application){
-    Applications.insert(application);
+    return Applications.insert(application);
   },
 
   saveApplication: function(applicationId, applicationUpdate){
-    Applications.update(applicationId, applicationUpdate);
+    return Applications.update(applicationId, applicationUpdate);
+  },
+
+  revertApplicationToEdit: function(applicationId){
+    return Applications.update(applicationId, {$set: {status: 'saved',},});
   },
 
   submitApplication: function(applicationId){
-    Applications.update(applicationId, {$set: {status: 'submitted',},});
+    return Applications.update(applicationId, {$set: {status: 'submitted',},});
+  },
+
+  signApplication: function(applicationId, signatureData){
+    return Applications.update(applicationId, {$set: {signature: signatureData, status: 'signed',},});
   },
 });
