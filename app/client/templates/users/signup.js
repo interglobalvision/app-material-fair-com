@@ -8,7 +8,7 @@ Template.signup.events = {
     };
 
     if (!user.email || !user.password) {
-        Materialize.toast(error.reason, 3000);
+      Materialize.toast(error.reason, 3000);
     } else {
       Accounts.createUser(user, function(error) {
         if (error) {
@@ -24,8 +24,8 @@ Template.signup.events = {
                 if (error) {
                   Materialize.toast(error, 3000);
                 } else {
-                  Materialize.toast('Thanks for registering.', 3000);
-                  Materialize.toast('Please fill out the application.', 3000);
+                  Materialize.toast('Thanks for registering.', 2000);
+                  Materialize.toast('Please fill out the application.', 3500);
                   Router.go('/application');
                 }
               });
