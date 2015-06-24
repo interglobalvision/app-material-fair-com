@@ -1,6 +1,11 @@
 <template name="login">
   <div class="container">
     <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <h4>{{_ "login-header"}}</h4>
+        </div>
+      </div>
       <form>
         <div class="row">
           <div class="input-field col s12">
@@ -12,15 +17,20 @@
               <label class="active">{{_ "password"}}</label>
           </div>
           <div class="form-actions">
-            <div class="col s6">
+            <div class="col s12">
               <input type="submit" class="waves-effect waves-light btn" value="{{_ 'login'}}" />
-            </div>
-            <div class="col s6">
-              <a href="/forgot">{{_ "forgot_password"}}</a>
             </div>
           </div>
         </div>
       </form>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+      <div class="row">
+        <div class="col s12">
+          <a href="/forgot">{{_ "forgot_password"}}</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
