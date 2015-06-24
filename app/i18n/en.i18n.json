@@ -8,6 +8,10 @@
   "forgot_password": "Forgot Password?",
   "browser-warning": "For best experience use an up-to-date modern browser like Chrome, Firefox or Safari",
 
+// Forgot
+  "forgot-header": "Forgot your password?",
+  "forgot-submit": "Send me a new one",
+
 // Homepage
   "homepage-welcome": "Welcome",
   
