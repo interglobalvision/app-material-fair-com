@@ -1,7 +1,5 @@
-Schemas = {};
-
 // Application Form Schema
-Schemas.applicationForm = new SimpleSchema({
+ApplicationSchema = new SimpleSchema({
   status: {
     type: String,
     defaultValue: 'saved',
@@ -15,51 +13,41 @@ Schemas.applicationForm = new SimpleSchema({
   },
   rating: {
     type: Number,
-    label: 'Rating',
     defaultValue: 0,
   },
 
   // General Information
   galleryName: {
     type: String,
-    label: 'Gallery Name',
   },
 
   // -- Address
   address: {
     type: Object,
-    label: 'Address',
   },
   'address.line1': {
     type: String,
-    label: '',
   },
   'address.line2': {
     type: String,
-    label: '',
     optional: true,
   },
   'address.city': {
     type: String,
-    label: 'City',
   },
   'address.state': {
     type: String,
-    label: 'State (if applicable)',
     optional: true,
   },
   'address.postalCode': {
     type: String,
-    label: 'Postal Code (if applicable)',
     optional: true,
   },
   galleryYear: {
     type: Number,
-    label: 'Year gallery was founded',
   },
   participation: {
     type: String,
-    label: 'Participation in other fairs',
     optional: true,
     max: 2000,
     autoform: {
@@ -69,35 +57,29 @@ Schemas.applicationForm = new SimpleSchema({
   },
   website: {
     type: String,
-    label: 'Website',
     regEx: SimpleSchema.RegEx.Domain,
     optional: true,
   },
   twitter: {
     type: String,
-    label: 'Twitter Username',
     optional: true,
   },
   facebook: {
     type: String,
-    label: 'Facebook',
     optional: true,
   },
   tumblr: {
     type: String,
-    label: 'Tumblr',
     optional: true,
   },
   instagram: {
     type: String,
-    label: 'Instagram',
     optional: true,
   },
 
   // Primary Contact
   'contact.name': {
     type: String,
-    label: 'Name',
   },
   'contact.email': {
     type: String,
@@ -106,11 +88,9 @@ Schemas.applicationForm = new SimpleSchema({
   },
   'contact.phone': {
     type: String,
-    label: 'Mobile Phone',
   },
   galleryHistory: {
     type: String,
-    label: 'Brief history of the gallery',
     max: 2000,
     autoform: {
       type: 'textarea',
@@ -121,7 +101,6 @@ Schemas.applicationForm = new SimpleSchema({
   // Proposal
   standProposal: {
     type: String,
-    label: 'Proposal for Material Art Fair 2016 stand',
     max: 2000,
     autoform: {
       type: 'textarea',
@@ -143,27 +122,21 @@ Schemas.applicationForm = new SimpleSchema({
   */
   'artists.$.name': {
     type: String,
-    label: 'Artist name',
   },
   'artists.$.workTitle': {
     type: String,
-    label: 'Work title',
   },
   'artists.$.medium': {
     type: String,
-    label: 'Medium',
   },
   'artists.$.dimensions': {
     type: String,
-    label: 'Dimensions',
   },
   'artists.$.year': {
     type: Number,
-    label: 'Year',
   },
   boothType: {
     type: String,
-    label: "Booth size",
     allowedValues: [
       'Project',
       'Small',
@@ -172,4 +145,9 @@ Schemas.applicationForm = new SimpleSchema({
       'Large',
     ],
   },
+});
+
+Meteor.startup(function() {
+  ApplicationSchema.i18n('schemas.application');
+  Applications.attachSchema(ApplicationSchema);
 });

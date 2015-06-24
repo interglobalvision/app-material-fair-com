@@ -4,7 +4,7 @@
     <p>{{_ "application-introduction-text"}}</p>
   </div>
   <div class="row">
-    {{#autoForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
+    {{#autoForm schema="ApplicationSchema" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
     <div class="col s10">
       <div class="section">
         {{> afQuickField name='galleryName' autofocus='' }}
@@ -41,6 +41,6 @@
 
 
   <!-- LEAVE THIS HERE, HELPS FOR TESTING -->
-  <!--    {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted,signed,paid,approved, rating" }} 
+  <!--    {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted,signed,paid,approved, rating" }}
   -->
 </template>

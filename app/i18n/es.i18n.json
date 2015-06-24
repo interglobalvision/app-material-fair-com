@@ -11,7 +11,7 @@
 // Forgot
   "forgot-header": "Forgot your password?",
   "forgot-submit": "Send me a new one",
-  
+
 // Homepage
   "homepage-welcome": "Bienvenidos",
 
@@ -86,7 +86,94 @@
 
   "application-please_pay": "Please pay",
 
-  "application-congratulations": "Contragulations!"
+  "application-congratulations": "Contragulations!",
+
+  "schemas": {
+    "application": {
+      "galleryName": {
+        "label": "Nombre de Galeria",
+        "placeholder": "Eso Galeria"
+      },
+      "rating": {
+        "label": "Rating"
+      },
+      "address": {
+        "label": "Direccion"
+      },
+      "address.line1": {
+        "label": ""
+      },
+      "address.line2": {
+        "label": ""
+      },
+      "address.city": {
+        "label": "City"
+      },
+      "address.state": {
+        "label": "Estado (if applicable)"
+      },
+      "address.postalCode": {
+        "label": "Postal Code (if applicable)"
+      },
+      "galleryYear": {
+        "label": "Año gallery was founded"
+      },
+      "participation": {
+        "label": "Participation in other fairs"
+      },
+      "website": {
+        "label": "Sitio de web",
+        "placeholder": "ourgallery.com"
+      },
+      "twitter": {
+        "label": "Twitter",
+        "placeholder": "@ourgallery"
+      },
+      "facebook": {
+        "label": "Facebook",
+        "placeholder": "facebook.com/ourgallery"
+      },
+      "tumblr": {
+        "label": "Tumblr"
+      },
+      "instagram": {
+        "label": "Instagram"
+      },
+      "contact.name": {
+        "label": "Nombre"
+      },
+      "contact.email": {
+        "label": "Email"
+      },
+      "contact.phone": {
+        "label": "Mobile Phone"
+      },
+      "galleryHistory": {
+        "label": "Brief history of the gallery"
+      },
+      "standProposal": {
+        "label": "Proposal for Material Art Fair 2016 stand"
+      },
+      "artists.$.name": {
+        "label": "Nombre de artista"
+      },
+      "artists.$.workTitle": {
+        "label": "Work Title"
+      },
+      "artists.$.medium": {
+        "label": "Medium"
+      },
+      "artists.$.dimensions": {
+        "label": "Dimensions"
+      },
+      "artists.$.year": {
+        "label": "Año"
+      },
+      "boothType": {
+        "label": "Booth size"
+      }
+    }
+  }
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."
