@@ -1,10 +1,12 @@
 {
 	"sign_up": "Registrate",
+	"sign_up-header": "Register",
 	"login": "Iniciar Sesión",
 	"logout": "Cerrar Sesión",
+	"login-header": "Welcome back",
 	"password": "Contraseña",
 	"forgot_password": "¿Olvidaste tu contraseña?",
-  "browser-warning": "For best experience use an up to date modern browser like Chrome, Firefox or Safari",
+  "browser-warning": "For best experience use an up-to-date modern browser like Chrome, Firefox or Safari",
 
 // Homepage
   "homepage-welcome": "Bienvenidos",
