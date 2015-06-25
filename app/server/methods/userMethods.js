@@ -47,10 +47,15 @@ Meteor.methods({
   },
 
   adminCreateUser: function(user) {
-    //>>> needs admin role check
-    var userId = Accounts.createUser(user);
+    var result;
 
-    return userId;
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      result = Accounts.createUser(user);
+    } else {
+      result = false;
+    }
+
+    return result;
   },
 
   enrollmentEmail: function(userId) {
@@ -59,8 +64,15 @@ Meteor.methods({
   },
 
   removeUser: function(userId) {
-    //>>> needs admin role check
-    return Meteor.users.remove({_id: userId,});
+    var result;
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      result = Meteor.users.remove({_id: userId,});
+    } else {
+      result = false;
+    }
+
+    return result;
   },
 
   setUserLanguage: function(userId, lang) {
