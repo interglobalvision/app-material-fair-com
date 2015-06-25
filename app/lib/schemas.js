@@ -49,6 +49,22 @@ ApplicationSchema = new SimpleSchema({
     },
   },
 
+  // Primary Contact
+  contact: {
+    type: Object,
+  },
+  'contact.name': {
+    type: String,
+  },
+  'contact.email': {
+    type: String,
+    label: 'Email',
+    regEx: SimpleSchema.RegEx.Email,
+  },
+  'contact.phone': {
+    type: String,
+  },
+
   // -- Address
   address: {
     type: Object,
@@ -93,22 +109,6 @@ ApplicationSchema = new SimpleSchema({
     optional: true,
   },
 
-  // Primary Contact
-  contact: {
-    type: Object,
-  },
-  'contact.name': {
-    type: String,
-  },
-  'contact.email': {
-    type: String,
-    label: 'Email',
-    regEx: SimpleSchema.RegEx.Email,
-  },
-  'contact.phone': {
-    type: String,
-  },
-
   // Proposal
   proposal: {
     type: Object,
@@ -131,35 +131,36 @@ ApplicationSchema = new SimpleSchema({
       'Large',
     ],
   },
-  'proposal.artists': {
+
+  artists: {
+    type: [Object,],
+    minCount: 1,
+  },
+  'artists.$.name': {
+    type: String,
+  },
+  'artists.$.cv': {
+    type: String,
+  },
+  'artists.$.work': {
     type: [Object,],
     label: '',
-    min: 1,
+    minCount: 1,
+    maxCount: 5,
   },
-  'proposal.artists.$.name': {
+  'artists.$.work.$.workTitle': {
     type: String,
   },
-  'proposal.artists.$.cv': {
+  'artists.$.work.$.medium': {
     type: String,
   },
-  'proposal.artists.$.work': {
-    type: [Object,],
-    label: '',
-    min: 1,
-  },
-  'proposal.artists.$.work.$.workTitle': {
+  'artists.$.work.$.dimensions': {
     type: String,
   },
-  'proposal.artists.$.work.$.medium': {
-    type: String,
-  },
-  'proposal.artists.$.work.$.dimensions': {
-    type: String,
-  },
-  'proposal.artists.$.work.$.year': {
+  'artists.$.work.$.year': {
     type: Number,
   },
-  'proposal.artists.$.work.$.image': {
+  'artists.$.work.$.image': {
     type: String,
   },
 });
