@@ -1,42 +1,4 @@
 Meteor.methods({
-  // User methods
-  createUserRoles: function(userId, role) {
-    var result;
-
-    if (Meteor.users.find().count() === 1) {
-      Roles.addUsersToRoles(userId, ['admin',]);
-      Meteor.users.update(userId, {$set:{'profile.name':'Admin',},});
-      result = 'admin';
-    } else if (role === 'committee' || role === 'admin') {
-      Roles.addUsersToRoles(userId, [role,]);
-      result = role;
-    } else {
-      Roles.addUsersToRoles(userId, ['applicant',]);
-      result = 'applicant';
-    }
-
-    return result;
-  },
-
-  adminCreateUser: function(user) {
-    var userId = Accounts.createUser(user);
-
-    return userId;
-  },
-
-  enrollmentEmail: function(userId) {
-    Accounts.sendEnrollmentEmail(userId);
-    return 'success';
-  },
-
-  removeUser: function(userId) {
-    Meteor.users.remove({_id: userId,});
-  },
-
-  setUserLanguage: function(userId, lang) {
-    Meteor.users.update(userId, {$set:{'profile.lang':lang,},});
-  },
-
   // Payment methods
   makePayment: function (params, applicationId) {
     this.unblock();
@@ -51,7 +13,7 @@ Meteor.methods({
     var result,
     url = 'https://www.pagofacil.net/st/public/Wsrtransaccion/index/format/json',
     apiResult = HTTP.call('POST', url, {params: params,});
-    
+
     var auth = apiResult.data.WebServices_Transacciones.transaccion.autorizado,
     transactionId = apiResult.data.WebServices_Transacciones.transaccion.transaccion,
     transaction = apiResult.data.WebServices_Transacciones.transaccion;

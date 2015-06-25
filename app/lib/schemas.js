@@ -149,5 +149,5 @@ ApplicationSchema = new SimpleSchema({
 
 Meteor.startup(function() {
   ApplicationSchema.i18n('schemas.application');
-  Applications.attachSchema(ApplicationSchema);
+//   Applications.attachSchema(ApplicationSchema);
 });
