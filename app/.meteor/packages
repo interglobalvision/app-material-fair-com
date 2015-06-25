@@ -26,3 +26,6 @@ ongoworks:pdf
 http
 gwendall:simple-schema-i18n
 gwendall:autoform-i18n
+cfs:standard-packages
+yogiben:autoform-file
+cfs:s3
