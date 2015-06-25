@@ -6,18 +6,6 @@ All publications-related code.
 
 /+ ---------------------------------------------------- */
 
-// Publish all items
-
-Meteor.publish('allItems', function() {
-  return Items.find();
-});
-
-// Publish a single item
-
-Meteor.publish('singleItem', function(id) {
-  return Items.find(id);
-});
-
 // Publish roles
 
 Meteor.publish('allRoles', function (){
@@ -45,4 +33,8 @@ Meteor.publish('singleApplication', function(userId) {
 Meteor.publish('allApplications', function(userId) {
   // >>> check user role is Admin / Committee
   return Applications.find();
+});
+
+Meteor.publish('storage', function() {
+	return Storage.find();
 });

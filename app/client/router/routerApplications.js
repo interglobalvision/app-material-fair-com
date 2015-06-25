@@ -16,7 +16,10 @@ Router.map(function() {
     },
 
     waitOn: function() {
-      return Meteor.subscribe('singleApplication', Meteor.userId());
+      return [   
+        Meteor.subscribe('singleApplication', Meteor.userId()),
+        Meteor.subscribe('storage'),
+      ];
     },
 
     data: function() {

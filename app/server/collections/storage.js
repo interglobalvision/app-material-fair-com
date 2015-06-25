@@ -6,5 +6,20 @@ var fileStore = new FS.Store.S3("storage", {
 });
 
 Storage = new FS.Collection("storage", {
-  stores: [fileStore],
+  stores: [fileStore,],
+});
+
+// Allow/Deny
+Storage.allow({
+  insert: function(userId, doc) {
+    return true;
+  },
+
+  download: function(userId) {
+    return true;
+  },
+
+  remove: function(userId, doc){
+    return false;
+  },
 });
