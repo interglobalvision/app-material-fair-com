@@ -2,22 +2,15 @@ Meteor.methods({
 
   setupUser: function(userId) {
     Meteor.call('createUserRoles', userId, function(error, result) {
-
-      console.log('post user role');
-
       if (error) {
         throw new Meteor.Error('set-role-failed', error);
       } else if (result === 'applicant') {
-
-        console.log('is applicant');
 
         Meteor.call('serverCreateApplication', {userId: userId, status: 'saved',}, function(error, result) {
           if (error) {
             throw new Meteor.Error('application-creation-failed', error);
           } else {
-
-            console.log('application created');
-            console.log(result);
+            Meteor.call('applicantEnrollmentEmail', userId);
 
             return true;
           }
