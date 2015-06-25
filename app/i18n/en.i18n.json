@@ -103,87 +103,114 @@
 
   "schemas": {
     "application": {
-      "galleryName": {
-        "label": "Gallery Name",
-        "placeholder": "This Gallery"
-      },
       "rating": {
         "label": "Rating"
       },
+
+      "general": {
+        "label": "General Information",
+        "galleryName": {
+          "label": "Gallery Name"
+        },
+        "website": {
+          "label": "Website"
+        },
+        "galleryYear": {
+          "label": "Year gallery was founded"
+        },
+        "participation": {
+          "label": "Participation in other fairs"
+        },
+        "galleryHistory": {
+          "label": "Brief history of the gallery"
+        }
+      },
+
       "address": {
-        "label": "Address"
+        "label": "Gallery address",
+        "line1": {
+          "label": "Line 1"
+        },
+        "line2": {
+          "label": "Line 2"
+        },
+        "city": {
+          "label": "City"
+        },
+        "state": {
+          "label": "State (if applicable)"
+        },
+        "postalCode": {
+          "label": "Postal Code (if applicable)"
+        }
       },
-      "address.line1": {
-        "label": ""
+      
+      "social": {
+        "label": "Social networks",
+        "twitter": {
+          "label": "Twitter"
+        },
+        "facebook": {
+          "label": "Facebook"
+        },
+        "tumblr": {
+          "label": "Tumblr"
+        },
+        "instagram": {
+          "label": "Instagram"
+        }
       },
-      "address.line2": {
-        "label": ""
+
+      "contact": {
+        "label": "Primary contact",
+        "name": {
+          "label": "Name"
+        },
+        "email": {
+          "label": "Email"
+        },
+        "phone": {
+          "label": "Mobile Phone"
+        }
       },
-      "address.city": {
-        "label": "City"
+      
+      "proposal": {
+        "label": "Proposal for Material Art Fair 2016",
+        "standProposal": {
+          "label": "Proposal"
+        },
+        "boothType": {
+          "label": "Booth size"
+        }
       },
-      "address.state": {
-        "label": "State (if applicable)"
-      },
-      "address.postalCode": {
-        "label": "Postal Code (if applicable)"
-      },
-      "galleryYear": {
-        "label": "Year gallery was founded"
-      },
-      "participation": {
-        "label": "Participation in other fairs"
-      },
-      "website": {
-        "label": "Website",
-        "placeholder": "ourgallery.com"
-      },
-      "twitter": {
-        "label": "Twitter",
-        "placeholder": "@ourgallery"
-      },
-      "facebook": {
-        "label": "Facebook",
-        "placeholder": "facebook.com/ourgallery"
-      },
-      "tumblr": {
-        "label": "Tumblr"
-      },
-      "instagram": {
-        "label": "Instagram"
-      },
-      "contact.name": {
-        "label": "Name"
-      },
-      "contact.email": {
-        "label": "Email"
-      },
-      "contact.phone": {
-        "label": "Mobile Phone"
-      },
-      "galleryHistory": {
-        "label": "Brief history of the gallery"
-      },
-      "standProposal": {
-        "label": "Proposal for Material Art Fair 2016 stand"
-      },
-      "artists.$.name": {
-        "label": "Artist name"
-      },
-      "artists.$.workTitle": {
-        "label": "Work Title"
-      },
-      "artists.$.medium": {
-        "label": "Medium"
-      },
-      "artists.$.dimensions": {
-        "label": "Dimensions"
-      },
-      "artists.$.year": {
-        "label": "Year"
-      },
-      "boothType": {
-        "label": "Booth size"
+      
+      "artists": {
+        "label": "Artist",
+        "$": {
+          "name": {
+            "label": "Artist name"
+          },
+          "cv": {
+            "label": "CV"
+          },
+          "work": {
+            "label": "Work",
+            "$": {
+              "workTitle": {
+                "label": "Title"
+              },
+              "medium": {
+                "label": "Medium"
+              },
+              "dimensions": {
+                "label": "Dimensions"
+              },
+              "year": {
+                "label": "Year"
+              }
+            }
+          }
+        }
       }
     }
   }
