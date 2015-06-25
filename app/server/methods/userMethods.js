@@ -25,9 +25,8 @@ Meteor.methods({
 
   createUserRoles: function(userId, role) {
     check(userId, String);
-    check(role, String);
 
-   var result;
+    var result;
 
     if (Meteor.users.find().count() === 1) {
       Roles.addUsersToRoles(userId, ['admin',]);
