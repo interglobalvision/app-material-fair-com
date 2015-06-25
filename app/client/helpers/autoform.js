@@ -1,3 +1,5 @@
+AutoForm.setDefaultTemplateForType('afArrayField', 'materialized');
+
 AutoForm.hooks({
  insertApplicationForm: {
    onSuccess: function(insertDoc, updateDoc, currentDoc) {
@@ -5,7 +7,7 @@ AutoForm.hooks({
        if (error) {
          console.log(error);
        } else {
-         Materialize.toast('Application submitted', 3000);
+         Materialize.toast('Application submitted', 30-00);
        }
      });
    },
