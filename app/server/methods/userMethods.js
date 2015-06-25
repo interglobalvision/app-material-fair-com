@@ -58,11 +58,6 @@ Meteor.methods({
     return result;
   },
 
-  enrollmentEmail: function(userId) {
-    Accounts.sendEnrollmentEmail(userId);
-    return 'success';
-  },
-
   removeUser: function(userId) {
     var result;
 

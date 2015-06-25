@@ -35,7 +35,7 @@ Template.dashboard.events({
 						if (error) {
               Materialize.toast(error.reason, 3000);
 						} else {
-							Meteor.call('enrollmentEmail', userId, function(error, result) {
+							Meteor.call('adminEnrollmentEmail', userId, function(error, result) {
 								if (error) {
                   Materialize.toast(error.reason, 3000);
 								} else {

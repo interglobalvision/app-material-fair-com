@@ -1,6 +1,6 @@
 // >>> think this can be declared as an array
 Accounts.emailTemplates.siteName = "Material Art Fair";
-Accounts.emailTemplates.from = "Material Art Fair Admin <accounts@example.com>";
+Accounts.emailTemplates.from = Meteor.settings.email_from;
 Accounts.emailTemplates.enrollAccount.subject = function (user) {
 	return "Your Material Art Fair " + user.roles[0] + " account.";
 };
