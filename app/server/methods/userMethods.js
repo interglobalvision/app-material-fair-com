@@ -1,8 +1,6 @@
 Meteor.methods({
 
   setupUser: function(userId) {
-    var userId = userId;
-
     Meteor.call('createUserRoles', userId, function(error, result) {
 
       console.log('post user role');
