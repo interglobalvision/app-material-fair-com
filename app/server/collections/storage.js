@@ -1,9 +1,8 @@
-var bucketName = process.env.AWS_BUCKET,
-fileStore = new FS.Store.S3("storage", {
-  region: process.env.AWS_REGION,
-  accessKeyId: process.env.AWS_ACCESSKEYID,
-  secretAccessKey: process.env.AWS_SECRETACCESSKEY,
-  bucket: 'material-art-fair',
+var fileStore = new FS.Store.S3("storage", {
+  region: Meteor.settings.aws_region,
+  accessKeyId: Meteor.settings.aws_accesskeyid,
+  secretAccessKey: Meteor.settings.aws_secretaccesskey,
+  bucket: Meteor.settings.aws_bucket,
 });
 
 Storage = new FS.Collection("storage", {
