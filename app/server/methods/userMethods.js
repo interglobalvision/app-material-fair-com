@@ -35,7 +35,7 @@ Meteor.methods({
       Roles.addUsersToRoles(userId, ['admin',]);
       Meteor.users.update(userId, {$set:{'profile.name':'Admin',},});
       result = 'admin';
-    } else if (role === 'committee' || role === 'admin') {
+    } else if (role === 'committee' || role === 'admin' && Roles.userIsInRole(Meteor.userId(), ['admin',])) {
       Roles.addUsersToRoles(userId, [role,]);
       result = role;
     } else {
