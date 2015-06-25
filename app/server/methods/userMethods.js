@@ -1,6 +1,8 @@
 Meteor.methods({
 
   setupUser: function(userId) {
+    check(userId, String);
+
     Meteor.call('createUserRoles', userId, function(error, result) {
       if (error) {
         throw new Meteor.Error('set-role-failed', error);
@@ -22,7 +24,10 @@ Meteor.methods({
   },
 
   createUserRoles: function(userId, role) {
-    var result;
+    check(userId, String);
+    check(role, String);
+
+   var result;
 
     if (Meteor.users.find().count() === 1) {
       Roles.addUsersToRoles(userId, ['admin',]);
@@ -40,6 +45,8 @@ Meteor.methods({
   },
 
   adminCreateUser: function(user) {
+//     check(userId, String);
+
     var result;
 
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
@@ -52,6 +59,8 @@ Meteor.methods({
   },
 
   removeUser: function(userId) {
+    check(userId, String);
+
     var result;
 
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
@@ -64,6 +73,9 @@ Meteor.methods({
   },
 
   setUserLanguage: function(userId, lang) {
+    check(userId, String);
+    check(lang, String);
+
     return Meteor.users.update(userId, {$set: {'profile.lang': lang,},});
   },
 

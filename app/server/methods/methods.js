@@ -3,6 +3,8 @@ Meteor.methods({
   makePayment: function (params, applicationId) {
     this.unblock();
 
+    check(applicationId, String);
+
     params.method = 'transaccion';
     params['data[monto]'] = '1.00';
     params['data[idSucursal]'] = '7caa36207edfd028940cd642d9bddce0f3f6ab87';

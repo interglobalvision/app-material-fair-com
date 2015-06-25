@@ -23,6 +23,8 @@ Meteor.methods({
   },
 
   revertApplicationToEdit: function(applicationId) {
+    check(applicationId, String);
+
     var application = Applications.findOne(applicationId);
 
     if (Meteor.userId() !== application.userId) {
@@ -33,6 +35,8 @@ Meteor.methods({
   },
 
   submitApplication: function(applicationId) {
+    check(applicationId, String);
+
     var application = Applications.findOne(applicationId);
 
     if (Meteor.userId() !== application.userId) {
@@ -43,6 +47,8 @@ Meteor.methods({
   },
 
   signApplication: function(applicationId, signatureData) {
+    check(applicationId, String);
+
     var application = Applications.findOne(applicationId);
 
     if (Meteor.userId() !== application.userId) {
