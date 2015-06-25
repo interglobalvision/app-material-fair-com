@@ -1,29 +1,35 @@
 <template name="saved">
-  <div class="section">
-    <h3>{{_ "application-introduction"}}</h3>
-    <p>{{_ "application-introduction-text"}}</p>
+  <div class="row">
+    <div class="section">
+      <div class="col s12">
+        <p>{{_ "application-introduction-text"}}</p>
+      </div>
+    </div>
   </div>
   <div class="row">
     {{#autoForm schema="ApplicationSchema" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
-    <div class="col s10">
+    <div class="col s12">
       <div class="section">
-        {{> afObjectField name='general' }}
+        {{> afQuickField name='general'}}
       </div>
       <div class="divider"></div>
       <div class="section">
-        {{> afObjectField name='address' }}
+        {{> afQuickField name='address'}}
       </div>
       <div class="divider"></div>
       <div class="section">
-        {{> afObjectField name='contact' }}
+        {{> afQuickField name='contact'}}
       </div>
       <div class="divider"></div>
       <div class="section">
-        {{> afObjectField name='social' }}
+        {{> afQuickField name='social'}}
       </div>
       <div class="divider"></div>
       <div class="section">
-        {{> afObjectField name='proposal' template='materialized' }}
+        {{> afQuickField name='proposal'}}
+      </div>
+      <div class="section">
+        {{> afArrayField name='artists'}}
       </div>
       <div class="section">
         <div class="progress">
@@ -32,15 +38,12 @@
       </div>
       <div class="divider"></div>
       <div class="section">
-        <button id="submitApplication" type="submit" class="btn btn-primary">{{_ "application-review"}}</button>
+        <button id="saveApplication" type="submit" class="btn btn-default">{{_ "application-save"}}</button>   
+        <button id="submitApplication" type="submit" class="btn indigo darken-4 btn-primary">{{_ "application-review"}}</button>
       </div>
     </div>
     {{/autoForm}}
-    <div class="col s2">
-      <button id="saveApplication" type="submit" class="btn btn-default">{{_ "application-save"}}</button>
-    </div>
   </div>
-
 
   <!-- LEAVE THIS HERE, HELPS FOR TESTING -->
   <!--    {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted,signed,paid,approved, rating" }}

@@ -1,10 +1,9 @@
 Template.saved.rendered = function () {
   $(window).scrollTop( 0 );
 
-  $('#saveApplication').pushpin({
-    top: $('#saveApplication').offset().top,
-    offset: 20,
-  });
+  $('select').material_select();
+
+  $('textarea').addClass('materialize-textarea');
 };
 
 Template.saved.events({
