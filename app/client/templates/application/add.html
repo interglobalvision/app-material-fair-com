@@ -7,21 +7,23 @@
     {{#autoForm schema="ApplicationSchema" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
     <div class="col s10">
       <div class="section">
-        {{> afQuickField name='galleryName' autofocus='' }}
+        {{> afObjectField name='general' }}
+      </div>
+      <div class="divider"></div>
+      <div class="section">
         {{> afObjectField name='address' }}
-        {{> afQuickField name='galleryYear' }}
-        {{> afQuickField name='participation' class='materialize-textarea' }}
-        {{> afQuickField name='website' }}
-        {{> afQuickField name='twitter' }}
-        {{> afQuickField name='facebook' }}
-        {{> afQuickField name='tumblr' }}
-        {{> afQuickField name='instagram' }}
+      </div>
+      <div class="divider"></div>
+      <div class="section">
         {{> afObjectField name='contact' }}
-        {{> afQuickField name='galleryHistory' class='materialize-textarea' }}
-        {{> afQuickField name='standProposal' class='materialize-textarea' }}
-        <h4>{{_ "application-artists"}}</h4>
-        {{> afArrayField name='artists' template='materialized' }}
-        {{> afQuickField name='boothType' options='allowed' class='browser-default' }}
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        {{> afObjectField name='social' }}
+      </div>
+      <div class="divider"></div>
+      <div class="section">
+        {{> afObjectField name='proposal' template='materialized' }}
       </div>
       <div class="section">
         <div class="progress">

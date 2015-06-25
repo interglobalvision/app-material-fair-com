@@ -16,9 +16,37 @@ ApplicationSchema = new SimpleSchema({
     defaultValue: 0,
   },
 
-  // General Information
-  galleryName: {
+  // -- General Information
+  general: {
+    type: Object,
+  },
+  'general.galleryName': {
     type: String,
+  },
+  'general.website': {
+    type: String,
+    regEx: SimpleSchema.RegEx.Domain,
+    optional: true,
+  },
+  'general.galleryYear': {
+    type: Number,
+  },
+  'general.galleryHistory': {
+    type: String,
+    max: 2000,
+    autoform: {
+      type: 'textarea',
+      rows: 10,
+    },
+  },
+  'general.participation': {
+    type: String,
+    optional: true,
+    max: 2000,
+    autoform: {
+      type: 'textarea',
+      rows: 5,
+    },
   },
 
   // -- Address
@@ -43,41 +71,32 @@ ApplicationSchema = new SimpleSchema({
     type: String,
     optional: true,
   },
-  galleryYear: {
-    type: Number,
+  
+  // -- Social
+  social: {
+    type: Object,
   },
-  participation: {
-    type: String,
-    optional: true,
-    max: 2000,
-    autoform: {
-      type: 'textarea',
-      rows: 5,
-    },
-  },
-  website: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Domain,
-    optional: true,
-  },
-  twitter: {
+  'social.twitter': {
     type: String,
     optional: true,
   },
-  facebook: {
+  'social.facebook': {
     type: String,
     optional: true,
   },
-  tumblr: {
+  'social.tumblr': {
     type: String,
     optional: true,
   },
-  instagram: {
+  'social.instagram': {
     type: String,
     optional: true,
   },
 
   // Primary Contact
+  contact: {
+    type: Object,
+  },
   'contact.name': {
     type: String,
   },
@@ -89,17 +108,12 @@ ApplicationSchema = new SimpleSchema({
   'contact.phone': {
     type: String,
   },
-  galleryHistory: {
-    type: String,
-    max: 2000,
-    autoform: {
-      type: 'textarea',
-      rows: 10,
-    },
-  },
 
   // Proposal
-  standProposal: {
+  proposal: {
+    type: Object,
+  },
+  'proposal.standProposal': {
     type: String,
     max: 2000,
     autoform: {
@@ -107,35 +121,7 @@ ApplicationSchema = new SimpleSchema({
       rows: 5,
     },
   },
-  artists: {
-    type: [Object,],
-    label: '',
-    min: 1,
-  },
-  /*
-   * Gotta fogure it out how to save and relate pdf, i think with FS u just save the ID
-   *
-  'proposal.artists.$.cv': {
-    type: String,
-    label: 'Artist name',
-  },
-  */
-  'artists.$.name': {
-    type: String,
-  },
-  'artists.$.workTitle': {
-    type: String,
-  },
-  'artists.$.medium': {
-    type: String,
-  },
-  'artists.$.dimensions': {
-    type: String,
-  },
-  'artists.$.year': {
-    type: Number,
-  },
-  boothType: {
+  'proposal.boothType': {
     type: String,
     allowedValues: [
       'Project',
@@ -145,9 +131,39 @@ ApplicationSchema = new SimpleSchema({
       'Large',
     ],
   },
+  'proposal.artists': {
+    type: [Object,],
+    label: '',
+    min: 1,
+  },
+  'proposal.artists.$.name': {
+    type: String,
+  },
+  'proposal.artists.$.cv': {
+    type: String,
+  },
+  'proposal.artists.$.work': {
+    type: [Object,],
+    label: '',
+    min: 1,
+  },
+  'proposal.artists.$.work.$.workTitle': {
+    type: String,
+  },
+  'proposal.artists.$.work.$.medium': {
+    type: String,
+  },
+  'proposal.artists.$.work.$.dimensions': {
+    type: String,
+  },
+  'proposal.artists.$.work.$.year': {
+    type: Number,
+  },
+  'proposal.artists.$.work.$.image': {
+    type: String,
+  },
 });
 
 Meteor.startup(function() {
   ApplicationSchema.i18n('schemas.application');
-//   Applications.attachSchema(ApplicationSchema);
 });
