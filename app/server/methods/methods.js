@@ -23,6 +23,7 @@ Meteor.methods({
     if (auth === '1') {
       Applications.update(applicationId, {$set: {transactionId: transactionId, transaction: transaction, status: 'paid',},});
       result = 1;
+      Meteor.call('paymentSuccessEmail', Meteor.userId());
     } else {
       result = 0;
     }

@@ -35,7 +35,7 @@ Template.signed.events({
 			$.each(paymentData, function(key, value) {
 				if (value === "" ) {
 					emptyFields = true;
-					console.log(key, value); 
+					console.log(key, value);
 				} else {
 					emptyFields = false;
 				}
@@ -56,7 +56,7 @@ Template.signed.events({
 					Materialize.toast('Thanks for your payment.', 3000);
 				} else if (result === 0) {
 					Materialize.toast('The transaction was denied.  Please make sure all fields are completed correctly.', 3000);
-				} 
+				}
 			});
 		}
 	},
