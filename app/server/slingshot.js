@@ -3,44 +3,40 @@
   secretAccessKey: Meteor.settings.aws_secretaccesskey,
   bucket: Meteor.settings.aws_bucket,*/
 
-Slingshot.createDirective("imageUpload", Slingshot.S3Storage, {
+Slingshot.createDirective('imageUpload', Slingshot.S3Storage, {
   bucket: Meteor.settings.aws_bucket,
 
-  acl: "public-read",
+  acl: 'public-read',
 
   authorize: function () {
-    //Deny uploads if user is not logged in.
     if (!this.userId) {
-      var message = "Please login before posting files";
-      throw new Meteor.Error("Login Required", message);
+      throw new Meteor.Error('not-signed-in', 'You must register a user first before uploading a file.');
     }
 
     return true;
   },
 
   key: function (file) {
-    //Store file into a directory by the user's username.
-    return this.userId + "/image/" + file.name;
+    // Store file into a directory by the user's username.
+    return this.userId + '/image/' + file.name;
   }
 });
 
-Slingshot.createDirective("pdfUpload", Slingshot.S3Storage, {
+Slingshot.createDirective('docUpload', Slingshot.S3Storage, {
   bucket: Meteor.settings.aws_bucket,
 
-  acl: "public-read",
+  acl: 'public-read',
 
   authorize: function () {
-    //Deny uploads if user is not logged in.
     if (!this.userId) {
-      var message = "Please login before posting files";
-      throw new Meteor.Error("Login Required", message);
+      throw new Meteor.Error('not-signed-in', 'You must register a user first before uploading a file.');
     }
 
     return true;
   },
 
   key: function (file) {
-    //Store file into a directory by the user's username.
-    return this.userId + "/pdf/" + file.name;
+    // Store file into a directory by the user's username.
+    return this.userId + '/pdf/' + file.name;
   }
 });
