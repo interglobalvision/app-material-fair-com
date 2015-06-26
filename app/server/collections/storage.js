@@ -9,6 +9,19 @@ Storage = new FS.Collection("storage", {
   stores: [fileStore,],
 });
 
+Storage.allow({
+  download: function () {
+    return true;
+  },
+
+  fetch: null,
+});
+
+/*
+Storage = new FS.Collection("storage", {
+  stores: [fileStore,],
+});
+
 // Allow/Deny
 Storage.allow({
   insert: function(userId, doc) {
@@ -22,4 +35,4 @@ Storage.allow({
   remove: function(userId, doc){
     return false;
   },
-});
+});*/
