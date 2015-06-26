@@ -1,5 +1,5 @@
 Template.signaturePad.rendered = function () {
-  var canvas = document.getElementById('signature-pad');
+  var canvas = $('canvas[name="signature.signature"]')[0];
 
   $(window).scrollTop( 0 );
 
