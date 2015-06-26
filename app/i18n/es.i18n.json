@@ -1,25 +1,25 @@
 {
 	"sign_up": "Registrate",
-	"sign_up-header": "Register",
+	"sign_up-header": "Registro",
 	"login": "Iniciar Sesión",
 	"logout": "Cerrar Sesión",
-	"login-header": "Welcome back",
+	"login-header": "Bienvenido",
 	"password": "Contraseña",
 	"forgot_password": "¿Olvidaste tu contraseña?",
-  "browser-warning": "For best experience use an up-to-date modern browser like Chrome, Firefox or Safari",
+  "browser-warning": "Para una mejor experiencia utiliza un explorador actualizado como Chrome, Firefox o Safari",
 
 // Forgot
-  "forgot-header": "Forgot your password?",
-  "forgot-submit": "Send me a new one",
+  "forgot-header": "¿Olvidaste tu contraseña?",
+  "forgot-submit": "Enviame uno nuevo",
 
 // Homepage
-  "homepage-welcome": "Bienvenidos",
+  "homepage-welcome": "Bienvenido",
 
 // Dashboard
 	"dashboard": "Dashboard",
-	"dashboard-application_status": "Status de Aplicación",
+	"dashboard-application_status": "Estatus de solicitud",
 	"dashboard-application_status-all": "Todas",
-	"dashboard-application_status-submitted": "Submitted",
+	"dashboard-application_status-submitted": "Enviadas",
 	"dashboard-application_status-signed": "Firmadas",
 	"dashboard-application_status-paid": "Pagadas",
 	"dashboard-application_status-approved": "Aprobada",
@@ -33,13 +33,13 @@
 	"dashboard-add_user-create": "Crear Usuario",
 
 // Submissions
-	"submissions": "Submissions",
-	"submissions-submitted": "Submitted",
+	"submissions": "Solicitudes",
+	"submissions-submitted": "Enviadas",
 	"submissions-signed": "Firmadas",
 	"submissions-paid": "Pagadas",
 	"submissions-approved": "Aceptadas",
-  "submissions-thanks": "Thanks for your submission",
-  "submissions-download_pdf": "Download PDF of your submission",
+  "submissions-thanks": "Gracias por tu solicitud",
+  "submissions-download_pdf": "Descarga tu solicitud en PDF",
 
 // Application
 	"application": "Aplicación",
@@ -59,7 +59,7 @@
 	"application-artists": "Artistas representados por la galería",
 	"application-artists-name": "Nombre",
 	"application-artists-title": "Titulo",
-	"application-artists-medium": "Medio",
+	"application-artists-medium": "Medium",
 	"application-artists-dimensions": "Dimensiones",
 	"application-artists-year": "Año",
 
@@ -76,29 +76,29 @@
 
 	"application-signature": "Firma",
 	"application-signature-typed": "Firma escrita",
-	"application-signature-legal_name": "Nombre Legar",
+	"application-signature-legal_name": "Nombre Legal",
 	"application-signature-or": "O",
-	"application-signature-drawn": "Diibujar firma",
+	"application-signature-drawn": "Dibujar firma",
 	"application-signature-clear": "Limpiar firma",
 
   "application-submit-warning": "When you submit...",
-  "application-submit": "Submit",
+  "application-submit": "Enviar",
 
   "application-please_pay": "Please pay",
 
-  "application-congratulations": "Contragulations!",
+  "application-congratulations": "¡Felicidades!",
 
   "schemas": {
     "application": {
       "galleryName": {
-        "label": "Nombre de Galeria",
-        "placeholder": "Eso Galeria"
+        "label": "Nombre de la Galeria",
+        "placeholder": "Mi Galeria"
       },
       "rating": {
         "label": "Rating"
       },
       "address": {
-        "label": "Direccion"
+        "label": "Dirección"
       },
       "address.line1": {
         "label": ""
@@ -107,22 +107,22 @@
         "label": ""
       },
       "address.city": {
-        "label": "City"
+        "label": "Ciudad"
       },
       "address.state": {
-        "label": "Estado (if applicable)"
+        "label": "Estado (en caso de que aplique)"
       },
       "address.postalCode": {
-        "label": "Postal Code (if applicable)"
+        "label": "Código Postal (en caso de que aplique)"
       },
       "galleryYear": {
-        "label": "Año gallery was founded"
+        "label": "Año en que fue fundada la galería"
       },
       "participation": {
-        "label": "Participation in other fairs"
+        "label": "Participacion en otras ferias"
       },
       "website": {
-        "label": "Sitio de web",
+        "label": "Sitio web",
         "placeholder": "ourgallery.com"
       },
       "twitter": {
@@ -146,31 +146,31 @@
         "label": "Email"
       },
       "contact.phone": {
-        "label": "Mobile Phone"
+        "label": "Telefono Celular"
       },
       "galleryHistory": {
-        "label": "Brief history of the gallery"
+        "label": "Breve historia de la galería"
       },
       "standProposal": {
-        "label": "Proposal for Material Art Fair 2016 stand"
+        "label": "Propuesta de stand para Material Art Fair 2016"
       },
       "artists.$.name": {
-        "label": "Nombre de artista"
+        "label": "Nombre del artista"
       },
       "artists.$.workTitle": {
-        "label": "Work Title"
+        "label": "Título de la obra"
       },
       "artists.$.medium": {
         "label": "Medium"
       },
       "artists.$.dimensions": {
-        "label": "Dimensions"
+        "label": "Dimensiones"
       },
       "artists.$.year": {
         "label": "Año"
       },
       "boothType": {
-        "label": "Booth size"
+        "label": "Tamaño del Booth"
       }
     }
   }
