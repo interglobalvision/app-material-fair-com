@@ -27,7 +27,7 @@ http
 gwendall:simple-schema-i18n
 gwendall:autoform-i18n
 cfs:standard-packages
-yogiben:autoform-file
 cfs:s3
 email
 meteorhacks:kadira-profiler
+cfs:autoform

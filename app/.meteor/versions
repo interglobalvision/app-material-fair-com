@@ -16,6 +16,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 cfs:access-point@0.1.49
+cfs:autoform@2.2.1
 cfs:base-package@0.0.30
 cfs:collection@0.5.5
 cfs:collection-filters@0.2.4
@@ -41,7 +42,6 @@ deps@1.0.7
 ejson@1.0.6
 email@1.0.6
 fastclick@1.0.3
-fortawesome:fontawesome@4.3.0
 geojson-utils@1.0.3
 gwendall:autoform-i18n@0.1.9_1
 gwendall:session-json@0.1.7
@@ -89,6 +89,7 @@ observe-sequence@1.0.6
 ongoworks:pdf@1.1.1
 ordered-dict@1.0.3
 raix:eventemitter@0.1.2
+raix:ui-dropped-event@0.0.7
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
@@ -110,4 +111,3 @@ underscore@1.0.3
 url@1.0.4
 webapp@1.2.0
 webapp-hashing@1.0.3
-yogiben:autoform-file@0.2.7
