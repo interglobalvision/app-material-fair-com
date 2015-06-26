@@ -161,13 +161,13 @@ ApplicationSchema = new SimpleSchema({
     type: Number,
   },
   'artists.$.work.$.image': {
-    type: Object,
-  },
-  'artists.$.work.$.image.name': {
     type: String,
-  },
-  'artists.$.work.$.image.fileId': {
-    type: String,
+    autoform: {
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "files",
+      },
+    },
   },
 });
 
