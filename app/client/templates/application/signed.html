@@ -36,13 +36,13 @@
 				<input type="text" name="colonia" id="address-2" placeholder='{{_ "application-pay-address_2"}}'>
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="municipio" id="city" placeholder='{{_ "application-pay-city"}}'>
+				<input type="text" name="municipio" id="city" placeholder='{{_ "application-pay-city"}}' value="{{city}}">
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="cp" id="postal-code" placeholder='{{_ "application-pay-postal_code"}}'>
+				<input type="text" name="cp" id="postal-code" placeholder='{{_ "application-pay-postal_code"}}' value="{{postalCode}}">
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="estado" id="state" placeholder='{{_ "application-pay-state"}}'>
+				<input type="text" name="estado" id="state" placeholder='{{_ "application-pay-state"}}' value="{{state}}">
 			</div>
 			<div class="input-field col s12 m6">
 				<input type="text" name="pais" id="country" placeholder='{{_ "application-pay-country"}}'>
@@ -50,11 +50,11 @@
 		</div>
 		<div class="row">
 			<div class="input-field col s12 m6">
-				<input type="text" name="telefono" id="phone" placeholder="XXX XXX XXXX">
+				<input type="text" name="telefono" id="phone" placeholder="XXX XXX XXXX" value="{{contact.phone}}">
 				<label for="telefono" class="active required">{{_ "application-pay-phone"}}</label>
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="telefono" id="cell" placeholder="XXX XXX XXXX">
+				<input type="text" name="telefono" id="cell" placeholder="XXX XXX XXXX" value="{{contact.phone}}">
 				<label for="telefono" class="active required">{{_ "application-pay-cell"}}</label>
 			</div>
 		</div>
@@ -63,6 +63,15 @@
 				<input type="submit" name="submit" id="submit-payment" class="btn" value="pay">
 			</div>
 		</div>
-
 	</form>
+
+	<div id="alt-payment-modal" class="modal">
+    <div class="modal-content">
+      <h4>Looks like you're having problems with the payment. Would you like to request an alternative payment?</h4>
+    </div>
+    <div class="modal-footer">
+      <a id="request-alt" class="modal-action modal-close waves-effect waves-green btn-flat ">Yes please</a>
+      <a class="modal-action modal-close waves-effect waves-green btn-flat ">No thanks</a>
+    </div>
+  </div>
 </template>

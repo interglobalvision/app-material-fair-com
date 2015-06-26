@@ -7,13 +7,13 @@ Template.signed.rendered = function () {
 
   Tracker.autorun(function() {
     if (Session.get('paymentErrors') === 3) {
-      Materialize.toast('Try alt payment.', 3000);
+      $('#alt-payment-modal').openModal();
     }
   });
 };
 
 Template.signed.events({
-  'click #submit-payment': function(e){
+  'click #submit-payment': function(e) {
     e.preventDefault();
 
     // Disable submit button
@@ -74,5 +74,10 @@ Template.signed.events({
         }
       });
     }
+  },
+
+  'click #request-alt': function() {
+    Meteor.call('requestAltPaymentEmail', Meteor.userId());
+    Materialize.toast('Alternate payment requested. Please wait for an email from Material Art Fair.', 3000);
   },
 });
