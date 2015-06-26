@@ -165,7 +165,7 @@ ApplicationSchema = new SimpleSchema({
     autoform: {
       afFieldInput: {
         type: "cfs-file",
-        collection: "files",
+        collection: "storage",
       },
     },
   },
