@@ -6,6 +6,10 @@ Custom Handlebars helpers.
 
 /+ ---------------------------------------------------- */
 
-Handlebars.registerHelper('myHelper', function(myArgument){
-  return "Hello, " + myArgument;
+Handlebars.registerHelper('isAdmin', function(){
+  if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+    return true;
+  } else {
+    return false;
+  }
 });

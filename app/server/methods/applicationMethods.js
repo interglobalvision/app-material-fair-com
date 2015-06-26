@@ -57,4 +57,15 @@ Meteor.methods({
 
     return Applications.update(applicationId, {$set: {signature: signatureData, status: 'signed',},});
   },
+
+  markApplicationPaid: function(applicationId) {
+    check(applicationId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update(applicationId, {$set: {status: 'paid',},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
 });
