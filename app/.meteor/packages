@@ -30,3 +30,4 @@ cfs:standard-packages
 yogiben:autoform-file
 cfs:s3
 email
+meteorhacks:kadira-profiler
