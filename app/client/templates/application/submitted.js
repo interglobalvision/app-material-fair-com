@@ -7,7 +7,7 @@ Template.submitted.helpers({
 });
 
 Template.submitted.rendered = function () {
-  var canvas = document.getElementById('signature-pad');
+  /*var canvas = document.getElementById('signature-pad');
 
   $(window).scrollTop( 0 );
 
@@ -26,33 +26,25 @@ Template.submitted.rendered = function () {
 
   resizeCanvas();
 
-  signaturePad = new SignaturePad(canvas);
-
-  $('#backToForm').pushpin({
-    top: $('#backToForm').offset().top,
-    bottom: $('#terms').offset().top,
-    offset: 20,
-  });
+  signaturePad = new SignaturePad(canvas);*/
 };
 
 Template.submitted.events({
   'click #reviewSign': function(e) {
     e.preventDefault();
 
-		if (signaturePad.isEmpty()) {
-			Materialize.toast('Please provide signature.', 3000);
-		} else {
-			var signatureData = signaturePad.toDataURL();
+    var signatureValues = AutoForm.getFormValues('signApplication');
 
-      Meteor.call('signApplication', this._id, signatureData, function(error, response) {
-        if (error) {
-          // >>> we need error handling
-          console.log(error);
-        } else {
-          Materialize.toast('Application signed', 3000);
-        }
-      });
-		}
+    console.log(signatureValues);
+
+    Meteor.call('signApplication', this._id, signatureValues.updateDoc, function(error, response) {
+      if (error) {
+        Materialize.toast(error.reason, 3000);
+      } else {
+        Materialize.toast('Application signed', 3000);
+      }
+    });
+
   },
 
   'click #backToForm': function(e) {

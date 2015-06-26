@@ -165,6 +165,28 @@ ApplicationSchema = new SimpleSchema({
   },
 });
 
+SignatureSchema = new SimpleSchema({
+  signature: {
+    type: Object,
+  },
+  'signature.name': {
+    type: String,
+  },
+  'signature.galleryName': {
+    type: String,
+  },
+  'signature.date': {
+    type: Date,
+  },
+  'signature.signature': {
+    type: String,
+    autoform: {
+      type: "signaturePad",
+    },
+  },
+});
+
 Meteor.startup(function() {
   ApplicationSchema.i18n('schemas.application');
+  SignatureSchema.i18n('schemas.sign');
 });

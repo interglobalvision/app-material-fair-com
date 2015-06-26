@@ -45,25 +45,6 @@
   "application-introduction": "Introduction",
   "application-introduction-text": "Blah, blah, blah...",
 
-  "application-gallery_name": "Gallery name",
-
-  "application-address": "Address",
-  "application-gallery_year": "Year the gallery was founded",
-  "application-participation": "Participation in other fairs",
-  "application-website": "Website",
-
-  "application-contact-name": "Contact Name",
-  "application-contact-phone": "Phone",
-
-  "application-artists": "Artists represented by the gallery",
-  "application-artists-name": "Name",
-  "application-artists-title": "Title",
-  "application-artists-medium": "Medium",
-  "application-artists-dimensions": "Dimensions",
-  "application-artists-year": "Year",
-
-  "application-booth": "Booth type",
-
   "application-review": "Review",
   "application-save": "Save",
 
@@ -74,10 +55,10 @@
   "application-terms-text": "Yada, yada, yada...",
 
   "application-signature": "Signature",
-  "application-signature-typed": "Typed signature",
-  "application-signature-legal_name": "Legal name",
-  "application-signature-or": "Or",
-  "application-signature-drawn": "Drawn signature",
+  "application-signature-name": "Name",
+  "application-signature-gallery_name": "Gallery name",
+  "application-signature-date": "Date",
+  "application-signature-pad": "Sign here",
   "application-signature-clear": "Clear signature",
 
   "application-submit-warning": "When you submit...",
@@ -138,20 +119,24 @@
           "label": "City"
         },
         "state": {
-          "label": "State (if applicable)"
+          "label": "State (if applicable)",
+          "review": "State"
         },
         "postalCode": {
-          "label": "Postal Code (if applicable)"
+          "label": "Postal Code (if applicable)",
+          "review": "Postal Code"
         }
       },
       
       "social": {
         "label": "Social networks",
         "twitter": {
-          "label": "Twitter"
+          "label": "Twitter",
+          "placeholder": "@theGallery"
         },
         "facebook": {
-          "label": "Facebook"
+          "label": "Facebook",
+          "placeholder": "facebook.com/theGallery"
         },
         "tumblr": {
           "label": "Tumblr"
@@ -186,6 +171,7 @@
       
       "artists": {
         "label": "Artist",
+        "review": "Artists",
         "$": {
           "name": {
             "label": "Artist name"
@@ -207,9 +193,32 @@
               },
               "year": {
                 "label": "Year"
+              },
+              "image": {
+                "label": "Image"
               }
             }
           }
+        }
+      }
+    },
+
+    "sign": {
+      "signature": {
+        "label": "Signature",
+        "name": {
+          "label": "Name",
+          "placeholder": "Legal name"
+        },
+        "galleryName": {
+          "label": "Gallery name"
+        },
+        "date": {
+          "label": "Date",
+          "placeholder": "DD/MM/YYYY"
+        },
+        "signature": {
+          "label": "Sign here"
         }
       }
     }

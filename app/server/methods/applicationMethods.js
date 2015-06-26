@@ -51,11 +51,15 @@ Meteor.methods({
 
     var application = Applications.findOne(applicationId);
 
+    console.log(signatureData);
+
     if (Meteor.userId() !== application.userId) {
       throw new Meteor.Error('not-allowed', 'You must own this application to change it.');
     }
 
-    return Applications.update(applicationId, {$set: {signature: signatureData, status: 'signed',},});
+    Applications.update(applicationId, {$set: {status: 'signed',},});
+    
+    return Applications.update(applicationId, signatureData);
   },
 
   markApplicationPaid: function(applicationId) {
