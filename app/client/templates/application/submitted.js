@@ -35,15 +35,19 @@ Template.submitted.events({
 
     var signatureValues = AutoForm.getFormValues('signApplication');
 
-    console.log(signatureValues);
+    if (AutoForm.validateForm('signApplication')) {
 
-    Meteor.call('signApplication', this._id, signatureValues.updateDoc, function(error, response) {
-      if (error) {
-        Materialize.toast(error.reason, 3000);
-      } else {
-        Materialize.toast('Application signed', 3000);
-      }
-    });
+      Meteor.call('signApplication', this._id, signatureValues.updateDoc, function(error, response) {
+        if (error) {
+          Materialize.toast(error.reason, 3000);
+        } else {
+          Materialize.toast('Application signed', 3000);
+        }
+      });
+
+    } else {
+      Materialize.toast('Invalid input', 3000);
+    }
 
   },
 
