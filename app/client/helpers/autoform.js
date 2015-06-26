@@ -9,6 +9,15 @@ AutoForm.addInputType('signaturePad', {
 	},
 });
 
+AutoForm.addInputType('docUpload', {
+	template: 'docUpload',
+	valueOut: function() {
+		var docUrl = this[0].val();
+		
+		return docUrl;
+	},
+});
+
 AutoForm.hooks({
 	insertApplicationForm: {
 		onSuccess: function(insertDoc, updateDoc, currentDoc) {

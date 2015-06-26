@@ -143,6 +143,9 @@ ApplicationSchema = new SimpleSchema({
   },
   'artists.$.cv': {
     type: String,
+    autoform: {
+      type: "docUpload",
+    },
   },
   'artists.$.work': {
     type: [Object,],

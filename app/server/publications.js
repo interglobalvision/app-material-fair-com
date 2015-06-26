@@ -34,7 +34,3 @@ Meteor.publish('allApplications', function(userId) {
   // >>> check user role is Admin / Committee
   return Applications.find();
 });
-
-Meteor.publish('storage', function() {
-	return Storage.find();
-});
