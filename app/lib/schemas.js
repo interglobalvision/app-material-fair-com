@@ -164,12 +164,6 @@ ApplicationSchema = new SimpleSchema({
   },
   'artists.$.work.$.image': {
     type: String,
-    autoform: {
-      afFieldInput: {
-        type: "cfs-file",
-        collection: "storage",
-      },
-    },
   },
 });
 
