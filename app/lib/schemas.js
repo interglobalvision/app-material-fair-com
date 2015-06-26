@@ -1,3 +1,5 @@
+SimpleSchema.debug = true;
+
 // Application Form Schema
 ApplicationSchema = new SimpleSchema({
   status: {
@@ -87,7 +89,7 @@ ApplicationSchema = new SimpleSchema({
     type: String,
     optional: true,
   },
-  
+
   // -- Social
   social: {
     type: Object,
