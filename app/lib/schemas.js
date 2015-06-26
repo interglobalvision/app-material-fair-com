@@ -167,6 +167,9 @@ ApplicationSchema = new SimpleSchema({
   },
   'artists.$.work.$.image': {
     type: String,
+    autoform: {
+      type: "imageUpload",
+    },
   },
 });
 
