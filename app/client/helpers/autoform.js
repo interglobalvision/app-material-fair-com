@@ -3,7 +3,7 @@ AutoForm.setDefaultTemplateForType('afArrayField', 'materialized');
 AutoForm.addInputType('signaturePad', {
 	template: 'signaturePad',
 	valueOut: function() {
-		var canvasData = $('canvas#signature-pad').toDataURL();
+		var canvasData = this[0].toDataURL();
 
 		return canvasData;
 	},
