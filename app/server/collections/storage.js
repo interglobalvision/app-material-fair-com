@@ -10,8 +10,16 @@ Storage = new FS.Collection("storage", {
 });
 
 Storage.allow({
+  insert: function() {
+    return true;
+  },
+
   download: function () {
     return true;
+  },
+
+  remove: function(){
+    return false;
   },
 
   fetch: null,
