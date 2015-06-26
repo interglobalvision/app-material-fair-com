@@ -7,7 +7,7 @@ AutoForm.hooks({
        if (error) {
          console.log(error);
        } else {
-         Materialize.toast('Application submitted', 30-00);
+         Materialize.toast('Application submitted', 3000);
        }
      });
    },

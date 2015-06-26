@@ -1,101 +1,111 @@
 <template name="submissions">
   <div class="container">
-  	<div class="submissions-submitted section">
-  		<h4>{{_ "submissions-submitted"}}</h4>
-			<div class="row">
-			{{#each submitted}}
-			  <div class="col m6 s12">
+    <div class="submissions-submitted section">
+      <h4>{{_ "submissions-submitted"}}</h4>
+      <div class="row">
+      {{#each submitted}}
+        <div class="col m6 s12">
           <a href="/submissions/{{userId}}">
-	          <div class="card-panel indigo darken-4 white-text">
-	            <h5>{{galleryName}}</h5>
-				  		{{#with address}}
-				  		<p>{{city}}, {{state}}</p>
-				  		{{/with}}
-				  		{{#with contact}}
-				  		<p>{{name}}<br>
-				  		<a href="mailto:{{email}}" class="white-text">{{email}}</a><br>
-				  		{{phone}}</p>
-				  		{{/with}}
-	          </div>
+            <div class="card-panel indigo darken-4 white-text">
+              <h5>{{galleryName}}</h5>
+              {{#with address}}
+              <p>{{city}}, {{state}}</p>
+              {{/with}}
+              {{#with contact}}
+              <p>{{name}}<br>
+              <a href="mailto:{{email}}" class="white-text">{{email}}</a><br>
+              {{phone}}</p>
+              {{/with}}
+            </div>
           </a>
-      	</div>
-			{{/each}}
-			</div>
-		</div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
 
-		<div class="divider"></div>
+    <div class="divider"></div>
 
-		<div class="submissions-signed section">
-  		<h4>{{_ "submissions-signed"}}</h4>
-			<div class="row">
-			{{#each signed}}
-			  <div class="col m6 s12">
-				  <a href="/submissions/{{userId}}">
-	          <div class="card-panel yellow darken-2 white-text">
-	            <h5>{{galleryName}}</h5>
-				  		{{#with address}}
-				  		<p>{{city}}, {{state}}</p>
-				  		{{/with}}
-				  		{{#with contact}}
-				  		<p>{{name}}<br>
-				  		<a href="mailto:{{email}}" class="white-text">{{email}}</a><br>
-				  		{{phone}}</p>
-				  		{{/with}}
-	          </div>
-          </a>
-      	</div>
-			{{/each}}
-			</div>
-		</div>
+    <div class="submissions-signed section">
+      <h4>{{_ "submissions-signed"}}</h4>
+      <div class="row">
+      {{#each signed}}
+        <div class="col m6 s12">
+          <div class="card-panel yellow darken-2 white-text">
+            <a href="/submissions/{{userId}}">
+              <h5>{{galleryName}}</h5>
+            </a>
 
-		<div class="divider"></div>
+            {{#with address}}
+            <p>{{city}}, {{state}}</p>
+            {{/with}}
 
-		<div class="submissions-paid section">
-  		<h4>{{_ "submissions-paid"}}</h4>
-			<div class="row">
-			{{#each paid}}
-			  <div class="col m6 s12">
+            {{#with contact}}
+              <p>
+              {{name}}<br>
+              <a href="mailto:{{email}}" class="white-text">{{email}}<br></a>
+              {{phone}}
+              </p>
+            {{/with}}
+
+            {{#if isAdmin}}
+              <div class="card-action">
+                <a href="#" class="mark-as-paid">Mark as paid</a>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="submissions-paid section">
+      <h4>{{_ "submissions-paid"}}</h4>
+      <div class="row">
+      {{#each paid}}
+        <div class="col m6 s12">
           <a href="/submissions/{{userId}}">
-	          <div class="card-panel cyan darken-1 white-text">
-	            <h5>{{galleryName}}</h5>
-				  		{{#with address}}
-				  		<p>{{city}}, {{state}}</p>
-				  		{{/with}}
-				  		{{#with contact}}
-				  		<p>{{name}}<br>
-				  		<a href="mailto:{{email}}" class="white-text">{{email}}</a><br>
-				  		{{phone}}</p>
-				  		{{/with}}
-	          </div>
+            <div class="card-panel cyan darken-1 white-text">
+              <h5>{{galleryName}}</h5>
+              {{#with address}}
+              <p>{{city}}, {{state}}</p>
+              {{/with}}
+              {{#with contact}}
+              <p>{{name}}<br>
+              <a href="mailto:{{email}}" class="white-text">{{email}}</a><br>
+              {{phone}}</p>
+              {{/with}}
+            </div>
           </a>
-      	</div>
-			{{/each}}
-			</div>
-		</div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
 
-		<div class="divider"></div>
+    <div class="divider"></div>
 
-		<div class="submissions-approved section">
-  		<h4>{{_ "submissions-approved"}}</h4>
-			<div class="row">
-			{{#each approved}}
-			  <div class="col m6 s12">
+    <div class="submissions-approved section">
+      <h4>{{_ "submissions-approved"}}</h4>
+      <div class="row">
+      {{#each approved}}
+        <div class="col m6 s12">
           <a href="/submissions/{{userId}}">
-	          <div class="card-panel teal darken-3 white-text">
-	            <h5>{{galleryName}}</h5>
-				  		{{#with address}}
-				  		<p>{{city}}, {{state}}</p>
-				  		{{/with}}
-				  		{{#with contact}}
-				  		<p>{{name}}<br>
-				  		<a href="mailto:{{email}}" class="white-text">{{email}}</a><br>
-				  		{{phone}}</p>
-				  		{{/with}}
-	          </div>
+            <div class="card-panel teal darken-3 white-text">
+              <h5>{{galleryName}}</h5>
+              {{#with address}}
+              <p>{{city}}, {{state}}</p>
+              {{/with}}
+              {{#with contact}}
+              <p>{{name}}<br>
+              <a href="mailto:{{email}}" class="white-text">{{email}}</a><br>
+              {{phone}}</p>
+              {{/with}}
+            </div>
           </a>
-      	</div>
-			{{/each}}
-			</div>
-		</div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
   </div>
 </template>
