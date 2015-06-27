@@ -18,7 +18,9 @@ Slingshot.createDirective('imageUpload', Slingshot.S3Storage, {
 
   key: function (file) {
     // Store file into a directory by the user's username.
-    return this.userId + '/image/' + file.name;
+    var filename = file.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
+    return this.userId + '/image/' + Random.id(10) + filename;
   },
 
 });
@@ -38,7 +40,9 @@ Slingshot.createDirective('docUpload', Slingshot.S3Storage, {
 
   key: function (file) {
     // Store file into a directory by the user's username.
-    return this.userId + '/pdf/' + file.name;
+    var filename = file.name.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
+    return this.userId + '/pdf/' + Random.id(10) + filename;
   },
 
 });

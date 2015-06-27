@@ -1,22 +1,23 @@
 var uploader;
 
 Template.docUpload.rendered = function () {
-  uploader = new Slingshot.Upload("docUpload");
+  uploader = new Slingshot.Upload('docUpload');
 };
 
 Template.docUpload.events({
-  'change #docUpload': function(e) {
+  'change .doc-upload-input': function(e) {
     e.preventDefault();
 
-    uploader.send(document.getElementById('docUpload').files[0], function (error, downloadUrl) {
+    var $hiddenInput = $('#' + this.atts.id);
+
+    uploader.send($hiddenInput.siblings('.doc-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
-        // Log service detailed response.
         console.error('Error uploading', uploader.xhr.response);
         Materialize.toast(error, 3000);
       } else {
         console.log(downloadUrl);
+        $hiddenInput.val(downloadUrl);
         Materialize.toast('Upload successful', 3000);
-        $('#docUrl').val(downloadUrl);
       }
     });
   },

@@ -17,7 +17,12 @@ Template.homepage.events({
   },
 
   'click #empezar': function() {
-    TAPi18n.setLanguage('es').done(function () {$('.language').prop('checked', true);}).fail(function (error) {console.log(error);});
+    TAPi18n.setLanguage('es').done(function () {
+      $('.language').prop('checked', true);
+    }).fail(function (error) {
+      console.log(error);
+    });
+
     Router.go('/signup');
   },
 
