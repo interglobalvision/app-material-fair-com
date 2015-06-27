@@ -97,6 +97,7 @@
 				  </div>
 			 	</div>
 			</div>
+			{{#if social}}
 			<div class="section">
 				<div class="card">
 			  	<div class="card-content">
@@ -125,6 +126,7 @@
 				  </div>
 			  </div>
 			</div>
+			{{/if}}
 			<div class="section">
 				<div class="card">
 			  	<div class="card-content">
@@ -158,8 +160,8 @@
 				  		<div class="divider"></div>
 
 				  		<div class="section">
-					  		<strong>{{_ "schemas.application.artists.$.cv.label"}}</strong>
-					  		<p>{{cv}}</p>
+					  		<strong>{{_ "schemas.application.artists.$.cv.review"}}</strong>
+					  		<p><a href="{{cv}}" target="_blank">{{cv}}</a></p>
 				  		</div>
 
 					  	{{#each work}}
@@ -186,8 +188,8 @@
 						  		</div>
 						  		<div class="divider"></div>
 						  		<div class="section">
-							  		<strong>{{_ "schemas.application.artists.$.work.$.image.label"}}</strong>
-							  		<p>{{image}}</p>
+							  		<strong>{{_ "schemas.application.artists.$.work.$.image.review"}}</strong>
+							  		<p><img src="{{image}}"></p>
 						  		</div>
 						  	</div>
 						  </div>
