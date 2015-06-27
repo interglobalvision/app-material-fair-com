@@ -22,7 +22,7 @@ Router.onBeforeAction(function () {
       this.next();
     }
   },
-  
+
   {
     except: ['signup','homepage','forgot',],
   }
@@ -38,15 +38,13 @@ Router.map(function() {
     path: '/',
   });
 
-  this.route('content');
-
   // Users
 
   this.route('login');
 
   this.route('signup', {
     path: '/signup',
-    onBeforeAction: function() {      
+    onBeforeAction: function() {
       if (!Meteor.userId()) {
         this.next();
       } else {
