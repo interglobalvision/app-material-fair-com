@@ -20,7 +20,8 @@
           </li>
           {{/afEachArrayItem}}
           {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
-          <li class="list-group-item">
+          <div class="divider"></div>
+          <li class="list-group-item section">
             <a type="a" class="btn waves-effect autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add {{#with afFieldLabelText name=this.atts.name}}{{this}}{{/with}}</a>
           </li>
           {{/if}}
