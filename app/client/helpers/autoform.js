@@ -18,6 +18,15 @@ AutoForm.addInputType('docUpload', {
 	},
 });
 
+AutoForm.addInputType('imageUpload', {
+	template: 'imageUpload',
+	valueOut: function() {
+		var imageUrl = this[0].val();
+		
+		return imageUrl;
+	},
+});
+
 AutoForm.hooks({
 	insertApplicationForm: {
 		onSuccess: function(insertDoc, updateDoc, currentDoc) {
