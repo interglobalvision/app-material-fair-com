@@ -1,6 +1,6 @@
 <template name='docUpload'>
 	<form enctype="multipart/form-data">
     <input type="file" class="doc-upload-input">
-    <input {{this.atts}} type="hidden">
+    <input {{this.atts}} type="hidden" value="{{this.value}}">
   </form>
 </template>

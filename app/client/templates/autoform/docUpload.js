@@ -15,7 +15,6 @@ Template.docUpload.events({
         console.error('Error uploading', uploader.xhr.response);
         Materialize.toast(error, 3000);
       } else {
-        console.log(downloadUrl);
         $hiddenInput.val(downloadUrl);
         Materialize.toast('Upload successful', 3000);
       }

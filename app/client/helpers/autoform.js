@@ -12,9 +12,7 @@ AutoForm.addInputType('signaturePad', {
 AutoForm.addInputType('docUpload', {
   template: 'docUpload',
   valueOut: function() {
-    var docUrl = this[0].val();
-
-    console.log(this);
+    var docUrl = this.val();
 
     return docUrl;
   },
@@ -23,7 +21,7 @@ AutoForm.addInputType('docUpload', {
 AutoForm.addInputType('imageUpload', {
   template: 'imageUpload',
   valueOut: function() {
-    var imageUrl = this[0].val();
+    var imageUrl = this.val();
 
     return imageUrl;
   },

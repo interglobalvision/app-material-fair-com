@@ -1,6 +1,6 @@
 <template name='imageUpload'>
 	<form enctype="multipart/form-data">
-    <input type="file" id="imageUpload">
-    <input {{this.atts}} type="hidden" id="imageUrl">
+    <input type="file" class="image-upload-input">
+    <input {{this.atts}} type="hidden" value="{{this.value}}">
   </form>
 </template>

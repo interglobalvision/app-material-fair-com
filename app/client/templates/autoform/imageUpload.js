@@ -5,18 +5,19 @@ Template.imageUpload.rendered = function () {
 };
 
 Template.imageUpload.events({
-  'change #imageUpload': function(e) {
+  'change .image-upload-input': function(e) {
     e.preventDefault();
 
-    uploader.send(document.getElementById('imageUpload').files[0], function (error, downloadUrl) {
+    var $hiddenInput = $('#' + this.atts.id);
+
+    uploader.send($hiddenInput.siblings('.image-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
         // Log service detailed response.
         console.error('Error uploading', uploader.xhr.response);
         Materialize.toast(error, 3000);
       } else {
-        console.log(downloadUrl);
+        $hiddenInput.val(downloadUrl);
         Materialize.toast('Upload successful', 3000);
-        $('#imageUrl').val(downloadUrl);
       }
     });
   },
