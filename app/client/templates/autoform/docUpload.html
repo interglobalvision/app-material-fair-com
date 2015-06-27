@@ -1,6 +1,8 @@
 <template name='docUpload'>
 	<form enctype="multipart/form-data">
-    <input type="file" class="doc-upload-input">
+		<a class="btn grey darken-1 doc-upload-trigger">Select file</a>
+		<span class="doc-upload-filename"></span>
+    <input type="file" class="doc-upload-input u-hidden">
     <input {{this.atts}} type="hidden" value="{{this.value}}">
   </form>
 </template>
