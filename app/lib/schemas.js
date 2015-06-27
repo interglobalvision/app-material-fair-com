@@ -93,6 +93,7 @@ ApplicationSchema = new SimpleSchema({
   // -- Social
   social: {
     type: Object,
+    optional: true,
   },
   'social.twitter': {
     type: String,
