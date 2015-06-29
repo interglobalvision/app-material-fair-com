@@ -19,6 +19,7 @@ Template.homepage.events({
       console.log(error);
     });
   },
+
   'click #es-ingresar': function() {
     TAPi18n.setLanguage('es').done(function () {
       $('.language').prop('checked', true);
@@ -27,6 +28,7 @@ Template.homepage.events({
       console.log(error);
     });
   },
+
   'click #en-register': function() {
     TAPi18n.setLanguage('en').done(function () {
       $('.language').prop('checked', false);
@@ -35,6 +37,7 @@ Template.homepage.events({
       console.log(error);
     });
   },
+
   'click #en-login': function() {
     TAPi18n.setLanguage('en').done(function () {
       $('.language').prop('checked', false);
