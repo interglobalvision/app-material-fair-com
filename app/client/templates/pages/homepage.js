@@ -11,19 +11,36 @@ Template.homepage.rendered = function () {
 };
 
 Template.homepage.events({
-  'click #espanol': function() {
+  'click #es-registrar': function() {
     TAPi18n.setLanguage('es').done(function () {
       $('.language').prop('checked', true);
+      Router.go('/signup');
     }).fail(function (error) {
       console.log(error);
     });
   },
-
-  'click .start': function() {
-    if (!Meteor.userId()) {
+  'click #es-ingresar': function() {
+    TAPi18n.setLanguage('es').done(function () {
+      $('.language').prop('checked', true);
+      Router.go('/login');
+    }).fail(function (error) {
+      console.log(error);
+    });
+  },
+  'click #en-register': function() {
+    TAPi18n.setLanguage('en').done(function () {
+      $('.language').prop('checked', false);
       Router.go('/signup');
-    } else {
-      Router.go('/application');
-    }
+    }).fail(function (error) {
+      console.log(error);
+    });
+  },
+  'click #en-login': function() {
+    TAPi18n.setLanguage('en').done(function () {
+      $('.language').prop('checked', false);
+      Router.go('/login');
+    }).fail(function (error) {
+      console.log(error);
+    });
   },
 });
