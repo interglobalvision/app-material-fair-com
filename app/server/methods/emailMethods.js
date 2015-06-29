@@ -27,13 +27,13 @@ Meteor.methods({
     var email = {
       address: user.emails[0].address,
       subject: 'Signup Successful | Material Art Fair',
-      text: 'Thanks for starting the application process for MAF 2015. You can access your application at: http://app.material-fair.com/application . Sign in with the email address: ' + user.emails[0].address + 'and the password you chose. If you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
+      text: 'Thanks for starting the application process for MAF 2015.\n\nYou can access your application at: http://app.material-fair.com/application\nSign in with the email address: ' + user.emails[0].address + ' and the password you chose.\n\nIf you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
     };
 
     if (user.profile.lang === 'es') {
       email = {
-        subject: 'Signup Success es | Material Art Fair',
-        text: 'ES Thanks for starting the application process for MAF 2015. You can access your application at: http://app.material-fair.com/application . Sign in with the email address: ' + user.emails[0].address + 'and the password you chose. If you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
+        subject: 'Signup Successful | Material Art Fair',
+        text: 'Thanks for starting the application process for MAF 2015.\n\nYou can access your application at: http://app.material-fair.com/application\nSign in with the email address: ' + user.emails[0].address + ' and the password you chose.\n\nIf you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
       };
     }
 
