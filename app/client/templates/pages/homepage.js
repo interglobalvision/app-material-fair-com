@@ -11,23 +11,19 @@ Template.homepage.rendered = function () {
 };
 
 Template.homepage.events({
-
-  'click #start': function() {
-    Router.go('/signup');
-  },
-
-  'click #empezar': function() {
+  'click #espanol': function() {
     TAPi18n.setLanguage('es').done(function () {
       $('.language').prop('checked', true);
     }).fail(function (error) {
       console.log(error);
     });
-
-    Router.go('/signup');
   },
 
-  'click #continue': function() {
-    Router.go('/application');
+  'click .start': function() {
+    if (!Meteor.userId()) {
+      Router.go('/signup');
+    } else {
+      Router.go('/application');
+    }
   },
-
 });
