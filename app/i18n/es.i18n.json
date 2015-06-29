@@ -1,12 +1,23 @@
 {
 	"sign_up": "Registrate",
-	"sign_up-header": "Registro",
 	"login": "Iniciar Sesión",
 	"logout": "Cerrar Sesión",
-	"login-header": "Bienvenido",
 	"password": "Contraseña",
 	"forgot_password": "¿Olvidaste tu contraseña?",
   "browser-warning": "Para una mejor experiencia utiliza un explorador actualizado como Chrome, Firefox o Safari",
+
+  "fair-timescale": "4-7 Febrero 2016",
+
+// Signup
+  "sign_up-header": "EXHIBITOR APPLICATION: REGISTER",
+  "sign_up-copy-line1": "Thank you for your interest in applying for the third edition of Material Art Fair in Mexico City. Please register below to start your application. Your registration information will be sent to the indicated email address so that you can pause and resume the application process as necessary.",
+  "sign_up-copy-line2": "Please note that the application deadline is Thursday, September 10th, 2015. No applications will be accepted after that date.",
+  "sign_up-copy-line3": "A mandatory and non-refundable application fee of $125 USD will be charged at the end of the process in order to complete the submission.",
+
+// Login
+  "login-header": "EXHIBITOR APPLICATION: LOGIN",
+  "login-copy-line1": "Thanks again for your application to Material Art Fair 2016.",
+  "login-copy-line2": "Please remember that the application deadline is Thursday, September 10th, 2015. No applications will be accepted after that date.",
 
 // Forgot
   "forgot-header": "¿Olvidaste tu contraseña?",
