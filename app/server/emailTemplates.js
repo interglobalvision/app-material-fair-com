@@ -6,5 +6,16 @@ Accounts.emailTemplates.enrollAccount.subject = function (user) {
 };
 
 Accounts.emailTemplates.enrollAccount.text = function (user, url) {
-	return "You have a new account on the Material Art Fair application & review." + " To activate your account, simply click the link below:\n\n" + url;
+  var role = user.roles[0],
+  lang = user.profile.lang;
+
+  if (lang === 'es') {
+
+    return "You have a new account on the Material Art Fair application & review." + " To activate your account, simply click the link below:\n\n" + url;
+
+  } else {
+
+    return "You have a new account on the Material Art Fair application & review." + " To activate your account, simply click the link below:\n\n" + url;
+
+  }
 };

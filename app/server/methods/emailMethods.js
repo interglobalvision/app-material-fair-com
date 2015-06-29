@@ -6,16 +6,14 @@ Meteor.methods({
     return 'success';
   },
 
-  sendMail: function(mail) {
+  sendMail: function(email) {
     this.unblock();
 
-    check(userId, String);
-
     Email.send({
-      to: mail.address,
+      to: email.address,
       from: Meteor.settings.email_from,
-      subject: mail.subject,
-      text: mail.text,
+      subject: email.subject,
+      text: email.text,
     });
 
   },
@@ -26,20 +24,20 @@ Meteor.methods({
     check(userId, String);
 
     var user = Meteor.users.findOne(userId);
-    var mail = {
+    var email = {
       address: user.emails[0].address,
       subject: 'Signup Successful | Material Art Fair',
       text: 'Thanks for starting the application process for MAF 2015. You can access your application at: http://app.material-fair.com/application . Sign in with the email address: ' + user.emails[0].address + 'and the password you chose. If you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
     };
 
     if (user.profile.lang === 'es') {
-      mail = {
+      email = {
         subject: 'Signup Success es | Material Art Fair',
         text: 'ES Thanks for starting the application process for MAF 2015. You can access your application at: http://app.material-fair.com/application . Sign in with the email address: ' + user.emails[0].address + 'and the password you chose. If you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
       };
     }
 
-    Meteor.call('sendMail', mail);
+    Meteor.call('sendMail', email);
   },
 
   paymentSuccessEmail: function(userId) {
@@ -61,7 +59,7 @@ Meteor.methods({
       };
     }
 
-    Meteor.call('sendMail', mail);
+    Meteor.call('sendMail', email);
   },
 
   requestAltPaymentEmail: function(userId) {
@@ -85,7 +83,7 @@ Meteor.methods({
       };
     }
 
-    Meteor.call('sendMail', mail);
+    Meteor.call('sendMail', email);
   },
 
 });

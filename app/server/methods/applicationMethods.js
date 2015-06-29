@@ -8,10 +8,6 @@ Meteor.methods({
     return Applications.insert(application);
   },
 
-  serverCreateApplication: function(application) {
-    return Applications.insert(application);
-  },
-
   saveApplication: function(applicationId, applicationUpdate) {
     var application = Applications.findOne(applicationId);
 

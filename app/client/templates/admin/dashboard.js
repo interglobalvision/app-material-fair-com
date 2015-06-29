@@ -41,7 +41,6 @@ Template.dashboard.events({
 								} else {
                   Materialize.toast('Enrollment email sent', 3000);
 									console.log(result);
-									Router.go('/admin');
 								}
 							});
 						}

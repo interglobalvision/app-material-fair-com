@@ -20,8 +20,7 @@ Template.signup.events = {
 
       Accounts.createUser(user, function(error) {
         if (error) {
-          Materialize.toast('Something went wrong.', 2000);
-          console.log(error);
+          Materialize.toast(error.reason, 2000);
         } else {
           var userId = Meteor.userId();
 

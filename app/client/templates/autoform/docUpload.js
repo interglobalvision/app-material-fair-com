@@ -35,3 +35,4 @@ Template.docUpload.events({
     $fileInput.click();
   },
 });
+

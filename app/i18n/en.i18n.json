@@ -248,8 +248,7 @@
       },
 
       "artists": {
-        "label": "Artist",
-        "review": "Artists",
+        "label": "Artists",
         "$": {
           "name": {
             "label": "Artist name"

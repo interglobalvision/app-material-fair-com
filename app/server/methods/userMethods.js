@@ -8,10 +8,11 @@ Meteor.methods({
         throw new Meteor.Error('set-role-failed', error);
       } else if (result === 'applicant') {
 
-        Meteor.call('serverCreateApplication', {userId: userId, status: 'saved',}, function(error, result) {
+        Meteor.call('createApplication', {userId: userId, status: 'saved',}, function(error, result) {
           if (error) {
             throw new Meteor.Error('application-creation-failed', error);
           } else {
+
             Meteor.call('applicantEnrollmentEmail', userId);
 
             return true;
