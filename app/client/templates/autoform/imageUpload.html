@@ -1,7 +1,8 @@
 <template name='imageUpload'>
 	<form enctype="multipart/form-data">
 		<input type="file" class="image-upload-input u-hidden">
-    <input {{this.atts}} type="text" value="{{this.value}}">
+    <input {{this.atts}} type="hidden" value="{{this.value}}">
 		<a class="btn grey darken-1 image-upload-trigger">Select file</a>
+    <img src="{{this.value}}" class="image-upload-thumbnail" />
   </form>
 </template>

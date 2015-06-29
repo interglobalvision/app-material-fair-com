@@ -12,6 +12,7 @@ Template.imageUpload.events({
 
     $hiddenInput = $('#' + this.atts.id);
     $fileInput = $hiddenInput.siblings('.image-upload-input');
+    var $thumbnail = $hiddenInput.siblings('.image-upload-thumbnail');
 
     uploader.send($hiddenInput.siblings('.image-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
@@ -20,6 +21,7 @@ Template.imageUpload.events({
         Materialize.toast(error, 3000);
       } else {
         $hiddenInput.val(downloadUrl);
+        $thumbnail.attr('src', downloadUrl);
         Materialize.toast('Upload successful', 3000);
       }
     });
