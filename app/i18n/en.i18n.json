@@ -188,8 +188,8 @@
             "label": "Artist name"
           },
           "cv": {
-            "label": "CV (PDF, or DOCX.  Maximum 10mb)",
-            "review": "CV"
+            "label": "CV",
+            "placeholder":  "PDF, or DOCX.  Maximum 10mb"
           },
           "work": {
             "label": "Work",
@@ -207,8 +207,8 @@
                 "label": "Year"
               },
               "image": {
-                "label": "Image (JPG, PNG, or GIF.  Maximum 4mb)",
-                "review": "Image"
+                "label": "Image",
+                "placeholder": "JPG, PNG, or GIF.  Maximum 4mb"
               }
             }
           }

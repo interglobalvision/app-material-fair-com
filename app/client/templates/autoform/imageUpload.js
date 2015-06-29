@@ -1,7 +1,5 @@
 var uploader,
-filename,
 $hiddenInput,
-$filenameInput,
 $fileInput;
 
 Template.imageUpload.rendered = function () {
@@ -14,9 +12,6 @@ Template.imageUpload.events({
 
     $hiddenInput = $('#' + this.atts.id);
     $fileInput = $hiddenInput.siblings('.image-upload-input');
-    $filenameInput = $hiddenInput.siblings('.image-upload-filename');
-    filename = $fileInput.val().split('\\').pop();
-    $filenameInput.html(filename);
 
     uploader.send($hiddenInput.siblings('.image-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
