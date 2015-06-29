@@ -1,5 +1,5 @@
 <template name="signed">
-  <p>{{_ "application-please_pay"}}</p>
+  <p class="flow-text">{{_ "application-please_pay"}}</p>
   <form id="transaccion" name="transaccion" enctype="application/x-www- form-urlencoded" action="" method="post">
     <input type="hidden" value="{{ _id }}" id="application-id">
   	<div class="row">
@@ -59,7 +59,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col s12 u-align-center">
+			<div class="input-field col s12">
+  			<p class="flow-text">{{_ "application-pay-confirm"}}</p>
 				<input type="submit" name="submit" id="submit-payment" class="btn" value="pay">
 			</div>
 		</div>
