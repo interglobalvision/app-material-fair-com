@@ -7,17 +7,19 @@ Meteor.methods({
 
     params['data[email]'] = Meteor.user().emails[0].address;
     params.method = 'transaccion';
-    params['data[monto]'] = '125.00';
+    params['data[monto]'] = '1.00';
     params['data[divisa]'] = 'USD';
-    params['data[idUsuario]'] = Meteor.settings.pagofacil_usuario_dev;
-    params['data[idSucursal]'] = Meteor.settings.pagofacil_sucursal_dev;
+    params['data[idUsuario]'] = Meteor.settings.pagofacil_usuario;
+    params['data[idSucursal]'] = Meteor.settings.pagofacil_sucursal;
     params['data[idServicio]'] = 3;
 
     var result,
-    url = 'https://www.pagofacil.net/st/public/Wsrtransaccion/index/format/json',
+// dev url for dev keys [lol]
+//     url = 'https://www.pagofacil.net/st/public/Wsrtransaccion/index/format/json',
+    url = 'https://www.pagofacil.net/ws/public/Wsrtransaccion/index/format/json',
     apiResult = HTTP.call('POST', url, {params: params,});
 
-//     console.log(apiResult.data);
+    console.log(apiResult.data);
 //     console.log(apiResult.data.WebServices_Transacciones.transaccion.error);
 
     var auth = apiResult.data.WebServices_Transacciones.transaccion.autorizado,
@@ -29,6 +31,7 @@ Meteor.methods({
       result = 1;
       Meteor.call('paymentSuccessEmail', Meteor.userId());
     } else {
+      console.log(apiResult.data.WebServices_Transacciones.transaccion.error);
       result = 0;
     }
 
