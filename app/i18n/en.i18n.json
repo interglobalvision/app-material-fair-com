@@ -57,14 +57,15 @@
 
 // Application
   "application": "Application",
-  "application-introduction": "Introduction",
-  "application-introduction-text": "Blah, blah, blah...",
+  "application-title": "Exibitor Application",
 
   "application-review": "Review",
   "application-save": "Save",
 
   "application-review_sign": "EXHIBITOR APPLICATION:<br />TERMS & CONDITIONS (STEP 3 OF 4)",
   "application-edit": "Edit",
+
+  "application-add": "Add",
 
   "application-terms": "TERMS AND CONDITIONS OF PARTICIPATION",
   "application-terms-text": "<p>1. GENERAL</p>
@@ -136,10 +137,6 @@
   "application-terms-confirmation": "The parties will be bound by signatures made electronic means on the signature line of this document (including, without limitation, by typing one’s name, an 's' mark or other comparable note on the signature line). The parties agree that such signatures are binding and may be transmitted by mail, hand delivery, facsimile, email and/or any other electronic method to the other party or, if applicable, counsel of record for the party, and will have the same binding effect as any original ink signature.",
 
   "application-signature": "Signature",
-  "application-signature-name": "Name",
-  "application-signature-gallery_name": "Gallery name",
-  "application-signature-date": "Date",
-  "application-signature-pad": "Sign here",
   "application-signature-clear": "Clear signature",
 
   "application-submit": "I accept",
@@ -170,88 +167,97 @@
       },
 
       "general": {
-        "label": "General Information",
-        "galleryName": {
-          "label": "Gallery Name"
-        },
-        "website": {
-          "label": "Website"
-        },
-        "galleryYear": {
-          "label": "Year gallery was founded"
-        },
-        "participation": {
-          "label": "Participation in other fairs"
-        },
-        "galleryHistory": {
-          "label": "Brief history of the gallery"
-        }
+        "label": "Gallery Information",
+        "text": "<p class='flow-text'>Thank you for your application to the third edition of Material Art Fair, which will take place from February 4th - 7th, 2016, in the historic Centro Cultural Universitario Tlatelolco (CCUT) in Mexico City.</p>
+        <p class='flow-text'>Each application will be carefully reviewed, considered, and discussed by our 2016 Selection Committee and we will send notification of their decisions to all applicants beginning in early October.</p>
+        <p class='flow-text'>If at any time you need to pause and continue your application at a later moment, please click the save button so as not to lose any information.</p>
+        <p class='flow-text'>Please report any errors or problems directly to us at <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>"
+      },
+      "galleryName": {
+        "label": "Gallery name"
+      },
+      "website": {
+        "label": "Website"
       },
 
       "address": {
-        "label": "Gallery address",
-        "line1": {
-          "label": "Line 1"
-        },
-        "line2": {
-          "label": "Line 2"
-        },
-        "city": {
-          "label": "City"
-        },
-        "state": {
-          "label": "State (if applicable)",
-          "review": "State"
-        },
-        "postalCode": {
-          "label": "Postal Code (if applicable)",
-          "review": "Postal Code"
-        }
+        "label": "Gallery address"
+      },
+      "address1": {
+        "label": "Address line 1"
+      },
+      "address2": {
+        "label": "Address line 2"
+      },
+      "city": {
+        "label": "City"
+      },
+      "state": {
+        "label": "State (if applicable)",
+        "review": "State"
+      },
+      "postalCode": {
+        "label": "Postal code (if applicable)",
+        "review": "Postal code"
       },
 
       "social": {
-        "label": "Social networks",
-        "twitter": {
-          "label": "Twitter",
-          "placeholder": "@theGallery"
-        },
-        "facebook": {
-          "label": "Facebook",
-          "placeholder": "facebook.com/theGallery"
-        },
-        "tumblr": {
-          "label": "Tumblr"
-        },
-        "instagram": {
-          "label": "Instagram"
-        }
+        "label": "Social networks"
+      },
+      "twitter": {
+        "label": "Twitter",
+        "placeholder": "@theGallery"
+      },
+      "facebook": {
+        "label": "Facebook",
+        "placeholder": "facebook.com/theGallery"
+      },
+      "tumblr": {
+        "label": "Tumblr",
+        "placeholder": "tumblr.com/theGallery"
+      },
+      "instagram": {
+        "label": "Instagram",
+        "placeholder": "@theGallery"
       },
 
       "contact": {
         "label": "Primary contact",
-        "name": {
-          "label": "Name"
-        },
-        "email": {
-          "label": "Email"
-        },
-        "phone": {
-          "label": "Mobile Phone"
-        }
+        "text": "<p class='flow-text'>Please indicate the contact information for the primary person at the gallery who will be responsible for managing the fair details.</p>"
+      },
+      "contactName": {
+        "label": "Name"
+      },
+      "contactEmail": {
+        "label": "Email"
+      },
+      "contactPhone": {
+        "label": "Mobile phone (with country code)"
       },
 
       "proposal": {
         "label": "Proposal for Material Art Fair 2016",
-        "standProposal": {
-          "label": "Proposal"
-        },
-        "boothType": {
-          "label": "Booth size"
-        }
+        "text": "<p class='flow-text'>In this section, you will provide information about your gallery, selected artists and booth proposal that will allow the Selection Committee to make an informed decision with respect to your application.</p>"
+      },
+      "galleryHistory": {
+        "label": "Brief history of the gallery"
+      },
+      "galleryYear": {
+        "label": "Year gallery was founded"
+      },
+      "participation": {
+        "label": "Participation in other fairs"
+      },
+      "artistsRepresented": {
+        "label": "Artists represented by the gallery"
+      },
+      "standProposal": {
+        "label": "Proposal"
       },
 
       "artists": {
-        "label": "Artists",
+        "title": "Proposed Artists for Material Art Fair 2016",
+        "label": "Artist",
         "$": {
           "name": {
             "label": "Artist name"
@@ -263,6 +269,10 @@
           "work": {
             "label": "Work",
             "$": {
+              "image": {
+                "label": "Image",
+                "placeholder": "JPG, PNG, or GIF.  72 dpi.  Maximum 1200px, 4mb"
+              },
               "workTitle": {
                 "label": "Title"
               },
@@ -274,15 +284,59 @@
               },
               "year": {
                 "label": "Year"
-              },
-              "image": {
-                "label": "Image",
-                "placeholder": "JPG, PNG, or GIF.  Maximum 4mb"
               }
             }
           }
         }
+      },
+
+      "booth": {
+        "label": "Booth Proposal for Material Art Fair 2016",
+        "text": "<p>Please check any booth sizes of interest, since quantities of each are limited. The principal section of the fair will be located in the Salón Juarez of the CCUT and project spaces will be located in a special outdoor tented area on the terrace adjacent to the Salón Juarez.</p>
+        <p>Project spaces are open to all applicants but, in general, preference will be given to artist and curator-run independent spaces and non-profit organizations. Commercial galleries are encouraged to apply for the principal section.</p>
+        <p><strong>IMPORTANT:</strong> Prices do not include insurance of the works and/or personal belongings like laptops and mobile phones. Material Art Fair and the Centro Cultural Universitario Tlatelolco will provide security for the event but cannot be held responsible for any damage or loss suffered by exhibitors.</p>
+        <ul><strong>PRICING:</strong>
+        <li>Project Space: $175 usd / m2</li>
+        <li>Principal Section: $275 usd / m2</li>
+        </ul>
+        <ul><strong>Stands include:</strong>
+        <li>Interior lighting</li>
+        <li>Booth signage</li>
+        <li>Exhibitor badges</li>
+        <li>Courtesy VIP and general admission passes</li>
+        <li>WiFi</li>
+        </ul>
+        <p><strong>Project Space</strong> stands include up to 2 linear meters of wall (4 linear meters for a double), additional wall is available upon request.</p>
+        <p><strong>Principal Section</strong> stands will each feature four walls with a height of 3 meters.<p>",
+        "project": {
+          "label": "Project",
+          "single": {
+            "description": "3 m2, $525 usd"
+          },
+          "double": {
+            "description": "6 m2, $1050 usd"
+          }
+        },
+        "principal": {
+          "label": "Principal",
+          "small": {
+            "description": "9 m2, $2475 usd"
+          },
+          "medium": {
+            "description": "12 m2, $3300 usd"
+          },
+          "mediumPlus": {
+            "description": "16 m2, $4400 usd"
+          },
+          "large": {
+            "description": "16 m2, $4400 usd"
+          },
+          "extraLarge": {
+            "description": "Please contact us at <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a> for more information."
+          }
+        }
       }
+
     },
 
     "sign": {
