@@ -6,18 +6,20 @@ Meteor.methods({
     check(data.token, String);
     check(data.applicationId, String);
 
-    var conekta = Meteor.npmRequire('conekta');
+    var Conekta = Meteor.npmRequire('conekta');
     var Future = Npm.require('fibers/future');
     var charge;
 
-    conekta.api_key = Meteor.settings.conekta_private_sandbox;
+    Conekta.locale = Meteor.user().profile.lang;
+
+    Conekta.api_key = Meteor.settings.conekta_private_sandbox;
 
     data.email = Meteor.user().emails[0].address;
 
     var conektaSync = function(data) {
       var future = new Future();
 
-      conekta.Charge.create({
+      Conekta.Charge.create({
         "amount": 125,
         "currency": "USD",
         "description": "Material Art Fair",
@@ -66,8 +68,10 @@ Meteor.methods({
     charge = chargeResult._json;
 
     console.log(charge.id);
+/*
     console.log(charge.status);
     console.log(charge.reference_id);
+*/
 
     Meteor.call('paymentSuccessEmail', Meteor.userId());
     return Applications.update(data.applicationId, {$set: {transactionId: charge.id, transaction: charge, status: 'paid',},});

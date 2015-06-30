@@ -31,6 +31,8 @@ Template.signed.events({
 
     $('#submit-payment').attr('disabled','disabled');
 
+    Conekta.locale = TAPi18n.getLanguage();
+
     Conekta.token.create($form, function(result) {
       data.token = result.id;
 
@@ -55,7 +57,7 @@ Template.signed.events({
     }, function(error) {
 
         console.log(error);
-        Materialize.toast(error.message, 3000);
+        Materialize.toast(error.message_to_purchaser, 3000);
         $('#submit-payment').removeAttr('disabled');
 
     });
