@@ -1,61 +1,65 @@
 <template name="signed">
   <p class="flow-text">{{_ "application-please_pay"}}</p>
-  <form id="transaccion" name="transaccion" enctype="application/x-www- form-urlencoded" action="" method="post">
+  <form id="pay" enctype="application/x-www- form-urlencoded" action="" method="post">
     <input type="hidden" value="{{ _id }}" id="application-id">
   	<div class="row">
+<!--
 	  	<div class="input-field col s12 m6">
 		  	<input type="text" name="nombre" id="first-name" placeholder='{{_ "application-pay-first_name"}}'>
 			</div>
 			<div class="input-field col s12 m6">
 				<input type="text" name="nombre" id="last-name" placeholder='{{_ "application-pay-last_name"}}'>
 			</div>
-		</div>
-		<div class="row">
-			<div class="input-field col s12 m6">
-				<input type="text" name="numeroTarjeta" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
-				<label for="numeroTarjeta" class="active required">{{_ "application-pay-card_number"}}</label>
-			</div>
-			<div class="input-field col s12 m6">
-				<input type="text" name="cvt" id="cvc" placeholder="XXX">
-				<label for="cvt" class="active required">{{_ "application-pay-cvc"}}</label>
-			</div>
-			<div class="input-field col s12 m6">
-				<input type="text" name="mesExpiracion" id="exp-month" placeholder="MM">
-				<label for="mesExpiracion" class="active required">{{_ "application-pay-exp_month"}}</label>
-			</div>
-			<div class="input-field col s12 m6">
-				<input type="text" name="anyoExpiracion" id="exp-year" placeholder="YY">
-				<label for="anyoExpiracion" class="active required">{{_ "application-pay-exp_year"}}</label>
+-->
+	  	<div class="input-field col s12">
+		  	<input type="text" name="name" id="name" size="20" data-conekta="card[name]">
+				<label for="name" class="active required">{{_ "application-pay-name"}}</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12 m6">
-				<input type="text" name="calleyNumero" id="address-1" placeholder='{{_ "application-pay-address_1"}}'>
+				<input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" size="20" data-conekta="card[number]">
+				<label class="active required">{{_ "application-pay-card_number"}}</label>
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="colonia" id="address-2" placeholder='{{_ "application-pay-address_2"}}'>
+				<input type="text" id="cvc" placeholder="XXX" size="4" data-conekta="card[cvc]">
+				<label class="active required">{{_ "application-pay-cvc"}}</label>
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="municipio" id="city" placeholder='{{_ "application-pay-city"}}' value="{{city}}">
+				<input type="text" id="exp-month" placeholder="MM" size="2" data-conekta="card[exp_month]">
+				<label class="active required">{{_ "application-pay-exp_month"}}</label>
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="cp" id="postal-code" placeholder='{{_ "application-pay-postal_code"}}' value="{{postalCode}}">
-			</div>
-			<div class="input-field col s12 m6">
-				<input type="text" name="estado" id="state" placeholder='{{_ "application-pay-state"}}' value="{{state}}">
-			</div>
-			<div class="input-field col s12 m6">
-				<input type="text" name="pais" id="country" placeholder='{{_ "application-pay-country"}}'>
+				<input type="text" id="exp-year" placeholder="YYYY" size="4" data-conekta="card[exp_year]">
+				<label class="active required">{{_ "application-pay-exp_year"}}</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12 m6">
-				<input type="text" name="telefono" id="phone" placeholder="XXX XXX XXXX" value="{{contact.phone}}">
-				<label for="telefono" class="active required">{{_ "application-pay-phone"}}</label>
+				<input type="text" name="address-1" id="address-1" placeholder='{{_ "application-pay-address_1"}}'>
 			</div>
 			<div class="input-field col s12 m6">
-				<input type="text" name="telefono" id="cell" placeholder="XXX XXX XXXX" value="{{contact.phone}}">
-				<label for="telefono" class="active required">{{_ "application-pay-cell"}}</label>
+				<input type="text" name="address-2" id="address-2" placeholder='{{_ "application-pay-address_2"}}'>
+			</div>
+			<div class="input-field col s12 m6">
+				<input type="text" name="city" id="city" placeholder='{{_ "application-pay-city"}}' value="{{city}}">
+			</div>
+			<div class="input-field col s12 m6">
+				<input type="text" name="postal-code" id="postal-code" placeholder='{{_ "application-pay-postal_code"}}' value="{{postalCode}}">
+			</div>
+			<div class="input-field col s12 m6">
+				<input type="text" name="state" id="state" placeholder='{{_ "application-pay-state"}}' value="{{state}}">
+			</div>
+<!--
+			<div class="input-field col s12 m6">
+				<input type="text" name="country" id="country" placeholder='{{_ "application-pay-country"}}'>
+			</div>
+-->
+		</div>
+		<div class="row">
+			<div class="input-field col s12 m6">
+				<input type="text" name="tel" id="tel" placeholder="XXX XXX XXXX" value="{{contact.phone}}">
+				<label for="tel" class="active required">{{_ "application-pay-phone"}}</label>
 			</div>
 		</div>
 		<div class="row">

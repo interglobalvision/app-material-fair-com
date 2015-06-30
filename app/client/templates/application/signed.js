@@ -13,67 +13,53 @@ Template.signed.rendered = function () {
 };
 
 Template.signed.events({
-  'click #submit-payment': function(e) {
+  'submit #pay': function(e) {
     e.preventDefault();
+
+    var $form = $(e.currentTarget);
+    var data = {
+      applicationId: $('#application-id').val(),
+      name: $('#name').val(),
+      address1: $('#address-1').val(),
+      address2: $('#address-2').val(),
+      city: $('#city').val(),
+      state: $('#state').val(),
+      postalCode: $('#postal-code').val(),
+      country: $('#country').val(),
+      tel: $('#tel').val(),
+    };
 
     // Disable submit button
     $('#submit-payment').attr('disabled','disabled');
 
-    var paymentData = {
-      "data[nombre]": $('#first-name').val(),
-      "data[apellidos]": $('#last-name').val(),
-      "data[numeroTarjeta]": $('#card-number').val().replace(/\D/g,''),
-      "data[cvt]": $('#cvc').val().replace(/\D/g,''),
-      "data[cp]": $('#postal-code').val(),
-      "data[mesExpiracion]": $('#exp-month').val().replace(/\D/g,''),
-      "data[anyoExpiracion]": $('#exp-year').val().replace(/\D/g,''),
-      "data[telefono]": $('#phone').val().replace(/\D/g,''),
-      "data[celular]": $('#cell').val().replace(/\D/g,''),
-      "data[calleyNumero]": $('#address-1').val(),
-      "data[colonia]": $('#address-2').val(),
-      "data[municipio]": $('#city').val(),
-      "data[estado]": $('#state').val(),
-      "data[pais]": $('#country').val(),
-    },
-    applicationId = $('#application-id').val();
+    Conekta.token.create($form, function(result) {
+      data.token = result.id;
 
-    function incomplete() {
-      var result = false;
-      var emptyFields;
+      Meteor.call('makePayment', data, function(error, result) {
 
-      $.each(paymentData, function(key, value) {
-        if (value === '') {
-          emptyFields = true;
-          console.log(key, value);
-        } else {
-          emptyFields = false;
-        }
+        console.log(result);
 
-        if (emptyFields) {
-          result = true;
-        }
-      });
-
-      return result;
-    }
-
-    if (incomplete()) {
-      Materialize.toast('Please complete all fields.', 3000);
-      $('#submit-payment').removeAttr('disabled');
-    } else {
-      Meteor.call('makePayment', paymentData, applicationId, function(error, result) {
         if (error) {
+
+          console.log(error);
           Materialize.toast(error.reason, 3000);
           $('#submit-payment').removeAttr('disabled');
-        } else if (result === 1) {
+
+        } else {
+
           Materialize.toast('Thanks for your payment.', 3000);
-        } else if (result === 0) {
-          Materialize.toast('The transaction was denied. Please make sure all fields are completed correctly.', 3000);
-          $('#submit-payment').removeAttr('disabled');
-          Session.set('paymentErrors', (Session.get('paymentErrors') + 1));
+
         }
       });
-    }
+
+    }, function(result) {
+
+        console.log(result);
+        Materialize.toast(result.message, 3000);
+        $('#submit-payment').removeAttr('disabled');
+
+    });
+
   },
 
   'click #request-alt': function() {

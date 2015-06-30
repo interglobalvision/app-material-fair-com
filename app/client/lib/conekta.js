@@ -1,0 +1,1 @@
+Conekta.setPublishableKey(Meteor.settings.public.conekta_public_sandbox);

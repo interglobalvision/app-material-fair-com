@@ -19,6 +19,7 @@ gulp.task('lintjs', function () {
     '!app/.meteor/**/*.js',
     '!app/packages/**/*.js',
     '!node_modules/**/*.js',
+    '!app/client/lib/*.js',
   ])
   .pipe(jshint())
   .pipe(jshint.reporter('default'))

@@ -1,41 +1,74 @@
 Meteor.methods({
   // Payment methods
-  makePayment: function (params, applicationId) {
-    this.unblock();
+  makePayment: function (data) {
 
-    check(applicationId, String);
+    check(data, Object);
+    check(data.token, String);
+    check(data.applicationId, String);
 
-    params['data[email]'] = Meteor.user().emails[0].address;
-    params.method = 'transaccion';
-    params['data[monto]'] = '1.00';
-    params['data[divisa]'] = 'USD';
-    params['data[idUsuario]'] = Meteor.settings.pagofacil_usuario;
-    params['data[idSucursal]'] = Meteor.settings.pagofacil_sucursal;
-    params['data[idServicio]'] = 3;
+    var result = false;
+    var _error;
 
-    var result,
-// dev url for dev keys [lol]
-//     url = 'https://www.pagofacil.net/st/public/Wsrtransaccion/index/format/json',
-    url = 'https://www.pagofacil.net/ws/public/Wsrtransaccion/index/format/json',
-    apiResult = HTTP.call('POST', url, {params: params,});
+    var conekta = Meteor.npmRequire('conekta');
 
-    console.log(apiResult.data);
-//     console.log(apiResult.data.WebServices_Transacciones.transaccion.error);
+    conekta.api_key = Meteor.settings.conekta_private_sandbox;
 
-    var auth = apiResult.data.WebServices_Transacciones.transaccion.autorizado,
-    transactionId = apiResult.data.WebServices_Transacciones.transaccion.transaccion,
-    transaction = apiResult.data.WebServices_Transacciones.transaccion;
+    var email = Meteor.user().emails[0].address;
 
-    if (auth === '1') {
-      Applications.update(applicationId, {$set: {transactionId: transactionId, transaction: transaction, status: 'paid',},});
-      result = 1;
-      Meteor.call('paymentSuccessEmail', Meteor.userId());
+    conekta.Charge.create({
+      "amount": 125,
+      "currency": "USD",
+      "description": "Material Art Fair",
+      "reference_id": data.applicationId,
+      "card": data.token,
+      "details": {
+        "email": email,
+        "line_items": [{
+          "name": "Material Art Fair application fee",
+          "sku": "maf_fee_1",
+          "unit_price": 125,
+          "description": "Art Fair Application",
+          "quantity": 1,
+          "type": "application",
+        },],
+        "phone": data.tel,
+        "billing_address": {
+          "street1": data.address1,
+          "street2": data.address2,
+          "city": data.city,
+          "state": data.state,
+          "zip": data.postalCode,
+        },
+      },
+    },
+      function(charge) {
+
+        console.log(charge.id);
+        console.log(charge.status);
+        console.log(charge.reference_id);
+
+        Applications.update(data.applicationId, {$set: {transactionId: charge.id, transaction: charge, status: 'paid',},});
+        Meteor.call('paymentSuccessEmail', Meteor.userId());
+
+        result = true;
+
+    }, function(error) {
+
+      _error = error;
+
+    });
+
+    console.log(_error);
+
+    if (result) {
+
+      return result;
+
     } else {
-      console.log(apiResult.data.WebServices_Transacciones.transaccion.error);
-      result = 0;
-    }
 
-    return result;
+      throw new Meteor.Error('card-payment-failed', _error.message_to_purchaser);
+
+    }
   },
 
 });
