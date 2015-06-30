@@ -10,6 +10,7 @@
         <h5 class="u-inline-block">{{#with afFieldLabelText name=this.atts.name}}{{this}}{{/with}}</h5>
         <ul class="list-group">
           {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+          <div class="divider"></div>
           <li class="list-group-item section">
             {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
             <a type="a" class="right btn waves-effect red autoform-remove-item">
@@ -20,6 +21,7 @@
           </li>
           {{/afEachArrayItem}}
           {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+          <div class="divider"></div>
           <li class="list-group-item section">
             <a type="a" class="btn waves-effect autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add {{#with afFieldLabelText name=this.atts.name}}{{this}}{{/with}}</a>
           </li>
@@ -28,5 +30,4 @@
       </div>
     </div>
   </div>
-  <div class="divider"></div>
 </template>
