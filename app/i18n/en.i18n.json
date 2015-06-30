@@ -236,7 +236,7 @@
       },
 
       "proposal": {
-        "label": "Proposal for Material Art Fair 2016",
+        "label": "Material Art Fair 2016 Booth Proposal",
         "text": "<p class='flow-text'>In this section, you will provide information about your gallery, selected artists and booth proposal that will allow the Selection Committee to make an informed decision with respect to your application.</p>"
       },
       "galleryHistory": {
@@ -252,7 +252,7 @@
         "label": "Artists represented by the gallery"
       },
       "standProposal": {
-        "label": "Proposal"
+        "label": "Booth Proposal for Material Art Fair 2016"
       },
 
       "artists": {
