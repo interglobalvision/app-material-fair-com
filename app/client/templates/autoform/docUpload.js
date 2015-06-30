@@ -20,7 +20,7 @@ Template.docUpload.events({
         Materialize.toast(error, 3000);
       } else {
         $hiddenInput.val(downloadUrl);
-        $hiddenInput.parent().append('<a target="_blank" class="btn blue doc-upload-link" href="' + downloadUrl + '">CV</a>');
+        $hiddenInput.parent().append('<a class="btn-floating blue doc-upload-link" href="' + downloadUrl + '"><i class="zmdi zmdi-file-text"></i></a>');
         Materialize.toast('Upload successful', 3000);
       }
     });
