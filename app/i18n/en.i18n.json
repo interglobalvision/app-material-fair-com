@@ -24,7 +24,11 @@
   "forgot-submit": "Send me a new one",
 
 // Homepage
-  "homepage-welcome": "Welcome to the online application for Material Art Fair 2016. Please click below to proceed in your language of choice.",
+  "homepage-line1": "Welcome to the online application for Material Art Fair 2016.",
+  "homepage-line2": "Please click below to proceed in your language of choice.",
+
+// Welcome
+  "welcome": "Please click register to begin a new application or login to continue working on an existing application.",
 
 // Dashboard
   "dashboard": "Dashboard",

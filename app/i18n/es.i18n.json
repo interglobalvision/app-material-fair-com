@@ -24,7 +24,12 @@
   "forgot-submit": "Enviame uno nuevo",
 
 // Homepage
-  "homepage-welcome": "Bienvenidos a la aplicación en línea de Material Art Fair 2016. Por favor haz click abajo para proceder en tu idioma preferida.",
+  "homepage-line1": "Bienvenidos a la aplicación en línea de Material Art Fair 2016.",
+  "homepage-line2": "Por favor haz click abajo para proceder en tu idioma preferida.",
+
+// Welcome
+  "welcome": "Por favor haz click en registrate para empezar una nueva aplicación o haz click en iniciar sesión para seguir trabajando en una aplicación existente.",
+
 
 // Dashboard
 	"dashboard": "Dashboard",

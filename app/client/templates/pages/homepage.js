@@ -11,39 +11,41 @@ Template.homepage.rendered = function () {
 };
 
 Template.homepage.events({
-  'click #es-registrar': function() {
-    TAPi18n.setLanguage('es').done(function () {
+  'click .continue': function(event) {
+    event.preventDefault();
+
+    var lang = $(event.target).attr('data-lang');
+
+    if (lang === 'es') {
       $('.language').prop('checked', true);
-      Router.go('/signup');
-    }).fail(function (error) {
-      console.log(error);
-    });
-  },
-
-  'click #es-ingresar': function() {
-    TAPi18n.setLanguage('es').done(function () {
-      $('.language').prop('checked', true);
-      Router.go('/login');
-    }).fail(function (error) {
-      console.log(error);
-    });
-  },
-
-  'click #en-register': function() {
-    TAPi18n.setLanguage('en').done(function () {
+    } else {
       $('.language').prop('checked', false);
-      Router.go('/signup');
-    }).fail(function (error) {
-      console.log(error);
-    });
-  },
+    }
 
-  'click #en-login': function() {
-    TAPi18n.setLanguage('en').done(function () {
-      $('.language').prop('checked', false);
-      Router.go('/login');
-    }).fail(function (error) {
-      console.log(error);
-    });
+    if (!Meteor.userId()) {
+      TAPi18n.setLanguage(lang).done(function () {
+        if (lang === 'es') {
+          $('.language').prop('checked', true);
+        }
+
+        Router.go('/welcome');
+      }).fail(function (error) {
+        console.log(error);
+      });
+    } else {
+      var userId = Meteor.userId();
+
+      TAPi18n.setLanguage(lang).done(function () {
+        if (Roles.userIsInRole(userId, 'applicant')) {
+          Router.go('/application');
+        } else if (Roles.userIsInRole(userId, 'committee') && !Roles.userIsInRole(userId, 'admin')) {
+          Router.go('/submissions');
+        } else if (Roles.userIsInRole(userId, 'admin')) {
+          Router.go('/admin');
+        } 
+      }).fail(function (error) {
+        console.log(error);
+      });
+    }
   },
 });

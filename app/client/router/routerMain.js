@@ -24,7 +24,7 @@ Router.onBeforeAction(function () {
   },
 
   {
-    except: ['signup','homepage','forgot',],
+    except: ['signup','homepage','forgot','welcome',],
   }
 );
 
@@ -36,6 +36,10 @@ Router.map(function() {
 
   this.route('homepage', {
     path: '/',
+  });
+
+  this.route('welcome', {
+    path: '/welcome', 
   });
 
   // Users
