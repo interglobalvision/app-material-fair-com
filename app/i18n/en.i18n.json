@@ -63,7 +63,7 @@
   "application-review": "Review",
   "application-save": "Save",
 
-  "application-review_sign": "Review and Sign",
+  "application-review_sign": "EXHIBITOR APPLICATION:<br />TERMS & CONDITIONS (STEP 3 OF 4)",
   "application-edit": "Edit",
 
   "application-terms": "TERMS AND CONDITIONS OF PARTICIPATION",
@@ -142,8 +142,7 @@
   "application-signature-pad": "Sign here",
   "application-signature-clear": "Clear signature",
 
-  "application-submit-warning": "When you submit...",
-  "application-submit": "Submit",
+  "application-submit": "I accept",
 
   "application-please_pay": "Thank you again for your application to the 2016 edition of Material Art Fair. In order to complete the submission of your application, there is a $125 usd application fee, payable by any major credit or debit card below. Please note that the charge will appear on your statement as having been made by Pagofacil.",
   "application-pay-first_name": "First name",

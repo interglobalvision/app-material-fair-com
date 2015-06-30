@@ -1,5 +1,5 @@
 <template name="submitted">
-	<h3>{{_ "application-review_sign"}}</h3>
+	<h3>{{{_ "application-review_sign"}}}</h3>
   <div class="row">
   	<div class="col s12">
 		  <div class="section">
@@ -206,9 +206,8 @@
 	<div class="row">
 		<div class="col s12">
 			<div class="section">
-				<h4>{{_ "application-terms"}}</h4>
+				<h5>{{_ "application-terms"}}</h5>
 				<div class="terms-and-conditions">{{{_ "application-terms-text"}}}</div>
-				<p class="flow-text">{{_ "application-terms-confirmation"}}</p>
 			</div>
 		</div>
 	</div>
@@ -230,7 +229,7 @@
 
 	  <div class="row">
 	  	<div class="col s12">
-		  	<p>{{_ "application-submit-warning"}}</p>
+				<p class="flow-text">{{_ "application-terms-confirmation"}}</p>
 		  	<a class="btn" id="backToForm">{{_ "application-edit"}}</a>
 			  <a class="btn indigo darken-4" id="reviewSign">{{_ "application-submit"}}</a>
 			</div>
@@ -238,48 +237,4 @@
 	</div>
 	{{/autoForm}}
 
-
-  <!--form>
-		<div class="section">
-			<h4>{{_ "application-signature"}}</h4>
-			<div class="row">
-					<div class="input-field col s12">
-			      <input id="signature-name" type="text" placeholder='{{_ "application-signature-name"}}'>
-			      <label class="active" for="typed-signature">{{_ "application-signature-name"}}</label>
-			    </div>
-			    <div class="input-field col s12">
-			      <input id="signature-gallery" type="text" placeholder='{{_ "application-signature-gallery_name"}}'>
-			      <label class="active" for="typed-signature">{{_ "application-signature-gallery_name"}}</label>
-			    </div>
-			    <div class="input-field col s12">
-			      <input id="signature-date" type="text" placeholder='{{_ "application-signature-date"}}'>
-			      <label class="active" for="typed-signature">{{_ "application-signature-date"}}</label>
-			    </div>
-			    <div class="col s12">
-				    <label class="active">{{_ "application-signature-pad"}}</label>
-					  <div class="card white">
-					  	<div class="card-content" id="signature-card">
-					    	<canvas id="signature-pad"></canvas>
-					  	</div>
-					  </div>
-					</div>
-		  		<div class="col s12">
-						<a id="clearSign" class="u-pointer">{{_ "application-signature-clear"}}</a>
-					</div>
-
-			</div>
-	  </div>
-
-	  <div class="divider"></div>
-
-	  <div class="section">
-	  	<div class="row">
-		  	<div class="col s12">
-			  	<p>{{_ "application-submit-warning"}}</p>
-			  	<a class="btn" id="backToForm">{{_ "application-edit"}}</a>
-				  <a class="btn indigo darken-4" id="reviewSign">{{_ "application-submit"}}</a>
-				</div>
-			</div>
-		</div>
-	</form-->
 </template>
