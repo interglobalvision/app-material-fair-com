@@ -3,14 +3,6 @@
   <form id="pay" enctype="application/x-www- form-urlencoded" action="" method="post">
     <input type="hidden" value="{{ _id }}" id="application-id">
   	<div class="row">
-<!--
-	  	<div class="input-field col s12 m6">
-		  	<input type="text" name="nombre" id="first-name" placeholder='{{_ "application-pay-first_name"}}'>
-			</div>
-			<div class="input-field col s12 m6">
-				<input type="text" name="nombre" id="last-name" placeholder='{{_ "application-pay-last_name"}}'>
-			</div>
--->
 	  	<div class="input-field col s12">
 		  	<input type="text" name="name" id="name" size="20" data-conekta="card[name]">
 				<label for="name" class="active required">{{_ "application-pay-name"}}</label>
@@ -50,11 +42,6 @@
 			<div class="input-field col s12 m6">
 				<input type="text" name="state" id="state" placeholder='{{_ "application-pay-state"}}' value="{{state}}">
 			</div>
-<!--
-			<div class="input-field col s12 m6">
-				<input type="text" name="country" id="country" placeholder='{{_ "application-pay-country"}}'>
-			</div>
--->
 		</div>
 		<div class="row">
 			<div class="input-field col s12 m6">

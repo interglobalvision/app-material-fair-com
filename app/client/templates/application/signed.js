@@ -29,7 +29,6 @@ Template.signed.events({
       tel: $('#tel').val(),
     };
 
-    // Disable submit button
     $('#submit-payment').attr('disabled','disabled');
 
     Conekta.token.create($form, function(result) {
@@ -43,6 +42,7 @@ Template.signed.events({
 
           console.log(error);
           Materialize.toast(error.reason, 3000);
+          Session.set('paymentErrors', (Session.get('paymentErrors') + 1));
           $('#submit-payment').removeAttr('disabled');
 
         } else {
@@ -52,10 +52,10 @@ Template.signed.events({
         }
       });
 
-    }, function(result) {
+    }, function(error) {
 
-        console.log(result);
-        Materialize.toast(result.message, 3000);
+        console.log(error);
+        Materialize.toast(error.message, 3000);
         $('#submit-payment').removeAttr('disabled');
 
     });
