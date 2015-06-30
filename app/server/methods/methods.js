@@ -42,6 +42,7 @@ Meteor.methods({
             "city": data.city,
             "state": data.state,
             "zip": data.postalCode,
+            "country": data.country,
           },
         },
       },
