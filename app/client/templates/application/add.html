@@ -1,35 +1,142 @@
 <template name="saved">
-  <div class="row">
     <div class="section">
-      <div class="col s12">
-        <p>{{_ "application-introduction-text"}}</p>
-      </div>
+        <h3>{{_ "application-title"}}</h3>
     </div>
-  </div>
-  <div class="row">
     {{#autoForm schema="ApplicationSchema" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted, signed, paid, approved, rating" }}
-    <div class="col s12">
       <div class="section">
-        {{> afQuickField name='general'}}
-      </div>
-      <div class="divider"></div>
-      <div class="section">
-        {{> afQuickField name='address'}}
-      </div>
-      <div class="divider"></div>
-      <div class="section">
-        {{> afQuickField name='contact'}}
-      </div>
-      <div class="divider"></div>
-      <div class="section">
-        {{> afQuickField name='social'}}
-      </div>
-      <div class="divider"></div>
-      <div class="section">
-        {{> afQuickField name='proposal'}}
+        <div class="card">
+          <div class="card-content">
+            {{{_ "schemas.application.general.text"}}}
+          </div>
+        </div>
       </div>
       <div class="section">
-        {{> afArrayField name='artists'}}
+        <div class="card">
+          <div class="card-content">
+            <h4>{{_ "schemas.application.general.label"}}</h4>
+            {{> afQuickField name='galleryName'}}
+            {{> afQuickField name='address1'}}
+            {{> afQuickField name='address2'}}
+            {{> afQuickField name='city'}}
+            {{> afQuickField name='state'}}
+            {{> afQuickField name='postalCode'}}
+            {{> afQuickField name='galleryPhone'}}
+            {{> afQuickField name='galleryEmail'}}
+            {{> afQuickField name='website'}}
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default saveApplication">{{_ "application-save"}}</button> 
+      <div class="section">
+        <div class="card">
+          <div class="card-content">
+            <h4>{{_ "schemas.application.social.label"}}</h4>
+            {{> afQuickField name='twitter'}}
+            {{> afQuickField name='facebook'}}
+            {{> afQuickField name='tumblr'}}
+            {{> afQuickField name='instagram'}}
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default saveApplication">{{_ "application-save"}}</button> 
+      <div class="section">
+        <div class="card">
+          <div class="card-content">
+            <h4>{{_ "schemas.application.contact.label"}}</h4>
+            {{{_ "schemas.application.contact.text"}}}
+            {{> afQuickField name='contactName'}}
+            {{> afQuickField name='contactEmail'}}
+            {{> afQuickField name='contactPhone'}}
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default saveApplication">{{_ "application-save"}}</button> 
+      <div class="section">
+        <div class="card">
+          <div class="card-content">
+            <h4>{{_ "schemas.application.proposal.label"}}</h4>
+            {{{_ "schemas.application.proposal.text"}}}
+            {{> afQuickField name='galleryHistory'}}
+            {{> afQuickField name='artistsRepresented'}}
+            {{> afQuickField name='galleryYear'}}
+            {{> afQuickField name='participation'}}
+            {{> afQuickField name='standProposal'}}
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default saveApplication">{{_ "application-save"}}</button> 
+      <div class="section">
+        <div class="card">
+          <div class="card-content">
+            <h4>{{_ "schemas.application.artists.title"}}</h4>
+            {{> afArrayField name='artists'}}
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default saveApplication">{{_ "application-save"}}</button> 
+      <div class="section">
+        <div class="card">
+          <div class="card-content">
+            <h4>{{_ "schemas.application.booth.label"}}</h4>
+            {{{_ "schemas.application.booth.text"}}}
+            <div class="divider"></div>
+            <div class="section">
+              <h5>{{_ "schemas.application.booth.project.label"}}</h5>
+              <div class="row">
+                <div class="col s4">
+                  {{> afFormGroup name='booth.project.single' label=false}}
+                  <div class="booth-size">
+                    {{_ "schemas.application.booth.project.single.description"}}
+                  </div>
+                </div>
+                <div class="col s4">
+                  {{> afFormGroup name='booth.project.double' label=false}}
+                  <div class="booth-size">
+                    {{_ "schemas.application.booth.project.double.description"}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+              <h5>{{_ "schemas.application.booth.principal.label"}}</h5>
+              <div class="row">
+                <div class="col s4">
+                  {{> afFormGroup name='booth.principal.small' label=false}}
+                  <div class="booth-size">
+                    {{_ "schemas.application.booth.principal.small.description"}}
+                  </div>
+                </div>
+                <div class="col s4">
+                  {{> afFormGroup name='booth.principal.medium' label=false}}
+                  <div class="booth-size">
+                    {{_ "schemas.application.booth.principal.medium.description"}}
+                  </div>
+                </div>
+                <div class="col s4">
+                  {{> afFormGroup name='booth.principal.mediumPlus' label=false}}
+                  <div class="booth-size">
+                    {{_ "schemas.application.booth.principal.mediumPlus.description"}}
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s4">
+                  {{> afFormGroup name='booth.principal.large' label=false}}
+                  <div class="booth-size">
+                    {{_ "schemas.application.booth.principal.large.description"}}
+                  </div>
+                </div>
+                <div class="col s8">
+                  {{> afFormGroup name='booth.principal.extraLarge' label=false}}
+                  <div class="booth-size">
+                    {{{_ "schemas.application.booth.principal.extraLarge.description"}}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="section">
         <div class="progress">
@@ -38,12 +145,10 @@
       </div>
       <div class="divider"></div>
       <div class="section">
-        <button id="saveApplication" type="submit" class="btn btn-default">{{_ "application-save"}}</button>   
+        <button type="submit" class="btn btn-default saveApplication">{{_ "application-save"}}</button>   
         <button id="submitApplication" type="submit" class="btn indigo darken-4 btn-primary">{{_ "application-review"}}</button>
       </div>
-    </div>
     {{/autoForm}}
-  </div>
 
   <!-- LEAVE THIS HERE, HELPS FOR TESTING -->
   <!--    {{> quickForm schema="Schemas.applicationForm" collection="Applications" doc=this id="insertApplicationForm" type="update" buttonContent="Review" omitFields="submitted,signed,paid,approved, rating" }}

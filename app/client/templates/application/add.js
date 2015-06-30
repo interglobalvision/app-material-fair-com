@@ -7,7 +7,7 @@ Template.saved.rendered = function () {
 };
 
 Template.saved.events({
-  'click #saveApplication': function(e) {
+  'click .saveApplication': function(e) {
     e.preventDefault();
 
     document.querySelector('.progress').style.opacity = 1;
