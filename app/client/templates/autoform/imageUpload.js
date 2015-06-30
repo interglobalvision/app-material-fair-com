@@ -1,9 +1,14 @@
 var uploader,
 $hiddenInput,
-$fileInput;
+$fileInput,
+$thumbnail;
 
 Template.imageUpload.rendered = function () {
   uploader = new Slingshot.Upload("imageUpload");
+
+  Tracker.autorun(function () {
+    $('.image-upload-thumbnail[src=""]').hide();
+  });
 };
 
 Template.imageUpload.events({
@@ -12,7 +17,7 @@ Template.imageUpload.events({
 
     $hiddenInput = $('#' + this.atts.id);
     $fileInput = $hiddenInput.siblings('.image-upload-input');
-    var $thumbnail = $hiddenInput.siblings('.image-upload-thumbnail');
+    $thumbnail = $hiddenInput.siblings('.image-upload-thumbnail');
 
     uploader.send($hiddenInput.siblings('.image-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
@@ -21,7 +26,7 @@ Template.imageUpload.events({
         Materialize.toast(error, 3000);
       } else {
         $hiddenInput.val(downloadUrl);
-        $thumbnail.attr('src', downloadUrl);
+        $thumbnail.attr('src', downloadUrl).show();
         Materialize.toast('Upload successful', 3000);
       }
     });
