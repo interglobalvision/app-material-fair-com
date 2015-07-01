@@ -59,10 +59,10 @@
   "application": "Application",
   "application-title": "Exibitor Application",
 
-  "application-review": "Review",
+  "application-review": "Save and Continue to next step",
   "application-save": "Save",
 
-  "application-review_sign": "EXHIBITOR APPLICATION:<br />TERMS & CONDITIONS (STEP 3 OF 4)",
+  "application-review_sign": "Review & Sign",
   "application-edit": "Edit",
 
   "application-add": "Add",
@@ -187,7 +187,8 @@
         "label": "Address line 1"
       },
       "address2": {
-        "label": "Address line 2"
+        "label": "Address line 2 (if applicable)",
+        "review": "Address line 2"
       },
       "city": {
         "label": "City"
