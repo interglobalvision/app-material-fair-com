@@ -6,8 +6,7 @@ Accounts.emailTemplates.enrollAccount.subject = function (user) {
 };
 
 Accounts.emailTemplates.enrollAccount.text = function (user, url) {
-  var role = user.roles[0],
-  lang = user.profile.lang;
+  var lang = user.profile.lang;
 
   if (lang === 'es') {
 
