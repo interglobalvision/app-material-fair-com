@@ -237,8 +237,9 @@
 				<h4>{{_ "schemas.sign.signature.title"}}</h4>
 				{{> afQuickField name='signatureName'}}
 				{{> afQuickField name='signatureGallery'}}
-				{{> afQuickField name='signatureDate'}}
-        {{> afQuickField name='signature'}}
+				{{> afQuickField name='signatureDate'}} 
+				<label>{{_ "schemas.sign.signature.signHere"}}</label>
+        {{> afFormGroup name='signature' label=false}}
 				<a id="clearSign" class="u-pointer">{{_ "application-signature-clear"}}</a>
 				<div class="section">
 					<div class="divider"></div>
