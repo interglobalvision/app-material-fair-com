@@ -207,6 +207,9 @@
         "label": "Postal code (if applicable)",
         "review": "Postal code"
       },
+      "country": {
+        "label": "Country"
+      },
 
       "social": {
         "label": "Social networks"
@@ -358,7 +361,8 @@
         "label": "Date"
       },
       "signature": {
-        "label": "Sign here",
+        "label": "Signature",
+        "signHere": "Sign here",
         "title": "Signature"
       }
     }
