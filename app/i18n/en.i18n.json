@@ -341,22 +341,19 @@
     },
 
     "sign": {
+      "signatureName": {
+        "label": "Name",
+        "placeholder": "Legal name"
+      },
+      "signatureGallery": {
+        "label": "Gallery name"
+      },
+      "signatureDate": {
+        "label": "Date"
+      },
       "signature": {
-        "label": "Signature",
-        "name": {
-          "label": "Name",
-          "placeholder": "Legal name"
-        },
-        "galleryName": {
-          "label": "Gallery name"
-        },
-        "date": {
-          "label": "Date",
-          "placeholder": "DD/MM/YYYY"
-        },
-        "signature": {
-          "label": "Sign here"
-        }
+        "label": "Sign here",
+        "title": "Signature"
       }
     }
   }

@@ -198,24 +198,20 @@
 		</div>
 	</div>
 
-  <div class="divider"></div>
-
   {{#autoForm schema="SignatureSchema" collection="Applications" doc=this id="signApplication" type="update" }}
   <div class="section">
-  	<div class="row">
-		  <div class="col s12">
-	      <div class="section">
-	        {{> afQuickField name='signature'}}
-	      </div>
-	    </div>
-	    <div class="col s12">
+  	<div class="card">
+			<div class="card-content">
+				<h4>{{_ "schemas.sign.signature.title"}}</h4>
+				{{> afQuickField name='signatureName'}}
+				{{> afQuickField name='signatureGallery'}}
+				{{> afQuickField name='signatureDate'}}
+        {{> afQuickField name='signature'}}
 				<a id="clearSign" class="u-pointer">{{_ "application-signature-clear"}}</a>
-			</div>
-	  </div>
-
-	  <div class="row">
-	  	<div class="col s12">
-				<p class="flow-text">{{_ "application-terms-confirmation"}}</p>
+				<div class="section">
+					<div class="divider"></div>
+					<p>{{_ "application-terms-confirmation"}}</p>
+				</div>
 		  	<a class="btn" id="backToForm">{{_ "application-edit"}}</a>
 			  <a class="btn indigo darken-4" id="reviewSign">{{_ "application-submit"}}</a>
 			</div>

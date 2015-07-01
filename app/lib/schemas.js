@@ -266,22 +266,19 @@ ApplicationSchema = new SimpleSchema({
 });
 
 SignatureSchema = new SimpleSchema({
-  signature: {
-    type: Object,
-  },
-  'signature.name': {
+  signatureName: {
     type: String,
   },
-  'signature.galleryName': {
+  signatureGallery: {
     type: String,
   },
-  'signature.date': {
+  signatureDate: {
     type: String,
     autoform: {
       type: 'fixedDate',
     },
   },
-  'signature.signature': {
+  signature: {
     type: String,
     autoform: {
       type: 'signaturePad',
