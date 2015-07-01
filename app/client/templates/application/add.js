@@ -3,7 +3,7 @@ Template.saved.rendered = function () {
 
   $('select').material_select();
 
-  $('textarea').addClass('materialize-textarea');
+  $('textarea').addClass('materialize-textarea').characterCounter();
 };
 
 Template.saved.events({

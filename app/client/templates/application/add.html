@@ -20,6 +20,7 @@
             {{> afQuickField name='city'}}
             {{> afQuickField name='state'}}
             {{> afQuickField name='postalCode'}}
+            {{> afQuickField name='country' firstOption=''}}
             {{> afQuickField name='galleryPhone'}}
             {{> afQuickField name='galleryEmail'}}
             {{> afQuickField name='website'}}
@@ -56,11 +57,11 @@
           <div class="card-content">
             <h4>{{_ "schemas.application.proposal.label"}}</h4>
             {{{_ "schemas.application.proposal.text"}}}
-            {{> afQuickField name='galleryHistory'}}
-            {{> afQuickField name='artistsRepresented'}}
+            {{> afQuickField name='galleryHistory' template='materialized'}}
+            {{> afQuickField name='artistsRepresented' template='materialized'}}
             {{> afQuickField name='galleryYear'}}
             {{> afQuickField name='participation'}}
-            {{> afQuickField name='standProposal'}}
+            {{> afQuickField name='standProposal' template='materialized'}}
           </div>
         </div>
       </div>
@@ -84,13 +85,13 @@
               <h5>{{_ "schemas.application.booth.project.label"}}</h5>
               <div class="row">
                 <div class="col m4 s12">
-                  {{> afFormGroup name='project.single' label=false}}
+                  {{> afQuickField name='single' label=false}}
                   <div class="booth-size">
                     {{_ "schemas.application.booth.project.single.description"}}
                   </div>
                 </div>
                 <div class="col m4 s12">
-                  {{> afFormGroup name='project.double' label=false}}
+                  {{> afFormGroup name='double' label=false}}
                   <div class="booth-size">
                     {{_ "schemas.application.booth.project.double.description"}}
                   </div>
@@ -102,31 +103,31 @@
               <h5>{{_ "schemas.application.booth.principal.label"}}</h5>
               <div class="row">
                 <div class="col m4 s12">
-                  {{> afFormGroup name='principal.small' label=false}}
+                  {{> afFormGroup name='small' label=false}}
                   <div class="booth-size">
                     {{_ "schemas.application.booth.principal.small.description"}}
                   </div>
                 </div>
                 <div class="col m4 s12">
-                  {{> afFormGroup name='principal.medium' label=false}}
+                  {{> afFormGroup name='medium' label=false}}
                   <div class="booth-size">
                     {{_ "schemas.application.booth.principal.medium.description"}}
                   </div>
                 </div>
                 <div class="col m4 s12">
-                  {{> afFormGroup name='principal.mediumPlus' label=false}}
+                  {{> afFormGroup name='mediumPlus' label=false}}
                   <div class="booth-size">
                     {{_ "schemas.application.booth.principal.mediumPlus.description"}}
                   </div>
                 </div>
                 <div class="col m4 s12">
-                  {{> afFormGroup name='principal.large' label=false}}
+                  {{> afFormGroup name='large' label=false}}
                   <div class="booth-size">
                     {{_ "schemas.application.booth.principal.large.description"}}
                   </div>
                 </div>
                 <div class="col m8 s12">
-                  {{> afFormGroup name='principal.extraLarge' label=false}}
+                  {{> afFormGroup name='extraLarge' label=false}}
                   <div class="booth-size">
                     {{{_ "schemas.application.booth.principal.extraLarge.description"}}}
                   </div>
