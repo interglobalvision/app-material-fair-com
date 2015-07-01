@@ -134,12 +134,14 @@
 <p>July, 2015</p>
 <p>Material Art Fair</p>
 <p>Feria de Arte Material México S.A. de C.V.</p>",
+  
   "application-terms-confirmation": "The parties will be bound by signatures made electronic means on the signature line of this document (including, without limitation, by typing one’s name, an 's' mark or other comparable note on the signature line). The parties agree that such signatures are binding and may be transmitted by mail, hand delivery, facsimile, email and/or any other electronic method to the other party or, if applicable, counsel of record for the party, and will have the same binding effect as any original ink signature.",
+  "application-terms-accept": "I / WE HAVE READ THIS AGREEMENT ON BEHALF OF EXHIBITOR IN ITS ENTIRETY, INCLUDING THE RULES AND REGULATIONS, AND AS AGENT/S OF EXHIBITOR, AGREE THAT EXHIBITOR SHALL BE BOUND BY THE TERMS AND CONDITIONS HEREIN.",
 
   "application-signature": "Signature",
   "application-signature-clear": "Clear signature",
 
-  "application-submit": "I accept",
+  "application-submit": "Submit and Continue to Payment",
 
   "application-please_pay": "Thank you again for your application to the 2016 edition of Material Art Fair. In order to complete the submission of your application, there is a $125 usd application fee, payable by any major credit or debit card below. Please note that the charge will appear on your statement as having been made by Pagofacil.",
   "application-pay-first_name": "First name",
