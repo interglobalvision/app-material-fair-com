@@ -36,6 +36,24 @@ AutoForm.addInputType('imageUpload', {
   },
 });
 
+AutoForm.addInputType('igvCheckboxGroup', {
+  template: 'igvCheckboxGroup',
+  valueOut: function () {
+
+    var output = $(this).find('input').map(function(index, item) {
+
+      if ($(item).prop('checked')) {
+        return $(item).val();
+      }
+
+    }).get().join();
+
+    console.log(output);
+
+    return output;
+  },
+});
+
 AutoForm.addInputType('materializedCheckbox', {
   template: 'checkbox_materialized',
   valueOut: function () {

@@ -154,108 +154,35 @@ ApplicationSchema = new SimpleSchema({
   },
 
   // Booth
-  project: {
-    type: Object,
-  },
-  principal: {
-    type: Object,
-  },
-  'project.single': {
-    type: Boolean,
-    optional: true,
-    label: function() {
-      if (TAPi18n.getLanguage() === 'es') {
-        return 'Sencillo';
-      } else {
-        return 'Single';
-      }
-    },
+  'booth': {
+    type: String,
+    label: 'Project Booth Sizes',
+
     autoform: {
-      type: 'materializedCheckbox',
-    },
-  },
-  'project.double': {
-    type: Boolean,
-    optional: true,
-    label: function() {
-      if (TAPi18n.getLanguage() === 'es') {
-        return 'Doble';
-      } else {
-        return 'Double';
-      }
-    },
-    autoform: {
-      type: 'materializedCheckbox',
-    },
-  },
-  'principal.small': {
-    type: Boolean,
-    optional: true,
-    label: function() {
-      if (TAPi18n.getLanguage() === 'es') {
-        return 'Chico';
-      } else {
-        return 'Small';
-      }
-    },
-    autoform: {
-      type: 'materializedCheckbox',
-    },
-  },
-  'principal.medium': {
-    type: Boolean,
-    optional: true,
-    label: function() {
-      if (TAPi18n.getLanguage() === 'es') {
-        return 'Mediano';
-      } else {
-        return 'Medium';
-      }
-    },
-    autoform: {
-      type: 'materializedCheckbox',
-    },
-  },
-  'principal.mediumPlus': {
-    type: Boolean,
-    optional: true,
-    label: function() {
-      if (TAPi18n.getLanguage() === 'es') {
-        return 'Mediano Plus';
-      } else {
-        return 'Medium Plus';
-      }
-    },
-    autoform: {
-      type: 'materializedCheckbox',
-    },
-  },
-  'principal.large': {
-    type: Boolean,
-    optional: true,
-    label: function() {
-      if (TAPi18n.getLanguage() === 'es') {
-        return 'Grande';
-      } else {
-        return 'Large';
-      }
-    },
-    autoform: {
-      type: 'materializedCheckbox',
-    },
-  },
-  'principal.extraLarge': {
-    type: Boolean,
-    optional: true,
-    label: function() {
-      if (TAPi18n.getLanguage() === 'es') {
-        return 'Extra Grande';
-      } else {
-        return 'Extra Large';
-      }
-    },
-    autoform: {
-      type: 'materializedCheckbox',
+      type: 'igvCheckboxGroup',
+      options: function () {
+        if (TAPi18n.getLanguage() === 'es') {
+          return [
+            {id: Random.id(6), type: 'Proyecto', label: 'Sencillo', value: 'single', cost: '3 m2, $525 usd',},
+            {id: Random.id(6), type: 'Proyecto', label: 'Doble', value: 'double', cost: '6 m2, $1050 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Small', value: 'small', cost: '9 m2, $2475 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Medium', value: 'medium', cost: '12 m2, $3300 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Medium Plus', value: 'medium-plus', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Large', value: 'large', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Extra Large', value: 'extra-large', cost: 'Please contact us at <a href="mailto:applications@material-fair.com">applications@material-fair.com</a> for more information.',},
+          ];
+        } else {
+          return [
+            {id: Random.id(6), type: 'Project', label: 'Single', value: 'single', cost: '3 m2, $525 usd',},
+            {id: Random.id(6), type: 'Project', label: 'Double', value: 'double', cost: '6 m2, $1050 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Small', value: 'small', cost: '9 m2, $2475 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Medium', value: 'medium', cost: '12 m2, $3300 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Medium Plus', value: 'medium-plus', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Large', value: 'large', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', label: 'Extra Large', value: 'extra-large', cost: 'Please contact us at <a href="mailto:applications@material-fair.com">applications@material-fair.com</a> for more information.',},
+          ];
+        }
+      },
     },
   },
 
