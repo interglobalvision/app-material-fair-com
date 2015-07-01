@@ -154,10 +154,13 @@ ApplicationSchema = new SimpleSchema({
   },
 
   // Booth
-  booth: {
+  project: {
     type: Object,
   },
-  'booth.project.single': {
+  principal: {
+    type: Object,
+  },
+  'project.single': {
     type: Boolean,
     optional: true,
     label: function() {
@@ -167,12 +170,11 @@ ApplicationSchema = new SimpleSchema({
         return 'Single';
       }
     },
-
     autoform: {
       type: 'materializedCheckbox',
     },
   },
-  'booth.project.double': {
+  'project.double': {
     type: Boolean,
     optional: true,
     label: function() {
@@ -182,12 +184,11 @@ ApplicationSchema = new SimpleSchema({
         return 'Double';
       }
     },
-
     autoform: {
       type: 'materializedCheckbox',
     },
   },
-  'booth.principal.small': {
+  'principal.small': {
     type: Boolean,
     optional: true,
     label: function() {
@@ -197,12 +198,11 @@ ApplicationSchema = new SimpleSchema({
         return 'Small';
       }
     },
-
     autoform: {
       type: 'materializedCheckbox',
     },
   },
-  'booth.principal.medium': {
+  'principal.medium': {
     type: Boolean,
     optional: true,
     label: function() {
@@ -212,12 +212,11 @@ ApplicationSchema = new SimpleSchema({
         return 'Medium';
       }
     },
-
     autoform: {
       type: 'materializedCheckbox',
     },
   },
-  'booth.principal.mediumPlus': {
+  'principal.mediumPlus': {
     type: Boolean,
     optional: true,
     label: function() {
@@ -227,12 +226,11 @@ ApplicationSchema = new SimpleSchema({
         return 'Medium Plus';
       }
     },
-
     autoform: {
       type: 'materializedCheckbox',
     },
   },
-  'booth.principal.large': {
+  'principal.large': {
     type: Boolean,
     optional: true,
     label: function() {
@@ -242,12 +240,11 @@ ApplicationSchema = new SimpleSchema({
         return 'Large';
       }
     },
-
     autoform: {
       type: 'materializedCheckbox',
     },
   },
-  'booth.principal.extraLarge': {
+  'principal.extraLarge': {
     type: Boolean,
     optional: true,
     label: function() {
@@ -257,7 +254,6 @@ ApplicationSchema = new SimpleSchema({
         return 'Extra Large';
       }
     },
-
     autoform: {
       type: 'materializedCheckbox',
     },

@@ -47,19 +47,19 @@
 
 		  	<div class="divider"></div>
 		  	<div class="section">
-		  		<strong>{{_ "schemas.application.galleryPhone.review"}}</strong>
+		  		<strong>{{_ "schemas.application.galleryPhone.label"}}</strong>
 		  		<p>{{galleryPhone}}</p>
 		  	</div>
 
 		  	<div class="divider"></div>
 		  	<div class="section">
-		  		<strong>{{_ "schemas.application.galleryEmail.review"}}</strong>
+		  		<strong>{{_ "schemas.application.galleryEmail.label"}}</strong>
 		  		<p>{{galleryEmail}}</p>
 		  	</div>
 
 		  	<div class="divider"></div>
 		  	<div class="section">
-		  		<strong>{{_ "schemas.application.website.review"}}</strong>
+		  		<strong>{{_ "schemas.application.website.label"}}</strong>
 		  		<p>{{website}}</p>
 		  	</div>
 
@@ -69,7 +69,7 @@
 	</div>
 
 	<a class="btn edit">{{_ "application-edit"}}</a>
-	
+
 	<div class="section">
 		<div class="card">
 	  	<div class="card-content">
@@ -203,6 +203,17 @@
   </div>
 
   <a class="btn edit">{{_ "application-edit"}}</a>
+
+  <div class="section">
+		<div class="card">
+	  	<div class="card-content">
+	  		<span class="card-title grey-text">{{_ "schemas.application.booth.label"}}</span>
+	  		{{#with booth.principal}}
+	  		{{small}}
+	  		{{/with}}
+	  	</div>
+	  </div>
+	</div>
 
 	<div class="section">
 		<div class="card">

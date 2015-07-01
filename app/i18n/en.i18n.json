@@ -179,6 +179,12 @@
       "website": {
         "label": "Website"
       },
+      "galleryPhone": {
+        "label": "Gallery phone"
+      },
+      "galleryEmail": {
+        "label": "Gallery email"
+      },
 
       "address": {
         "label": "Gallery address"

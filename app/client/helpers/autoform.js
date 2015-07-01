@@ -38,11 +38,8 @@ AutoForm.addInputType('imageUpload', {
 
 AutoForm.addInputType('materializedCheckbox', {
   template: 'checkbox_materialized',
-  valueIsArray: true,
   valueOut: function () {
-    var val = this.val();
-
-    return val;
+    return this.prop('checked');
   },
 });
 
