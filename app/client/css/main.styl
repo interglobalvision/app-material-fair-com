@@ -3,14 +3,33 @@ $color-yellow = #fff176;
 $color-yellow-dark = #fdd835;
 
 // Basic
+html 
+  font-family: 'AkkuratPro'
+  
 body 
   background-image: url(images/shapes_bg.png)
   background-repeat: repeat
   
 iframe
   position: absolute // hide that conekta iframe
+  
+// Type
+em
+  font-weight: normal
+  font-style: italic
+
+strong
+  font-weight: bold
+  font-style: normal
+  
+em strong, strong em
+  font-weight: bold
+  font-style: italic
 
 // Header
+.brand-logo
+  font-family: 'Stanley'
+  
 nav ul .switch
   padding: 0px 15px
   label .lever

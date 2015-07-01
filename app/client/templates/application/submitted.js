@@ -7,7 +7,7 @@ Template.submitted.helpers({
 });
 
 Template.submitted.rendered = function () {
-  //
+  $(window).scrollTop( 0 );
 };
 
 Template.submitted.events({

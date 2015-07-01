@@ -20,6 +20,7 @@
             {{> afQuickField name='city'}}
             {{> afQuickField name='state'}}
             {{> afQuickField name='postalCode'}}
+            {{> afQuickField name='country' firstOption=''}}
             {{> afQuickField name='galleryPhone'}}
             {{> afQuickField name='galleryEmail'}}
             {{> afQuickField name='website'}}
@@ -56,11 +57,11 @@
           <div class="card-content">
             <h4>{{_ "schemas.application.proposal.label"}}</h4>
             {{{_ "schemas.application.proposal.text"}}}
-            {{> afQuickField name='galleryHistory'}}
-            {{> afQuickField name='artistsRepresented'}}
+            {{> afQuickField name='galleryHistory' template='materialized'}}
+            {{> afQuickField name='artistsRepresented' template='materialized'}}
             {{> afQuickField name='galleryYear'}}
             {{> afQuickField name='participation'}}
-            {{> afQuickField name='standProposal'}}
+            {{> afQuickField name='standProposal' template='materialized'}}
           </div>
         </div>
       </div>

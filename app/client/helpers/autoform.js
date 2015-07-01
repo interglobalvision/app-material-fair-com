@@ -4,7 +4,7 @@ AutoForm.addInputType('signaturePad', {
   template: 'signaturePad',
   valueOut: function() {
     var canvasData = this[0].toDataURL();
-
+  
     return canvasData;
   },
 });

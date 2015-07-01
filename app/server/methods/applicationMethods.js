@@ -47,8 +47,6 @@ Meteor.methods({
 
     var application = Applications.findOne(applicationId);
 
-    console.log(signatureData);
-
     if (Meteor.userId() !== application.userId) {
       throw new Meteor.Error('not-allowed', 'You must own this application to change it.');
     }

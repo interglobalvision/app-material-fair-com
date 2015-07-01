@@ -207,6 +207,9 @@
         "label": "Postal code (if applicable)",
         "review": "Postal code"
       },
+      "country": {
+        "label": "Country"
+      },
 
       "social": {
         "label": "Social networks"
@@ -259,7 +262,7 @@
         "label": "Artists represented by the gallery"
       },
       "standProposal": {
-        "label": "Booth Proposal for Material Art Fair 2016"
+        "label": "Booth Selection"
       },
 
       "artists": {
@@ -358,7 +361,8 @@
         "label": "Date"
       },
       "signature": {
-        "label": "Sign here",
+        "label": "Signature",
+        "signHere": "Sign here",
         "title": "Signature"
       }
     }
