@@ -32,7 +32,7 @@ Template.submitted.events({
 
   },
 
-  'click #backToForm': function(e) {
+  'click .edit': function(e) {
     e.preventDefault();
 
     Meteor.call('revertApplicationToEdit', this._id, function(error, response) {
