@@ -9,6 +9,15 @@ AutoForm.addInputType('signaturePad', {
   },
 });
 
+AutoForm.addInputType('fixedDate', {
+  template: 'fixedDate',
+  valueOut: function() {
+    var value = this.val();
+
+    return value;
+  },
+});
+
 AutoForm.addInputType('docUpload', {
   template: 'docUpload',
   valueOut: function() {

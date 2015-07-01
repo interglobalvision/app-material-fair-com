@@ -63,7 +63,7 @@ ApplicationSchema = new SimpleSchema({
   },
   contactPhone: {
     type: String,
-  },  
+  },
 
   // -- Social
   twitter: {
@@ -257,7 +257,7 @@ ApplicationSchema = new SimpleSchema({
         return 'Extra Large';
       }
     },
-    
+
     autoform: {
       type: 'materializedCheckbox',
     },
@@ -276,12 +276,15 @@ SignatureSchema = new SimpleSchema({
     type: String,
   },
   'signature.date': {
-    type: Date,
+    type: String,
+    autoform: {
+      type: 'fixedDate',
+    },
   },
   'signature.signature': {
     type: String,
     autoform: {
-      type: "signaturePad",
+      type: 'signaturePad',
     },
   },
 });
