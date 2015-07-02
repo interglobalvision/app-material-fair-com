@@ -143,9 +143,9 @@
 
   "application-submit": "Submit and Continue to Payment",
 
+  "application-payment": "Payment",
   "application-please_pay": "Thank you again for your application to the 2016 edition of Material Art Fair. In order to complete the submission of your application, there is a $125 usd application fee, payable by any major credit or debit card below. Please note that the charge will appear on your statement as having been made by Pagofacil.",
-  "application-pay-first_name": "First name",
-  "application-pay-last_name": "Last name",
+  "application-pay-name": "Name as it appears on your card",
   "application-pay-card_number": "Card number",
   "application-pay-cvc": "CVC",
   "application-pay-exp_month": "Expiration month",

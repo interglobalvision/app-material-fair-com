@@ -9,13 +9,13 @@ Template.submitted.helpers({
 Template.submitted.rendered = function () {
   $(window).scrollTop( 0 );
 
-  var boothList = $('ul#booth-list').html(),
+  var boothList = $('#booth-list').html(),
     booths = boothList.split(',');
 
-  $('ul#booth-list').html('');
+  $('#booth-list').html('');
 
   $.each(booths, function( index, value ) {
-    $('ul#booth-list').append('<li>' + value + '</li>');
+    $('#booth-list').append('<p>' + value + '</p>');
   });
 };
 
