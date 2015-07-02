@@ -78,7 +78,12 @@
       <div class="section">
         <div class="card">
           <div class="card-content">
-            {{> afQuickField name='booth'}}
+            <h4>{{_ "schemas.application.booth.label"}}</h4>
+            {{{_ "schemas.application.booth.text"}}}
+            <div class="divider"></div>
+            <div class="section row">
+              {{> afQuickField name='booth' label=false}}
+            </div>
           </div>
         </div>
       </div>

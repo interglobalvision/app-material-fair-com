@@ -425,23 +425,23 @@ ApplicationSchema = new SimpleSchema({
       options: function () {
         if (TAPi18n.getLanguage() === 'es') {
           return [
-            {id: Random.id(6), type: 'Proyecto', label: 'Sencillo', value: 'single', cost: '3 m2, $525 usd',},
-            {id: Random.id(6), type: 'Proyecto', label: 'Doble', value: 'double', cost: '6 m2, $1050 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Small', value: 'small', cost: '9 m2, $2475 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Medium', value: 'medium', cost: '12 m2, $3300 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Medium Plus', value: 'medium-plus', cost: '16 m2, $4400 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Large', value: 'large', cost: '16 m2, $4400 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Extra Large', value: 'extra-large', cost: 'Please contact us at <a href="mailto:applications@material-fair.com">applications@material-fair.com</a> for more information.',},
+            {id: Random.id(6), type: 'Proyecto', color: 'teal-text', label: 'Sencillo', value: 'Sencillo', cost: '3 m2, $525 usd',},
+            {id: Random.id(6), type: 'Proyecto', color: 'teal-text', label: 'Doble', value: 'Doble', cost: '6 m2, $1050 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Chico', value: 'Chico', cost: '9 m2, $2475 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Mediano', value: 'Mediano', cost: '12 m2, $3300 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Mediano Plus', value: 'Mediano Plus', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Grande', value: 'Grande', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Extra Grande', value: 'Extra Grande', cost: 'Please contact us at <a href="mailto:applications@material-fair.com">applications@material-fair.com</a> for more information.',},
           ];
         } else {
           return [
-            {id: Random.id(6), type: 'Project', label: 'Single', value: 'single', cost: '3 m2, $525 usd',},
-            {id: Random.id(6), type: 'Project', label: 'Double', value: 'double', cost: '6 m2, $1050 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Small', value: 'small', cost: '9 m2, $2475 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Medium', value: 'medium', cost: '12 m2, $3300 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Medium Plus', value: 'medium-plus', cost: '16 m2, $4400 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Large', value: 'large', cost: '16 m2, $4400 usd',},
-            {id: Random.id(6), type: 'Principal', label: 'Extra Large', value: 'extra-large', cost: 'Please contact us at <a href="mailto:applications@material-fair.com">applications@material-fair.com</a> for more information.',},
+            {id: Random.id(6), type: 'Project', color: 'teal-text', label: 'Single', value: 'Single', cost: '3 m2, $525 usd',},
+            {id: Random.id(6), type: 'Project', color: 'teal-text', label: 'Double', value: 'Double', cost: '6 m2, $1050 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Small', value: 'Small', cost: '9 m2, $2475 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Medium', value: 'Medium', cost: '12 m2, $3300 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Medium Plus', value: 'Medium Plus', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Large', value: 'Large', cost: '16 m2, $4400 usd',},
+            {id: Random.id(6), type: 'Principal', color: 'indigo-text .text-darken-4', label: 'Extra Large', value: 'Extra Large', cost: 'Please contact us at <a href="mailto:applications@material-fair.com">applications@material-fair.com</a> for more information.',},
           ];
         }
       },

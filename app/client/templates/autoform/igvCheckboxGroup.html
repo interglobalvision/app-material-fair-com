@@ -1,10 +1,12 @@
 <template name="igvCheckboxGroup">
   <div class="af-checkbox-group" {{dsk}}>
     {{#each this.selectOptions}}
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="{{this.value}}" id="{{this.id}}" />
-        <label for="{{this.id}}">{{this.type}}:<h5>{{this.label}}</h5>{{{this.cost}}}</label>
+    <div class="checkbox col s6">
+      <input type="checkbox" value="{{this.value}}" id="{{this.id}}" />
+      <label for="{{this.id}}">
+        <h5 class="black-text">{{this.label}}</h5>
+        <div class="{{this.color}}" >{{this.type}}</div>
+        {{{this.cost}}}
       </label>
     </div>
     {{/each}}
