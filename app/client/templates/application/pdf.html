@@ -3,74 +3,124 @@
 	<img src="images/logo.png" width="20" height="20"><br>
 	<h3>Material Art Fair Application</h3>
 
-	<strong>{{_ "application-gallery_name"}}</strong>
+	<h4>{{_ "schemas.application.general.label"}}</h4>
+
+	<strong>{{_ "schemas.application.galleryName.label"}}</strong>
 	<p>{{galleryName}}</p>
 
-	<strong>{{_ "application-address"}}</strong>
-	{{#with address}}
-	<p>{{line1}}<br>
-	{{#if line2}}
-	{{line2}}<br>
+	<strong>{{_ "schemas.application.address1.label"}}</strong>
+	<p>{{address1}}</p>
+
+	{{#if address2}}
+	<strong>{{_ "schemas.application.address2.review"}}</strong>
+	<p>{{address2}}</p>
 	{{/if}}
-	{{city}}, {{state}} {{postalCode}}</p>
-	{{/with}}
 
-	<strong>{{_ "application-gallery_year"}}</strong>
-	<p>{{galleryYear}}</p>
+	<strong>{{_ "schemas.application.city.label"}}</strong>
+	<p>{{city}}</p>
 
-	<strong>{{_ "application-participation"}}</strong>
-	<p>{{participation}}</p>
+	{{#if state}}
+	<strong>{{_ "schemas.application.state.review"}}</strong>
+	<p>{{state}}</p>
+	{{/if}}
 
-	<strong>{{_ "application-website"}}</strong>
+	{{#if postalCode}}
+	<strong>{{_ "schemas.application.postalCode.review"}}</strong>
+	<p>{{postalCode}}</p>
+	{{/if}}
+
+	<strong>{{_ "schemas.application.country.label"}}</strong>
+	<p>{{country}}</p>
+
+	<strong>{{_ "schemas.application.galleryPhone.label"}}</strong>
+	<p>{{galleryPhone}}</p>
+
+	<strong>{{_ "schemas.application.galleryEmail.label"}}</strong>
+	<p>{{galleryEmail}}</p>
+
+	<strong>{{_ "schemas.application.website.label"}}</strong>
 	<p>{{website}}</p>
 
-	<strong>Twitter</strong>
+	<h4>{{_ "schemas.application.social.label"}}</h4>
+
+	{{#if twitter}}
+	<strong>{{_ "schemas.application.twitter.label"}}</strong>
 	<p>{{twitter}}</p>
+	{{/if}}
 
-	<strong>Facebook</strong>
+	{{#if facebook}}
+	<strong>{{_ "schemas.application.facebook.label"}}</strong>
 	<p>{{facebook}}</p>
+	{{/if}}
 
-	<strong>Tumblr</strong>
+	{{#if tumblr}}
+	<strong>{{_ "schemas.application.tumblr.label"}}</strong>
 	<p>{{tumblr}}</p>
+	{{/if}}
 
-	<strong>Instagram</strong>
+	{{#if instagram}}
+	<strong>{{_ "schemas.application.instagram.label"}}</strong>
 	<p>{{instagram}}</p>
+	{{/if}}
 
-  {{#with contact}}
-	<strong>{{_ "application-contact-name"}}</strong>
+	<h4>{{_ "schemas.application.proposal.label"}}</h4>
+
+	<strong>{{_ "schemas.application.galleryHistory.label"}}</strong>
+	<p>{{galleryHistory}}</p>
+
+	<strong>{{_ "schemas.application.artistsRepresented.label"}}</strong>
+	<p>{{artistsRepresented}}</p>
+
+	<strong>{{_ "schemas.application.galleryYear.label"}}</strong>
+	<p>{{galleryYear}}</p>
+
+	<strong>{{_ "schemas.application.participation.label"}}</strong>
+	<p>{{participation}}</p>
+
+	<strong>{{_ "schemas.application.standProposal.label"}}</strong>
+	<p>{{standProposal}}</p>
+
+	<h4>{{_ "schemas.application.artists.title"}}</h4>
+
+	{{#each artists}}
+
+	<strong>{{_ "schemas.application.artists.$.name.label"}}</strong>
 	<p>{{name}}</p>
 
-	<strong>Email</strong>
-	<p>{{email}}</p>
+	{{#each work}}
 
-	<strong>{{_ "application-contact-phone"}}</strong>
-	<p>{{phone}}</p>
-	{{/with}}
+	<strong>{{_ "schemas.application.artists.$.work.$.image.label"}}</strong>
+	<p><img src="{{image}}" class="image-upload-thumbnail" width="50"></p>
 
-  {{#each artists}}
-	<strong>{{_ "application-artists-name"}}</strong>
-	<p>{{name}}</p>
-
-	<strong>{{_ "application-artists-title"}}</strong>
+	<strong>{{_ "schemas.application.artists.$.work.$.workTitle.label"}}</strong>
 	<p>{{workTitle}}</p>
 
-	<strong>{{_ "application-artists-medium"}}</strong>
+	<strong>{{_ "schemas.application.artists.$.work.$.medium.label"}}</strong>
 	<p>{{medium}}</p>
 
-	<strong>{{_ "application-artists-dimensions"}}</strong>
+	<strong>{{_ "schemas.application.artists.$.work.$.dimensions.label"}}</strong>
 	<p>{{dimensions}}</p>
 
-	<strong>{{_ "application-artists-year"}}</strong>
+	<strong>{{_ "schemas.application.artists.$.work.$.year.label"}}</strong>
 	<p>{{year}}</p>
+
 	{{/each}}
 
-	<strong>{{_ "application-booth"}}</strong>
-	<p>{{boothType}}</p>
+	{{/each}}
+
+	<h4>{{_ "schemas.application.booth.label"}}</h4>
+	{{booth}}
 
 	<h4>{{_ "application-terms"}}</h4>
-	<p>{{_ "application-terms-text"}}</p>
+	{{{_ "application-terms-text"}}}
 
-	<h4>{{_ "application-signature"}}</h4>
+	<h4>{{_ "schemas.sign.signature.title"}}</h4>
+	<p>{{_ "application-terms-confirmation"}}</p>
+	<p>{{signatureName}}</p>
+	<p>{{signatureGallery}}</p>
+	<p>{{signatureDate}}</p>
 	<img src="{{signature}}" width="100" height="30">
+
+	<p>{{_ "application-terms-accept"}}</p>
 </div>
 </template>
