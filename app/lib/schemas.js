@@ -42,10 +42,6 @@ ApplicationSchema = new SimpleSchema({
   },
   country: {
     type: String,
-    allowedValues: [
-      'Afghanistan',
-      'Åland Islands',
-    ],
     autoform: {
       type: "select",
       options: function () {
