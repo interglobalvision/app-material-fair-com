@@ -3,7 +3,15 @@ Template.submitted.onCreated( function() {
 });
 
 Template.submitted.helpers({
-  //
+  galleryHistory: function() {
+    return this.galleryHistory.split("\n");
+  },
+  artistsRepresented: function() {
+    return this.artistsRepresented.split("\n");
+  },
+  standProposal: function() {
+    return this.standProposal.split("\n");
+  },
 });
 
 Template.submitted.rendered = function () {

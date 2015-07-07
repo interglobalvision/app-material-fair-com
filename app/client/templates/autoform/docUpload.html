@@ -3,7 +3,7 @@
     <input type="file" class="doc-upload-input u-hidden">
     <input {{this.atts}} type="hidden" value="{{this.value}}">
 
-    <a class="btn grey darken-1 doc-upload-trigger">Select file</a>
+    <a class="btn grey darken-1 doc-upload-trigger">{{_ "load-file"}}</a>
     {{#if this.value}}
     <a class="btn-floating blue doc-upload-link" href="{{this.value}}">
       <i class="zmdi zmdi-file-text"></i>

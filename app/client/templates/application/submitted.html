@@ -120,12 +120,16 @@
 	  		<span class="card-title grey-text">{{_ "schemas.application.proposal.label"}}</span>
 	  		<div class="section">
 		  		<strong>{{_ "schemas.application.galleryHistory.label"}}</strong>
-		  		<p>{{galleryHistory}}</p>
+		  		{{#each galleryHistory}}
+		  		{{this}}<br>
+		  		{{/each}}
 		  	</div>
 		  	<div class="divider"></div>
 		  	<div class="section">
 		  		<strong>{{_ "schemas.application.artistsRepresented.label"}}</strong>
-		  		<p>{{artistsRepresented}}</p>
+		  		{{#each artistsRepresented}}
+		  		{{this}}<br>
+		  		{{/each}}
 		  	</div>
 		  	<div class="divider"></div>
 		  	<div class="section">
@@ -140,7 +144,9 @@
 		  	<div class="divider"></div>
 		  	<div class="section">
 		  		<strong>{{_ "schemas.application.standProposal.label"}}</strong>
-		  		<p>{{standProposal}}</p>
+		  		{{#each standProposal}}
+		  		{{this}}<br>
+		  		{{/each}}
 		  	</div>
 		  	<div class="divider"></div>
 			</div>

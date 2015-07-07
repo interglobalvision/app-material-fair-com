@@ -5,27 +5,28 @@
   "password": "Password",
   "forgot_password": "Forgot Password?",
   "browser-warning": "For best experience use an up-to-date modern browser like Chrome, Firefox or Safari",
+  "load-file": "Select file",
 
   "fair-timescale": "4-7 February 2016",
 
 // Signup
-  "sign_up-header": "EXHIBITOR APPLICATION: REGISTER",
-  "sign_up-copy-line1": "Thank you for your interest in applying for the third edition of Material Art Fair in Mexico City. Please register below to start your application. Your registration information will be sent to the indicated email address so that you can pause and resume the application process as necessary.",
-  "sign_up-copy-line2": "Please note that the application deadline is Thursday, September 10th, 2015. No applications will be accepted after that date.",
-  "sign_up-copy-line3": "A mandatory and non-refundable application fee of $125 USD will be charged at the end of the process in order to complete the submission.",
+  "sign_up-header": "Register",
+  "sign_up-copy": "<p class='flow-text'>Thank you for your interest in applying for the third edition of Material Art Fair in Mexico City. Please register below to start your application. Your registration information will be sent to the indicated email address so that you can pause and resume the application process as necessary.</p>
+  <p class='flow-text'>Please note that the <strong>application deadline is Thursday, September 10th, 2015</strong>. No applications will be accepted after that date.</p>
+  <p class='flow-text'>A mandatory and non-refundable application fee of $125 USD will be charged at the end of the process in order to complete the submission.</p>",
 
 // Login
-  "login-header": "EXHIBITOR APPLICATION: LOGIN",
-  "login-copy-line1": "Thanks again for your application to Material Art Fair 2016.",
-  "login-copy-line2": "Please remember that the application deadline is Thursday, September 10th, 2015. No applications will be accepted after that date.",
+  "login-header": "Login",
+  "login-copy": "<p class='flow-text'>Thanks again for your application to Material Art Fair 2016.</p>
+  <p class='flow-text'>Please remember that the application deadline is <strong>Thursday, September 10th, 2015</strong>. No applications will be accepted after that date.</p>",
 
 // Forgot
   "forgot-header": "Forgot your password?",
   "forgot-submit": "Send me a new one",
 
 // Homepage
-  "homepage-line1": "Welcome to the online application for Material Art Fair 2016.",
-  "homepage-line2": "Please click below to proceed in your language of choice.",
+  "homepage-copy": "<p class='flow-text'>Welcome to the online application for Material Art Fair 2016.</p>
+  <p class='flow-text'>Please click below to proceed in your language of choice.</p>",
 
 // Welcome
   "welcome": "Please click register to begin a new application or login to continue working on an existing application.",
@@ -52,12 +53,10 @@
   "submissions-signed": "Signed",
   "submissions-paid": "Paid",
   "submissions-approved": "Approved",
-  "submissions-thanks": "Thanks for your submission",
-  "submissions-download_pdf": "Download PDF of your submission",
 
 // Application
   "application": "Application",
-  "application-title": "Exibitor Application",
+  "application-title": "Exhibitor Application",
 
   "application-review": "Save and Continue to next step",
   "application-save": "Save",
@@ -97,8 +96,7 @@
 <p>Material Art Fair reserves the right to rearrange the layout of unoccupied areas, and to alter entrances and exits to and from the exhibition space, halls and aisles. </p>
 <p>Material Art Fair will be entitled to change, at any time, the place allocated according to Centro Cultural Universitario Tlatelolco’s safety regulations. Material Art Fair shall be subject, at any time, to the provisions set forth by Centro Cultural Universitario Tlatelolco regarding space, aisles, emergency exits and other specifications.</p>
 <p>Furthermore, Material does not represent, warrant or guarantee the final square footage of any booth space leased hereunder, it being expressly understood by Exhibitor the actual square footage of a booth leased hereunder shall be unknown until a final floor plan is received by Material. Should the final floor plan received by Material (depicting the actual booth size to be leased to Exhibitor) differ from the approximate booth square footage stated herein, the final floor plan shall control and same shall be deemed to amend and supplement this Agreement so that the square footage of the booth size depicted in the final floor plan shall replace the approximate square footage stated herein, and the rental payments hereunder will be slightly adjusted accordingly.</p>
-<p>Additional walls, special walls, custom flooring, custom carpeting, additional signage, furniture, miscellaneous electrical services, shelving, sculpture pedestals, drayage & labor furnished for exhibitor-supplied materials are available at additional charges. Prices are to be outlined in the Exhibitor’s Kit. Exhibitor agrees to pay full costs of booth decoration</p>
-<p>and additional lighting.</p>
+<p>Additional walls, special walls, custom flooring, custom carpeting, additional signage, furniture, miscellaneous electrical services, shelving, sculpture pedestals, drayage & labor furnished for exhibitor-supplied materials are available at additional charges. Prices are to be outlined in the Exhibitor’s Kit. Exhibitor agrees to pay full costs of booth decoration and additional lighting.</p>
 <p>8. CO-EXHIBITORS / BOOTH SHARING</p>
 <p>No exhibitor may sublet his/her booth either wholly or in part. Products, exhibitors or individuals other than those specified in the exhibitor’s application may not be shown or advertised in the booth without written permission from Material Art Fair.</p>
 <p>9. CONDITIONS OF PAYMENT</p>
@@ -144,7 +142,7 @@
   "application-submit": "Submit and Continue to Payment",
 
   "application-payment": "Payment",
-  "application-please_pay": "Thank you again for your application to the 2016 edition of Material Art Fair. In order to complete the submission of your application, there is a $125 usd application fee, payable by any major credit or debit card below. Please note that the charge will appear on your statement as having been made by Pagofacil.",
+  "application-please_pay": "Thank you again for your application to the 2016 edition of Material Art Fair. In order to complete the submission of your application, there is a $125 usd application fee, payable by any major credit or debit card below. Please note that this charge will appear as 'Conekta' on your bank or credit card statement.",
   "application-pay-name": "Name as it appears on your card",
   "application-pay-card_number": "Card number",
   "application-pay-cvc": "CVC",
@@ -159,8 +157,10 @@
   "application-pay-phone": "Telephone",
   "application-pay-cell": "Cellphone",
   "application-pay-confirm": "By clicking the 'Pay' button below, you agree to pay the $125 usd application fee. You will receive confirmation of the charge as well as confirmation that your application to Material Art Fair 2016 has been completed.",
+  "application-pay-pay": "Pay",
 
-  "application-congratulations": "Contragulations!",
+  "application-thanks": "Thanks for your application to Material Art Fair 2016. Your application fee has been processed. The 2016 Selection Committee will begin reviewing applications after the deadline of September 10th and we will begin the notification process in early October.",
+  "application-download_pdf": "Download PDF of your application",
 
   "schemas": {
     "application": {
@@ -171,6 +171,7 @@
       "general": {
         "label": "Gallery Information",
         "text": "<p class='flow-text'>Thank you for your application to the third edition of Material Art Fair, which will take place from February 4th - 7th, 2016, in the historic Centro Cultural Universitario Tlatelolco (CCUT) in Mexico City.</p>
+        <p class='flow-text'>Please remember that the <strong>application deadline is Thursday, September 10th, 2015</strong>. No applications will be accepted after that date.</p>
         <p class='flow-text'>Each application will be carefully reviewed, considered, and discussed by our 2016 Selection Committee and we will send notification of their decisions to all applicants beginning in early October.</p>
         <p class='flow-text'>If at any time you need to pause and continue your application at a later moment, please click the save button so as not to lose any information.</p>
         <p class='flow-text'>Please report any errors or problems directly to us at <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>"
@@ -264,7 +265,7 @@
         "label": "Artists represented by the gallery"
       },
       "standProposal": {
-        "label": "Proposal"
+        "label": "Booth proposal"
       },
 
       "artists": {
@@ -307,7 +308,7 @@
         "text": "<p>Please check any booth sizes of interest, since quantities of each are limited. The principal section of the fair will be located in the Salón Juarez of the CCUT and project spaces will be located in a special outdoor tented area on the terrace adjacent to the Salón Juarez.</p>
         <p>Project spaces are open to all applicants but, in general, preference will be given to artist and curator-run independent spaces and non-profit organizations. Commercial galleries are encouraged to apply for the principal section.</p>
         <p><strong>IMPORTANT:</strong> Prices do not include insurance of the works and/or personal belongings like laptops and mobile phones. Material Art Fair and the Centro Cultural Universitario Tlatelolco will provide security for the event but cannot be held responsible for any damage or loss suffered by exhibitors.</p>
-        <ul><strong>PRICING:</strong>
+        <ul><strong>Pricing:</strong>
         <li>Project Space: $175 usd / m2</li>
         <li>Principal Section: $275 usd / m2</li>
         </ul>
@@ -317,36 +318,11 @@
         <li>Exhibitor badges</li>
         <li>Courtesy VIP and general admission passes</li>
         <li>WiFi</li>
+        <li>Empty storage</li>
+        <li>Additional work storage</li>
         </ul>
-        <p><strong>Project Space</strong> stands include up to 2 linear meters of wall (4 linear meters for a double), additional wall is available upon request.</p>
-        <p><strong>Principal Section</strong> stands will each feature four walls with a height of 3 meters.<p>",
-        "project": {
-          "label": "Project",
-          "single": {
-            "description": "3 m2, $525 usd"
-          },
-          "double": {
-            "description": "6 m2, $1050 usd"
-          }
-        },
-        "principal": {
-          "label": "Principal",
-          "small": {
-            "description": "9 m2, $2475 usd"
-          },
-          "medium": {
-            "description": "12 m2, $3300 usd"
-          },
-          "mediumPlus": {
-            "description": "16 m2, $4400 usd"
-          },
-          "large": {
-            "description": "16 m2, $4400 usd"
-          },
-          "extraLarge": {
-            "description": "Please contact us at <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a> for more information."
-          }
-        }
+        <p><strong>Project Space</strong> stands include up to 3 linear meters of wall (6 linear meters for a double), additional wall is available upon request. Wall height is 2 meters. Project spaces will be located in a tented structure on the outdoor terrace.</p>
+        <p><strong>Principal Section</strong> stands will each feature four walls with two corners. Wall height is 3 meters<p>"
       }
 
     },

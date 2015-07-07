@@ -8,51 +8,52 @@
       <form id="pay" enctype="application/x-www- form-urlencoded" action="" method="post">
         <input type="hidden" value="{{ _id }}" id="application-id">
       	<div class="row">
-    	  	<div class="input-field col s12">
+    	  	<div class="col s12">
+            <label for="name" class="required">{{_ "application-pay-name"}}</label>
     		  	<input type="text" name="name" id="name" size="20" data-conekta="card[name]" required>
-    				<label for="name" class="active required">{{_ "application-pay-name"}}</label>
     			</div>
     		</div>
     		<div class="row">
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-card_number"}}</label>
     				<input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" size="20" data-conekta="card[number]" required>
-    				<label class="active required">{{_ "application-pay-card_number"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-cvc"}}</label>
     				<input type="text" id="cvc" placeholder="XXX" size="4" data-conekta="card[cvc]" required>
-    				<label class="active required">{{_ "application-pay-cvc"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-exp_month"}}</label>
     				<input type="text" id="exp-month" placeholder="MM" size="2" data-conekta="card[exp_month]" required>
-    				<label class="active required">{{_ "application-pay-exp_month"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-exp_year"}}</label>
     				<input type="text" id="exp-year" placeholder="YYYY" size="4" data-conekta="card[exp_year]" required>
-    				<label class="active required">{{_ "application-pay-exp_year"}}</label>
     			</div>
     		</div>
     		<div class="row">
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-address_1"}}</label>
     				<input type="text" name="address-1" id="address-1" required>
-            <label class="active required">{{_ "application-pay-address_1"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-address_2"}}</label>
     				<input type="text" name="address-2" id="address-2" >
-            <label class="active required">{{_ "application-pay-address_2"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-city"}}</label>
     				<input type="text" name="city" id="city" value="{{city}}" required>
-            <label class="active required">{{_ "application-pay-city"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-postal_code"}}</label>
     				<input type="text" name="postal-code" id="postal-code" value="{{postalCode}}">
-            <label class="active required">{{_ "application-pay-postal_code"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-state"}}</label>
     				<input type="text" name="state" id="state" value="{{state}}" required>
-            <label class="active required">{{_ "application-pay-state"}}</label>
     			</div>
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label class="required">{{_ "application-pay-country"}}</label>
     				<select name="country" id="country" required novalidate>
             	<option value=""></option>
             	<option value="AF">Afghanistan</option>
@@ -305,19 +306,18 @@
             	<option value="ZM">Zambia</option>
             	<option value="ZW">Zimbabwe</option>
             </select>
-            <label class="active required">{{_ "application-pay-country"}}</label>
     			</div>
     		</div>
     		<div class="row">
-    			<div class="input-field col s12 m6">
+    			<div class="col s12 m6">
+            <label for="tel" class="required">{{_ "application-pay-phone"}}</label>
     				<input type="text" name="tel" id="tel" placeholder="XXX XXX XXXX" value="{{contact.phone}}">
-    				<label for="tel" class="active required">{{_ "application-pay-phone"}}</label>
     			</div>
     		</div>
     		<div class="row">
-    			<div class="input-field col s12">
+    			<div class="col s12">
       			<p class="flow-text">{{_ "application-pay-confirm"}}</p>
-    				<input type="submit" name="submit" id="submit-payment" class="btn" value="pay">
+    				<input type="submit" name="submit" id="submit-payment" class="btn" value="{{_ "application-pay-pay"}}">
     			</div>
     		</div>
     	</form>
