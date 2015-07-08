@@ -1,5 +1,6 @@
  Router.route('/pdf/:_id', function() {
   var id = this.params._id;
+
   check(id, String);
 
   var application = Applications.findOne(id);
@@ -9,7 +10,7 @@
     var user = Meteor.users.findOne(application.userId);
     var lang;
 
-    console.log(application);
+//     console.log(application);
 
     if (typeof user.profile === 'undefined') {
       lang = 'en';
@@ -19,11 +20,13 @@
 
     var doc = new PDFDocument({size: 'A4', margin: 50,});
 
+    doc.font(process.env.PWD + '/public/fonts/Stanley-Bold.ttf');
     doc.fontSize(15);
     doc.text('Material Art Fair Application', {align: 'center',});
-//     doc.image(Meteor.absoluteUrl('images/logo.png'), {height: 100});
-//    HOW to fuck do you load in images from path here?
-//     doc.image('/images/logo.png', {height: 100});
+
+    doc.image(process.env.PWD + '/public/images/logo.png', {height: 100,});
+
+    doc.font(process.env.PWD + '/public/fonts/AkkuratPro.ttf');
     doc.moveDown(0.5);
     doc.fontSize(12);
     doc.text(TAPi18n.__('schemas.application.general.label', null, lang));
@@ -37,6 +40,7 @@
     if (typeof application.address2 !== 'undefined') {
       doc.text(application.address2);
     }
+
     doc.text(application.city);
     doc.text(application.state);
     doc.text(application.postalCode);
@@ -59,14 +63,19 @@
     if (typeof application.twitter !== 'undefined') {
       doc.text(application.twitter);
     }
+
     if (typeof application.facebook !== 'undefined') {
       doc.text(application.facebook);
     }
+
     if (typeof application.tumblr !== 'undefined') {
       doc.text(application.tumblr);
-    }    if (typeof application.instagram !== 'undefined') {
+    }
+
+    if (typeof application.instagram !== 'undefined') {
       doc.text(application.instagram);
     }
+
     doc.moveDown(1.5);
 
     // proposal
@@ -101,14 +110,24 @@
       doc.text(TAPi18n.__('schemas.application.artists.$.name.label', null, lang));
       doc.text(artist.name);
       _.each(artist.work, function(work) {
-//         oops need to fix filenames here I think. or maybe external files is the issue i dunno
-//         doc.image(work.image, {height: 100});
+
+        var image = HTTP.get(work.image);
+
+        var imageBuffer = new Buffer(image.content, 'binary');
+
+//         console.log(imageBuffer);
+
+        console.log(imageBuffer.toString('base64'));
+
+//         doc.image(imageBuffer.toString('base64'), {height: 100,});
+
         doc.text(work.workTitle);
         doc.text(work.medium);
         doc.text(work.dimensions);
         doc.text(work.year);
         doc.moveDown(0.5);
       });
+
       doc.moveDown(1.5);
     });
 
@@ -132,8 +151,7 @@
     doc.text(application.signatureGallery);
     doc.text(application.signatureDate);
     doc.moveDown(1.5);
-    var signatureImageBuffer = new Buffer(application.signature.replace('data:image/png;base64,','') || '', 'base64');
-    doc.image(signatureImageBuffer, {height: 100});
+    doc.image(new Buffer(application.signature.replace('data:image/png;base64,','') || '', 'base64'), {height: 100,});
     doc.moveDown(1.5);
 
     this.response.writeHead(200, {
@@ -144,7 +162,7 @@
 
   } else {
     this.response.writeHead(302, {
-      'Location': '/'
+      'Location': '/',
     });
     this.response.end();
   }
