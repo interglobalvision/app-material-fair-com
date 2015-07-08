@@ -141,7 +141,7 @@
   "application-signature": "Firma",
   "application-signature-clear": "Limpiar firma",
 
-  "application-submit": "Submit and Continue to Payment",
+  "application-submit": "Firmar y continuar al pago",
 
   "application-payment": "Pago de tasa de solicitud",
   "application-please_pay": "Gracias de nuevo por su aplicación para la edición 2016 de Material Art Fair. Con el fin de completar la presentación de su solicitud, hay una tasa de solicitud de $125 USD obligatoria y no reembolsable, a pagar con tarjeta de crédito o débito. Tenga en cuenta que este cargo aparecerá como 'Conekta' en su estado de cuenta bancaria o tarjeta de crédito.",
@@ -163,6 +163,14 @@
 
   "application-thanks": "Gracias por tu solicitud a Material Art Fair 2016. Tu tasa de solicitud ha sido procesado exitosamente. El comite de selección de 2016 va a empezar a revisar las solicitudes después de la fecha límite del 10 de Septiembre y Material Art Fair comenzará a notificar a los solicitantes en los principios de Octubre.",
   "application-download_pdf": "Descargar PDF de tu solicitud",
+
+  "booth-single": "Proyecto / Sencillo / 3 m2, $525 usd",
+  "booth-double": "Proyecto / Doble / 6 m2, $1050 usd",
+  "booth-small": "Principal / Chico / 9 m2, $2475 usd",
+  "booth-medium": "Principal / Mediano / 12 m2, $3300 usd",
+  "booth-plus": "Principal / Mediano Plus / 16 m2, $4400 usd",
+  "booth-large": "Principal / Grande / 24 m2, $6600 usd",
+  "booth-extra": "Principal / Extra Grande / Te contactaremos con más información",
 
   "schemas": {
     "application": {

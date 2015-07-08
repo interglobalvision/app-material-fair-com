@@ -23,7 +23,9 @@ Template.submitted.rendered = function () {
   $('#booth-list').html('');
 
   $.each(booths, function( index, value ) {
-    $('#booth-list').append('<p>' + value + '</p>');
+    var string = TAPi18n.__(value);
+
+    $('#booth-list').append('<p>' + string + '</p>');
   });
 };
 
