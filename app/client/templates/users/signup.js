@@ -15,25 +15,26 @@ Template.signup.events = {
     }
 
     if (!user.email || !user.password) {
-      Materialize.toast('Empty email or password', 3000);
+      Materialize.toast(TAPi18n.__('alert-please_fill'), 3000);
     } else {
 
       Accounts.createUser(user, function(error) {
         if (error) {
-          Materialize.toast(error.reason, 2000);
+          Materialize.toast(TAPi18n.__('alert-error'), 2000);
+          Materialize.toast(error.reason, 3000);
         } else {
           var userId = Meteor.userId();
 
           Meteor.call('setupUser', userId, function(error) {
             if (error) {
-              Materialize.toast('Something went wrong.', 2000);
+              Materialize.toast(TAPi18n.__('alert-error'), 2000);
               console.log(error);
             } else if (Roles.userIsInRole(userId, 'admin')) {
-              Materialize.toast('Welcome to the admin dashboard.', 3000);
+              Materialize.toast(TAPi18n.__('alert-signup_admin'), 3000);
               Router.go('/admin');
             } else if (Roles.userIsInRole(userId, 'applicant')) {
-              Materialize.toast('Thanks for registering.', 2000);
-              Materialize.toast('Please fill out the application.', 3500);
+              Materialize.toast(TAPi18n.__('alert-signup_applicant-thanks'), 2000);
+              Materialize.toast(TAPi18n.__('alert-signup_applicant-please'), 3500);
                 Router.go('/application');
             } else {
               Router.go('/');

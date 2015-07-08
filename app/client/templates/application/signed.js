@@ -43,20 +43,20 @@ Template.signed.events({
         if (error) {
 
           console.log(error);
+          Materialize.toast(TAPi18n.__('alert-error'), 3000);
           Materialize.toast(error.reason, 3000);
           Session.set('paymentErrors', (Session.get('paymentErrors') + 1));
           $('#submit-payment').removeAttr('disabled');
 
         } else {
-
-          Materialize.toast('Thanks for your payment.', 3000);
-
+          Materialize.toast(TAPi18n.__('alert-pay_thanks'), 3000);
         }
       });
 
     }, function(error) {
 
         console.log(error);
+        Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.message_to_purchaser, 3000);
         $('#submit-payment').removeAttr('disabled');
 
@@ -66,6 +66,6 @@ Template.signed.events({
 
   'click #request-alt': function() {
     Meteor.call('requestAltPaymentEmail', Meteor.userId());
-    Materialize.toast('Alternate payment requested. Please wait for an email from Material Art Fair.', 3000);
+    Materialize.toast(TAPi18n.__('alert-pay_alternate'), 3000);
   },
 });

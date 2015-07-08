@@ -6,9 +6,11 @@ Template.submitted.helpers({
   galleryHistory: function() {
     return this.galleryHistory.split("\n");
   },
+
   artistsRepresented: function() {
     return this.artistsRepresented.split("\n");
   },
+
   standProposal: function() {
     return this.standProposal.split("\n");
   },
@@ -39,14 +41,16 @@ Template.submitted.events({
 
       Meteor.call('signApplication', this._id, signatureValues.updateDoc, function(error, response) {
         if (error) {
+          console.log(error);
+          Materialize.toast(TAPi18n.__('alert-error'), 3000);
           Materialize.toast(error.reason, 3000);
         } else {
-          Materialize.toast('Application signed', 3000);
+          Materialize.toast(TAPi18n.__('alert-application_signed'), 3000);
         }
       });
 
     } else {
-      Materialize.toast('Invalid input', 3000);
+      Materialize.toast(TAPi18n.__('alert-invalid_input'), 3000);
     }
 
   },
@@ -56,8 +60,9 @@ Template.submitted.events({
 
     Meteor.call('revertApplicationToEdit', this._id, function(error, response) {
       if (error) {
-        // >>> we need error handling
         console.log(error);
+        Materialize.toast(TAPi18n.__('alert-error'), 3000);
+        Materialize.toast(error.reason, 3000);
       } else {
         $(window).scrollTop( 0 );
       }

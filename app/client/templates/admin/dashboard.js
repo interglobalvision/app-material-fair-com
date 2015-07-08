@@ -23,23 +23,26 @@ Template.dashboard.events({
     role = $('input[name="role"]:checked').val();
 
 		if (!user.email || !role || !user.profile.name) {
-			Materialize.toast('Please fill in all fields', 3000);
+			Materialize.toast(TAPi18n.__('alert-please_fill'), 3000);
 		} else {
 			Meteor.call('adminCreateUser', user, function(error, result) {
 				if (error) {
+          Materialize.toast(TAPi18n.__('alert-error'), 2000);
           Materialize.toast(error.reason, 3000);
 				} else {
 					var userId = result;
 
 					Meteor.call('createUserRoles', userId, role, function(error, result) {
 						if (error) {
+              Materialize.toast(TAPi18n.__('alert-error'), 2000);
               Materialize.toast(error.reason, 3000);
 						} else {
 							Meteor.call('adminEnrollmentEmail', userId, function(error, result) {
 								if (error) {
+                  Materialize.toast(TAPi18n.__('alert-error'), 2000);
                   Materialize.toast(error.reason, 3000);
 								} else {
-                  Materialize.toast('Enrollment email sent', 3000);
+                  Materialize.toast(TAPi18n.__('alert-enroll_sent'), 2000);
 									console.log(result);
 								}
 							});

@@ -17,7 +17,7 @@ Template.header.rendered = function () {
 		if (Meteor.userId()) {
 			Meteor.call('setUserLanguage', Meteor.userId(), lang, function(error, result) {
 				if (error) {
-					Materialize.toast(error, 3000);
+					Materialize.toast(TAPi18n.__('alert-error'), 3000);
 				}
 			});
 		}

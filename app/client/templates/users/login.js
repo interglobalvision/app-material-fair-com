@@ -6,9 +6,11 @@ Template.login.events = {
 
     Meteor.loginWithPassword(email, password, function(error){
       if (error) {
+        Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.reason, 3000);
       } else {
-        Materialize.toast('You are now logged in.', 3000);
+
+        Materialize.toast(TAPi18n.__('alert-login'), 3000);
 
         var userId = Meteor.userId();
 

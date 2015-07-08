@@ -7,11 +7,9 @@ Template.saved.rendered = function () {
 
   var booths = Applications.findOne().booth,
     boothArr = booths.split(',');
-
-  console.log(boothArr);
   
   $.each(boothArr, function(key,value) {
-    $('input[value="'+value+'"]')[0].checked = true;
+    $('input[value="' + value + '"]')[0].checked = true;
   });
 };
 
@@ -27,8 +25,10 @@ Template.saved.events({
     Applications.update(this._id, applicationValues.updateDoc, function(error, response) {
       if (error) {
         console.log(error);
+        Materialize.toast(TAPi18n.__('alert-error'), 3000);
+        Materialize.toast(error.reason, 3000);
       } else {
-        Materialize.toast('Application saved', 3000);
+        Materialize.toast(TAPi18n.__('alert-application_saved'), 3000);
       }
 
       document.querySelector('.progress').style.opacity = 0;

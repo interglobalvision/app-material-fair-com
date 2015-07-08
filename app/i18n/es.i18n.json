@@ -9,6 +9,23 @@
 
   "fair-timescale": "4-7 Febrero 2016",
 
+// Alerts
+  "alert-error": "Error",
+  "alert-invalid_input": "Invalid input",
+  "alert-application_saved": "Solicitud guardada",
+  "alert-application_signed": "Solicitud firmada",
+  "alert-pay_thanks": "Thanks for your payment",
+  "alert-pay_alternate": "Alternate payment requested. Please wait for an email from Material Art Fair",
+  "alert-upload_success": "Upload Successful",
+  "alert-marked_paid": "Application marked as paid",
+  "alert-reset_sent": "Password reset link sent",
+  "alert-login": "You are now logged in",
+  "alert-please_fill": "Please fill in all fields",
+  "alert-signup_admin": "Welcome to the admin dashboard",
+  "alert-signup_applicant-thanks": "Thanks for registering",
+  "alert-signup_applicant-please": "Please fill out the application",
+  "alert-enroll_sent": "Enrollment email sent",
+
 // Signup
   "sign_up-header": "Registrarse",
   "sign_up-copy": "<p class='flow-text'>Gracias por tu interés en participar en la tercera edición de Material Art Fair en la Ciudad de México. Por favor regístrate en la parte inferior para empezar el proceso de solicitud. La información de tu registro será enviada a la cuenta de correo electrónico que indiques para que puedas pausar y resumir el llenado de este proceso de solicitud como te sea necesario.</p>

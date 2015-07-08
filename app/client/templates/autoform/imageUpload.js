@@ -23,11 +23,12 @@ Template.imageUpload.events({
       if (error) {
         $filenameInput.html('');
         console.error('Error uploading', uploader.xhr.response);
-        Materialize.toast(error, 3000);
+        Materialize.toast(TAPi18n.__('alert-error'), 3000);
+        Materialize.toast(error.reason, 3000);
       } else {
         $hiddenInput.val(downloadUrl);
         $thumbnail.attr('src', downloadUrl).show();
-        Materialize.toast('Upload successful', 3000);
+        Materialize.toast(TAPi18n.__('alert-upload_success'), 3000);
       }
     });
   },
