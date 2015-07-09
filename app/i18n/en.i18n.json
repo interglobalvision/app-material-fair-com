@@ -303,14 +303,14 @@
           },
           "cv": {
             "label": "CV",
-            "placeholder":  "PDF, or DOCX.  Maximum 10mb"
+            "specs":  "PDF or DOCX.  Maximum 10mb"
           },
           "work": {
             "label": "Work",
             "$": {
               "image": {
                 "label": "Image",
-                "placeholder": "JPG, PNG, or GIF.  72 dpi.  Maximum 1200px, 4mb"
+                "specs": "JPG, PNG, or GIF.  72 dpi.  Maximum 1200px, 4mb"
               },
               "workTitle": {
                 "label": "Title"
