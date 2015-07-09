@@ -21,10 +21,8 @@ Template.imageUpload.events({
 
     uploader.send($hiddenInput.siblings('.image-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
-        $filenameInput.html('');
-        console.error('Error uploading', uploader.xhr.response);
-        Materialize.toast(TAPi18n.__('alert-error'), 3000);
-        Materialize.toast(error.reason, 3000);
+        console.error('Error uploading', error.reason);
+        Materialize.toast(TAPi18n.__('alert-error'), 2000);
       } else {
         $hiddenInput.val(downloadUrl);
         $thumbnail.attr('src', downloadUrl).show();
