@@ -1,4 +1,5 @@
 <template name='imageUpload'>
+  <p><label>{{_ "schemas.application.artists.$.work.$.image.specs"}}</label></p>
 	<form enctype="multipart/form-data" class="upload-form">
 		<input type="file" class="image-upload-input u-hidden">
     <input {{this.atts}} type="hidden" value="{{this.value}}">

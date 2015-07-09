@@ -1,14 +1,13 @@
 <template name='docUpload'>
+  <p><label>{{_ "schemas.application.artists.$.cv.specs"}}</label></p>
   <form enctype="multipart/form-data" class="upload-form">
     <input type="file" class="doc-upload-input u-hidden">
     <input {{this.atts}} type="hidden" value="{{this.value}}">
-
     <a class="btn grey darken-1 doc-upload-trigger">{{_ "load-file"}}</a>
     {{#if this.value}}
     <a class="btn-floating blue doc-upload-link" href="{{this.value}}">
       <i class="zmdi zmdi-file-text"></i>
     </a>
     {{/if}}
-
   </form>
 </template>
