@@ -44,6 +44,11 @@ Template.dashboard.events({
 								} else {
                   Materialize.toast(TAPi18n.__('alert-enroll_sent'), 2000);
 									console.log(result);
+
+                  // Clean form
+                  $('#email').val('');
+                  $('#name').val('');
+                  $('input[name="role"]:checked').prop( "checked", false );
 								}
 							});
 						}
