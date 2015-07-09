@@ -1,11 +1,3 @@
-Template.igvCheckboxGroup.rendered = function () {
-  console.log(this);
-};
-
-/*Template.igvCheckboxGroup.created = function () {
-  console.log(this);
-};*/
-
 Template.igvCheckboxGroup.helpers({
   dsk: function dsk() {
     return {
