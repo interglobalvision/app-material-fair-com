@@ -16,7 +16,6 @@ Template.imageUpload.events({
     e.preventDefault();
 
     $hiddenInput = $('#' + this.atts.id);
-    $fileInput = $hiddenInput.siblings('.image-upload-input');
     $thumbnail = $hiddenInput.siblings('.image-upload-thumbnail');
 
     uploader.send($hiddenInput.siblings('.image-upload-input')[0].files[0], function (error, downloadUrl) {

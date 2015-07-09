@@ -5,12 +5,14 @@ Template.saved.rendered = function () {
 
   $('textarea').addClass('materialize-textarea').characterCounter();
 
-  var booths = Applications.findOne().booth,
-    boothArr = booths.split(',');
-  
-  $.each(boothArr, function(key,value) {
-    $('input[value="' + value + '"]')[0].checked = true;
-  });
+  if (Applications.findOne().booth) {
+    var booths = Applications.findOne().booth,
+      boothArr = booths.split(',');
+    
+    $.each(boothArr, function(key,value) {
+      $('input[value="' + value + '"]')[0].checked = true;
+    });
+  }
 };
 
 Template.saved.events({
