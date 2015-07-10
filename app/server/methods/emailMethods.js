@@ -40,7 +40,7 @@ Meteor.methods({
     Meteor.call('sendMail', email);
   },
 
-  paymentSuccessEmail: function(userId) {
+  paymentSuccessEmail: function(userId, transactionId, cardType, last4) {
     this.unblock();
 
     check(userId, String);
@@ -49,13 +49,13 @@ Meteor.methods({
     var email = {
       address: user.emails[0].address,
       subject: 'Payment Successful | Material Art Fair',
-      text: 'Thanks for completing the application process for MAF 2015',
+      text: 'Your payment ' + transactionId + ' to Material Art Fair has been completed from your ' + cardType + ' ending in ' + last4,
     };
 
     if (user.profile.lang === 'es') {
       email = {
-        subject: 'Pago Completado | Material Art Fair',
-        text: 'Gracias',
+        subject: 'Payment Successful | Material Art Fair',
+        text: 'Your payment ' + transactionId + ' to Material Art Fair has been completed from your ' + cardType + ' ending in ' + last4,
       };
     }
 
@@ -73,13 +73,13 @@ Meteor.methods({
     var email = {
       address: 'brett@material-fair.com',
       subject: 'Offline payment needed for ' + application.general.galleryName + ' | Material Art Fair',
-      text: application.general.galleryName + 'Have requested alternate payment. Their email address to invoice is: ' + user.emails[0].address,
+      text: application.general.galleryName + 'have requested alternate payment. Their email address to invoice is: ' + user.emails[0].address,
     };
 
     if (user.profile.lang === 'es') {
       email = {
         subject: 'Offline payment needed for ' + application.general.galleryName + ' | Material Art Fair',
-        text: application.general.galleryName + 'Have requested alternate payment. Their email address to invoice is: ' + user.emails[0].address,
+        text: application.general.galleryName + 'have requested alternate payment. Their email address to invoice is: ' + user.emails[0].address,
       };
     }
 

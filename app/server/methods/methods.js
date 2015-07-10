@@ -68,13 +68,7 @@ Meteor.methods({
 
     charge = chargeResult._json;
 
-    console.log(charge.id);
-/*
-    console.log(charge.status);
-    console.log(charge.reference_id);
-*/
-
-    Meteor.call('paymentSuccessEmail', Meteor.userId());
+    Meteor.call('paymentSuccessEmail', Meteor.userId(), charge.id, charge.payment_method.brand, charge.payment_method.last4);
     return Applications.update(data.applicationId, {$set: {transactionId: charge.id, transaction: charge, status: 'paid',},});
 
   },
