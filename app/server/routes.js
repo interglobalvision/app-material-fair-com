@@ -91,9 +91,9 @@
     doc.fontSize(12);
     doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.text(TAPi18n.__('schemas.application.proposal.label', null, lang));
+    doc.moveDown(0.5);
     doc.font(prefix + '/fonts/AkkuratPro.ttf');
     doc.fontSize(11);
-    doc.moveDown(0.5);
     doc.text(TAPi18n.__('schemas.application.galleryHistory.label', null, lang));
     doc.text(application.galleryHistory);
     doc.moveDown(0.5);
@@ -114,11 +114,13 @@
     doc.moveDown(1.5);
 
     // artists
+    doc.fontSize(12);
+    doc.font(prefix + '/fonts/Stanley-Bold.ttf');
+    doc.text(TAPi18n.__('schemas.application.artists.title', null, lang));
+    doc.moveDown(0.5);
+    doc.font(prefix + '/fonts/AkkuratPro.ttf');
+    doc.fontSize(11);
     _.each(application.artists, function(artist) {
-      doc.font(prefix + '/fonts/Stanley-Bold.ttf');
-      doc.text(TAPi18n.__('schemas.application.artists.$.name.label', null, lang));
-      doc.moveDown(0.5);
-      doc.font(prefix + '/fonts/AkkuratPro.ttf');
       doc.text(artist.name);
       doc.moveDown(0.5);
       _.each(artist.work, function(work) {
