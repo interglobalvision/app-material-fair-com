@@ -55,7 +55,7 @@ Meteor.methods({
     if (user.profile.lang === 'es') {
       email = {
         subject: 'Pago Completado | Material Art Fair',
-        text: 'Gracias por completar el proceso de solicutd para MAF 2016',
+        text: 'Tu pago ' + transactionId + ' a Material Art Fair ha sido completado desde tu ' + cardType + ' con terminación ' + last4,
       };
     }
 
