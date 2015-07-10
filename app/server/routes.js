@@ -9,8 +9,7 @@
 
     var user = Meteor.users.findOne(application.userId);
     var lang;
-
-//     console.log(application);
+    var prefix;
 
     if (typeof user.profile === 'undefined') {
       lang = 'en';
@@ -18,19 +17,27 @@
       lang = user.profile.lang;
     }
 
+    if (process.env.NODE_ENV === 'development') {
+      prefix = process.env.PWD + '/public';
+    } else {
+      prefix = '/bundle/bundle/programs/web.browser/app';
+    }
+
+    console.log(prefix);
+
     var doc = new PDFDocument({size: 'A4', margin: 50,});
 
-    doc.font(process.env.PWD + '/public/fonts/Stanley-Bold.ttf');
+    doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.fontSize(15);
     doc.text('Material Art Fair Application', {align: 'center',});
 
-    doc.image(process.env.PWD + '/public/images/logo.png', 25, 25, {height: 60,});
+    doc.image(prefix + '/images/logo.png', 25, 25, {height: 60,});
 
     doc.moveDown(2.5);
     doc.fontSize(12);
     doc.text(TAPi18n.__('schemas.application.general.label', null, lang));
     doc.moveDown(0.5);
-    doc.font(process.env.PWD + '/public/fonts/AkkuratPro.ttf');
+    doc.font(prefix + '/fonts/AkkuratPro.ttf');
     doc.fontSize(11);
     doc.text(application.galleryName);
     doc.moveDown(0.5);
@@ -57,9 +64,9 @@
     doc.fontSize(12);
 
     // social links
-    doc.font(process.env.PWD + '/public/fonts/Stanley-Bold.ttf');
+    doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.text(TAPi18n.__('schemas.application.social.label', null, lang));
-    doc.font(process.env.PWD + '/public/fonts/AkkuratPro.ttf');
+    doc.font(prefix + '/fonts/AkkuratPro.ttf');
     doc.fontSize(11);
     doc.moveDown(0.5);
     if (typeof application.twitter !== 'undefined') {
@@ -82,9 +89,9 @@
 
     // proposal
     doc.fontSize(12);
-    doc.font(process.env.PWD + '/public/fonts/Stanley-Bold.ttf');
+    doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.text(TAPi18n.__('schemas.application.proposal.label', null, lang));
-    doc.font(process.env.PWD + '/public/fonts/AkkuratPro.ttf');
+    doc.font(prefix + '/fonts/AkkuratPro.ttf');
     doc.fontSize(11);
     doc.moveDown(0.5);
     doc.text(TAPi18n.__('schemas.application.galleryHistory.label', null, lang));
@@ -108,10 +115,10 @@
 
     // artists
     _.each(application.artists, function(artist) {
-      doc.font(process.env.PWD + '/public/fonts/Stanley-Bold.ttf');
+      doc.font(prefix + '/fonts/Stanley-Bold.ttf');
       doc.text(TAPi18n.__('schemas.application.artists.$.name.label', null, lang));
       doc.moveDown(0.5);
-      doc.font(process.env.PWD + '/public/fonts/AkkuratPro.ttf');
+      doc.font(prefix + '/fonts/AkkuratPro.ttf');
       doc.text(artist.name);
       doc.moveDown(0.5);
       _.each(artist.work, function(work) {
@@ -127,19 +134,19 @@
 
     // terms
     doc.fontSize(12);
-    doc.font(process.env.PWD + '/public/fonts/Stanley-Bold.ttf');
+    doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.text(TAPi18n.__('application-terms', null, lang));
     doc.moveDown(0.5);
-    doc.font(process.env.PWD + '/public/fonts/AkkuratPro.ttf');
+    doc.font(prefix + '/fonts/AkkuratPro.ttf');
     doc.fontSize(8);
     doc.text(TAPi18n.__('application-terms-text-nohtml', null, lang));
     doc.moveDown(1.5);
 
     // signature
     doc.fontSize(12);
-    doc.font(process.env.PWD + '/public/fonts/Stanley-Bold.ttf');
+    doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.text(TAPi18n.__('schemas.sign.signature.title', null, lang));
-    doc.font(process.env.PWD + '/public/fonts/AkkuratPro.ttf');
+    doc.font(prefix + '/fonts/AkkuratPro.ttf');
     doc.moveDown(0.5);
     doc.fontSize(9);
     doc.text(TAPi18n.__('application-terms-confirmation', null, lang));
