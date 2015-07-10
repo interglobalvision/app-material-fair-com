@@ -25,7 +25,7 @@
 
     console.log(prefix);
 
-    var doc = new PDFDocument({size: 'A4', margin: 50,});
+    var doc = new PDFDocument({size: 'letter', margin: 50,});
 
     doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.fontSize(15);
@@ -135,6 +135,7 @@
     });
 
     // terms
+    doc.addPage();
     doc.fontSize(12);
     doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.text(TAPi18n.__('application-terms', null, lang));
@@ -145,6 +146,7 @@
     doc.moveDown(1.5);
 
     // signature
+    doc.addPage();
     doc.fontSize(12);
     doc.font(prefix + '/fonts/Stanley-Bold.ttf');
     doc.text(TAPi18n.__('schemas.sign.signature.title', null, lang));
