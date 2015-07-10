@@ -305,14 +305,14 @@
           },
           "cv": {
             "label": "CV",
-            "placeholder":  "PDF, o DOCX.  Max 10mb"
+            "specs":  "PDF o DOCX.  Max 10mb"
           },
           "work": {
             "label": "Obra",
             "$": {
               "image": {
                 "label": "Imágen",
-                "placeholder": "JPG, PNG, o GIF.  72 dpi.  Max 1200px, 4mb"
+                "specs": "JPG, PNG, o GIF.  72 dpi.  Max 1200px, 4mb"
               },
               "workTitle": {
                 "label": "Titulo"
