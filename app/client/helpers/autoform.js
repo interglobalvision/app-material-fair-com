@@ -4,8 +4,17 @@ AutoForm.addInputType('signaturePad', {
   template: 'signaturePad',
   valueOut: function() {
     var canvasData = this[0].toDataURL();
+    var blankCanvas = document.createElement('canvas');
+
+    blankCanvas.height = this[0].height;
+    blankCanvas.width = this[0].width;
+
+    if ( canvasData === blankCanvas.toDataURL() ) {
+      return '';
+    } else {
+      return canvasData;
+    }
   
-    return canvasData;
   },
 });
 
