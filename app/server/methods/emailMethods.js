@@ -27,13 +27,13 @@ Meteor.methods({
     var email = {
       address: user.emails[0].address,
       subject: 'Signup Successful | Material Art Fair',
-      text: 'Thanks for starting the application process for MAF 2015.\n\nYou can access your application at: http://app.material-fair.com/application\nSign in with the email address: ' + user.emails[0].address + ' and the password you chose.\n\nIf you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
+      text: 'Thanks for starting the application process for MAF 2016.\n\nYou can access your application at: http://app.material-fair.com/application\nSign in with the email address: ' + user.emails[0].address + ' and the password you chose.\n\nIf you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
     };
 
     if (user.profile.lang === 'es') {
       email = {
-        subject: 'Signup Successful | Material Art Fair',
-        text: 'Thanks for starting the application process for MAF 2015.\n\nYou can access your application at: http://app.material-fair.com/application\nSign in with the email address: ' + user.emails[0].address + ' and the password you chose.\n\nIf you have forgotten your password you can reset it at: http://app.material-fair.com/forgot.',
+        subject: 'Cuenta creada exitosamente | Material Art Fair',
+        text: 'Gracias por comenzar el proceso de solicitud para MAF 2016.\n\nPuedes acceder a tu solicitud en: http://app.material-fair.com/application\nInicia sesión con el email: ' + user.emails[0].address + ' y la contraseña que elejiste.\n\nSi olvidaste tu contraseña puedes restablecerla en: http://app.material-fair.com/forgot.',
       };
     }
 
@@ -54,8 +54,8 @@ Meteor.methods({
 
     if (user.profile.lang === 'es') {
       email = {
-        subject: 'Payment Successful | Material Art Fair',
-        text: 'Your payment ' + transactionId + ' to Material Art Fair has been completed from your ' + cardType + ' ending in ' + last4,
+        subject: 'Pago Completado | Material Art Fair',
+        text: 'Gracias por completar el proceso de solicutd para MAF 2016',
       };
     }
 
@@ -75,13 +75,6 @@ Meteor.methods({
       subject: 'Offline payment needed for ' + application.general.galleryName + ' | Material Art Fair',
       text: application.general.galleryName + 'have requested alternate payment. Their email address to invoice is: ' + user.emails[0].address,
     };
-
-    if (user.profile.lang === 'es') {
-      email = {
-        subject: 'Offline payment needed for ' + application.general.galleryName + ' | Material Art Fair',
-        text: application.general.galleryName + 'have requested alternate payment. Their email address to invoice is: ' + user.emails[0].address,
-      };
-    }
 
     Meteor.call('sendMail', email);
   },
