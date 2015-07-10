@@ -12,7 +12,7 @@ Meteor.methods({
 
     Conekta.locale = Meteor.user().profile.lang;
 
-    Conekta.api_key = Meteor.settings.conekta_private_sandbox;
+    Conekta.api_key = Meteor.settings.conekta_private;
 
     data.email = Meteor.user().emails[0].address;
 
