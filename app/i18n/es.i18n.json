@@ -33,7 +33,7 @@
   <p class='flow-text'>Existe un costo obligatorio y no reembolsable de $125 USD que será cargado al final del proceso de solicitud para finalizar el envío de la misma.</p>",
 
 // Login
-  "login-header": "Iniciar Sesión",
+  "login-header": "Ingresar",
   "login-copy": "<p class='flow-text'>Gracias de nuevo por tu solicitud para participar en Material Art Fair 2016.</p>
   <p class='flow-text'>Por favor toma nota de que el proceso de registro concluye<strong>Jueves 10 de Septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>",
 
@@ -46,7 +46,7 @@
   <p class='flow-text'>Por favor haz click abajo para proceder en tu idioma de preferencia.</p>",
 
 // Welcome
-  "welcome": "Por favor haz click en “registrar” para empezar una nueva solicitud o haz click en “iniciar sesión” para seguir trabajando en una solicitud existente.",
+  "welcome": "Por favor haz click en “registrar” para empezar una nueva solicitud o haz click en “Ingresar” para seguir trabajando en una solicitud existente.",
 
 // Dashboard
 	"dashboard": "Dashboard",
