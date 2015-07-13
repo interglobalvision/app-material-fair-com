@@ -24,6 +24,7 @@ Template.docUpload.events({
         } else {
           $hiddenInput.parent().append('<a class="btn-floating blue doc-upload-link" href="' + downloadUrl + '"><i class="zmdi zmdi-file-text"></i></a>');
         }
+        
         Materialize.toast(TAPi18n.__('alert-upload_success'), 3000);
       }
     });
