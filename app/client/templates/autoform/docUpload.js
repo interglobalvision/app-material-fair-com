@@ -11,6 +11,9 @@ Template.docUpload.events({
     e.preventDefault();
 
     $hiddenInput = $('#' + this.atts.id);
+    $loader = $hiddenInput.siblings('.preloader-wrapper');
+
+    $loader.addClass('active');
 
     uploader.send($hiddenInput.siblings('.doc-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
@@ -27,6 +30,8 @@ Template.docUpload.events({
         
         Materialize.toast(TAPi18n.__('alert-upload_success'), 3000);
       }
+
+      $loader.removeClass('active');
     });
   },
 

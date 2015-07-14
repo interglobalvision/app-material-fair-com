@@ -16,7 +16,10 @@ Template.imageUpload.events({
     e.preventDefault();
 
     $hiddenInput = $('#' + this.atts.id);
+    $loader = $hiddenInput.siblings('.preloader-wrapper');
     $thumbnail = $hiddenInput.siblings('.image-upload-thumbnail');
+
+    $loader.addClass('active');
 
     uploader.send($hiddenInput.siblings('.image-upload-input')[0].files[0], function (error, downloadUrl) {
       if (error) {
@@ -27,6 +30,8 @@ Template.imageUpload.events({
         $thumbnail.attr('src', downloadUrl).show();
         Materialize.toast(TAPi18n.__('alert-upload_success'), 3000);
       }
+
+      $loader.removeClass('active');
     });
   },
 
