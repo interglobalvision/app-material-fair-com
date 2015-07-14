@@ -415,7 +415,6 @@ ApplicationSchema = new SimpleSchema({
   // Booth
   'booth': {
     type: String,
-    label: 'Project Booth Sizes',
     autoform: {
       type: 'igvCheckboxGroup',
       options: function () {
