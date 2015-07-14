@@ -76,8 +76,9 @@ AutoForm.hooks({
       Meteor.call('submitApplication', this.docId, function(error, response) {
         if (error) {
           console.log(error);
+          Materialize.toast(TAPi18n.__('alert-error'), 3000);
         } else {
-          Materialize.toast('Application submitted', 3000);
+          Materialize.toast(TAPi18n.__('alert-application_saved'), 3000);
         }
       });
     },
