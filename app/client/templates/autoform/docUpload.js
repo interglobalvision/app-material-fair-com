@@ -19,6 +19,7 @@ Template.docUpload.events({
       if (error) {
         console.error('Error uploading', error.reason);
         Materialize.toast(TAPi18n.__('alert-error'), 2000);
+        Materialize.toast(error.reason, 3000);
       } else {
 
         $hiddenInput.val(downloadUrl);
