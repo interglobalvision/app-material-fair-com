@@ -90,6 +90,7 @@ session@1.1.0
 sha@1.0.3
 spacebars@1.0.6
 spacebars-compiler@1.0.6
+spiderable@1.0.7
 srp@1.0.3
 stylus@1.0.7
 tap:i18n@1.5.0
