@@ -35,11 +35,9 @@ Router.map(function() {
       return Meteor.subscribe('singleApplication', this.params.userId);
     },
 
-    data: function () {
-      return {
-        submission: Applications.findOne({userId: this.params.userId,}),
-      };
-    },
+    data: function() {
+      return Applications.findOne({userId: this.params.userId,});
+    }, 
   });
 
 });

@@ -317,7 +317,6 @@ ApplicationSchema = new SimpleSchema({
   },
   contactEmail: {
     type: String,
-    label: 'Email',
     regEx: SimpleSchema.RegEx.Email,
   },
   contactPhone: {

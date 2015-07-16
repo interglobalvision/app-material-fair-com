@@ -1,108 +1,248 @@
 <template name="submissionReview">
-  <div class="container">
-  	{{#with submission}}
-  	<div class="row">
-	  	<div class="col s12">
-			  <div class="section">
-				  <ul class="collection">
-				  	<li class="collection-item">
-				  		<strong>Gallery Name</strong>
-				  		<p>{{galleryName}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Address</strong>
-				  		<p>{{#with address}}
-				  		{{line1}}<br>
-				  		{{#if line2}}
-				  		{{line2}}<br>
-				  		{{/if}}
-				  		{{city}}, {{state}} {{postalCode}}
-				  		{{/with}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Gallery Year</strong>
-				  		<p>{{galleryYear}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Participation in other fairs</strong>
-				  		<p>{{participation}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Website</strong>
-				  		<p>{{website}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Twitter</strong>
-				  		<p>{{twitter}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Facebook</strong>
-				  		<p>{{facebook}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Tumblr</strong>
-				  		<p>{{tumblr}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Instagram</strong>
-				  		<p>{{instagram}}</p>
-				  	</li>
-				  </ul>
-				</div>
-			  {{#with contact}}
-			  <div class="section">
-				  <ul class="collection">
-				  	<li class="collection-item">
-				  		<strong>Contact name</strong>
-				  		<p>{{name}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Email</strong>
-				  		<p>{{email}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Phone</strong>
-				  		<p>{{phone}}</p>
-				  	</li>
-					</ul>
-				</div>
-				{{/with}}
-				<div class="section">
-			  {{#each artists}}
-				  <ul class="collection">
-				  	<li class="collection-item">
-				  		<strong>Name</strong>
-				  		<p>{{name}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Title of the work</strong>
-				  		<p>{{workTitle}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Medium</strong>
-				  		<p>{{medium}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Dimensions</strong>
-				  		<p>{{dimensions}}</p>
-				  	</li>
-				  	<li class="collection-item">
-				  		<strong>Year</strong>
-				  		<p>{{year}}</p>
-				  	</li>
-				  </ul>
-			  {{/each}}
+	<div class="container">
+		<h3>{{galleryName}}</h3>
+	  <div class="section">
+		  <div class="card">
+		  	<div class="card-content">
+		  		<span class="card-title grey-text">{{_ "schemas.application.general.label"}}</span>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.address1.label"}}</strong>
+			  		<p>{{address1}}</p>
+			  	</div>
+
+			  	{{#if address2}}
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.address2.review"}}</strong>
+			  		<p>{{address2}}</p>
+			  	</div>
+			  	{{/if}}
+
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.city.label"}}</strong>
+			  		<p>{{city}}</p>
+			  	</div>
+
+			  	{{#if state}}
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.state.review"}}</strong>
+			  		<p>{{state}}</p>
+			  	</div>
+			  	{{/if}}
+
+			  	{{#if postalCode}}
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.postalCode.review"}}</strong>
+			  		<p>{{postalCode}}</p>
+			  	</div>
+			  	{{/if}}
+
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.country.label"}}</strong>
+			  		<p>{{country}}</p>
+			  	</div>
+
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.galleryPhone.label"}}</strong>
+			  		<p>{{galleryPhone}}</p>
+			  	</div>
+
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.galleryEmail.label"}}</strong>
+			  		<p>{{galleryEmail}}</p>
+			  	</div>
+
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.website.label"}}</strong>
+			  		<p>{{website}}</p>
+			  	</div>
+
+			  	<div class="divider"></div>
 			  </div>
-			  <div class="section">
-				  <ul class="collection">
-				  	<li class="collection-item">
-				  		<strong>Booth type</strong>
-				  		<p>{{boothType}}</p>
-				  	</li>
-				  </ul>
+		  </div>
+		</div>
+
+		<div class="section">
+			<div class="card">
+		  	<div class="card-content">
+		  		<span class="card-title grey-text">{{_ "schemas.application.social.label"}}</span>
+		  		{{#if twitter}}
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.twitter.label"}}</strong>
+			  		<p>{{twitter}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	{{/if}}
+			  	{{#if facebook}}
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.facebook.label"}}</strong>
+			  		<p>{{facebook}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	{{/if}}
+			  	{{#if tumblr}}
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.tumblr.label"}}</strong>
+			  		<p>{{tumblr}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	{{/if}}
+			  	{{#if instagram}}
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.instagram.label"}}</strong>
+			  		<p>{{instagram}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	{{/if}}
 				</div>
 			</div>
 		</div>
-		{{/with}}
-  </div>
+
+		<div class="section">
+			<div class="card">
+		  	<div class="card-content">
+		  		<span class="card-title grey-text">{{_ "schemas.application.contact.label"}}</span>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.contactName.label"}}</strong>
+			  		<p>{{contactName}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.contactEmail.label"}}</strong>
+			  		<p>{{contactEmail}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.contactPhone.label"}}</strong>
+			  		<p>{{contactPhone}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="card">
+		  	<div class="card-content">
+		  		<span class="card-title grey-text">{{{_ "schemas.application.proposal.label"}}}</span>
+		  		<div class="section">
+			  		<strong>{{_ "schemas.application.galleryHistory.label"}}</strong>
+			  		<p>
+			  		{{#with galleryHistory}}
+			  		{{this}}<br>
+			  		{{/with}}
+			  		</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.artistsRepresented.label"}}</strong>
+			  		<p>
+			  		{{#with artistsRepresented}}
+			  		{{this}}<br>
+			  		{{/with}}
+			  		</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.galleryYear.label"}}</strong>
+			  		<p>{{galleryYear}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.participation.label"}}</strong>
+			  		<p>{{participation}}</p>
+			  	</div>
+			  	<div class="divider"></div>
+			  	<div class="section">
+			  		<strong>{{_ "schemas.application.standProposal.label"}}</strong>
+			  		<p>
+			  		{{#with standProposal}}
+			  		{{this}}<br>
+			  		{{/with}}
+			  		</p>
+			  	</div>
+			  	<div class="divider"></div>
+				</div>
+		  </div>
+		</div>
+
+		<div class="section">
+			<div class="card">
+		  	<div class="card-content">
+		  		<span class="card-title grey-text">{{_ "schemas.application.artists.title"}}</span>
+					{{#each artists}}
+				 	<div class="array-section">
+
+			  		<div class="section">
+				  		<strong>{{_ "schemas.application.artists.$.name.label"}}</strong>
+				  		<p>{{name}}</p>
+			  		</div>
+
+			  		<div class="divider"></div>
+
+			  		<div class="section">
+				  		<strong>{{_ "schemas.application.artists.$.cv.label"}}</strong>
+				  		<p>
+					  		<a class="btn-floating blue doc-upload-link" href="{{cv}}" target="_blank">
+						      <i class="zmdi zmdi-file-text"></i>
+						    </a>
+					    </p>
+			  		</div>
+
+				  	{{#each work}}
+				  	<div class="divider"></div>
+				  	<div class="array-section">
+				  		<div class="section">
+					  		<strong>{{_ "schemas.application.artists.$.work.$.image.label"}}</strong>
+					  		<p>
+						  		<a href="{{image}}" target="blank">
+							  		<img src="{{image}}" class="image-upload-thumbnail">
+						  		</a>
+					  		</p>
+				  		</div>
+				  		<div class="divider"></div>
+				  		<div class="section">
+					  		<strong>{{_ "schemas.application.artists.$.work.$.workTitle.label"}}</strong>
+					  		<p>{{workTitle}}</p>
+					  	</div>
+				  		<div class="divider"></div>
+				  		<div class="section">
+					  		<strong>{{_ "schemas.application.artists.$.work.$.medium.label"}}</strong>
+					  		<p>{{medium}}</p>
+				  		</div>
+				  		<div class="divider"></div>
+				  		<div class="section">
+					  		<strong>{{_ "schemas.application.artists.$.work.$.dimensions.label"}}</strong>
+					  		<p>{{dimensions}}</p>
+				  		</div>
+				  		<div class="divider"></div>
+				  		<div class="section">
+					  		<strong>{{_ "schemas.application.artists.$.work.$.year.label"}}</strong>
+					  		<p>{{year}}</p>
+				  		</div>
+					  </div>
+				  	{{/each}}
+				  <div class="divider"></div>
+				  </div>
+				  {{/each}}
+			  </div>
+		  </div>
+	  </div>
+
+	  <div class="section">
+			<div class="card">
+		  	<div class="card-content">
+		  		<span class="card-title grey-text">{{_ "schemas.application.booth.label"}}</span>
+		  		<div id="booth-list">{{booth}}</div>
+		  	</div>
+		  </div>
+		</div>
+	</div>
 </template>
