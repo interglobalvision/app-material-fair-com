@@ -37,4 +37,28 @@ Router.map(function() {
     },
   });
 
+  this.route('userRemove', {
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+      
+      if (Roles.userIsInRole(userId, 'admin')) {
+        this.next();
+      } else {
+        Router.go('/');
+      }
+    },
+
+    waitOn: function() {
+      return [
+        Meteor.subscribe('allUsers'),
+      ];
+    },
+
+    data: function() {
+      return {
+        users: Meteor.users.find(),
+      };
+    },
+  });
+
 });

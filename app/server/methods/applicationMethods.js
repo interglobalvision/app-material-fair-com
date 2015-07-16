@@ -66,4 +66,18 @@ Meteor.methods({
     }
 
   },
+
+  removeApplication: function(userId) {
+    check(userId, String);
+
+    var result;
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      result = Applications.remove({userId: userId,});
+    } else {
+      result = false;
+    }
+
+    return result;
+  },
 });

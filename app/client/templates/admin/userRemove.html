@@ -1,0 +1,17 @@
+<template name="userRemove">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        {{#each users}}
+          <div class="section">
+            <p>
+              {{#each emails}}{{address}}{{/each}}
+            </p>
+            <button class="btn remove-user red">Remove</button>
+          </div>
+          <div class="divider"></div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

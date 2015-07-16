@@ -6,6 +6,12 @@ All publications-related code.
 
 /+ ---------------------------------------------------- */
 
+// Publish users
+
+Meteor.publish('allUsers', function (){
+  return Meteor.users.find();
+});
+
 // Publish roles
 
 Meteor.publish('allRoles', function (){
