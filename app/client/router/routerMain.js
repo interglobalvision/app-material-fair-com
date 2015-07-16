@@ -24,7 +24,7 @@ Router.onBeforeAction(function () {
   },
 
   {
-    except: ['signup','homepage','forgot','welcome',],
+    except: ['signup','homepage','forgot','welcome','application-closed',],
   }
 );
 
@@ -50,7 +50,11 @@ Router.map(function() {
     path: '/signup',
     onBeforeAction: function() {
       if (!Meteor.userId()) {
-        this.next();
+        if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
+          Router.go('/application-closed');
+        } else {
+          this.next();
+        }
       } else {
         Router.go('/');
       }
