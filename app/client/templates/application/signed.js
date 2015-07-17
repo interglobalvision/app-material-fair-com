@@ -17,7 +17,7 @@ Template.signed.events({
     e.preventDefault();
 
     // Disable pay button
-    $('submit-payment').prop('disabled', true); 
+    $('#submit-payment').attr('disabled','disabled');
 
     var $form = $(e.currentTarget);
     var data = {
@@ -32,7 +32,6 @@ Template.signed.events({
       tel: $('#tel').val(),
     };
 
-    $('#submit-payment').attr('disabled','disabled');
 
     Conekta.locale = TAPi18n.getLanguage();
 
@@ -49,7 +48,6 @@ Template.signed.events({
           Materialize.toast(TAPi18n.__('alert-error'), 3000);
           Materialize.toast(error.reason, 3000);
           Session.set('paymentErrors', (Session.get('paymentErrors') + 1));
-          $('#submit-payment').removeAttr('disabled');
 
         } else {
           Materialize.toast(TAPi18n.__('alert-pay_thanks'), 3000);
@@ -61,12 +59,11 @@ Template.signed.events({
         console.log(error);
         Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.message_to_purchaser, 3000);
-        $('#submit-payment').removeAttr('disabled');
 
     });
 
     // Enable pay button
-    $('submit-payment').prop('disabled', true); 
+    $('#submit-payment').removeAttr('disabled');
 
   },
 
