@@ -16,6 +16,9 @@ Template.signed.events({
   'submit #pay': function(e) {
     e.preventDefault();
 
+    // Disable pay button
+    $('submit-payment').prop('disabled', true); 
+
     var $form = $(e.currentTarget);
     var data = {
       applicationId: $('#application-id').val(),
@@ -61,6 +64,9 @@ Template.signed.events({
         $('#submit-payment').removeAttr('disabled');
 
     });
+
+    // Enable pay button
+    $('submit-payment').prop('disabled', true); 
 
   },
 
