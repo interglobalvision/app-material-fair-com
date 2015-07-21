@@ -32,6 +32,7 @@ Meteor.methods({
 
     if (user.profile.lang === 'es') {
       email = {
+        address: user.emails[0].address,
         subject: 'Cuenta creada exitosamente | Material Art Fair',
         text: 'Gracias por comenzar el proceso de solicitud para MAF 2016.\n\nPuedes acceder a tu solicitud en: http://app.material-fair.com/application\nInicia sesión con el email: ' + user.emails[0].address + ' y la contraseña que elejiste.\n\nSi olvidaste tu contraseña puedes restablecerla en: http://app.material-fair.com/forgot.',
       };
