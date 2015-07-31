@@ -20,5 +20,19 @@ Template.submissionReview.rendered = function () {
 };
 
 Template.submissionReview.events({
-  //
+  'click #submit-add-comment': function(e) {
+    var applicationId = $('#application-id').val();
+    var comment = AutoForm.getFieldValue('comment', 'add-comment-form');
+
+    e.preventDefault();
+
+    Meteor.call('createComment', applicationId, comment, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(result);
+        AutoForm.resetForm('add-comment-form');
+      }
+    });
+  },
 });

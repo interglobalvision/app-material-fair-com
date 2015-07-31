@@ -36,7 +36,16 @@ Meteor.publish('singleApplication', function(userId) {
   return Applications.find({userId: userId,});
 });
 
-Meteor.publish('allApplications', function(userId) {
+Meteor.publish('allApplications', function() {
   // >>> check user role is Admin / Committee
   return Applications.find();
+});
+
+Meteor.publish('comments', function(userId) {
+  check(userId, String);
+
+  var application = Applications.findOne({userId: userId,});
+
+  // >>> check user role is Admin / Committee
+  return Comments.find({applicationId: application._id,});
 });
