@@ -3,7 +3,7 @@ Router.map(function() {
   this.route('submissions', {
     onBeforeAction: function() {
       var userId = Meteor.userId();
-      
+
       if (Roles.userIsInRole(userId, 'admin') || Roles.userIsInRole(userId, 'committee')) {
         this.next();
       } else if (Roles.userIsInRole(userId, 'applicant')) {
@@ -32,12 +32,18 @@ Router.map(function() {
   this.route('submissionReview', {
     path: '/submissions/:userId',
     waitOn: function () {
-      return Meteor.subscribe('singleApplication', this.params.userId);
+      return [
+        Meteor.subscribe('singleApplication', this.params.userId),
+        Meteor.subscribe('comments', this.params.userId),
+      ];
     },
 
     data: function() {
-      return Applications.findOne({userId: this.params.userId,});
-    }, 
+      return {
+        application: Applications.findOne({userId: this.params.userId,}),
+        comments: Comments.find({}, {sort: {timestamp: 1}}),
+      };
+    },
   });
 
 });
