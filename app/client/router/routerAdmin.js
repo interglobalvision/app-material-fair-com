@@ -37,7 +37,7 @@ Router.map(function() {
     },
   });
 
-  this.route('userRemove', {
+  this.route('removeUser', {
     onBeforeAction: function() {
       var userId = Meteor.userId();
       
@@ -56,7 +56,31 @@ Router.map(function() {
 
     data: function() {
       return {
-        users: Meteor.users.find(),
+        users: Meteor.users.find({roles: "applicant"}),
+      };
+    },
+  });
+
+  this.route('users', {
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+      
+      if (Roles.userIsInRole(userId, 'admin')) {
+        this.next();
+      } else {
+        Router.go('/');
+      }
+    },
+
+    waitOn: function() {
+      return [
+        Meteor.subscribe('allUsers'),
+      ];
+    },
+
+    data: function() {
+      return {
+        users: Meteor.users.find({roles: "applicant"}),
       };
     },
   });
