@@ -33,19 +33,3 @@ Handlebars.registerHelper('displayUsername', function(userId) {
     return user.emails[0].address;
   }
 });
-
-  // COMMENTS
-
-Handlebars.registerHelper('formatCommentTimestamp', function(timestamp) {
-  var time = moment(timestamp, 'X');
-
-  return time.fromNow();
-});
-
-Handlebars.registerHelper('isCommentOwner', function() {
-  if (Meteor.userId() === this.userId) {
-    return true;
-  } else {
-    return false;
-  }
-});
