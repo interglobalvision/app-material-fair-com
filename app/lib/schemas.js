@@ -548,6 +548,7 @@ CommentSchema = new SimpleSchema({
     max: 1000,
     autoform: {
       type: 'igvTextarea',
+      class: 'materialize-textarea',
     },
   },
 
