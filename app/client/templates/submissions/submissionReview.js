@@ -35,6 +35,7 @@ Template.submissionReview.events({
       }
     });
   },
+
   'click .js-comment-delete': function(e) {
     e.preventDefault();
 
@@ -45,5 +46,5 @@ Template.submissionReview.events({
 //         console.log(result);
       }
     });
-  }
+  },
 });
