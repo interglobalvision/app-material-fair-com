@@ -35,6 +35,7 @@ Router.map(function() {
       return [
         Meteor.subscribe('singleApplication', this.params.userId),
         Meteor.subscribe('comments', this.params.userId),
+        Meteor.subscribe('ratings', Meteor.userId()),
         Meteor.subscribe('committeeUsers'),
       ];
     },
