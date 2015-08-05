@@ -14,8 +14,10 @@ Tracker.autorun(function () {
     .done(function () {
       if (userLanguage === 'en') {
         $('.language').prop('checked', false);
+        moment.locale('en');
       } else if (userLanguage === 'es') {
         $('.language').prop('checked', true);
+        moment.locale('es');
       }
     })
     .fail(function (error) {
