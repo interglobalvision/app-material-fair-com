@@ -504,6 +504,32 @@
 
   <div class="container">
     <div class="section">
+      {{#if application.rating}}
+        <h3>Rating</h3>
+        <h4>{{application.rating}}</h4>
+      {{/if}}
+    </div>
+    <div class="section">
+      <h4>Add Your Rating</h4>
+
+      <ul>
+        <li class="js-set-rating">1</li>
+        <li class="js-set-rating">2</li>
+        <li class="js-set-rating">3</li>
+        <li class="js-set-rating">4</li>
+        <li class="js-set-rating">5</li>
+        <li class="js-set-rating">6</li>
+        <li class="js-set-rating">7</li>
+        <li class="js-set-rating">8</li>
+        <li class="js-set-rating">9</li>
+        <li class="js-set-rating">10</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
       <h3>Comments</h3>
       {{#each comments}}
       <div class="card">
@@ -524,7 +550,6 @@
       {{/each}}
     </div>
     <div class="section">
-      <h3>Add Comment</h3>
 
       {{#autoForm schema="CommentSchema" collection="Comments" id="add-comment-form" type="insert"}}
         <input type="hidden" id="application-id" name="applicationId" value="{{application._id}}" />
