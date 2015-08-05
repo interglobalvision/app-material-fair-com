@@ -35,4 +35,15 @@ Template.submissionReview.events({
       }
     });
   },
+  'click .js-comment-delete': function(e) {
+    e.preventDefault();
+
+    Meteor.call('deleteComment', this._id, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+//         console.log(result);
+      }
+    });
+  }
 });

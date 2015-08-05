@@ -23,4 +23,19 @@ Meteor.methods({
     }
 
   },
+  deleteComment: function(commentId) {
+    check(commentId, String);
+
+    var comment = Comments.findOne(commentId);
+
+    if (!comment) {
+      throw new Meteor.Error('no-comment', 'You cannot delete a comment that doesn\'t exist.');
+    }
+
+    if (Meteor.userId() !== comment.userId) {
+      throw new Meteor.Error('not-owner', 'You cannot delete a comment you didn\'t make.');
+    }
+
+    return Comments.remove(commentId);
+  },
 });
