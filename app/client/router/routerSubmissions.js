@@ -35,13 +35,15 @@ Router.map(function() {
       return [
         Meteor.subscribe('singleApplication', this.params.userId),
         Meteor.subscribe('comments', this.params.userId),
+        Meteor.subscribe('committeeUsers'),
       ];
     },
 
     data: function() {
       return {
         application: Applications.findOne({userId: this.params.userId,}),
-        comments: Comments.find({}, {sort: {timestamp: 1}}),
+        comments: Comments.find({}, {sort: {timestamp: 1,},}),
+        committeeUsers: Roles.getUsersInRole('committee'),
       };
     },
   });

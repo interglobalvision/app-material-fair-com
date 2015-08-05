@@ -29,9 +29,22 @@ Template.submissionReview.events({
     Meteor.call('createComment', applicationId, comment, function(err, result) {
       if (err) {
         console.log(err);
+        Materialize.toast(TAPi18n.__(err.error), 3000);
       } else {
         console.log(result);
         AutoForm.resetForm('add-comment-form');
+      }
+    });
+  },
+
+  'click .js-comment-delete': function(e) {
+    e.preventDefault();
+
+    Meteor.call('deleteComment', this._id, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+//         console.log(result);
       }
     });
   },
