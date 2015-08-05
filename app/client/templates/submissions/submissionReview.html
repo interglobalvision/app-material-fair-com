@@ -508,10 +508,18 @@
       {{#each comments}}
       <div class="card">
         <div class="card-content">
-        <h6>{{userId}}</h6>
-        <h6>{{timestamp}}</h6>
-        <p>{{comment}}</p>
+          <span class="card-title black-text">
+            <strong>{{displayUsername userId}}</strong> {{formatCommentTimestamp timestamp}}
+          </span>
+          <p>{{comment}}</p>
         </div>
+
+        {{#if isCommentOwner}}
+        <div class="card-action">
+          <a href="#" class="js-comment-delete">Delete</a>
+        </div>
+        {{/if}}
+
       </div>
       {{/each}}
     </div>
