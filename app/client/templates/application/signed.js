@@ -32,7 +32,6 @@ Template.signed.events({
       tel: $('#tel').val(),
     };
 
-
     Conekta.locale = TAPi18n.getLanguage();
 
     Conekta.token.create($form, function(result) {
