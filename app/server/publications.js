@@ -41,6 +41,12 @@ Meteor.publish('allApplications', function() {
   return Applications.find();
 });
 
+Meteor.publish('ratings', function(userId) {
+  check(userId, String);
+
+  return Ratings.find({userId: userId,});
+});
+
 Meteor.publish('comments', function(userId) {
   check(userId, String);
 
