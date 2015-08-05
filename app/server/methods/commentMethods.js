@@ -23,6 +23,7 @@ Meteor.methods({
     }
 
   },
+
   deleteComment: function(commentId) {
     check(commentId, String);
 
