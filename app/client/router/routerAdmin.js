@@ -56,7 +56,7 @@ Router.map(function() {
 
     data: function() {
       return {
-        users: Meteor.users.find({roles: "applicant"}),
+        users: Meteor.users.find({roles: "applicant",}),
       };
     },
   });
@@ -80,7 +80,7 @@ Router.map(function() {
 
     data: function() {
       return {
-        users: Meteor.users.find({roles: "applicant"}),
+        users: Meteor.users.find({roles: "applicant",}),
       };
     },
   });
