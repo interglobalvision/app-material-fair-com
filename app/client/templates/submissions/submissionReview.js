@@ -20,6 +20,20 @@ Template.submissionReview.rendered = function () {
 };
 
 Template.submissionReview.events({
+  'click .js-set-rating': function(e) {
+    e.preventDefault();
+
+//     console.log(e.currentTarget.innerText);
+
+    Meteor.call('rateApplication', parseInt(e.currentTarget.innerText), this.application._id, function(err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(result);
+      }
+    });
+  },
+
   'click #submit-add-comment': function(e) {
     var applicationId = $('#application-id').val();
     var comment = AutoForm.getFieldValue('comment', 'add-comment-form');
