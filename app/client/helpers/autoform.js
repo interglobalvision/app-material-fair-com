@@ -14,7 +14,7 @@ AutoForm.addInputType('signaturePad', {
     } else {
       return canvasData;
     }
-  
+
   },
 });
 
@@ -60,6 +60,13 @@ AutoForm.addInputType('igvCheckboxGroup', {
     console.log(output);
 
     return output;
+  },
+});
+
+AutoForm.addInputType('igvTextarea', {
+  template: 'igvTextarea',
+  valueOut: function () {
+    return this[0].value;
   },
 });
 

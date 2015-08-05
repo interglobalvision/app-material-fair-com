@@ -547,8 +547,7 @@ CommentSchema = new SimpleSchema({
     type: String,
     max: 1000,
     autoform: {
-      type: 'textarea',
-      rows: 10,
+      type: 'igvTextarea',
     },
   },
 
