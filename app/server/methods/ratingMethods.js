@@ -1,6 +1,6 @@
 Meteor.methods({
-  rateApplication: function(rating, applicationId) {
-    check(rating, Number);
+  rateApplication: function(ratingNumber, applicationId) {
+    check(ratingNumber, Number);
     check(applicationId, String);
 
     if (!Meteor.userId()) {
@@ -13,12 +13,13 @@ Meteor.methods({
       applicationId: applicationId,
       // timestamp as unix timestamp. parse back to moment easily
       timestamp: moment().format('X'),
-      rating: rating,
+      rating: ratingNumber,
     };
+    var result;
 
     if (existingRating) {
 
-      var result = Ratings.update(existingRating._id, rating);
+      result = Ratings.update(existingRating._id, rating);
 
       if (result) {
         Meteor.call('updateApplicationRating', applicationId);
@@ -29,7 +30,7 @@ Meteor.methods({
 
     } else {
 
-      var result = Ratings.insert(rating);
+      result = Ratings.insert(rating);
 
       if (result) {
         Meteor.call('updateApplicationRating', applicationId);
