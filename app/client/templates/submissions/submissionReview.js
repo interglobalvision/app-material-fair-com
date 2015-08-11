@@ -23,9 +23,7 @@ Template.submissionReview.events({
   'click .js-set-rating': function(e) {
     e.preventDefault();
 
-//     console.log(e.currentTarget.innerText);
-
-    Meteor.call('rateApplication', parseInt(e.currentTarget.innerText), this.application._id, function(err, result) {
+    Meteor.call('rateApplication', parseInt($(e.currentTarget).html()), this.application._id, function(err, result) {
       if (err) {
         console.log(err);
       } else {
