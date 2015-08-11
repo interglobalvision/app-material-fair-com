@@ -35,7 +35,7 @@
 // Login
   "login-header": "Ingresar",
   "login-copy": "<p class='flow-text'>Gracias de nuevo por tu solicitud para participar en Material Art Fair 2016.</p>
-  <p class='flow-text'>Por favor toma nota de que el proceso de registro concluye<strong>Jueves 10 de Septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>",
+  <p class='flow-text'>Por favor toma nota de que el proceso de registro concluye el <strong>Jueves 10 de Septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>",
 
 // Forgot
   "forgot-header": "¿Olvidaste tu contraseña?",
