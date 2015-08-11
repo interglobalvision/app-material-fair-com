@@ -247,28 +247,34 @@
   </div>
 
   <div class="container">
-    <div class="section">
-      {{#if application.rating}}
-        <h3>Rating</h3>
-        <h4>{{application.rating}}</h4>
-      {{/if}}
-    </div>
-    <div class="section">
-      <h4>Add Your Rating</h4>
+    <h3>Ratings</h3>
+    <div class="card">
+      <div class="card-content">
+        <div class="section">
+          <span class="card-title grey-text">Average Rating</span>
+          {{#if application.rating}}
+          <h4>{{application.rating}}</h4>
+          {{else}}
+          <h4>Not rated</h4>
+          {{/if}}
+        </div>
+        <div class="section">
+          <span class="card-title grey-text">Your Rating</span>
 
-      <ul>
-        <li class="js-set-rating">1</li>
-        <li class="js-set-rating">2</li>
-        <li class="js-set-rating">3</li>
-        <li class="js-set-rating">4</li>
-        <li class="js-set-rating">5</li>
-        <li class="js-set-rating">6</li>
-        <li class="js-set-rating">7</li>
-        <li class="js-set-rating">8</li>
-        <li class="js-set-rating">9</li>
-        <li class="js-set-rating">10</li>
-      </ul>
-
+          <ul class="u-inline-list">
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">1</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">2</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">3</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">4</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">5</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">6</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">7</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">8</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">9</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4">10</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -294,13 +300,15 @@
       {{/each}}
     </div>
     <div class="section">
-
-      {{#autoForm schema="CommentSchema" collection="Comments" id="add-comment-form" type="insert"}}
-        <input type="hidden" id="application-id" name="applicationId" value="{{application._id}}" />
-        {{> afQuickField name='comment'}}
-        <button type="submit" id="submit-add-comment" class="btn btn-primary">Add Comment</button>
-      {{/autoForm}}
-
+      <div class="card">
+        <div class="card-content">
+          {{#autoForm schema="CommentSchema" collection="Comments" id="add-comment-form" type="insert"}}
+            <input type="hidden" id="application-id" name="applicationId" value="{{application._id}}" />
+            {{> afQuickField name='comment'}}
+            <button type="submit" id="submit-add-comment" class="btn btn-primary">Add Comment</button>
+          {{/autoForm}}
+        </div>
+      </div>
     </div>
   </div>
 </template>
