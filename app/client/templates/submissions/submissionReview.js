@@ -1,5 +1,5 @@
 Template.submissionReview.created = function () {
-  //
+
 };
 
 Template.submissionReview.helpers({
@@ -17,13 +17,25 @@ Template.submissionReview.rendered = function () {
 
     $('#booth-list').append('<p>' + string + '</p>');
   });
+
+  Tracker.autorun(function () {
+
+    var application = Applications.findOne();
+    var userReview = Ratings.findOne({applicationId: application._id});
+
+    if (userReview) {
+      $('.js-set-rating').removeClass('green').addClass('yellow');
+      $('li[data-value="' + userReview.rating + '"]').removeClass('yellow').addClass('green');
+    }
+
+  });
 };
 
 Template.submissionReview.events({
   'click .js-set-rating': function(e) {
     e.preventDefault();
 
-    Meteor.call('rateApplication', parseInt($(e.currentTarget).html()), this.application._id, function(err, result) {
+    Meteor.call('rateApplication', parseInt($(e.currentTarget).data('value')), this.application._id, function(err, result) {
       if (err) {
         console.log(err);
       } else {
