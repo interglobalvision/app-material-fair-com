@@ -196,15 +196,13 @@
               </p>
             </div>
 
-            {{#each application.work}}
+            {{#each work}}
             <div class="divider"></div>
             <div class="array-section">
               <div class="section">
                 <strong>{{_ "schemas.application.artists.$.work.$.image.label"}}</strong>
                 <p>
-                  <a href="{{image}}" target="blank">
-                    <img src="{{image}}" class="image-upload-thumbnail">
-                  </a>
+                  <img src="{{image}}" class="js-materialize-boxed u-max-width-none" width="200">
                 </p>
               </div>
               <div class="divider"></div>
@@ -247,8 +245,40 @@
   </div>
 
   <div class="container">
+    <h3>Ratings</h3>
+    <div class="card">
+      <div class="card-content">
+        <div class="section">
+          <span class="card-title grey-text">Average Rating</span>
+          {{#if application.rating}}
+          <h4>{{application.rating}}</h4>
+          {{else}}
+          <h4>Not rated</h4>
+          {{/if}}
+        </div>
+        <div class="section">
+          <span class="card-title grey-text">Your Rating</span>
+
+          <ul class="u-inline-list">
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="1">1</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="2">2</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="3">3</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="4">4</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="5">5</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="6">6</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="7">7</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="8">8</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="9">9</li>
+            <li class="js-set-rating btn-floating u-align-center yellow darken-4" data-value="10">10</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Comments</h3>
     <div class="section">
-      <h3>Comments</h3>
       {{#each comments}}
       <div class="card">
         <div class="card-content">
@@ -268,14 +298,15 @@
       {{/each}}
     </div>
     <div class="section">
-      <h3>Add Comment</h3>
-
-      {{#autoForm schema="CommentSchema" collection="Comments" id="add-comment-form" type="insert"}}
-        <input type="hidden" id="application-id" name="applicationId" value="{{application._id}}" />
-        {{> afQuickField name='comment'}}
-        <button type="submit" id="submit-add-comment" class="btn btn-primary">Add Comment</button>
-      {{/autoForm}}
-
+      <div class="card">
+        <div class="card-content">
+          {{#autoForm schema="CommentSchema" collection="Comments" id="add-comment-form" type="insert"}}
+            <input type="hidden" id="application-id" name="applicationId" value="{{application._id}}" />
+            {{> afQuickField name='comment'}}
+            <button type="submit" id="submit-add-comment" class="btn btn-primary">Add Comment</button>
+          {{/autoForm}}
+        </div>
+      </div>
     </div>
   </div>
 </template>

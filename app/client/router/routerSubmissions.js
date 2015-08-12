@@ -30,11 +30,22 @@ Router.map(function() {
   });
 
   this.route('submissionReview', {
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+
+      if (Roles.userIsInRole(userId, 'admin') || Roles.userIsInRole(userId, 'committee')) {
+        this.next();
+      } else if (Roles.userIsInRole(userId, 'applicant')) {
+        Router.go('/application');
+      }
+    },
+
     path: '/submissions/:userId',
     waitOn: function () {
       return [
         Meteor.subscribe('singleApplication', this.params.userId),
         Meteor.subscribe('comments', this.params.userId),
+        Meteor.subscribe('ratings', Meteor.userId()),
         Meteor.subscribe('committeeUsers'),
       ];
     },
