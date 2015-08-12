@@ -6,7 +6,10 @@ Template.submissionReview.helpers({
   //
 });
 
-Template.submissionReview.rendered = function () {
+Template.submissionReview.onRendered(function() {
+  var _this = this;
+
+  //>>> this block needs rationalizing to start from a template instance selected jquery object
   var boothList = $('#booth-list').html(),
     booths = boothList.split(',');
 
@@ -18,10 +21,12 @@ Template.submissionReview.rendered = function () {
     $('#booth-list').append('<p>' + string + '</p>');
   });
 
-  Tracker.autorun(function () {
+  //highlight users rating value if set
+  _this.autorun(function () {
 
-    var application = Applications.findOne();
-    var userReview = Ratings.findOne({applicationId: application._id});
+    console.log(_this.data);
+
+    var userReview = Ratings.findOne({applicationId: _this.data.application._id,});
 
     if (userReview) {
       $('.js-set-rating').removeClass('darken-4').addClass('darken-2');
@@ -30,8 +35,9 @@ Template.submissionReview.rendered = function () {
 
   });
 
-  $('.materialboxed').materialbox(); //init popover images
-};
+  //init materialize popover popover images
+  _this.$('.js-materialize-boxed').materialbox();
+});
 
 Template.submissionReview.events({
   'click .js-set-rating': function(e) {
@@ -41,7 +47,7 @@ Template.submissionReview.events({
       if (err) {
         console.log(err);
       } else {
-        console.log(result);
+//         console.log(result);
       }
     });
   },
