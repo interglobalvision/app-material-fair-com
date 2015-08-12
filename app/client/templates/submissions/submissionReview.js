@@ -24,11 +24,13 @@ Template.submissionReview.rendered = function () {
     var userReview = Ratings.findOne({applicationId: application._id});
 
     if (userReview) {
-      $('.js-set-rating').removeClass('green').addClass('yellow');
-      $('li[data-value="' + userReview.rating + '"]').removeClass('yellow').addClass('green');
+      $('.js-set-rating').removeClass('darken-4').addClass('darken-2');
+      $('li[data-value="' + userReview.rating + '"]').removeClass('darken-2').addClass('darken-4');
     }
 
   });
+
+  $('.materialboxed').materialbox(); //init popover images
 };
 
 Template.submissionReview.events({
