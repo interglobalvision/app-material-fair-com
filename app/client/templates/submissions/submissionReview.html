@@ -452,17 +452,15 @@
               </p>
             </div>
 
-            {{#each application.work}}
+            {{#each work}}
             <div class="divider"></div>
             <div class="array-section">
               <div class="section">
                 <strong>{{_ "schemas.application.artists.$.work.$.image.label"}}</strong>
                 <p>
-                  <a href="{{image}}" target="blank">
-                    <img src="{{image}}" class="image-upload-thumbnail">
-                  </a>
+                  <img src="{{image}}" class="materialboxed u-max-width-none" width="200">
                 </p>
-              </div>
+              </div> 
               <div class="divider"></div>
               <div class="section">
                 <strong>{{_ "schemas.application.artists.$.work.$.workTitle.label"}}</strong>
@@ -535,8 +533,8 @@
   </div>
 
   <div class="container">
+    <h3>Comments</h3>
     <div class="section">
-      <h3>Comments</h3>
       {{#each comments}}
       <div class="card">
         <div class="card-content">
