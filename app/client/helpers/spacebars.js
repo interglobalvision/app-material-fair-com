@@ -27,9 +27,11 @@ Handlebars.registerHelper('isLoggedIn', function() {
 Handlebars.registerHelper('displayUsername', function(userId) {
   var user = Meteor.users.findOne(userId);
 
-  if (user.profile.name) {
-    return user.profile.name;
-  } else {
-    return user.emails[0].address;
+  if (user) {
+    if (user.profile.name) {
+      return user.profile.name;
+    } else {
+      return user.emails[0].address;
+    }
   }
 });
