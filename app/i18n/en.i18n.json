@@ -26,6 +26,12 @@
   "alert-signup_applicant-please": "Please fill out the application",
   "alert-enroll_sent": "Enrollment email sent",
 
+// Errors
+  "error-comments-not-signed-in": "You must register a user first before making a comment.",
+  "error-comments-insert-failed": "Adding your comment failed.",
+  "error-comments-no-comment": "You cannot delete a comment that doesn't exist.",
+  "error-comments-not-owner": "You cannot delete a comment you didn't make.",
+
 // Signup
   "sign_up-header": "Register",
   "sign_up-copy": "<p class='flow-text'>Thank you for your interest in applying for the third edition of Material Art Fair in Mexico City. Please register below to start your application. Your registration information will be sent to the indicated email address so that you can pause and resume the application process as necessary.</p>
