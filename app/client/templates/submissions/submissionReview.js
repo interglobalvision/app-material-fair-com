@@ -23,9 +23,6 @@ Template.submissionReview.onRendered(function() {
 
   //highlight users rating value if set
   _this.autorun(function () {
-
-    console.log(_this.data);
-
     var userReview = Ratings.findOne({applicationId: _this.data.application._id,});
 
     if (userReview) {
