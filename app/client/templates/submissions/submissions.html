@@ -4,8 +4,9 @@
       <h4>{{_ "submissions-for-consideration"}}</h4>
       <div class="row">
       {{#each paid}}
+        {{#if hasUserNotRated _id}}
         <div class="col m6 s12">
-          <div {{ifNoRatingShowRed}}>
+          <div class="card-panel">
             <span class="card-title">
               <a href="/submissions/{{userId}}">
                 <h5>{{galleryName}}</h5>
@@ -15,17 +16,50 @@
             {{country}}</p>
             {{#if rating}}
             <div class="submission-rating">
-              <h6>{{rating}} / 10</h6>
+              <h5>{{_ "submissions-average-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{rating}}</span></h5>
             </div>
             {{/if}}
           </div>
         </div>
+        {{/if}}
       {{/each}}
       </div>
     </div>
 
     <div class="divider"></div>
 
+    <div class="section">
+      <h4>{{_ "submissions-already-rated"}}</h4>
+      <div class="row">
+      {{#each paid}}
+        {{#if hasUserRated _id}}
+        <div class="col m6 s12">
+          <div class="card-panel">
+            <span class="card-title">
+              <a href="/submissions/{{userId}}">
+                <h5>{{galleryName}}</h5>
+              </a>
+            </span>
+            <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
+            {{country}}</p>
+            {{#if rating}}
+            <div class="submission-rating">
+              <h5>{{_ "submissions-average-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{rating}}</span></h5>
+              <h5>{{_ "submissions-your-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{userRating _id}}</span></h5>
+            </div>
+            {{/if}}
+          </div>
+        </div>
+        {{/if}}
+      {{/each}}
+      </div>
+    </div>
+
+<!-- does any of the below actually need to be here? -->
+
+    <div class="divider"></div>
+
+    {{#if approved}}
     <div class="submissions-approved section">
       <h4>{{_ "submissions-approved"}}</h4>
       <div class="row">
@@ -46,5 +80,7 @@
       {{/each}}
       </div>
     </div>
+    {{/if}}
+
   </div>
 </template>

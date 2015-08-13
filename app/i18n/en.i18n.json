@@ -76,6 +76,11 @@
   "submissions-signed": "Signed",
   "submissions-paid": "Paid",
   "submissions-for-consideration": "For consideration",
+  "submissions-already-rated": "Already rated",
+
+  "submissions-average-rating": "Average rating",
+  "submissions-your-rating": "Your rating",
+
   "submissions-approved": "Approved",
 
 // Application
