@@ -15,14 +15,13 @@ Router.map(function() {
       return [
         Meteor.subscribe('committeeUsers'),
         Meteor.subscribe('allApplications'),
+        Meteor.subscribe('ratings', Meteor.userId()),
       ];
     },
 
     data: function() {
       return {
-        submitted: Applications.find({status: 'submitted',}),
-        signed: Applications.find({status: 'signed',}),
-        paid: Applications.find({status: 'paid',}),
+        paid: Applications.find({status: 'paid',}, {sort: {rating: -1,},}),
         approved: Applications.find({status: 'approved',}),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
