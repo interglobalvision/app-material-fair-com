@@ -71,6 +71,7 @@
   "dashboard-add_user-create": "Create User",
 
 // Submissions
+  "status": "Status",
   "submissions": "Submissions",
   "submissions-submitted": "Submitted",
   "submissions-signed": "Signed",

@@ -1,5 +1,34 @@
 Router.map(function() {
 
+  this.route('status', {
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+
+      if (Roles.userIsInRole(userId, 'admin')) {
+        this.next();
+      } else {
+        Router.go('/application');
+      }
+    },
+
+    waitOn: function() {
+      return [
+        Meteor.subscribe('committeeUsers'),
+        Meteor.subscribe('allApplications'),
+      ];
+    },
+
+    data: function() {
+      return {
+        submitted: Applications.find({status: 'submitted',}),
+        signed: Applications.find({status: 'signed',}),
+        paid: Applications.find({status: 'paid',}),
+        approved: Applications.find({status: 'approved',}),
+        committeeUsers: Roles.getUsersInRole('committee'),
+      };
+    },
+  });
+
   this.route('submissions', {
     onBeforeAction: function() {
       var userId = Meteor.userId();

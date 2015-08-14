@@ -66,6 +66,7 @@
 	"dashboard-add_user-create": "Crear Usuario",
 
 // Submissions
+  "status": "Status",
 	"submissions": "Solicitudes",
 	"submissions-submitted": "Enviadas",
 	"submissions-signed": "Firmadas",
