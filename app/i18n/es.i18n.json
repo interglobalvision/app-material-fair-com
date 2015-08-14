@@ -74,6 +74,7 @@
   "extend-deadline": "Extender fecha de límite",
 
 // Submissions
+  "status": "Status",
 	"submissions": "Solicitudes",
 	"submissions-submitted": "Enviadas",
 	"submissions-signed": "Firmadas",

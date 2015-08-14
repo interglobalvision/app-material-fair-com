@@ -79,6 +79,7 @@
   "extend-deadline": "Extend deadline",
 
 // Submissions
+  "status": "Status",
   "submissions": "Submissions",
   "submissions-submitted": "Submitted",
   "submissions-signed": "Signed",
