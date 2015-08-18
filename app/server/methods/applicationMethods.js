@@ -15,6 +15,15 @@ Meteor.methods({
       throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.');
     }
 
+    // Look for falsy values on works and remove them
+    if (applicationUpdate.$set.hasOwnProperty('artists')) {
+      for (var i = 0; i < applicationUpdate.$set.artists.length; i++) {
+        if (applicationUpdate.$set.artists[i].hasOwnProperty('work')) {
+          applicationUpdate.$set.artists[i].work = _.compact( applicationUpdate.$set.artists[i].work );
+        }
+      }
+    }
+
     return Applications.update(application._id, applicationUpdate);
   },
 
