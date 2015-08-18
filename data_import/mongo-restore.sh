@@ -1,13 +1,18 @@
 #!/bin/bash
+
+# This script restores meteor mongo database from a tar file with the contents from a mongodump
+# Requires Mongo to be installed system wide [Meteor can run without with]. If you don't have mongorestore run `brew install mongodb`
+
+# You might want to `meteor reset` before running this data import
 # Make sure your meteor is running: meteor run
-# To get ur host and port run `meteor mongo` on another window
-# Set the vars below
 
 set -e
 
 export PATH="$PATH:/usr/local/bin"
 
-# Set this vars
+# These vars are the meteor defaults. You probably don't need to edit them
+# If you need to check host and port run `meteor mongo` while meteor is running
+
 MONGODB_HOSTING=127.0.0.1
 MONGODB_PORT=3001
 MONGODB_DATABASE=meteor
