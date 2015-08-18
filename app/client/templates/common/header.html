@@ -37,6 +37,7 @@
           <ul id="nav-mobile" class="side-nav">
             {{#if isInRole 'admin'}}
               <li><a href="/admin">{{_ "dashboard"}}</a></li>
+              <li><a href="/status">{{_ "status"}}</a></li>
             {{/if}}
             {{#if isInRole 'admin,committee'}}
               <li><a href="/submissions">{{_ "submissions"}}</a></li>
