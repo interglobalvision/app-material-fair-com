@@ -3,7 +3,40 @@ Template.submissionReview.created = function () {
 };
 
 Template.submissionReview.helpers({
-  //
+  website: function() {
+    var application = Applications.find({}, { fields: {website:1}}).fetch(),
+    url = application[0].website.replace(/^https?\:\/\//i, "");
+
+    return 'http://' + url;
+  },
+  facebook: function() {
+    var application = Applications.find({}, { fields: {facebook:1}}).fetch(),
+    url = application[0].facebook.replace(/^https?\:\/\//i, "");
+
+    return 'https://' + url;
+  },
+  tumblr: function() {
+    var application = Applications.find({}, { fields: {tumblr:1}}).fetch(),
+    url = application[0].tumblr.replace(/^https?\:\/\//i, "");
+
+    return 'https://' + url;
+  },
+  twitter: function() {
+    var application = Applications.find({}, { fields: {twitter:1}}).fetch(),
+      handle = application[0].twitter;
+    if (handle.charAt(0) == '@') {
+      handle = handle.substr(1);
+    }
+    return handle.toLowerCase();
+  },
+  instagram: function() {
+    var application = Applications.find({}, { fields: {instagram:1}}).fetch(),
+      handle = application[0].instagram;
+    if (handle.charAt(0) == '@') {
+      handle = handle.substr(1);
+    }
+    return handle.toLowerCase();
+  },
 });
 
 Template.submissionReview.onRendered(function() {
