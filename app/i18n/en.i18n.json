@@ -73,6 +73,7 @@
 // Submissions
   "status": "Status",
   "submissions": "Submissions",
+  "submissions-started": "Started",
   "submissions-submitted": "Submitted",
   "submissions-signed": "Signed",
   "submissions-paid": "Paid",
