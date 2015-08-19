@@ -1,17 +1,3 @@
-/*
-Handlebars.registerHelper('ifNoRatingShowRed', function() {
-  if (this.rating) {
-    return {
-      class: 'card-panel',
-    };
-  } else {
-    return {
-      class: 'card-panel red accent-2',
-    };
-  }
-});
-*/
-
 Handlebars.registerHelper('hasUserRated', function(applicationId) {
   if (Ratings.findOne({userId: Meteor.userId(), applicationId: applicationId,})) {
     return true;

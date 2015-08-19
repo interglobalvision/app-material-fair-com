@@ -48,11 +48,12 @@ Template.submissionReview.helpers({
 Template.submissionReview.onRendered(function() {
   var _this = this;
 
-  //>>> this block needs rationalizing to start from a template instance selected jquery object
-  var boothList = $('#booth-list').html(),
-    booths = boothList.split(',');
+  //renders comma separated booth choices in <p> tags
+  var $boothList = _this.$('#booth-list'),
+    boothListHtml = $boothList.html(),
+    booths = boothListHtml.split(',');
 
-  $('#booth-list').html('');
+  $boothList.html('');
 
   $.each(booths, function( index, value ) {
     var string = TAPi18n.__(value);
