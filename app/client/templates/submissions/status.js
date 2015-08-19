@@ -3,7 +3,13 @@ Template.status.onCreated(function() {
 });
 
 Template.status.helpers({
+  hasProposal: function(_id) {
 
+  },
+
+  hasArtists: function(_id) {
+
+  },
 });
 
 Template.status.onRendered(function() {
