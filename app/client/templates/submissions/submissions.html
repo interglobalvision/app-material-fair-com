@@ -1,77 +1,61 @@
 <template name="submissions">
   <div class="container">
-    <div class="submissions-submitted section">
-      <h4>{{_ "submissions-submitted"}}</h4>
+    <div class="section">
+      <h4>{{_ "submissions-for-consideration"}}</h4>
       <div class="row">
-      {{#each submitted}}
+      {{#each paid}}
+        {{#if hasUserNotRated _id}}
         <div class="col m6 s12">
           <div class="card-panel">
-            <span class="yellow-text text-darken-2">{{_ "dashboard-application_status-submitted"}}</span><br>
-            <a href="/submissions/{{userId}}">
-              <h5>{{galleryName}}</h5>
-            </a>
+            <span class="card-title">
+              <a href="/submissions/{{userId}}">
+                <h5>{{galleryName}}</h5>
+              </a>
+            </span>
             <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
             {{country}}</p>
-            <p>{{contactName}}<br>
-            <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
-            {{contactPhone}}</p>
-          </div>
-        </div>
-      {{/each}}
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="submissions-signed section">
-      <h4>{{_ "submissions-signed"}}</h4>
-      <div class="row">
-      {{#each signed}}
-        <div class="col m6 s12">
-          <div class="card-panel">
-            <span class="cyan-text text-darken-1">{{_ "dashboard-application_status-signed"}}</span><br>
-            <a href="/submissions/{{userId}}">
-              <h5>{{galleryName}}</h5>
-            </a>
-            <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
-            {{country}}</p>
-            <p>{{contactName}}<br>
-            <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
-            {{contactPhone}}</p>
-
-            {{#if isAdmin}}
-              <div class="card-action">
-                <a href="#" class="mark-as-paid">Mark as paid</a>
-              </div>
+            {{#if rating}}
+            <div class="submission-rating">
+              <h5>{{_ "submissions-average-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{rating}}</span></h5>
+            </div>
             {{/if}}
           </div>
         </div>
+        {{/if}}
       {{/each}}
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <div class="submissions-paid section">
-      <h4>{{_ "submissions-paid"}}</h4>
+    <div class="section">
+      <h4>{{_ "submissions-already-rated"}}</h4>
       <div class="row">
       {{#each paid}}
+        {{#if hasUserRated _id}}
         <div class="col m6 s12">
           <div class="card-panel">
-            <span class="teal-text text-darken-3">{{_ "dashboard-application_status-paid"}}</span><br>
-            <a href="/submissions/{{userId}}">
-              <h5>{{galleryName}}</h5>
-            </a>
+            <span class="card-title">
+              <a href="/submissions/{{userId}}">
+                <h5>{{galleryName}}</h5>
+              </a>
+            </span>
             <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
             {{country}}</p>
-            <p>{{contactName}}<br>
-            <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
-            {{contactPhone}}</p>
+            {{#if rating}}
+            <div class="submission-rating">
+              <h5>{{_ "submissions-average-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{rating}}</span></h5>
+              <h5>{{_ "submissions-your-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{userRating _id}}</span></h5>
+            </div>
+            {{/if}}
           </div>
         </div>
+        {{/if}}
       {{/each}}
       </div>
     </div>
+
+<!-- does any of the below actually need to be here? -->
 
     <div class="divider"></div>
 
@@ -81,19 +65,22 @@
       {{#each approved}}
         <div class="col m6 s12">
           <div class="card-panel">
-            <span class="indigo-text text-darken-4">{{_ "dashboard-application_status-approved"}}</span><br>
-            <a href="/submissions/{{userId}}">
-              <h5>{{galleryName}}</h5>
-            </a>
+            <span class="card-title">
+              <a href="/submissions/{{userId}}">
+                <h5>{{galleryName}}</h5>
+              </a>
+            </span>
             <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
             {{country}}</p>
-            <p>{{contactName}}<br>
-            <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
-            {{contactPhone}}</p>
-          </div>
+            <p>
+              <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
+              {{contactPhone}}
+            </p>
+            </div>
         </div>
       {{/each}}
       </div>
     </div>
+
   </div>
 </template>

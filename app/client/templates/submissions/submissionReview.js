@@ -3,17 +3,57 @@ Template.submissionReview.created = function () {
 };
 
 Template.submissionReview.helpers({
-  //
+  website: function(input) {
+    var website = input;
+    var url = website.replace(/^https?\:\/\//i, "");
+
+    return 'http://' + url;
+  },
+
+  facebook: function(input) {
+    var facebook = input;
+    var url = facebook.replace(/^https?\:\/\//i, "");
+
+    return 'https://' + url;
+  },
+
+  tumblr: function(input) {
+    var tumblr = input;
+    var url = tumblr.replace(/^https?\:\/\//i, "");
+
+    return 'https://' + url;
+  },
+
+  twitter: function(input) {
+    var handle = input;
+
+    if (handle.charAt(0) === '@') {
+      handle = handle.substr(1);
+    }
+
+    return handle.toLowerCase();
+  },
+
+  instagram: function(input) {
+    var handle = input;
+
+    if (handle.charAt(0) === '@') {
+      handle = handle.substr(1);
+    }
+
+    return handle.toLowerCase();
+  },
 });
 
 Template.submissionReview.onRendered(function() {
   var _this = this;
 
-  //>>> this block needs rationalizing to start from a template instance selected jquery object
-  var boothList = $('#booth-list').html(),
-    booths = boothList.split(',');
+  //renders comma separated booth choices in <p> tags
+  var $boothList = _this.$('#booth-list'),
+    boothListHtml = $boothList.html(),
+    booths = boothListHtml.split(',');
 
-  $('#booth-list').html('');
+  $boothList.html('');
 
   $.each(booths, function( index, value ) {
     var string = TAPi18n.__(value);
@@ -23,9 +63,6 @@ Template.submissionReview.onRendered(function() {
 
   //highlight users rating value if set
   _this.autorun(function () {
-
-    console.log(_this.data);
-
     var userReview = Ratings.findOne({applicationId: _this.data.application._id,});
 
     if (userReview) {

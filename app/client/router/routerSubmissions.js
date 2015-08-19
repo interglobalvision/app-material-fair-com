@@ -1,12 +1,12 @@
 Router.map(function() {
 
-  this.route('submissions', {
+  this.route('status', {
     onBeforeAction: function() {
       var userId = Meteor.userId();
 
-      if (Roles.userIsInRole(userId, 'admin') || Roles.userIsInRole(userId, 'committee')) {
+      if (Roles.userIsInRole(userId, 'admin')) {
         this.next();
-      } else if (Roles.userIsInRole(userId, 'applicant')) {
+      } else {
         Router.go('/application');
       }
     },
@@ -23,6 +23,34 @@ Router.map(function() {
         submitted: Applications.find({status: 'submitted',}),
         signed: Applications.find({status: 'signed',}),
         paid: Applications.find({status: 'paid',}),
+        approved: Applications.find({status: 'approved',}),
+        committeeUsers: Roles.getUsersInRole('committee'),
+      };
+    },
+  });
+
+  this.route('submissions', {
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+
+      if (Roles.userIsInRole(userId, 'admin') || Roles.userIsInRole(userId, 'committee')) {
+        this.next();
+      } else if (Roles.userIsInRole(userId, 'applicant')) {
+        Router.go('/application');
+      }
+    },
+
+    waitOn: function() {
+      return [
+        Meteor.subscribe('committeeUsers'),
+        Meteor.subscribe('allApplications'),
+        Meteor.subscribe('ratings', Meteor.userId()),
+      ];
+    },
+
+    data: function() {
+      return {
+        paid: Applications.find({status: 'paid',}, {sort: {rating: -1,},}),
         approved: Applications.find({status: 'approved',}),
         committeeUsers: Roles.getUsersInRole('committee'),
       };

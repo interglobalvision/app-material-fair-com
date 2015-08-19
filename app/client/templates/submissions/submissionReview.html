@@ -6,44 +6,13 @@
         <div class="card-content">
           <span class="card-title grey-text">{{_ "schemas.application.general.label"}}</span>
           <div class="section">
-            <strong>{{_ "schemas.application.address1.label"}}</strong>
-            <p>{{application.address1}}</p>
-          </div>
-
-          {{#if application.address2}}
-          <div class="divider"></div>
-          <div class="section">
-            <strong>{{_ "schemas.application.address2.review"}}</strong>
-            <p>{{application.address2}}</p>
-          </div>
-          {{/if}}
-
-          <div class="divider"></div>
-          <div class="section">
-            <strong>{{_ "schemas.application.city.label"}}</strong>
-            <p>{{application.city}}</p>
-          </div>
-
-          {{#if application.state}}
-          <div class="divider"></div>
-          <div class="section">
-            <strong>{{_ "schemas.application.state.review"}}</strong>
-            <p>{{application.state}}</p>
-          </div>
-          {{/if}}
-
-          {{#if application.postalCode}}
-          <div class="divider"></div>
-          <div class="section">
-            <strong>{{_ "schemas.application.postalCode.review"}}</strong>
-            <p>{{application.postalCode}}</p>
-          </div>
-          {{/if}}
-
-          <div class="divider"></div>
-          <div class="section">
-            <strong>{{_ "schemas.application.country.label"}}</strong>
-            <p>{{application.country}}</p>
+            <strong>{{_ "schemas.application.address.label"}}</strong>
+            <p>
+              {{application.address1}}<br>
+              {{#if application.address2}}{{application.address2}}<br>{{/if}}
+              {{application.city}}{{#if application.state}}, {{application.state}}{{/if}}{{#if application.postalCode}} {{application.postalCode}}{{/if}}<br>
+              {{application.country}}
+            </p>
           </div>
 
           <div class="divider"></div>
@@ -55,16 +24,22 @@
           <div class="divider"></div>
           <div class="section">
             <strong>{{_ "schemas.application.galleryEmail.label"}}</strong>
-            <p>{{application.galleryEmail}}</p>
+            <p>
+              <a href="mailto:{{application.galleryEmail}}">{{application.galleryEmail}}</a>
+            </p>
           </div>
 
           <div class="divider"></div>
+          {{#if application.website}}
           <div class="section">
             <strong>{{_ "schemas.application.website.label"}}</strong>
-            <p>{{application.website}}</p>
+            <p>
+              <a href="{{website application.website}}" target="_blank">{{website application.website}}</a>
+            </p>
           </div>
 
           <div class="divider"></div>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -76,28 +51,36 @@
           {{#if application.twitter}}
           <div class="section">
             <strong>{{_ "schemas.application.twitter.label"}}</strong>
-            <p>{{application.twitter}}</p>
+            <p>
+              <a href="https://twitter.com/{{twitter application.twitter}}" target="_blank">https://twitter.com/{{twitter application.twitter}}</a>
+            </p>
           </div>
           <div class="divider"></div>
           {{/if}}
           {{#if application.facebook}}
           <div class="section">
             <strong>{{_ "schemas.application.facebook.label"}}</strong>
-            <p>{{application.facebook}}</p>
+            <p>
+              <a href="{{facebook application.facebook}}" target="_blank">{{facebook application.facebook}}</a>
+            </p>
           </div>
           <div class="divider"></div>
           {{/if}}
           {{#if application.tumblr}}
           <div class="section">
             <strong>{{_ "schemas.application.tumblr.label"}}</strong>
-            <p>{{application.tumblr}}</p>
+            <p>
+              <a href="{{tumblr application.tumblr}}" target="_blank">{{tumblr application.tumblr}}</a>
+            </p>
           </div>
           <div class="divider"></div>
           {{/if}}
           {{#if application.instagram}}
           <div class="section">
             <strong>{{_ "schemas.application.instagram.label"}}</strong>
-            <p>{{application.instagram}}</p>
+            <p>
+              <a href="https://instagram.com/{{instagram application.instagram}}" target="_blank">https://instagram.com/{{instagram application.instagram}}</a>
+            </p>
           </div>
           <div class="divider"></div>
           {{/if}}
@@ -116,7 +99,9 @@
           <div class="divider"></div>
           <div class="section">
             <strong>{{_ "schemas.application.contactEmail.label"}}</strong>
-            <p>{{application.contactEmail}}</p>
+            <p>
+              <a href="mailto:{{application.contactEmail}}">{{application.contactEmail}}</a>
+            </p>
           </div>
           <div class="divider"></div>
           <div class="section">
