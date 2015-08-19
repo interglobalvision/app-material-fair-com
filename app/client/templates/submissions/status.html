@@ -14,6 +14,22 @@
             <p>{{contactName}}<br>
             <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
             {{contactPhone}}</p>
+
+            <ul>
+              {{#if galleryHistory}}
+                <li><i class="material-icons">done</i> {{_ "history"}}</li>
+              {{/if}}
+              {{#if standProposal}}
+                <li><i class="material-icons">done</i> {{_ "proposal"}}</li>
+              {{/if}}
+              {{#if artists}}
+                <li><i class="material-icons">done</i> {{_ "artist"}}</li>
+              {{/if}}
+              {{#if booth}}
+                <li><i class="material-icons">done</i> {{_ "booth-selection"}}</li>
+              {{/if}}
+            </ul>
+
           </div>
         </div>
       {{/each}}
