@@ -1,84 +1,154 @@
 <template name="submissions">
   <div class="container">
     <div class="section">
-      <h4>{{_ "submissions-for-consideration"}}</h4>
-      <div class="row">
-      {{#each paid}}
-        {{#if hasUserNotRated _id}}
-        <div class="col m6 s12">
-          <div class="card-panel">
-            <span class="card-title">
-              <a href="/submissions/{{userId}}">
-                <h5>{{galleryName}}</h5>
-              </a>
-            </span>
-            <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
-            {{country}}</p>
-            {{#if rating}}
-            <div class="submission-rating">
-              <h5>{{_ "submissions-average-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{rating}}</span></h5>
-            </div>
-            {{/if}}
+      <div class="card">
+        <div class="card-content">
+          <h4>{{_ "submissions-for-consideration"}}</h4>
+          <div class="row">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th data-field="image">Image</th>
+                  <th data-field="id">Name</th>
+                  <th data-field="name">Location</th>
+                  <th data-field="average">{{_ "submissions-average-rating"}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each paid}}
+                {{#if hasUserNotRated _id}}
+                <tr>
+                  <td>
+                    {{#if artists.[0].work.[0].image}}
+                    <a href="/submissions/{{userId}}">
+                      <img src="{{artists.[0].work.[0].image}}" alt="" style="max-width: 70px">
+                    </a>
+                    {{/if}}
+                  </td>
+                  <td>
+                    <a href="/submissions/{{userId}}">{{galleryName}}</a>
+                  </td>
+                  <td>
+                    {{city}}{{#if state}}, {{state}}{{/if}}<br>
+                    {{country}}
+                  </td>
+                  <td>
+                    {{#if rating}}
+                    <span class="btn-floating btn-small waves-effect waves-light indigo darken-4 u-align-center">
+                      {{rating}}
+                    </span>
+                    {{/if}}
+                  </td>
+                </tr>
+                {{/if}}
+                {{/each}}
+              </tbody>
+            </table>
           </div>
         </div>
-        {{/if}}
-      {{/each}}
       </div>
     </div>
 
-    <div class="divider"></div>
-
     <div class="section">
-      <h4>{{_ "submissions-already-rated"}}</h4>
-      <div class="row">
-      {{#each paid}}
-        {{#if hasUserRated _id}}
-        <div class="col m6 s12">
-          <div class="card-panel">
-            <span class="card-title">
-              <a href="/submissions/{{userId}}">
-                <h5>{{galleryName}}</h5>
-              </a>
-            </span>
-            <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
-            {{country}}</p>
-            {{#if rating}}
-            <div class="submission-rating">
-              <h5>{{_ "submissions-average-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{rating}}</span></h5>
-              <h5>{{_ "submissions-your-rating"}} <span class="btn-floating u-align-center yellow darken-4">{{userRating _id}}</span></h5>
-            </div>
-            {{/if}}
+      <div class="card">
+        <div class="card-content">
+          <h4>{{_ "submissions-already-rated"}}</h4>
+          <div class="row">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th data-field="image">Image</th>
+                  <th data-field="id">Name</th>
+                  <th data-field="name">Location</th>
+                  <th data-field="average">{{_ "submissions-average-rating"}}</th>
+                  <th data-field="rating">{{_ "submissions-your-rating"}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each paid}}
+                {{#if hasUserRated _id}}
+                <tr>
+                  <td>
+                    {{#if artists.[0].work.[0].image}}
+                    <a href="/submissions/{{userId}}">
+                      <img src="{{artists.[0].work.[0].image}}" alt="" style="max-width: 70px">
+                    </a>
+                    {{/if}}
+                  </td>
+                  <td>
+                    <a href="/submissions/{{userId}}">{{galleryName}}</a>
+                  </td>
+                  <td>
+                    {{city}}{{#if state}}, {{state}}{{/if}}<br>
+                    {{country}}
+                  </td>
+                  <td>
+                    {{#if rating}}
+                    <span class="btn-floating btn-small waves-effect waves-light indigo darken-4 u-align-center">
+                      {{rating}}
+                    </span>
+                    {{/if}}
+                  </td>
+                  <td>
+                    {{#if rating}}
+                    <span class="btn-floating btn-small waves-effect waves-light yellow darken-4 u-align-center">
+                      {{userRating _id}}
+                    </span>
+                    {{/if}}
+                  </td>
+                </tr>
+                {{/if}}
+                {{/each}}
+              </tbody>
+            </table>
           </div>
         </div>
-        {{/if}}
-      {{/each}}
       </div>
     </div>
 
 <!-- does any of the below actually need to be here? -->
 
-    <div class="divider"></div>
-
     <div class="submissions-approved section">
-      <h4>{{_ "submissions-approved"}}</h4>
-      <div class="row">
-      {{#each approved}}
-        <div class="col m6 s12">
-          <div class="card-panel">
-            <span class="card-title">
-              <a href="/submissions/{{userId}}">
-                <h5>{{galleryName}}</h5>
-              </a>
-            </span>
-            <p>{{city}}{{#if state}}, {{state}}{{/if}}<br>
-            {{country}}</p>
-            <p>
-              <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
-              {{contactPhone}}
-            </p>
-            </div>
+      <div class="card">
+        <div class="card-content">
+          <h4>{{_ "submissions-approved"}}</h4>
+          <div class="row">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th data-field="image">Image</th>
+                  <th data-field="id">Name</th>
+                  <th data-field="name">Location</th>
+                  <th data-field="contact">Contact</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each approved}}
+                <tr>
+                  <td>
+                    {{#if artists.[0].work.[0].image}}
+                    <a href="/submissions/{{userId}}">
+                      <img src="{{artists.[0].work.[0].image}}" alt="" style="max-width: 70px">
+                    </a>
+                    {{/if}}
+                  </td>
+                  <td>
+                    <a href="/submissions/{{userId}}">{{galleryName}}</a>
+                  </td>
+                  <td>
+                    {{city}}{{#if state}}, {{state}}{{/if}}<br>
+                    {{country}}
+                  </td>
+                  <td>
+                    <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
+                    {{contactPhone}}
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
         </div>
-      {{/each}}
       </div>
     </div>
 
