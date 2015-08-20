@@ -85,6 +85,18 @@
 
   "submissions-approved": "Approved",
 
+  "review": {
+    "image": "Image",
+    "name": "Name",
+    "location": "Location",
+    "contact": "Contact",
+    "history": "History",
+    "proposal": "Proposal",
+    "booth": "Booth",
+    "artists": "Artists",
+    "mark-paid": "Mark as Paid"
+  },
+
 // Application
   "application": "Application",
   "application-title": "Exhibitor Application",
@@ -387,6 +399,7 @@
       }
     }
   }
+
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."
