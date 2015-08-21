@@ -1,14 +1,20 @@
-Template.status.created = function () {
-  //
-};
+Template.status.onCreated(function() {
 
-Template.status.helpers({
-  //
 });
 
-Template.status.rendered = function () {
-  //
-};
+Template.status.helpers({
+  hasProposal: function(_id) {
+
+  },
+
+  hasArtists: function(_id) {
+
+  },
+});
+
+Template.status.onRendered(function() {
+
+});
 
 Template.status.events({
   'click .mark-as-paid': function(e) {

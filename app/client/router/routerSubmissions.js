@@ -20,6 +20,7 @@ Router.map(function() {
 
     data: function() {
       return {
+        started: Applications.find({status: 'saved', galleryName: {$ne: null,},}),
         submitted: Applications.find({status: 'submitted',}),
         signed: Applications.find({status: 'signed',}),
         paid: Applications.find({status: 'paid',}),

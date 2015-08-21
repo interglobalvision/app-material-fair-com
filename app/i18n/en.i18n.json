@@ -73,6 +73,7 @@
 // Submissions
   "status": "Status",
   "submissions": "Submissions",
+  "submissions-started": "Started",
   "submissions-submitted": "Submitted",
   "submissions-signed": "Signed",
   "submissions-paid": "Paid",
@@ -83,6 +84,18 @@
   "submissions-your-rating": "Your rating",
 
   "submissions-approved": "Approved",
+
+  "review": {
+    "image": "Image",
+    "name": "Name",
+    "location": "Location",
+    "contact": "Contact",
+    "history": "History",
+    "proposal": "Proposal",
+    "booth": "Booth",
+    "artists": "Artists",
+    "mark-paid": "Mark as Paid"
+  },
 
 // Application
   "application": "Application",
@@ -386,6 +399,7 @@
       }
     }
   }
+
 }
 
 // "with-variables": "Hey, %s! You have received %s new messages today."
