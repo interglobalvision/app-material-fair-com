@@ -7,7 +7,7 @@ Template.submissions.helpers({
 });
 
 Template.submissions.rendered = function () {
-  //
+  $(".js-sortable").tablesorter(); 
 };
 
 Template.submissions.events({
