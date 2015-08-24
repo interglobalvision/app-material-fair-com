@@ -13,7 +13,7 @@ Template.status.helpers({
 });
 
 Template.status.onRendered(function() {
-
+  $(".js-sortable").tablesorter(); 
 });
 
 Template.status.events({
