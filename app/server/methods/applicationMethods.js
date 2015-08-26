@@ -78,6 +78,17 @@ Meteor.methods({
 
   },
 
+  removeWaitlist: function(applicationId) {
+    check(applicationId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update(applicationId, {$set: {waitlist: false,},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
   markApproved: function(applicationId) {
     check(applicationId, String);
 
