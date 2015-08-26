@@ -42,7 +42,7 @@ Template.submissionReview.helpers({
     }
 
     return handle.toLowerCase();
-  },
+  }, 
 });
 
 Template.submissionReview.onRendered(function() {
