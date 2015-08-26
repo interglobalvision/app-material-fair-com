@@ -13,7 +13,9 @@
                   <th data-field="location">Location</th>
                   <th data-field="average" data-empty="bottom">{{_ "submissions-average-rating"}}</th>
                   {{#if isAdmin}}
+                  {{#if afterDeadline}}
                   <th data-field="waitlist">{{_ "submissions-waitlist"}}</th>
+                  {{/if}}
                   {{/if}}
                 </tr>
               </thead>
@@ -43,9 +45,11 @@
                     {{/if}}
                   </td>
                   {{#if isAdmin}}
+                  {{#if afterDeadline}}
                   <td>
                     <a href="#" class="btn btn-small mark-waitlist">{{_ "review.waitlist"}}</a>
                   </td>
+                  {{/if}}
                   {{/if}}
                 </tr>
                 {{/if}}
@@ -71,7 +75,9 @@
                   <th data-field="average">{{_ "submissions-average-rating"}}</th>
                   <th data-field="rating">{{_ "submissions-your-rating"}}</th>
                   {{#if isAdmin}}
+                  {{#if afterDeadline}}
                   <th data-field="waitlist">{{_ "submissions-waitlist"}}</th>
+                  {{/if}}
                   {{/if}}
                 </tr>
               </thead>
@@ -108,9 +114,11 @@
                     {{/if}}
                   </td>
                   {{#if isAdmin}}
+                  {{#if afterDeadline}}
                   <td>
                     <a href="#" class="btn btn-small mark-waitlist">{{_ "review.waitlist"}}</a>
                   </td>
+                  {{/if}}
                   {{/if}}
                 </tr>
                 {{/if}}
@@ -122,6 +130,7 @@
       </div>
     </div>
 
+    {{#if afterDeadline}}
     {{#if isAdmin}}
     <div class="submissions-waitlist section">
       <div class="card">
@@ -215,6 +224,7 @@
         </div>
       </div>
     </div>
+    {{/if}}
 
   </div>
 </template>
