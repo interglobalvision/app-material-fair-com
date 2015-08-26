@@ -25,6 +25,8 @@
   "alert-signup_applicant-thanks": "Gracias por registrarte",
   "alert-signup_applicant-please": "Por favor completa la solicitud",
   "alert-enroll_sent": "Se ha enviado la cuenta por correo electronico",
+  "alert-removed-waitlist": "Removed waitlist",
+  "alert-removed-approved": "Removed approved",
 
 // Signup
   "sign_up-header": "Registro",
@@ -79,7 +81,24 @@
 	"submissions-submitted": "Enviadas",
 	"submissions-signed": "Firmadas",
 	"submissions-paid": "Pagadas",
-	"submissions-approved": "Aceptadas",
+  "submissions-approved": "Aceptadas",
+  "submissions-for-consideration": "For consideration",
+  "submissions-already-rated": "Already rated",
+  "submissions-average-rating": "Average rating",
+  "submissions-your-rating": "Your rating",
+
+  "submissions-image": "Image",
+  "submissions-name": "Name",
+  "submissions-location": "Location",
+  "submissions-contact": "Contact",
+  "submissions-history": "History",
+  "submissions-proposal": "Proposal",
+  "submissions-booth": "Booth",
+  "submissions-artists": "Artists",
+  "submissions-mark-paid": "Mark as Paid",
+  "submissions-waitlist": "Waitlist",
+  "submissions-approve": "Approve",
+  "submissions-remove": "Remove",
 
 // Application
   "application": "Solicitud",
