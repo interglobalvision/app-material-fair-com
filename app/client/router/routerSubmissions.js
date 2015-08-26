@@ -52,6 +52,7 @@ Router.map(function() {
     data: function() {
       return {
         paid: Applications.find({status: 'paid',}, {sort: {rating: -1,},}),
+        waitlist: Applications.find({waitlist: true,}),
         approved: Applications.find({status: 'approved',}),
         committeeUsers: Roles.getUsersInRole('committee'),
       };
