@@ -1,19 +1,8 @@
-Template.status.onCreated(function() {
-
-});
-
-Template.status.helpers({
-  hasProposal: function(_id) {
-
-  },
-
-  hasArtists: function(_id) {
-
-  },
-});
-
 Template.status.onRendered(function() {
-  $(".js-sortable").tablesorter(); 
+  var _this = this;
+
+  _this.$('.js-sortable').tablesorter();
+
 });
 
 Template.status.events({
