@@ -1,14 +1,9 @@
-Template.submissions.created = function () {
-  //
-};
+Template.submissions.onRendered(function() {
+  var _this = this;
 
-Template.submissions.helpers({
-  //
+  _this.$('.js-sortable').tablesorter();
+
 });
-
-Template.submissions.rendered = function () {
-  $('.js-sortable').tablesorter();
-};
 
 Template.submissions.events({
   'click .mark-waitlist': function(e) {

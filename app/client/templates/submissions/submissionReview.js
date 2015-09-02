@@ -1,7 +1,3 @@
-Template.submissionReview.created = function () {
-
-};
-
 Template.submissionReview.helpers({
   website: function(input) {
     var website = input;
@@ -42,7 +38,7 @@ Template.submissionReview.helpers({
     }
 
     return handle.toLowerCase();
-  }, 
+  },
 });
 
 Template.submissionReview.onRendered(function() {
@@ -84,7 +80,7 @@ Template.submissionReview.events({
       if (err) {
         console.log(err);
       } else {
-//         console.log(result);
+
       }
     });
   },
@@ -113,7 +109,7 @@ Template.submissionReview.events({
       if (err) {
         console.log(err);
       } else {
-//         console.log(result);
+
       }
     });
   },
