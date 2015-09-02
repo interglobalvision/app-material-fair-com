@@ -71,7 +71,24 @@
 	"submissions-submitted": "Enviadas",
 	"submissions-signed": "Firmadas",
 	"submissions-paid": "Pagadas",
-	"submissions-approved": "Aceptadas",
+  "submissions-approved": "Aceptadas",
+  "submissions-for-consideration": "For consideration",
+  "submissions-already-rated": "Already rated",
+  "submissions-average-rating": "Average rating",
+  "submissions-your-rating": "Your rating",
+
+  "submissions-image": "Image",
+  "submissions-name": "Name",
+  "submissions-location": "Location",
+  "submissions-contact": "Contact",
+  "submissions-history": "History",
+  "submissions-proposal": "Proposal",
+  "submissions-booth": "Booth",
+  "submissions-artists": "Artists",
+  "submissions-mark-paid": "Mark as Paid",
+  "submissions-waitlist": "Waitlist",
+  "submissions-approve": "Approve",
+  "submissions-remove": "Remove",
 
 // Application
   "application": "Solicitud",
@@ -84,7 +101,7 @@
   "application-edit": "Editar",
 
   "application-add": "Añadir",
-  
+
   "application-closed": "<h2>El proceso de solicitud ha concluido 😞</h2><p class='flow-text'>Si crees que estás viendo este mensaje por error o tienes alguna duda por favor contáctanos a <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>",
 
   "application-terms": "TERMINOS Y CONDICIONES DE PARTICIPACIÓN",

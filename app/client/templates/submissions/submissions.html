@@ -8,15 +8,21 @@
             <table class="striped js-sortable">
               <thead>
                 <tr>
-                  <th data-field="image" data-sorter="false">Image</th>
-                  <th data-field="name">Name</th>
-                  <th data-field="location">Location</th>
+                  <th data-field="image" data-sorter="false">{{_ "submissions-image"}}</th>
+                  <th data-field="name">{{_ "submissions-name"}}</th>
+                  <th data-field="location">{{_ "submissions-location"}}</th>
                   <th data-field="average" data-empty="bottom">{{_ "submissions-average-rating"}}</th>
+                  {{#if isAdmin}}
+                  {{#if afterDeadline}}
+                  <th data-field="waitlist">{{_ "submissions-waitlist"}}</th>
+                  {{/if}}
+                  {{/if}}
                 </tr>
               </thead>
               <tbody>
                 {{#each paid}}
                 {{#if hasUserNotRated _id}}
+                {{#unless waitlist}}
                 <tr>
                   <td>
                     {{#if artists.[0].work.[0].image}}
@@ -39,7 +45,15 @@
                     </span>
                     {{/if}}
                   </td>
+                  {{#if isAdmin}}
+                  {{#if afterDeadline}}
+                  <td>
+                    <a href="#" class="btn btn-small mark-waitlist">{{_ "submissions-waitlist"}}</a>
+                  </td>
+                  {{/if}}
+                  {{/if}}
                 </tr>
+                {{/unless}}
                 {{/if}}
                 {{/each}}
               </tbody>
@@ -57,16 +71,22 @@
             <table class="striped js-sortable">
               <thead>
                 <tr>
-                  <th data-field="image" data-sorter="false">Image</th>
-                  <th data-field="name">Name</th>
-                  <th data-field="location">Location</th>
+                  <th data-field="image" data-sorter="false">{{_ "submissions-image"}}</th>
+                  <th data-field="name">{{_ "submissions-name"}}</th>
+                  <th data-field="location">{{_ "submissions-location"}}</th>
                   <th data-field="average">{{_ "submissions-average-rating"}}</th>
                   <th data-field="rating">{{_ "submissions-your-rating"}}</th>
+                  {{#if isAdmin}}
+                  {{#if afterDeadline}}
+                  <th data-field="waitlist">{{_ "submissions-waitlist"}}</th>
+                  {{/if}}
+                  {{/if}}
                 </tr>
               </thead>
               <tbody>
                 {{#each paid}}
                 {{#if hasUserRated _id}}
+                {{#unless waitlist}}
                 <tr>
                   <td>
                     {{#if artists.[0].work.[0].image}}
@@ -96,7 +116,15 @@
                     </span>
                     {{/if}}
                   </td>
+                  {{#if isAdmin}}
+                  {{#if afterDeadline}}
+                  <td>
+                    <a href="#" class="btn btn-small mark-waitlist">{{_ "submissions-waitlist"}}</a>
+                  </td>
+                  {{/if}}
+                  {{/if}}
                 </tr>
+                {{/unless}}
                 {{/if}}
                 {{/each}}
               </tbody>
@@ -106,7 +134,60 @@
       </div>
     </div>
 
-<!-- does any of the below actually need to be here? -->
+    {{#if afterDeadline}}
+    {{#if isAdmin}}
+    <div class="submissions-waitlist section">
+      <div class="card">
+        <div class="card-content">
+          <h4>{{_ "submissions-waitlist"}}</h4>
+          <div class="row">
+            <table class="striped js-sortable">
+              <thead>
+                <tr>
+                  <th data-field="image" data-sorter="false">{{_ "submissions-image"}}</th>
+                  <th data-field="name">{{_ "submissions-name"}}</th>
+                  <th data-field="location">{{_ "submissions-location"}}</th>
+                  <th data-field="contact">{{_ "submissions-contact"}}</th>
+                  <th data-field="approve">{{_ "submissions-approve"}}</th>
+                  <th data-field="remove">{{_ "submissions-remove"}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each waitlist}}
+                <tr>
+                  <td>
+                    {{#if artists.[0].work.[0].image}}
+                    <a href="/submissions/{{userId}}">
+                      <img src="{{artists.[0].work.[0].image}}" alt="" style="max-width: 70px">
+                    </a>
+                    {{/if}}
+                  </td>
+                  <td>
+                    <a href="/submissions/{{userId}}">{{galleryName}}</a>
+                  </td>
+                  <td>
+                    {{city}}{{#if state}}, {{state}}{{/if}}<br>
+                    {{country}}
+                  </td>
+                  <td>
+                    <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
+                    {{contactPhone}}
+                  </td>
+                  <td>
+                    <a href="#" class="btn btn-small mark-approved">{{_ "submissions-approve"}}</a>
+                  </td>
+                  <td>
+                    <a href="#" class="btn btn-small red remove-waitlist">{{_ "submissions-remove"}}</a>
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/if}}
 
     <div class="submissions-approved section">
       <div class="card">
@@ -116,10 +197,13 @@
             <table class="striped js-sortable">
               <thead>
                 <tr>
-                  <th data-field="image" data-sorter="false">Image</th>
-                  <th data-field="name">Name</th>
-                  <th data-field="location">Location</th>
-                  <th data-field="contact">Contact</th>
+                  <th data-field="image" data-sorter="false">{{_ "submissions-image"}}</th>
+                  <th data-field="name">{{_ "submissions-name"}}</th>
+                  <th data-field="location">{{_ "submissions-location"}}</th>
+                  <th data-field="contact">{{_ "submissions-contact"}}</th>
+                  {{#if isAdmin}}
+                  <th data-field="remove">{{_ "submissions-remove"}}</th>
+                  {{/if}}
                 </tr>
               </thead>
               <tbody>
@@ -143,6 +227,11 @@
                     <a href="mailto:{{contactEmail}}">{{contactEmail}}</a><br>
                     {{contactPhone}}
                   </td>
+                  {{#if isAdmin}}
+                  <td>
+                    <a href="#" class="btn btn-small red remove-approved">{{_ "submissions-remove"}}</a>
+                  </td>
+                  {{/if}}
                 </tr>
                 {{/each}}
               </tbody>
@@ -151,6 +240,7 @@
         </div>
       </div>
     </div>
+    {{/if}}
 
   </div>
 </template>

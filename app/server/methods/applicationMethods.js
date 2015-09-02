@@ -67,6 +67,39 @@ Meteor.methods({
 
   },
 
+  markWaitlist: function(applicationId) {
+    check(applicationId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update(applicationId, {$set: {waitlist: true,},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
+  removeWaitlist: function(applicationId) {
+    check(applicationId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update(applicationId, {$set: {waitlist: false,},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
+  markApproved: function(applicationId) {
+    check(applicationId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update(applicationId, {$set: {status: 'approved',},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
   removeApplication: function(userId) {
     check(userId, String);
 
