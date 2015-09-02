@@ -7,7 +7,7 @@ Template.submissions.helpers({
 });
 
 Template.submissions.rendered = function () {
-  $(".js-sortable").tablesorter(); 
+  $('.js-sortable').tablesorter();
 };
 
 Template.submissions.events({
@@ -20,7 +20,7 @@ Template.submissions.events({
         Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.reason, 3000);
       } else {
-        Materialize.toast(TAPi18n.__('alert-waitlisted'), 3000);
+
       }
     });
 
@@ -35,7 +35,7 @@ Template.submissions.events({
         Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.reason, 3000);
       } else {
-        Materialize.toast(TAPi18n.__('alert-removed-waitlist'), 3000);
+
       }
     });
 
@@ -50,7 +50,7 @@ Template.submissions.events({
         Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.reason, 3000);
       } else {
-        Materialize.toast(TAPi18n.__('alert-approved'), 3000);
+
       }
     });
 
@@ -65,7 +65,7 @@ Template.submissions.events({
         Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.reason, 3000);
       } else {
-        Materialize.toast(TAPi18n.__('alert-removed-approved'), 3000);
+
       }
     });
 
