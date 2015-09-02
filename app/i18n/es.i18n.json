@@ -25,8 +25,6 @@
   "alert-signup_applicant-thanks": "Gracias por registrarte",
   "alert-signup_applicant-please": "Por favor completa la solicitud",
   "alert-enroll_sent": "Se ha enviado la cuenta por correo electronico",
-  "alert-removed-waitlist": "Removed waitlist",
-  "alert-removed-approved": "Removed approved",
 
 // Signup
   "sign_up-header": "Registro",
