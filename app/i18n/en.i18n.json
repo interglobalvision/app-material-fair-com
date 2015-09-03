@@ -29,13 +29,13 @@
 // Signup
   "sign_up-header": "Register",
   "sign_up-copy": "<p class='flow-text'>Thank you for your interest in applying for the third edition of Material Art Fair in Mexico City. Please register below to start your application. Your registration information will be sent to the indicated email address so that you can pause and resume the application process as necessary.</p>
-  <p class='flow-text'>Please note that the <strong>application deadline is Thursday, September 10th, 2015</strong>. No applications will be accepted after that date.</p>
+  <p class='flow-text'>Please note that the <strong>application deadline is Friday, September 18th, 2015</strong>. No applications will be accepted after that date.</p>
   <p class='flow-text'>A mandatory and non-refundable application fee of $125 USD will be charged at the end of the process in order to complete the submission.</p>",
 
 // Login
   "login-header": "Login",
   "login-copy": "<p class='flow-text'>Thanks again for your application to Material Art Fair 2016.</p>
-  <p class='flow-text'>Please remember that the application deadline is <strong>Thursday, September 10th, 2015</strong>. No applications will be accepted after that date.</p>",
+  <p class='flow-text'>Please remember that the application deadline is <strong>Friday, September 18th, 2015</strong>. No applications will be accepted after that date.</p>",
 
 // Forgot
   "forgot-header": "Forgot your password?",
@@ -179,7 +179,7 @@
   "application-pay-confirm": "By clicking the 'Pay' button below, you agree to pay the $125 USD application fee. You will receive confirmation of the charge as well as confirmation that your application to Material Art Fair 2016 has been completed.",
   "application-pay-pay": "Pay",
 
-  "application-thanks": "Thanks for your application to Material Art Fair 2016. Your application fee has been processed. The 2016 Selection Committee will begin reviewing applications after the deadline of September 10th and we will begin the notification process in early October.",
+  "application-thanks": "Thanks for your application to Material Art Fair 2016. Your application fee has been processed. The 2016 Selection Committee will begin reviewing applications after the deadline of September 18th and we will begin the notification process in early October.",
   "application-download_pdf": "Download PDF of your application",
 
   "booth-single": "Project / Single / 3 m2 (approx. 32 sq. ft.), $525 USD",
@@ -199,7 +199,7 @@
       "general": {
         "label": "Gallery Information",
         "text": "<p class='flow-text'>Thank you for your application to the third edition of Material Art Fair, which will take place from February 4th - 7th, 2016, at Expo Reforma in Mexico City.</p>
-        <p class='flow-text'>Please remember that the <strong>application deadline is Thursday, September 10th, 2015</strong>. No applications will be accepted after that date.</p>
+        <p class='flow-text'>Please remember that the <strong>application deadline is Friday, September 18th, 2015</strong>. No applications will be accepted after that date.</p>
         <p class='flow-text'>Each application will be carefully reviewed, considered, and discussed by our 2016 Selection Committee and we will send notification of their decisions to all applicants beginning in early October.</p>
         <p class='flow-text'>If at any time you need to pause and continue your application at a later moment, please click the save button so as not to lose any information.</p>
         <p class='flow-text'>Please report any errors or problems directly to us at <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>"

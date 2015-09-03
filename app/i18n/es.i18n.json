@@ -29,13 +29,13 @@
 // Signup
   "sign_up-header": "Registro",
   "sign_up-copy": "<p class='flow-text'>Gracias por tu interés en participar en la tercera edición de Material Art Fair en la Ciudad de México. Por favor llena el registro en la parte inferior para empezar tu proceso de solicitud. En breve recibirás un correo con la confirmación de tu registro para que puedas pausar y resumir el proceso de solicitud como te sea necesario.</p>
-  <p class='flow-text'>El proceso de solicitud <strong>concluye el jueves 10 de septiembre del 2015</strong>. Después de esta fecha no se aceptará ninguna solicitud, ni se aceptarán prórrogas.</p>
+  <p class='flow-text'>El proceso de solicitud <strong>concluye el viernes 18 de septiembre del 2015</strong>. Después de esta fecha no se aceptará ninguna solicitud, ni se aceptarán prórrogas.</p>
   <p class='flow-text'>Existe un costo obligatorio y no reembolsable de $125 USD que será cargado al final del proceso de solicitud para finalizar el envío de la misma.</p>",
 
 // Login
   "login-header": "Ingresar",
   "login-copy": "<p class='flow-text'>Gracias de nuevo por tu solicitud para participar en Material Art Fair 2016.</p>
-  <p class='flow-text'>Por favor toma nota de que el proceso de registro concluye <strong>Jueves 10 de Septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>",
+  <p class='flow-text'>Por favor toma nota de que el proceso de registro concluye <strong>Viernes 18 de Septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>",
 
 // Forgot
   "forgot-header": "¿Olvidaste tu contraseña?",
@@ -201,7 +201,7 @@
       "general": {
         "label": "Información de galería/espacio",
         "text": "<p class='flow-text'>Gracias por tu solicitud a la tercera edición de Material Art Fair, que se llevará a cabo a del 4 al 7 de Febrero del 2016, en el Expo Reforma en la Ciudad de México.</p>
-        <p class='flow-text'>El proceso de registro <strong>concluye el jueves 10 de septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>
+        <p class='flow-text'>El proceso de registro <strong>concluye el viernes 18 de septiembre del 2015</strong>. No se aceptará ninguna solicitud después de esta fecha.</p>
         <p class='flow-text'>Cada solicitud será cuidadosamente revisada, considerada y analizada por nuestro comité de selección del 2016. Les haremos llegar la decisión del comité a todos los solicitantes a principios de Octubre.</p>
         <p class='flow-text'>Si en algún momento necesitas pausar y deseas continuar después con tu solicitud, por favor haz click en el botón “guardar” para no perder tu información.</p>
         <p class='flow-text'>Por favor reporta cualquier error o problema directamente con nosotros a <a href='mailto:applications@material-fair.com' class='u-inline-block'>applications@material-fair.com</a>.</p>"
