@@ -9,14 +9,15 @@ Meteor.methods({
   },
 
   saveApplication: function(applicationId, applicationUpdate) {
-    var application = Applications.findOne(applicationId);
 
     if (!Meteor.userId()) {
       throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.');
     }
 
+    var application = Applications.findOne(applicationId);
+
     // Look for falsy values on works and remove them
-    if (applicationUpdate.$set.hasOwnProperty('artists')) {
+    if (applicationUpdate.hasOwnProperty('$set') && applicationUpdate.$set.hasOwnProperty('artists')) {
       for (var i = 0; i < applicationUpdate.$set.artists.length; i++) {
         if (applicationUpdate.$set.artists[i].hasOwnProperty('work')) {
           applicationUpdate.$set.artists[i].work = _.compact( applicationUpdate.$set.artists[i].work );
