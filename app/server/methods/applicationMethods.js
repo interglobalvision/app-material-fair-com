@@ -18,8 +18,12 @@ Meteor.methods({
 
     // Look for falsy values on works and remove them
     if (applicationUpdate.hasOwnProperty('$set') && applicationUpdate.$set.hasOwnProperty('artists')) {
+
+      // Sanitize artists
+      applicationUpdate.$set.artists = _.compact( applicationUpdate.$set.artists);
       for (var i = 0; i < applicationUpdate.$set.artists.length; i++) {
         if (applicationUpdate.$set.artists[i].hasOwnProperty('work')) {
+          // Sanitize works
           applicationUpdate.$set.artists[i].work = _.compact( applicationUpdate.$set.artists[i].work );
         }
       }
