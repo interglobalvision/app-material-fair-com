@@ -51,18 +51,22 @@ Template.signed.events({
         } else {
           Materialize.toast(TAPi18n.__('alert-pay_thanks'), 3000);
         }
+
+        // Enable pay button
+        $('#submit-payment').removeAttr('disabled');
+
       });
 
     }, function(error) {
+
+        // Enable pay button
+        $('#submit-payment').removeAttr('disabled');
 
         console.log(error);
         Materialize.toast(TAPi18n.__('alert-error'), 3000);
         Materialize.toast(error.message_to_purchaser, 3000);
 
     });
-
-    // Enable pay button
-    $('#submit-payment').removeAttr('disabled');
 
   },
 
