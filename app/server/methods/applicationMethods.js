@@ -81,6 +81,28 @@ Meteor.methods({
 
   },
 
+  extendApplication: function(applicationUserId) {
+    check(applicationUserId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update({userId: applicationUserId}, {$set: {extend: true,},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
+  unextendApplication: function(applicationUserId) {
+    check(applicationUserId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update({userId: applicationUserId}, {$set: {extend: false,},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
   removeApplication: function(userId) {
     check(userId, String);
 
