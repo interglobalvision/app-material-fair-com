@@ -27,10 +27,10 @@ Template.users.events({
   'click .extend': function(event){
     event.preventDefault();
 
-		var applicationUserId = this._id,
-		userId = Meteor.userId();
+    var applicationUserId = this._id,
+    userId = Meteor.userId();
 
-		if (Roles.userIsInRole(userId, 'admin')) {
+    if (Roles.userIsInRole(userId, 'admin')) {
       Meteor.call('extendApplication', applicationUserId, function(error, result) {
         if (error) {
           alert(error);
@@ -38,11 +38,11 @@ Template.users.events({
           Materialize.toast('Application extended', 3000);
         }
       });
-		} else {
-			Materialize.toast("You don't have permission", 3000);
-			Router.go('/');
-		}
-	},
+    } else {
+      Materialize.toast("You don't have permission", 3000);
+      Router.go('/');
+    }
+  },
 
   'click .unextend': function(event){
     event.preventDefault();
