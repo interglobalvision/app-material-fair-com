@@ -26,7 +26,11 @@
                     {{#each emails}}{{address}}{{/each}}
                   </td>
                   <td>
+                    {{#if extended}}
+                    <a href="#" class="btn red btn-small unextend">Unextend</a>
+                    {{else}}
                     <a href="#" class="btn btn-small extend">Extend</a>
+                    {{/if}}
                   </td>
                 </tr>
               {{/each}}
