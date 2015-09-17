@@ -7,9 +7,9 @@ Template.users.helpers({
     var application = Applications.findOne({userId: this._id}, {galleryName: 1});
     return application.galleryName;
   },
-  galleryEmail: function() {
-    var application = Applications.findOne({userId: this._id}, {galleryEmail: 1});
-    return application.galleryEmail;
+  contactEmail: function() {
+    var application = Applications.findOne({userId: this._id}, {contactEmail: 1});
+    return application.contactEmail;
   },
   extended: function() {
     var application = Applications.findOne({userId: this._id}, {extend: 1});
