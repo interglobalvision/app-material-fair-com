@@ -75,6 +75,7 @@ Router.map(function() {
     waitOn: function() {
       return [
         Meteor.subscribe('allUsers'),
+        Meteor.subscribe('allApplications'),
       ];
     },
 
