@@ -65,6 +65,14 @@
 	"dashboard-add_user-committee": "Comité",
 	"dashboard-add_user-create": "Crear Usuario",
 
+// Users
+  "users": "Usuarios",
+  "contact-email": "Email de Contacto",
+  "user-email": "Email de Usuario",
+  "extend": "Extender",
+  "undextend": "Desextender",
+  "extend-deadline": "Extender fecha de límite",
+
 // Submissions
 	"submissions": "Solicitudes",
 	"submissions-submitted": "Enviadas",

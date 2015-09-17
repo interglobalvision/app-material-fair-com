@@ -3,11 +3,41 @@
     <div class="section">
       <div class="card">
         <div class="card-content">
-          {{#each users}}
-          <p>
-            {{#each emails}}{{address}}{{/each}}
-          </p>
-          {{/each}}
+          <h4>{{_ "users"}}</h4>
+          <div class="row">
+            <table class="striped js-sortable">
+              <thead>
+                <tr>
+                  <th data-field="galleryname" class="u-pointer">{{_ "schemas.application.galleryName.label"}}</th>
+                  <th data-field="contactemail" class="u-pointer">{{_ "contact-email"}}</th>
+                  <th data-field="useremail" class="u-pointer">{{_ "user-email"}}</th>
+                  <th data-field="extend" data-sorter="false">{{_ "extend-deadline"}}</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#each users}}
+                <tr>
+                  <td>
+                    <a href="/submissions/{{userId}}">{{galleryName}}</a>
+                  </td>
+                  <td>
+                    {{contactEmail}}
+                  </td>
+                  <td>
+                    {{#each emails}}{{address}}{{/each}}
+                  </td>
+                  <td>
+                    {{#if extended}}
+                    <a href="#" class="btn red btn-small unextend">{{_ "unextend"}}</a>
+                    {{else}}
+                    <a href="#" class="btn btn-small extend">{{_ "extend"}}</a>
+                    {{/if}}
+                  </td>
+                </tr>
+              {{/each}}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

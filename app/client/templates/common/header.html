@@ -7,6 +7,7 @@
           <ul id="nav" class="right hide-on-med-and-down">
             {{#if isInRole 'admin'}}
               <li class="waves-effect waves-light"><a href="/admin">{{_ "dashboard"}}</a></li>
+              <li class="waves-effect waves-light"><a href="/users">{{_ "users"}}</a></li>
             {{/if}}
             {{#if isInRole 'admin,committee'}}
               <li class="waves-effect waves-light"><a href="/submissions">{{_ "submissions"}}</a></li>
