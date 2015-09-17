@@ -3,13 +3,36 @@
     <div class="section">
       <div class="card">
         <div class="card-content">
-          {{#each users}}
-          <p>
-            {{galleryName}}
-            {{galleryEmail}}
-            {{#each emails}}{{address}}{{/each}}
-          </p>
-          {{/each}}
+          <div class="row">
+            <table class="striped js-sortable">
+              <thead>
+                <tr>
+                  <th data-field="name">Gallery Name</th>
+                  <th data-field="galleryemail">Gallery Email</th>
+                  <th data-field="useremail">User Email</th>
+                  <th data-field="average" data-sorter="false">Extend Deadline</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#each users}}
+                <tr>
+                  <td>
+                    <a href="/submissions/{{userId}}">{{galleryName}}</a>
+                  </td>
+                  <td>
+                    {{galleryEmail}}
+                  </td>
+                  <td>
+                    {{#each emails}}{{address}}{{/each}}
+                  </td>
+                  <td>
+                    <a href="#" class="btn btn-small extend">Extend</a>
+                  </td>
+                </tr>
+              {{/each}}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
