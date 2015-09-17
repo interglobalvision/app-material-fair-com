@@ -14,7 +14,9 @@ Template.users.helpers({
 });
 
 Template.users.rendered = function () {
-  //
+  var _this = this;
+
+  _this.$('.js-sortable').tablesorter();
 };
 
 Template.users.events({
