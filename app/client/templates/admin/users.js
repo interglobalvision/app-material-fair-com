@@ -11,6 +11,10 @@ Template.users.helpers({
     var application = Applications.findOne({userId: this._id}, {galleryEmail: 1});
     return application.galleryEmail;
   },
+  extended: function() {
+    var application = Applications.findOne({userId: this._id}, {extend: 1});
+    return application.extend;
+  },
 });
 
 Template.users.rendered = function () {
@@ -31,7 +35,7 @@ Template.users.events({
         if (error) {
           alert(error);
         } else {
-          Materialize.toast('Application Extended', 3000);
+          Materialize.toast('Application extended', 3000);
         }
       });
 		} else {
@@ -39,4 +43,24 @@ Template.users.events({
 			Router.go('/');
 		}
 	},
+
+  'click .unextend': function(event){
+    event.preventDefault();
+
+    var applicationUserId = this._id,
+    userId = Meteor.userId();
+
+    if (Roles.userIsInRole(userId, 'admin')) {
+      Meteor.call('unextendApplication', applicationUserId, function(error, result) {
+        if (error) {
+          alert(error);
+        } else {
+          Materialize.toast('Application unextended', 3000);
+        }
+      });
+    } else {
+      Materialize.toast("You don't have permission", 3000);
+      Router.go('/');
+    }
+  },
 });
