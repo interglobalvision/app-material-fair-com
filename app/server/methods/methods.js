@@ -62,6 +62,8 @@ Meteor.methods({
 
     var chargeResult = conektaSync(data);
 
+    console.log('New transaction: ', chargeResult);
+
     if (chargeResult.object === 'error') {
       throw new Meteor.Error('card-payment-failed', chargeResult.message_to_purchaser);
     }
