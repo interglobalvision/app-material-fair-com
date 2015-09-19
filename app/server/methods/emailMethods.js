@@ -55,6 +55,7 @@ Meteor.methods({
 
     if (user.profile.lang === 'es') {
       email = {
+        address: user.emails[0].address,
         subject: 'Pago Completado | Material Art Fair',
         text: 'Tu pago ' + transactionId + ' a Material Art Fair ha sido completado desde tu ' + cardType + ' con terminación ' + last4,
       };
