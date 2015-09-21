@@ -307,7 +307,6 @@ ApplicationSchema = new SimpleSchema({
   },
   website: {
     type: String,
-    regEx: SimpleSchema.RegEx.Domain,
     optional: true,
   },
 
@@ -317,7 +316,6 @@ ApplicationSchema = new SimpleSchema({
   },
   contactEmail: {
     type: String,
-    regEx: SimpleSchema.RegEx.Email,
   },
   contactPhone: {
     type: String,
