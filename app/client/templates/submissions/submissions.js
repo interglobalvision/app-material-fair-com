@@ -54,7 +54,7 @@ Template.submissions.events({
   'click .remove-approved': function(e) {
     e.preventDefault();
 
-    Meteor.call('markApplicationPaid', this._id, function(error, result) {
+    Meteor.call('removeApproved', this._id, function(error, result) {
       if (error) {
         console.log(reason);
         Materialize.toast(TAPi18n.__('alert-error'), 3000);

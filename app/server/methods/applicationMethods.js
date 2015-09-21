@@ -129,7 +129,18 @@ Meteor.methods({
     check(applicationId, String);
 
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
-      return Applications.update(applicationId, {$set: {status: 'approved',},});
+      return Applications.update(applicationId, {$set: {status: 'approved', waitlist: false},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
+  removeApproved: function(applicationId) {
+    check(applicationId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update(applicationId, {$set: {status: 'paid', waitlist: true,},});
     } else {
       throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
     }
