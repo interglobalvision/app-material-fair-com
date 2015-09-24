@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 insecure
 iron:router
 accounts-base
@@ -31,11 +30,28 @@ edgee:slingshot
 random
 meteorhacks:npm
 
-npm-container
 force-ssl
 ixdi:material-design-iconic-font
 underscore
 pascoual:pdfkit
 spiderable
 andrei:tablesorter
-materialize:materialize@0.97.0
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+ejson
+spacebars
+check
+
+
+
+
+npm-container
+materialize:materialize@=0.97.0
