@@ -7,6 +7,7 @@
           <ul id="nav" class="right hide-on-med-and-down">
             {{#if isInRole 'admin'}}
               <li class="waves-effect waves-light"><a href="/admin">{{_ "dashboard"}}</a></li>
+              <li class="waves-effect waves-light"><a href="/users">{{_ "users"}}</a></li>
               <li class="waves-effect waves-light"><a href="/status">{{_ "status"}}</a></li>
             {{/if}}
             {{#if isInRole 'admin,committee'}}
@@ -36,6 +37,7 @@
           <ul id="nav-mobile" class="side-nav">
             {{#if isInRole 'admin'}}
               <li><a href="/admin">{{_ "dashboard"}}</a></li>
+              <li><a href="/users">{{_ "users"}}</a></li>
               <li><a href="/status">{{_ "status"}}</a></li>
             {{/if}}
             {{#if isInRole 'admin,committee'}}

@@ -9,10 +9,24 @@ Meteor.methods({
   },
 
   saveApplication: function(applicationId, applicationUpdate) {
-    var application = Applications.findOne(applicationId);
 
     if (!Meteor.userId()) {
       throw new Meteor.Error('not-signed-in', 'You must register a user first before creating an application.');
+    }
+
+    var application = Applications.findOne(applicationId);
+
+    // Look for falsy values on works and remove them
+    if (applicationUpdate.hasOwnProperty('$set') && applicationUpdate.$set.hasOwnProperty('artists')) {
+
+      // Sanitize artists
+      applicationUpdate.$set.artists = _.compact( applicationUpdate.$set.artists);
+      for (var i = 0; i < applicationUpdate.$set.artists.length; i++) {
+        if (applicationUpdate.$set.artists[i].hasOwnProperty('work')) {
+          // Sanitize works
+          applicationUpdate.$set.artists[i].work = _.compact( applicationUpdate.$set.artists[i].work );
+        }
+      }
     }
 
     return Applications.update(application._id, applicationUpdate);
@@ -67,6 +81,28 @@ Meteor.methods({
 
   },
 
+  extendApplication: function(applicationUserId) {
+    check(applicationUserId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update({userId: applicationUserId}, {$set: {extend: true,},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
+  unextendApplication: function(applicationUserId) {
+    check(applicationUserId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update({userId: applicationUserId}, {$set: {extend: false,},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
   markWaitlist: function(applicationId) {
     check(applicationId, String);
 
@@ -93,7 +129,18 @@ Meteor.methods({
     check(applicationId, String);
 
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
-      return Applications.update(applicationId, {$set: {status: 'approved',},});
+      return Applications.update(applicationId, {$set: {status: 'approved', waitlist: false},});
+    } else {
+      throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
+    }
+
+  },
+
+  removeApproved: function(applicationId) {
+    check(applicationId, String);
+
+    if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      return Applications.update(applicationId, {$set: {status: 'paid', waitlist: true,},});
     } else {
       throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
     }

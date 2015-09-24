@@ -7,15 +7,20 @@ Router.map(function() {
       var userId = Meteor.userId();
       
       if (Roles.userIsInRole(userId, 'applicant')) {
-        
-        // Check if after deadline
-        if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
 
-          // Get application status and redirect depending on that
-          var userApplication = Applications.findOne({}, {'status': 1,});
+        var userApplication = Applications.findOne({}, {'status': 1, 'extend': 1});
+
+        if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
         
-          if (userApplication.status !== 'paid' || userApplication.status !== 'approved') {
-            Router.go('/application-closed');
+          // Check if after deadline
+          if (userApplication.extend !== true || moment().isAfter(Meteor.settings.public.applicationExtension)) {
+
+            // Get application status and redirect depending on that
+            
+            if (userApplication.status !== 'paid' || userApplication.status !== 'approved') {
+              Router.go('/application-closed');
+            }
+
           }
 
         }

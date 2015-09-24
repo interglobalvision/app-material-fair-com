@@ -24,7 +24,7 @@ Template.saved.events({
     var applicationValues = AutoForm.getFormValues('insertApplicationForm');
 
     // Update values
-    Applications.update(this._id, applicationValues.updateDoc, function(error, response) {
+    Meteor.call('saveApplication', this._id, applicationValues.updateDoc, function(error, response) {
       if (error) {
         console.log(error);
         Materialize.toast(TAPi18n.__('alert-error'), 3000);

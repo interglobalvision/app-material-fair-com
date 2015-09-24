@@ -1,16 +1,16 @@
-Template.userRemove.created = function () {
+Template.removeUser.created = function () {
   //
 };
 
-Template.userRemove.helpers({
+Template.removeUser.helpers({
 	//
 });
 
-Template.userRemove.rendered = function () {
+Template.removeUser.rendered = function () {
   //
 };
 
-Template.userRemove.events({
+Template.removeUser.events({
   'click .remove-user': function(event){
     event.preventDefault();
 

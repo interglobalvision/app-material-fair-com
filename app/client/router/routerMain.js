@@ -50,11 +50,7 @@ Router.map(function() {
     path: '/signup',
     onBeforeAction: function() {
       if (!Meteor.userId()) {
-        if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
-          Router.go('/application-closed');
-        } else {
-          this.next();
-        }
+        this.next();
       } else {
         Router.go('/');
       }

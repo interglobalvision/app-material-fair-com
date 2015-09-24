@@ -20,7 +20,7 @@ Meteor.methods({
       var future = new Future();
 
       Conekta.Charge.create({
-        "amount": 125,
+        "amount": 12500,
         "currency": "USD",
         "description": "Material Art Fair",
         "reference_id": data.applicationId,
@@ -30,7 +30,7 @@ Meteor.methods({
           "line_items": [{
             "name": "Material Art Fair application fee",
             "sku": "maf_fee_1",
-            "unit_price": 125,
+            "unit_price": 12500,
             "description": "Art Fair Application",
             "quantity": 1,
             "type": "application",
@@ -61,6 +61,8 @@ Meteor.methods({
     };
 
     var chargeResult = conektaSync(data);
+
+    console.log('New transaction: ', chargeResult);
 
     if (chargeResult.object === 'error') {
       throw new Meteor.Error('card-payment-failed', chargeResult.message_to_purchaser);
