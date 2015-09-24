@@ -104,6 +104,19 @@
   "submissions-approve": "Approve",
   "submissions-remove": "Remove",
 
+// Exhibitor
+  "exhibitor-area": "Exhibitor Area",
+  "exhibitor-congratulations": "Congratulations!  You have been selected...",
+  "exhibitor-general": "General Exhibitor Information",
+  "exhibitor-badges": "Exhibitor Badge Registration",
+  "exhibitor-vip": "VIP invitations",
+  "exhibitor-events": "Offsite Exhibition and Event Registration",
+  "exhibitor-floorplan": "General Floorplan",
+  "exhibitor-transport": "Work Transportation",
+  "exhibitor-guide": "Lodging and restaurant guide",
+  "exhibitor-logo": "Material Art Fair logo files",
+
+
 // Application
   "application": "Application",
   "application-title": "Exhibitor Application",
