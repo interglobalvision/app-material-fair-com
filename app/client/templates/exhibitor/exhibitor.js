@@ -1,6 +1,6 @@
-Template.exhibitor.created = function () {
+Template.exhibitor.onCreated( function() {
   //
-};
+});
 
 Template.exhibitor.helpers({
   //
