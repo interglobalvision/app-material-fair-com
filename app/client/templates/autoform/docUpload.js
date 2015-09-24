@@ -26,7 +26,7 @@ Template.docUpload.events({
         if ($hiddenInput.siblings('.doc-upload-link')[0]) {
           $hiddenInput.siblings('.doc-upload-link').attr('href', downloadUrl);
         } else {
-          $hiddenInput.parent().append('<a class="btn-floating blue doc-upload-link" href="' + downloadUrl + '"><i class="zmdi zmdi-file-text"></i></a>');
+          $hiddenInput.parent().append('<a class="btn-floating blue doc-upload-link" href="' + downloadUrl + '"><i class="material-icons">description</i></a>');
         }
         
         Materialize.toast(TAPi18n.__('alert-upload_success'), 3000);
