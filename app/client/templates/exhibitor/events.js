@@ -1,15 +1,15 @@
-Template.events.created = function () {
+Template.exhibitorEvents.created = function () {
   //
 };
 
-Template.events.helpers({
+Template.exhibitorEvents.helpers({
   //
 });
 
-Template.events.rendered = function () {
+Template.exhibitorEvents.rendered = function () {
   //
 };
 
-Template.events.events({
+Template.exhibitorEvents.events({
   //
 });

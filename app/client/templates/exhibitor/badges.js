@@ -1,15 +1,15 @@
-Template.badges.created = function () {
+Template.exhibitorBadges.created = function () {
   //
 };
 
-Template.badges.helpers({
+Template.exhibitorBadges.helpers({
   //
 });
 
-Template.badges.rendered = function () {
+Template.exhibitorBadges.rendered = function () {
   //
 };
 
-Template.badges.events({
+Template.exhibitorBadges.events({
   //
 });

@@ -1,15 +1,15 @@
-Template.vip.created = function () {
+Template.exhibitorVip.created = function () {
   //
 };
 
-Template.vip.helpers({
+Template.exhibitorVip.helpers({
   //
 });
 
-Template.vip.rendered = function () {
+Template.exhibitorVip.rendered = function () {
   //
 };
 
-Template.vip.events({
+Template.exhibitorVip.events({
   //
 });
