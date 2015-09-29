@@ -45,6 +45,9 @@
             {{#if isInRole 'admin,committee'}}
               <li><a href="/submissions">{{_ "submissions"}}</a></li>
             {{/if}}
+            {{#if isInRole 'exhibitor'}}
+              <li><a href="/exhibitor">{{_ "exhibitor-area"}}</a></li>
+            {{/if}}
             {{#if isInRole 'applicant'}}
               <li><a href="/application">{{_ "application"}}</a></li>
             {{/if}}
