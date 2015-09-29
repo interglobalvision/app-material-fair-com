@@ -15,7 +15,11 @@ Template.login.events = {
         var userId = Meteor.userId();
 
         if (Roles.userIsInRole(userId, 'applicant')) {
-          Router.go('/application');
+          if (Roles.userIsInRole(userId, 'exhibitor')) {
+            Router.go('/exhibitor');
+          } else {
+            Router.go('/application');
+          }
         } else if (Roles.userIsInRole(userId, 'committee') && !Roles.userIsInRole(userId, 'admin')) {
           Router.go('/submissions');
         } else if (Roles.userIsInRole(userId, 'admin')) {

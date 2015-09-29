@@ -128,7 +128,11 @@ Meteor.methods({
   markApproved: function(applicationId) {
     check(applicationId, String);
 
+    var application = Applications.findOne(applicationId, {userId: 1}),
+      applicantId = application.userId;
+
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      Roles.addUsersToRoles(applicantId, ['exhibitor',]);
       return Applications.update(applicationId, {$set: {status: 'approved', waitlist: false},});
     } else {
       throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
@@ -139,7 +143,11 @@ Meteor.methods({
   removeApproved: function(applicationId) {
     check(applicationId, String);
 
+    var application = Applications.findOne(applicationId, {userId: 1}),
+      applicantId = application.userId;
+
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
+      Roles.removeUsersFromRoles(applicantId, ['exhibitor',]);
       return Applications.update(applicationId, {$set: {status: 'paid', waitlist: true,},});
     } else {
       throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');

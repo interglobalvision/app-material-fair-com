@@ -13,10 +13,12 @@
             {{#if isInRole 'admin,committee'}}
               <li class="waves-effect waves-light"><a href="/submissions">{{_ "submissions"}}</a></li>
             {{/if}}
+            {{#if isInRole 'exhibitor'}}
+              <li class="waves-effect waves-light"><a href="/exhibitor">{{_ "exhibitor-area"}}</a></li>
+            {{/if}}
             {{#if isInRole 'applicant'}}
               <li class="waves-effect waves-light"><a href="/application">{{_ "application"}}</a></li>
             {{/if}}
-
             {{#if isLoggedIn}}
               <li class="waves-effect waves-light"><a href="/" class="log-out">{{_ "logout"}}</a></li>
             {{else}}
@@ -42,6 +44,9 @@
             {{/if}}
             {{#if isInRole 'admin,committee'}}
               <li><a href="/submissions">{{_ "submissions"}}</a></li>
+            {{/if}}
+            {{#if isInRole 'exhibitor'}}
+              <li><a href="/exhibitor">{{_ "exhibitor-area"}}</a></li>
             {{/if}}
             {{#if isInRole 'applicant'}}
               <li><a href="/application">{{_ "application"}}</a></li>
