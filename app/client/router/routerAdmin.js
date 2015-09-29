@@ -86,4 +86,32 @@ Router.map(function() {
     },
   });
 
+  this.route('exhibitors', {
+    path: '/exhibitors',
+    onBeforeAction: function() {
+      var userId = Meteor.userId();
+      
+      if (Roles.userIsInRole(userId, 'admin')) {
+        this.next();
+      } else if (Roles.userIsInRole(userId, 'exhibitor')) {
+        Router.go('/exhibitor');
+      } else {
+        Router.go('/');
+      }
+    },
+
+    waitOn: function() {
+      return [
+        Meteor.subscribe('allUsers'),
+        Meteor.subscribe('allApplications'),
+      ];
+    },
+
+    data: function() {
+      return {
+        users: Meteor.users.find({roles: "exhibitor",}),
+      };
+    },
+  });
+
 });
