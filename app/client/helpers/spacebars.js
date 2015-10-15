@@ -43,3 +43,9 @@ Handlebars.registerHelper('displayUsername', function(userId) {
     }
   }
 });
+
+// DISPLAY
+
+Handlebars.registerHelper('roundNumber', function(number) {
+  return Math.round(number * 10) / 10;
+});
