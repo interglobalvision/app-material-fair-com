@@ -51,7 +51,9 @@ Meteor.methods({
 
     // add total of all ratings
     ratings.forEach(function(rating, index) {
-      ratingValue += (ratingValue + rating.rating);
+
+      ratingValue += rating.rating;
+
     });
 
     // calc average

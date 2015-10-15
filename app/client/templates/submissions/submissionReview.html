@@ -237,7 +237,7 @@
         <div class="section">
           <span class="card-title grey-text">Average Rating</span>
           {{#if application.rating}}
-          <h4>{{application.rating}}</h4>
+          <h4>{{roundNumber application.rating}}</h4>
           {{else}}
           <h4>Not rated</h4>
           {{/if}}
