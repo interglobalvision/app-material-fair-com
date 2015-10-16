@@ -243,6 +243,29 @@
           {{/if}}
         </div>
         <div class="section">
+          <span class="card-title grey-text">Committee Ratings</span>
+          {{#if application.rating}}
+            <table>
+              <thead>
+                <tr>
+                  <th data-field="member">Member</th>
+                  <th data-field="rating">Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+            {{#each committeeUsers}}
+              {{#if userRating _id }}
+              <tr>
+                <td>{{ profile.name }}</td>
+                <td>{{ userRating _id }}</td>
+              </tr>
+              {{/if}}
+            {{/each}}
+              </tbody>
+            </table>
+          {{/if}}
+        </div>
+        <div class="section">
           <span class="card-title grey-text">Your Rating</span>
 
           <ul class="u-inline-list">

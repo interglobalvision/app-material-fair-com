@@ -75,7 +75,7 @@ Router.map(function() {
       return [
         Meteor.subscribe('singleApplication', this.params.userId),
         Meteor.subscribe('comments', this.params.userId),
-        Meteor.subscribe('ratings', Meteor.userId()),
+        Meteor.subscribe('applicationRatings', this.params.userId),
         Meteor.subscribe('committeeUsers'),
       ];
     },
@@ -84,7 +84,8 @@ Router.map(function() {
       return {
         application: Applications.findOne({userId: this.params.userId,}),
         comments: Comments.find({}, {sort: {timestamp: 1,},}),
-        committeeUsers: Roles.getUsersInRole('committee'),
+        committeeUsers: Roles.getUsersInRole(['admin','committee',]),
+        ratings: Ratings.find(),
       };
     },
   });

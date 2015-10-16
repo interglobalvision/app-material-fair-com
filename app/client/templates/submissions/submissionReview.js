@@ -39,6 +39,20 @@ Template.submissionReview.helpers({
 
     return handle.toLowerCase();
   },
+
+  userRating: function(userId) {
+    var rating = Ratings.findOne({
+      userId: userId,
+    }, {
+      'rating': true,
+    });
+
+    if (rating) {
+      return rating.rating;
+    } else {
+      return false;
+    }
+  },
 });
 
 Template.submissionReview.onRendered(function() {
@@ -59,7 +73,7 @@ Template.submissionReview.onRendered(function() {
 
   //highlight users rating value if set
   _this.autorun(function () {
-    var userReview = Ratings.findOne({applicationId: _this.data.application._id,});
+    var userReview = Ratings.findOne({userId: Meteor.user()._id,});
 
     if (userReview) {
       $('.js-set-rating').removeClass('darken-4').addClass('darken-2');
