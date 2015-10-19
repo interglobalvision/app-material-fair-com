@@ -19,6 +19,10 @@ Meteor.methods({
 
     if (existingRating) {
 
+      if( existingRating.rating === ratingNumber ) {
+        rating.rating = 0;
+      } 
+      
       result = Ratings.update(existingRating._id, rating);
 
       if (result) {
