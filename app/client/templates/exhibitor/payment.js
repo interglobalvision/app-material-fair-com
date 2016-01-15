@@ -38,7 +38,7 @@ Template.payment.events({
     Conekta.token.create($form, function(result) {
       data.token = result.id;
 
-      Meteor.call('makePayment', data, function(error, result) {
+      Meteor.call('exhibitorMakePayment', data, function(error, result) {
 
         console.log(result);
 
