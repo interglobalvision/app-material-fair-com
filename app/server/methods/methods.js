@@ -20,7 +20,7 @@ Meteor.methods({
       var future = new Future();
 
       Conekta.Charge.create({
-        "amount": 12500,
+        "amount": data.amount,
         "currency": "USD",
         "description": "Material Art Fair",
         "reference_id": data.applicationId,
@@ -30,7 +30,7 @@ Meteor.methods({
           "line_items": [{
             "name": "Material Art Fair application fee",
             "sku": "maf_fee_1",
-            "unit_price": 12500,
+            "unit_price": data.amount,
             "description": "Art Fair Application",
             "quantity": 1,
             "type": "application",
