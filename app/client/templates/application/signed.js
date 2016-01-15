@@ -30,6 +30,7 @@ Template.signed.events({
       postalCode: $('#postal-code').val(),
       country: $('#country').val(),
       tel: $('#tel').val(),
+      amount: 12500,
     };
 
     Conekta.locale = TAPi18n.getLanguage();
