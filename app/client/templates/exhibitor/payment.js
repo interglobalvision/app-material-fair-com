@@ -10,12 +10,6 @@ Template.payment.rendered = function () {
   $('select').material_select();
 
   Session.set('paymentErrors', 0);
-
-  Tracker.autorun(function() {
-    if (Session.get('paymentErrors') === 3) {
-      $('#alt-payment-modal').openModal();
-    }
-  });
 };
 
 Template.payment.events({
@@ -75,10 +69,5 @@ Template.payment.events({
 
     });
 
-  },
-
-  'click #request-alt': function() {
-    Meteor.call('requestAltPaymentEmail', Meteor.userId());
-    Materialize.toast(TAPi18n.__('alert-pay_alternate'), 3000);
   },
 });
