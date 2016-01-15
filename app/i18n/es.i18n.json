@@ -98,6 +98,22 @@
   "submissions-approve": "Aprobar",
   "submissions-remove": "Eliminar",
 
+// Exhibitor
+  "exhibitor-area": "Exhibitor Area",
+  "exhibitor-congratulations": "Congratulations!  You have been selected...",
+  "exhibitor-general": "General Exhibitor Information",
+  "exhibitor-badges": "Exhibitor Badge Registration",
+  "exhibitor-vip": "VIP invitations",
+  "exhibitor-events": "Offsite Exhibition and Event Registration",
+  "exhibitor-floorplan": "General Floorplan",
+  "exhibitor-transport": "Work Transportation",
+  "exhibitor-guide": "Lodging and restaurant guide",
+  "exhibitor-logo": "Material Art Fair logo files",
+  "exhibitor-payment": "Payment form",
+  "exhibitor-please_pay": "Please pay for stuff",
+  "exhibitor-pay-amount": "Enter the amount you wish to pay in dollars and cents",
+  "exhibitor-pay-confirm": "You are going to pay now",
+
 // Application
   "application": "Solicitud",
   "application-title": "Registro para solicitantes",

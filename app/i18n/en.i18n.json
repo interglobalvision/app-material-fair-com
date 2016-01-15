@@ -115,7 +115,10 @@
   "exhibitor-transport": "Work Transportation",
   "exhibitor-guide": "Lodging and restaurant guide",
   "exhibitor-logo": "Material Art Fair logo files",
-
+  "exhibitor-payment": "Payment form",
+  "exhibitor-please_pay": "Please pay for stuff",
+  "exhibitor-pay-amount": "Enter the amount you wish to pay in dollars and cents",
+  "exhibitor-pay-confirm": "You are going to pay now",
 
 // Application
   "application": "Application",
