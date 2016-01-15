@@ -10,14 +10,14 @@ Router.map(function() {
 
         var userApplication = Applications.findOne({}, {'status': 1, 'extend': 1});
 
-        if (moment().isAfter(Meteor.settings.public.applicationDeadline)) {
-        
+        if (moment().isAfter(Meteor.settings.public.applicationDeadline) && userApplication.status !== 'approved') {
+
           // Check if after deadline
           if (userApplication.extend !== true || moment().isAfter(Meteor.settings.public.applicationExtension)) {
 
             // Get application status and redirect depending on that
             
-            if (userApplication.status !== 'paid' || userApplication.status !== 'approved') {
+            if (userApplication.status !== 'paid') {
               Router.go('/application-closed');
             }
 
