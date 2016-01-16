@@ -8,9 +8,13 @@
       <form id="pay" enctype="application/x-www- form-urlencoded" action="" method="post">
         <input type="hidden" value="{{ _id }}" id="application-id">
         <div class="row">
-          <div class="col s12">
-            <label for="amount" class="required">{{_ "exhibitor-pay-amount"}}</label>
-            <input type="number" name="amount" id="amount" size="6" placeholder="100.00" required>
+          <div class="col s12 m6">
+            <label for="dollars" class="required">{{_ "exhibitor-pay-dollars"}}</label>
+            <input type="number" name="dollars" id="dollars" size="5" placeholder="100" required>
+          </div>
+          <div class="col s12 m6">
+            <label for="cents" class="required">{{_ "exhibitor-pay-cents"}}</label>
+            <input type="number" name="cents" id="cents" size="2" placeholder="00" required>
           </div>
         </div>
         <div class="row">

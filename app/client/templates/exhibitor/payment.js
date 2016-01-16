@@ -19,7 +19,12 @@ Template.payment.events({
     // Disable pay button
     $('#submit-payment').attr('disabled','disabled');
 
-    var $form = $(e.currentTarget);
+    var $form = $(e.currentTarget),
+      dollars = $('#dollars').val(),
+      cents = $('#cents').val();
+
+    var amount = parseInt(dollars + cents);
+
     var data = {
       applicationId: $('#application-id').val(),
       name: $('#name').val(),
@@ -30,7 +35,7 @@ Template.payment.events({
       postalCode: $('#postal-code').val(),
       country: $('#country').val(),
       tel: $('#tel').val(),
-      amount: $('#amount').val(),
+      amount: amount,
     };
 
     Conekta.locale = TAPi18n.getLanguage();
