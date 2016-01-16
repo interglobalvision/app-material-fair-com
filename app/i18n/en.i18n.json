@@ -119,6 +119,8 @@
   "exhibitor-please_pay": "Please pay for stuff",
   "exhibitor-pay-amount": "Enter the amount you wish to pay in dollars and cents",
   "exhibitor-pay-confirm": "You are going to pay now",
+  "exhibitor-pay-dollars": "Dollars",
+  "exhibitor-pay-cents": "Cents",
 
 // Application
   "application": "Application",
