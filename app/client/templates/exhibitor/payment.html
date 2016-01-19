@@ -10,33 +10,33 @@
         <div class="row">
           <div class="col s12 m6">
             <label for="dollars" class="required">{{_ "exhibitor-pay-dollars"}}</label>
-            <input type="number" name="dollars" id="dollars" size="5" placeholder="100" required>
+            <input type="number" name="dollars" id="dollars" min="0" max="99999" placeholder="100" required>
           </div>
           <div class="col s12 m6">
             <label for="cents" class="required">{{_ "exhibitor-pay-cents"}}</label>
-            <input type="number" name="cents" id="cents" size="2" placeholder="00" required>
+            <input type="number" name="cents" id="cents" min="0" max="99" placeholder="00" required>
           </div>
         </div>
         <div class="row">
           <div class="col s12">
             <label for="name" class="required">{{_ "application-pay-name"}}</label>
-            <input type="text" name="name" id="name" size="20" data-conekta="card[name]" required>
+            <input type="text" name="name" id="name" maxlength="60" data-conekta="card[name]" required>
           </div>
           <div class="col s12 m6">
             <label class="required">{{_ "application-pay-card_number"}}</label>
-            <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" size="20" data-conekta="card[number]" required>
+            <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" data-conekta="card[number]" required>
           </div>
           <div class="col s12 m6">
             <label class="required">{{_ "application-pay-cvc"}}</label>
-            <input type="text" id="cvc" placeholder="XXX" size="4" data-conekta="card[cvc]" required>
+            <input type="text" id="cvc" placeholder="XXX" maxlength="4" data-conekta="card[cvc]" required>
           </div>
           <div class="col s12 m6">
             <label class="required">{{_ "application-pay-exp_month"}}</label>
-            <input type="text" id="exp-month" placeholder="MM" size="2" data-conekta="card[exp_month]" required>
+            <input type="text" id="exp-month" placeholder="MM" maxlength="2" data-conekta="card[exp_month]" required>
           </div>
           <div class="col s12 m6">
             <label class="required">{{_ "application-pay-exp_year"}}</label>
-            <input type="text" id="exp-year" placeholder="YYYY" size="4" data-conekta="card[exp_year]" required>
+            <input type="text" id="exp-year" placeholder="YYYY" maxlength="4" data-conekta="card[exp_year]" required>
           </div>
         </div>
         <div class="row">
