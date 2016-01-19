@@ -10,6 +10,12 @@ Template.payment.rendered = function () {
   $('select').material_select();
 
   Session.set('paymentErrors', 0);
+
+  Tracker.autorun(function() {
+    if (Session.get('paymentErrors') === 1) {
+      $('#submit-payment').prop( "disabled", true );
+    }
+  });
 };
 
 Template.payment.events({
