@@ -1,25 +1,36 @@
-Template.signed.rendered = function () {
-  $(window).scrollTop( 0 );
+Template.payment.created = function () {
+  //
+};
 
+Template.payment.helpers({
+  //
+});
+
+Template.payment.rendered = function () {
   $('select').material_select();
 
   Session.set('paymentErrors', 0);
 
   Tracker.autorun(function() {
-    if (Session.get('paymentErrors') === 3) {
-      $('#alt-payment-modal').openModal();
+    if (Session.get('paymentErrors') === 1) {
+      $('#submit-payment').prop( "disabled", true );
     }
   });
 };
 
-Template.signed.events({
+Template.payment.events({
   'submit #pay': function(e) {
     e.preventDefault();
 
     // Disable pay button
     $('#submit-payment').attr('disabled','disabled');
 
-    var $form = $(e.currentTarget);
+    var $form = $(e.currentTarget),
+      dollars = $('#dollars').val(),
+      cents = $('#cents').val();
+
+    var amount = parseInt(dollars + cents);
+
     var data = {
       applicationId: $('#application-id').val(),
       name: $('#name').val(),
@@ -30,7 +41,7 @@ Template.signed.events({
       postalCode: $('#postal-code').val(),
       country: $('#country').val(),
       tel: $('#tel').val(),
-      amount: 12500,
+      amount: amount,
     };
 
     Conekta.locale = TAPi18n.getLanguage();
@@ -38,7 +49,7 @@ Template.signed.events({
     Conekta.token.create($form, function(result) {
       data.token = result.id;
 
-      Meteor.call('makePayment', data, function(error, result) {
+      Meteor.call('exhibitorMakePayment', data, function(error, result) {
 
         console.log(result);
 
@@ -69,10 +80,5 @@ Template.signed.events({
 
     });
 
-  },
-
-  'click #request-alt': function() {
-    Meteor.call('requestAltPaymentEmail', Meteor.userId());
-    Materialize.toast(TAPi18n.__('alert-pay_alternate'), 3000);
   },
 });

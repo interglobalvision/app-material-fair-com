@@ -106,7 +106,7 @@
 
 // Exhibitor
   "exhibitor-area": "Exhibitor Area",
-  "exhibitor-congratulations": "Congratulations!  You have been selected...",
+  "exhibitor-congratulations": "Congratulations on your selection for Material Art Fair 2016.",
   "exhibitor-general": "General Exhibitor Information",
   "exhibitor-badges": "Exhibitor Badge Registration",
   "exhibitor-vip": "VIP invitations",
@@ -115,7 +115,12 @@
   "exhibitor-transport": "Work Transportation",
   "exhibitor-guide": "Lodging and restaurant guide",
   "exhibitor-logo": "Material Art Fair logo files",
-
+  "exhibitor-payment": "Payment",
+  "exhibitor-please_pay": "Please enter your payment information below, including the amount to charge in dollars and cents USD. If you are paying with Mastercard or Visa, please add an additional 3% to cover processing fees. For American Express, please add an additional 5%.",
+  "exhibitor-pay-amount": "Enter the amount you wish to pay in dollars and cents USD",
+  "exhibitor-pay-confirm": "By clicking the 'PAY' button below, your card will be charged the amount indicated above. Only click once and if you receive an error, please do not attempt to press it again. Instead, write to <a href='mailto:info@material-fair.com'>info@material-fair.com</a>.",
+  "exhibitor-pay-dollars": "Dollars",
+  "exhibitor-pay-cents": "Cents",
 
 // Application
   "application": "Application",

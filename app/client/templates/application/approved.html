@@ -3,10 +3,14 @@
     <div class="card">
       <div class="card-content">
         <div class="row">
-          <p class="flow-text">{{_ "application-congratulations"}}</p>
+          <div class="col s12">
+            <p class="flow-text">{{_ "exhibitor-congratulations"}}</p>
+          </div>
         </div>
         <a target="_blank" href="/pdf/{{_id}}" class="btn">{{_ "application-download_pdf"}}</a>
       </div>
     </div>
   </div>
+
+  {{> payment}}
 </template>
