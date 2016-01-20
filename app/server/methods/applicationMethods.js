@@ -132,7 +132,7 @@ Meteor.methods({
       applicantId = application.userId;
 
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
-      Roles.addUsersToRoles(applicantId, ['exhibitor',]);
+      //Roles.addUsersToRoles(applicantId, ['exhibitor',]);
       return Applications.update(applicationId, {$set: {status: 'approved', waitlist: false},});
     } else {
       throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');
@@ -147,7 +147,9 @@ Meteor.methods({
       applicantId = application.userId;
 
     if (Roles.userIsInRole(Meteor.userId(), ['admin',])) {
-      Roles.removeUsersFromRoles(applicantId, ['exhibitor',]);
+      if (Roles.userIsInRole(applicantId, ['exhibitor',])) {
+        Roles.removeUsersFromRoles(applicantId, ['exhibitor',]);
+      }
       return Applications.update(applicationId, {$set: {status: 'paid', waitlist: true,},});
     } else {
       throw new Meteor.Error('not-allowed', 'Bitch you aint got nooooooooo juice ');

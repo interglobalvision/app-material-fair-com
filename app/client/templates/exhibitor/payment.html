@@ -4,7 +4,7 @@
   </div>
   <div class="card">
     <div class="card-content">
-      <p class="flow-text">{{_ "exhibitor-please_pay"}}</p>
+      <p id="please-pay" class="flow-text">{{_ "exhibitor-please_pay"}}</p>
       <form id="pay" enctype="application/x-www- form-urlencoded" action="" method="post">
         <input type="hidden" value="{{ _id }}" id="application-id">
         <div class="row">
@@ -329,6 +329,7 @@
           </div>
         </div>
       </form>
+      <p class="u-hidden flow-text" id="payment-thanks">{{{_ "exhibitor-pay-thanks"}}}</p>
     </div>
   </div>
 </template>

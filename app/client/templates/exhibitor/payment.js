@@ -62,6 +62,8 @@ Template.payment.events({
 
         } else {
           Materialize.toast(TAPi18n.__('alert-pay_thanks'), 3000);
+          $('form#pay, #please-pay').addClass('u-hidden');
+          $('#payment-thanks').removeClass('u-hidden');
         }
 
         // Enable pay button

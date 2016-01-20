@@ -121,6 +121,7 @@
   "exhibitor-pay-confirm": "By clicking the 'PAY' button below, your card will be charged the amount indicated above. Only click once and if you receive an error, please do not attempt to press it again. Instead, write to <a href='mailto:info@material-fair.com'>info@material-fair.com</a>.",
   "exhibitor-pay-dollars": "Dollars",
   "exhibitor-pay-cents": "Cents",
+  "exhibitor-pay-thanks": "Thank you, your payment has been processed successfully. If you have any further questions, please contact <a href='mailto:info@material-fair.com'>info@material-fair.com</a>.",
 
 // Application
   "application": "Application",
